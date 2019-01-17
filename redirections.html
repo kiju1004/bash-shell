@@ -1405,9 +1405,7 @@ lrwx------ 1 mug896 mug896 64 07.06.2015 15:56 2 -&gt; /dev/pts/10  # stdout
 </code></pre><p>&#xC624;&#xB958;&#xBA54;&#xC2DC;&#xC9C0;&#xB294; stdout &#xC744; &#xD1B5;&#xD574; &#xD130;&#xBBF8;&#xB110;&#xB85C; &#xCD9C;&#xB825;&#xB418;&#xBBC0;&#xB85C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD558;&#xBA74; errfile &#xB85C; &#xC800;&#xC7A5;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># { ;} &#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4; &#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; outfile &#xB0B4;&#xC6A9;&#xC774; errfile &#xB85C; &#xAC00;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</span>
 { mycomm <span class="hljs-number">2</span>&gt;&amp;<span class="hljs-number">1</span> &gt; outfile ;} &gt; errfile
-
 ------------------------------------
-
 $ cat x
 <span class="hljs-number">11111111</span>
 
@@ -1706,7 +1704,7 @@ date: invalid option -- <span class="hljs-string">&apos;%&apos;</span>     <span
 ls <span class="hljs-operator">-l</span> /dev/fd/
 ------------------
 
-<span class="hljs-function"><span class="hljs-title">f1</span></span>() { ./t.sh ;                                            }
+<span class="hljs-function"><span class="hljs-title">f1</span></span>() { ./t.sh ;}
 
 <span class="hljs-keyword">while</span> :; <span class="hljs-keyword">do</span> 
     f1
