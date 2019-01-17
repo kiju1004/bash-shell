@@ -1388,7 +1388,12 @@ What is the date today?
 <p>&#xBA85;&#xB839;&#xC774; <code>command1 | command2</code> &#xC640; &#xAC19;&#xC774; &#xC2E4;&#xD589;&#xB420; &#xACBD;&#xC6B0; command2 &#xC5D0;&#xC11C;&#xB294; stdin &#xC774; &#xD30C;&#xC774;&#xD504;&#xC5D0; &#xC5F0;&#xACB0;&#xB418;&#xC5B4; &#xC788;&#xC5B4; read &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xC790;&#xB85C;&#xBD80;&#xD130; &#xC785;&#xB825;&#xC744; &#xBC1B;&#xC744; &#xC218; &#xC5C6;&#xB294;&#xB370;&#xC694;.
 &#xC774;&#xB54C;&#xB294; &#xD604;&#xC7AC; &#xD130;&#xBBF8;&#xB110;&#xC5D0; &#xC5F0;&#xACB0;&#xB418;&#xC5B4; &#xC788;&#xB294; stdout &#xC774;&#xB098; stderr &#xB610;&#xB294; <a href="tty.html#dev-tty">/dev/tty</a> &#xB97C;
 &#xC774;&#xC6A9;&#xD574; &#xC0AC;&#xC6A9;&#xC790;&#xB85C;&#xBD80;&#xD130; &#xC785;&#xB825;&#xC744; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash"><span class="hljs-built_in">command</span> ... | { <span class="hljs-built_in">read</span> -p <span class="hljs-string">&apos;enter: &apos;</span> var &lt; /dev/tty; <span class="hljs-built_in">command</span> ... ;}
+<pre><code class="lang-bash"><span class="hljs-built_in">command</span> ... | { 
+    <span class="hljs-built_in">read</span> -p <span class="hljs-string">&apos;enter: &apos;</span> var &lt; /dev/tty
+    <span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> line; <span class="hljs-keyword">do</span>   <span class="hljs-comment"># while &#xBB38;&#xC740; &#xD30C;&#xC774;&#xD504;&#xB85C; &#xBD80;&#xD130; &#xC785;&#xB825;&#xC744; &#xBC1B;&#xC74C;</span>
+        ....
+    <span class="hljs-keyword">done</span>
+}
 <span class="hljs-comment"># &#xB610;&#xB294;</span>
 <span class="hljs-built_in">command</span> ... | { <span class="hljs-built_in">read</span> -p <span class="hljs-string">&apos;enter: &apos;</span> var &lt;&amp;<span class="hljs-number">2</span>; <span class="hljs-built_in">command</span> ... ;}
 </code></pre>
