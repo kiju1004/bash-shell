@@ -1299,20 +1299,20 @@ $ <span class="hljs-built_in">kill</span> <span class="hljs-variable">$COPROC_PI
 <pre><code class="lang-bash">$ mkfifo inpipe outpipe
 $ <span class="hljs-built_in">exec</span> <span class="hljs-number">3</span>&lt;&gt;inpipe <span class="hljs-number">4</span>&lt;&gt;outpipe 
 
-$ <span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> -r line; <span class="hljs-keyword">do</span> <span class="hljs-built_in">eval</span> expr <span class="hljs-string">&quot;<span class="hljs-variable">$line</span>&quot;</span> &gt; inpipe ; <span class="hljs-keyword">done</span> &lt; outpipe  &amp;
+$ <span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> -r line; <span class="hljs-keyword">do</span> <span class="hljs-built_in">eval</span> expr <span class="hljs-string">&quot;<span class="hljs-variable">$line</span>&quot;</span> &gt;&amp;<span class="hljs-number">3</span> ; <span class="hljs-keyword">done</span> &lt;&amp;<span class="hljs-number">4</span>  &amp;
 [<span class="hljs-number">1</span>] <span class="hljs-number">17647</span>
 
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;1 + 2&quot;</span> &gt;&amp; <span class="hljs-number">4</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;1 + 2&quot;</span> &gt;&amp;<span class="hljs-number">4</span>
 
-$ <span class="hljs-built_in">read</span> -r res &lt;&amp; <span class="hljs-number">3</span>
+$ <span class="hljs-built_in">read</span> -r res &lt;&amp;<span class="hljs-number">3</span>
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$res</span>
 <span class="hljs-number">3</span>
 
-$ <span class="hljs-built_in">kill</span> <span class="hljs-number">17647</span>
-
 $ <span class="hljs-built_in">exec</span> <span class="hljs-number">3</span>&gt;&amp;- <span class="hljs-number">4</span>&gt;&amp;-
 $ rm <span class="hljs-operator">-f</span> inpipe outpipe
+
+$ <span class="hljs-built_in">kill</span> <span class="hljs-number">17647</span>
 </code></pre>
 <p>&#xB2E4;&#xC74C;&#xC740; coproc &#xB97C; &#xC2E4;&#xD589;&#xD588;&#xC744;&#xB54C; FD &#xC0C1;&#xD0DC;&#xC785;&#xB2C8;&#xB2E4;.
 &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xBCC4;&#xB85C; 2 &#xAC1C;&#xC758; FD &#xAC00; &#xC0AC;&#xC6A9;&#xB418;&#xACE0; &#xC788;&#xACE0;,  pipe &#xB3C4; 2 &#xAC1C;&#xAC00;( &#xBE68;&#xAC15;, &#xD30C;&#xB791; ) &#xC0AC;&#xC6A9;&#xB418;&#xACE0; &#xC788;&#xB294; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
