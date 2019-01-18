@@ -1441,7 +1441,7 @@ readline &#xD568;&#xC218;&#xC778; history-expand-line &#xACFC; <code>!#:$</code>
 <span class="hljs-comment"># \C-y : yank &#xD568;&#xC218;&#xB85C; paste &#xC5D0; &#xD574;&#xB2F9;&#xD569;&#xB2C8;&#xB2E4;. &#xC55E;&#xC11C; \C-u &#xB85C; copy &#xD588;&#xB358; &#xBD80;&#xBD84;&#xC744; &#xBD99;&#xC5EC; &#xB123;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
 <span class="hljs-comment"># \C-e : &#xCEE4;&#xC11C;&#xB97C; &#xB77C;&#xC778; &#xB05D;&#xC73C;&#xB85C; &#xC62E;&#xAE41;&#xB2C8;&#xB2E4;.</span>
 
-<span class="hljs-string">&quot;\e[19~&quot;</span>: <span class="hljs-string">&quot;\C-u<span class="hljs-variable">$(!! 2&gt;&amp;1 | awk &apos;$NF { W = $NF } END {print W}&apos;)</span>\e\C-e\C-a\C-y\C-e&quot;</span>
+<span class="hljs-string">&quot;\e[19~&quot;</span>: <span class="hljs-string">&quot;\C-u<span class="hljs-variable">$(!! 2&gt;&amp;1 | awk &apos;$NF {W = $NF} END{print W}&apos;)</span>\e\C-e\C-a\C-y\C-e&quot;</span>
 <span class="hljs-string">&quot;\e[19;2~&quot;</span>: <span class="hljs-string">&quot;\C-u<span class="hljs-variable">$(!!)</span>\e\C-e\C-a\C-y\C-e&quot;</span>
 </code></pre>
 <video width="748" height="200" controls preload="auto">
