@@ -1402,7 +1402,7 @@ $ grep PIPE_DEF_BUFFERS /usr/src/linux-headers-`uname -r`/include/linux/pipe_fs_
 $ mkfifo mypipe
 $ <span class="hljs-built_in">exec</span> <span class="hljs-number">3</span>&lt;&gt; mypipe
 
-<span class="hljs-comment"># ctrl-c &#xB85C; &#xC885;&#xB8CC;</span>
+<span class="hljs-comment"># ctrl-c &#xB85C; &#xC885;&#xB8CC; ( &#xBC84;&#xD37C;&#xAC00; &#xCC28;&#xAC8C;&#xB418;&#xBA74; &#xBE14;&#xB85D;&#xB418;&#xBBC0;&#xB85C; )</span>
 $ <span class="hljs-keyword">while</span> :; <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> -n <span class="hljs-string">&apos;1&apos;</span>; <span class="hljs-keyword">done</span> &gt; mypipe     
 ^Cbash: <span class="hljs-built_in">echo</span>: write error: Interrupted system call
 
