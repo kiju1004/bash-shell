@@ -1436,13 +1436,13 @@ readline &#xD568;&#xC218;&#xC778; history-expand-line &#xACFC; <code>!#:$</code>
 <p>&#xBA85;&#xB839;&#xBB38;&#xC744; &#xC791;&#xC131;&#xD560; &#xB54C; &#xC774;&#xC804; &#xBA85;&#xB839;&#xBB38;&#xC774; &#xC544;&#xB2C8;&#xB77C; &#xBA85;&#xB839;&#xC758; &#xCD9C;&#xB825; &#xACB0;&#xACFC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC2F6;&#xC744; &#xB54C;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>.inputrc &#xC5D0; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC124;&#xC815;&#xC744; &#xD1B5;&#xD574; &#xC774;&#xC804; &#xBA85;&#xB839;&#xC758; &#xCD9C;&#xB825;&#xC744; &#xC785;&#xB825;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># &quot;\e[19~&quot; : F8 &#xD0A4;&#xB85C; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.  &quot;\e[19;2~&quot;  &#xB294; SHIFT-F8 &#xC785;&#xB2C8;&#xB2E4;.</span>
 <span class="hljs-comment"># \C-u : &#xD604;&#xC7AC;&#xAE4C;&#xC9C0; &#xD0C0;&#xC785;&#xD55C; &#xBA85;&#xB839;&#xC744; &#xC0AD;&#xC81C;&#xD568;&#xACFC; &#xB3D9;&#xC2DC;&#xC5D0; copy &#xD569;&#xB2C8;&#xB2E4;.</span>
-<span class="hljs-comment"># $(!!)\e\C-e : \e\C-e &#xB294; shell-expand-line &#xD568;&#xC218;&#xB85C; &#xC55E;&#xC11C; &#xC785;&#xB825;&#xD55C; $(!!) &#xBD80;&#xBD84;&#xC774; &#xD655;&#xC7A5;&#xB429;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-comment"># $(...)\e\C-e : \e\C-e &#xB294; shell-expand-line &#xD568;&#xC218;&#xB85C; &#xC55E;&#xC11C; &#xC785;&#xB825;&#xD55C; $(...) &#xBD80;&#xBD84;&#xC774; &#xD655;&#xC7A5;&#xB429;&#xB2C8;&#xB2E4;.</span>
 <span class="hljs-comment"># \C-a : &#xCEE4;&#xC11C;&#xB97C; &#xB77C;&#xC778; &#xCC98;&#xC74C;&#xC73C;&#xB85C; &#xC62E;&#xAE41;&#xB2C8;&#xB2E4;.</span>
 <span class="hljs-comment"># \C-y : yank &#xD568;&#xC218;&#xB85C; paste &#xC5D0; &#xD574;&#xB2F9;&#xD569;&#xB2C8;&#xB2E4;. &#xC55E;&#xC11C; \C-u &#xB85C; copy &#xD588;&#xB358; &#xBD80;&#xBD84;&#xC744; &#xBD99;&#xC5EC; &#xB123;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
 <span class="hljs-comment"># \C-e : &#xCEE4;&#xC11C;&#xB97C; &#xB77C;&#xC778; &#xB05D;&#xC73C;&#xB85C; &#xC62E;&#xAE41;&#xB2C8;&#xB2E4;.</span>
 
-<span class="hljs-string">&quot;\e[19~&quot;</span>: <span class="hljs-string">&quot;\C-u<span class="hljs-variable">$(!! 2&gt;&amp;1 | awk &apos;$NF {W = $NF} END{print W}&apos;)</span>\e\C-e\C-a\C-y\C-e&quot;</span>
-<span class="hljs-string">&quot;\e[19;2~&quot;</span>: <span class="hljs-string">&quot;\C-u<span class="hljs-variable">$(!!)</span>\e\C-e\C-a\C-y\C-e&quot;</span>
+<span class="hljs-string">&quot;\e[19~&quot;</span>: <span class="hljs-string">&quot;\C-u<span class="hljs-variable">$( { !! ;} |&amp; awk &apos;$NF {W = $NF} END{print W}&apos;)</span>\e\C-e\C-a\C-y\C-e&quot;</span>
+<span class="hljs-string">&quot;\e[19;2~&quot;</span>: <span class="hljs-string">&quot;\C-u<span class="hljs-variable">$( { !! ;} 2&gt;&amp;1)</span>\e\C-e\C-a\C-y\C-e&quot;</span>
 </code></pre>
 <video width="748" height="200" controls preload="auto">
   <source src="images/readline_ex3.mp4" type="video/mp4">
