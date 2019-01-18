@@ -1450,6 +1450,27 @@ l-wx------ 1 mug896 mug896 64 07.06.2015 15:33 2 -&gt; /home/mug896/tmp/outfile
 <li><code>mycomm1 2&gt;&amp;1 | mycomm2</code> &#xC744; &#xC904;&#xC5EC;&#xC11C; <code>mycomm1 |&amp; mycomm2</code>  </li>
 </ul>
 <h4 id="&#xC5F0;&#xC2B5;&#xBB38;&#xC81C;-">&#xC5F0;&#xC2B5;&#xBB38;&#xC81C; )</h4>
+<p>&#xB2E4;&#xC74C;&#xC740; &#xD504;&#xB86C;&#xD504;&#xD2B8; &#xC0C1;&#xC5D0;&#xC11C; &#xC2E4;&#xD589;&#xD55C; &#xBA85;&#xB839;&#xC778;&#xB370;&#xC694;.
+exec &#xBA85;&#xB839;&#xC73C;&#xB85C; FD 2 (stderr) &#xB97C; FD 1 (stdin) &#xC73C;&#xB85C; &#xC5F0;&#xACB0;&#xD558;&#xC600;&#xC73C;&#xBBC0;&#xB85C;
+<code>date -@</code> &#xBA85;&#xB839;&#xC758; &#xC624;&#xB958;&#xBA54;&#xC2DC;&#xC9C0;&#xAC00; /dev/null &#xB85C; &#xC804;&#xB2EC;&#xB420;&#xAE4C;&#xC694;?
+&#xB2E8;&#xACC4;&#xC801;&#xC73C;&#xB85C; &#xB530;&#xB77C;&#xAC00; &#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p><b>$ exec 2&gt;&amp;1 ; date -@ &gt; /dev/null</b></p>
+</blockquote>
+<p><em>1</em> . exec &#xBA85;&#xB839;&#xC5D0; &#xC758;&#xD574; FD 2 (stderr) &#xAC00; stdout &#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>exec 2&gt;&amp;1 &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; ( FD 1 : stdout, FD 2 : stdout )</p>
+</blockquote>
+<p><em>2</em> . FD 1 (stdout) &#xC774; /dev/null &#xB85C; &#xC5F0;&#xACB0;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>1&gt; /dev/null &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; ( FD 1 : /dev/null, FD 2 : stdout )</p>
+</blockquote>
+<p>&#xCD5C;&#xC885;&#xC801;&#xC73C;&#xB85C; &#xC774; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C; <code>date -@</code> &#xBA85;&#xB839;&#xC758; &#xC624;&#xB958;&#xBA54;&#xC2DC;&#xC9C0;&#xB294; /dev/null &#xB85C; &#xAC00;&#xB294;&#xAC83;&#xC774; &#xC544;&#xB2C8;&#xACE0; stdout &#xC744; &#xD1B5;&#xD574;&#xC11C; &#xD130;&#xBBF8;&#xB110;&#xB85C; &#xAC00;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
+&#xB530;&#xB77C;&#xC11C; &#xC624;&#xB958;&#xBA54;&#xC2DC;&#xC9C0;&#xAC00; /dev/null &#xB85C; &#xAC00;&#xAC8C; &#xD558;&#xB824;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>( exec 2&gt;&amp;1 ; date -@ ) &gt; /dev/null</p>
+</blockquote>
+<hr>
 <p>&#xB2E4;&#xC74C;&#xC740; <code>date -@</code> &#xBA85;&#xB839;&#xC758; &#xC624;&#xB958; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; <code>2&gt; errfile</code> &#xB85C; &#xBC1B;&#xC9C0; &#xC54A;&#xACE0; <code>1&gt; errfile</code> &#xB85C; &#xBC1B;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC880; &#xBCF5;&#xC7A1;&#xD574; &#xBCF4;&#xC77C; &#xC218; &#xC788;&#xB294;&#xB370; &#xB2E8;&#xACC4;&#xBCC4;&#xB85C; &#xB530;&#xB77C;&#xAC00; &#xBCF4;&#xBA74; &#xC5B4;&#xB835;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.  </p>
 <blockquote>
 <p><b>( 3&gt; outfile &#xA0; 2&gt;&amp;1 &#xA0; 1&gt;&amp;3 &#xA0; date -@ ) &#xA0;&gt; errfile</b></p>
