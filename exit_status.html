@@ -1311,12 +1311,12 @@ function &#xC774;&#xB098; source &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xC77D;&#xC5B
 }
 ---------------------------------------
 
-$ <span class="hljs-function"><span class="hljs-title">f1</span></span>() { <span class="hljs-literal">true</span> &amp;&amp; <span class="hljs-built_in">return</span>; <span class="hljs-built_in">echo</span> end... ;}
+$ <span class="hljs-function"><span class="hljs-title">f1</span></span>() { <span class="hljs-literal">true</span> &amp;&amp; <span class="hljs-built_in">return</span>; <span class="hljs-built_in">echo</span> end... ;}     <span class="hljs-comment"># true &#xAC00; &#xC885;&#xB8CC;&#xC0C1;&#xD0DC; &#xAC12;&#xC774; &#xB41C;&#xB2E4;.</span>
 $ f1
 $ <span class="hljs-built_in">echo</span> $?
 <span class="hljs-number">0</span>
 
-$ <span class="hljs-function"><span class="hljs-title">f1</span></span>() { <span class="hljs-literal">false</span> || <span class="hljs-built_in">return</span>; <span class="hljs-built_in">echo</span> end... ;}
+$ <span class="hljs-function"><span class="hljs-title">f1</span></span>() { <span class="hljs-literal">false</span> || <span class="hljs-built_in">return</span>; <span class="hljs-built_in">echo</span> end... ;}    <span class="hljs-comment"># false &#xAC00; &#xC885;&#xB8CC;&#xC0C1;&#xD0DC; &#xAC12;&#xC774; &#xB41C;&#xB2E4;.</span>
 $ f1
 $ <span class="hljs-built_in">echo</span> $?
 <span class="hljs-number">1</span>
