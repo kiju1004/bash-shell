@@ -1383,9 +1383,10 @@ lrwx------ <span class="hljs-number">1</span> mug896 mug896 <span class="hljs-nu
 <blockquote>
 <p>$ exec 2&gt;&amp;1</p>
 </blockquote>
-<p>FD 2 (stderr) &#xB97C; FD 1 (stdout) &#xC5D0; &#xC5F0;&#xACB0; &#xD558;&#xC600;&#xC2B5;&#xB2C8;&#xB2E4;.
-&#xD604;&#xC7AC; 1, 2 &#xBC88;&#xC740; &#xBAA8;&#xB450; &#xB3D9;&#xC77C;&#xD55C; &#xD130;&#xBBF8;&#xB110;&#xC5D0;( /dev/pts/10 ) &#xC5F0;&#xACB0;&#xB3FC; &#xC788;&#xC73C;&#xBBC0;&#xB85C; &#xBCC0;&#xACBD;&#xC0AC;&#xD56D;&#xC774; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
-&#xB2E4;&#xB9CC; stderr &#xBA54;&#xC2DC;&#xC9C0;&#xAC00; stdout &#xC744; &#xD1B5;&#xD574; &#xD130;&#xBBF8;&#xB110;&#xB85C; &#xD45C;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>FD 2 &#xC758; stderr &#xB97C; FD 1 &#xC758; stdout &#xC5D0; &#xC5F0;&#xACB0; &#xD558;&#xC600;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xD604;&#xC7AC; FD 1, 2 &#xBC88;&#xC740; &#xBAA8;&#xB450; &#xB3D9;&#xC77C;&#xD55C; &#xD130;&#xBBF8;&#xB110;&#xC5D0;( /dev/pts/10 ) &#xC5F0;&#xACB0;&#xB3FC; &#xC788;&#xC73C;&#xBBC0;&#xB85C; &#xCD9C;&#xB825;&#xC774; &#xD130;&#xBBF8;&#xB110;&#xB85C; &#xAC00;&#xB294;&#xAC83;&#xC740;
+&#xBC14;&#xB00C;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xD558;&#xC9C0;&#xB9CC; FD 2 &#xC758; stderr &#xBA54;&#xC2DC;&#xC9C0;&#xAC00; stdout &#xC744; &#xD1B5;&#xD574; &#xD130;&#xBBF8;&#xB110;&#xB85C; &#xD45C;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code>$ ls -l /proc/20040/fd
 total 0
 lrwx------ 1 mug896 mug896 64 07.06.2015 15:56 0 -&gt; /dev/pts/10  # stdin  
@@ -1457,11 +1458,11 @@ exec &#xBA85;&#xB839;&#xC73C;&#xB85C; FD 2 (stderr) &#xB97C; FD 1 (stdin) &#xC73
 <blockquote>
 <p><b>$ exec 2&gt;&amp;1 ; date -@ &gt; /dev/null</b></p>
 </blockquote>
-<p><em>1</em> . exec &#xBA85;&#xB839;&#xC5D0; &#xC758;&#xD574; FD 2 (stderr) &#xAC00; stdout &#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p><em>1</em> . exec &#xBA85;&#xB839;&#xC5D0; &#xC758;&#xD574; FD 2 &#xC758; stderr &#xAC00; FD 1 &#xC758; stdout &#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <blockquote>
 <p>exec 2&gt;&amp;1 &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; ( FD 1 : stdout, FD 2 : stdout )</p>
 </blockquote>
-<p><em>2</em> . FD 1 (stdout) &#xC774; /dev/null &#xB85C; &#xC5F0;&#xACB0;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p><em>2</em> . FD 1 &#xC758; stdout &#xC774; /dev/null &#xB85C; &#xBCC0;&#xACBD;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <blockquote>
 <p>1&gt; /dev/null &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; ( FD 1 : /dev/null, FD 2 : stdout )</p>
 </blockquote>
