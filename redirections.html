@@ -1850,12 +1850,12 @@ $ <span class="hljs-built_in">exec</span> <span class="hljs-number">3</span>&gt;
 
 <span class="hljs-comment">################# &#xD14C;&#xC2A4;&#xD2B8; #################</span>
 
-$ ( <span class="hljs-number">3</span>&gt;&amp;<span class="hljs-number">1</span> <span class="hljs-number">1</span>&gt;&amp;<span class="hljs-number">2</span> <span class="hljs-number">2</span>&gt;&amp;<span class="hljs-number">3</span> <span class="hljs-number">3</span>&gt;&amp;- date ) <span class="hljs-number">2</span>&gt; out
+$ ( <span class="hljs-number">3</span>&gt;&amp;<span class="hljs-number">1</span> <span class="hljs-number">1</span>&gt;&amp;<span class="hljs-number">2</span> <span class="hljs-number">2</span>&gt;&amp;<span class="hljs-number">3</span> <span class="hljs-number">3</span>&gt;&amp;- date ) <span class="hljs-number">2</span>&gt; out         <span class="hljs-comment"># &#xC815;&#xC0C1;&#xBA54;&#xC2DC;&#xC9C0;&#xB97C; 2&gt; &#xB85C; &#xC7A1;&#xB294;&#xB2E4;.</span>
 
 $ cat out
 Sat Aug  <span class="hljs-number">1</span> <span class="hljs-number">15</span>:<span class="hljs-number">51</span>:<span class="hljs-number">45</span> KST <span class="hljs-number">2015</span>
 
-$ ( <span class="hljs-number">3</span>&gt;&amp;<span class="hljs-number">1</span> <span class="hljs-number">1</span>&gt;&amp;<span class="hljs-number">2</span> <span class="hljs-number">2</span>&gt;&amp;<span class="hljs-number">3</span> <span class="hljs-number">3</span>&gt;&amp;- date -@ ) <span class="hljs-number">1</span>&gt; out
+$ ( <span class="hljs-number">3</span>&gt;&amp;<span class="hljs-number">1</span> <span class="hljs-number">1</span>&gt;&amp;<span class="hljs-number">2</span> <span class="hljs-number">2</span>&gt;&amp;<span class="hljs-number">3</span> <span class="hljs-number">3</span>&gt;&amp;- date -@ ) <span class="hljs-number">1</span>&gt; out      <span class="hljs-comment"># &#xC624;&#xB958;&#xBA54;&#xC2DC;&#xC9C0;&#xB97C; 1&gt; &#xB85C; &#xC7A1;&#xB294;&#xB2E4;.</span>
 
 $ cat out
 date: invalid option -- <span class="hljs-string">&apos;@&apos;</span>
