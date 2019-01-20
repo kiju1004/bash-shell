@@ -1752,6 +1752,7 @@ $ strace -o thread.strace -f -e %process ./tls
 ./hello: ELF <span class="hljs-number">64</span>-bit LSB shared object, x86-<span class="hljs-number">64</span>, version <span class="hljs-number">1</span> (SYSV), dynamically linked,
 interpreter /lib64/ld-linux-x86-<span class="hljs-number">64</span>.so.<span class="hljs-number">2</span>, <span class="hljs-keyword">for</span> GNU/Linux <span class="hljs-number">3.2</span>.<span class="hljs-number">0</span>, BuildID[sha1]=<span class="hljs-number">1971</span>f93bf98c6e51994dcf0079aef9c37ad6a512, not stripped
 
+<span class="hljs-comment"># hello &#xBA85;&#xB839; &#xC2E4;&#xD589;&#xC2DC; main &#xD568;&#xC218;&#xAC00; &#xD638;&#xCD9C;&#xB418;&#xAE30; &#xC804;&#xC5D0; &#xC5EC;&#xB7EC; &#xAC1C;&#xC758; &#xCD08;&#xAE30;&#xD654; &#xD568;&#xC218;&#xAC00; &#xD638;&#xCD9C;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
 $ ltrace -n3 -x+ ./hello
 __libc_start_main@libc.so.<span class="hljs-number">6</span>(<span class="hljs-number">0</span>x55575102377a, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>x7fffd832<span class="hljs-built_in">fc</span>28, <span class="hljs-number">0</span>x5557510237c0 &lt;unfinished ...&gt;
    __cxa_atexit@libc.so.<span class="hljs-number">6</span>(<span class="hljs-number">0</span>x7f6cc35e1ee0, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>x5557510237c0) = <span class="hljs-number">0</span>
@@ -1764,7 +1765,7 @@ __libc_start_main@libc.so.<span class="hljs-number">6</span>(<span class="hljs-n
    _setjmp@libc.so.<span class="hljs-number">6</span>(<span class="hljs-number">0</span>x7fffd832fb70, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>x7fffd832<span class="hljs-built_in">fc</span>38, <span class="hljs-number">0</span> &lt;unfinished ...&gt;
       __sigsetjmp@libc.so.<span class="hljs-number">6</span>(<span class="hljs-number">0</span>x7fffd832fb70, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>x7fffd832<span class="hljs-built_in">fc</span>38, <span class="hljs-number">0</span>) = <span class="hljs-number">0</span>
    &lt;... _setjmp resumed&gt; )                       = <span class="hljs-number">0</span>
-   main(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>x7fffd832<span class="hljs-built_in">fc</span>28, <span class="hljs-number">0</span>x7fffd832<span class="hljs-built_in">fc</span>38, <span class="hljs-number">0</span> &lt;unfinished ...&gt;
+   main(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>x7fffd832<span class="hljs-built_in">fc</span>28, <span class="hljs-number">0</span>x7fffd832<span class="hljs-built_in">fc</span>38, <span class="hljs-number">0</span> &lt;unfinished ...&gt;     <span class="hljs-comment"># main &#xD568;&#xC218;</span>
       puts(<span class="hljs-string">&quot;main start...&quot;</span> &lt;unfinished ...&gt;
 . . . .
 . . . .
