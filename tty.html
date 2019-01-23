@@ -1382,19 +1382,26 @@ ctty &#xB97C; &#xAC16;&#xC9C0; &#xC54A;&#xB294; &#xD504;&#xB85C;&#xC138;&#xC2A4;
 <p><code>/dev/tty</code> &#xB294; &#xD2B9;&#xC218; &#xD30C;&#xC77C;&#xB85C; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC758; controlling terminal &#xACFC; &#xB3D9;&#xC77C;&#xD569;&#xB2C8;&#xB2E4;.
 &#xB2E4;&#xC2DC;&#xB9D0;&#xD574; &#xD604;&#xC7AC; ctty &#xAC00; /dev/pts/1 &#xC774;&#xB77C;&#xBA74; /dev/tty &#xB3C4; /dev/pts/1 &#xC640; &#xAC19;&#xB2E4;&#xACE0; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xC5B4;&#xB5A4; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; /dev/tty &#xB97C; open &#xD558;&#xB294;&#xB370; &#xC2E4;&#xD328;&#xD558;&#xC600;&#xB2E4;&#xBA74; ctty &#xB97C; &#xAC16;&#xACE0;&#xC788;&#xC9C0; &#xC54A;&#xB2E4;&#xACE0; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-standard stream &#xC774; &#xBAA8;&#xB450; redirect &#xB418;&#xC5B4;&#xC788;&#xB2E4;&#xACE0; &#xD558;&#xB354;&#xB77C;&#xB3C4; /dev/tty &#xB85C; &#xCD9C;&#xB825;&#xD558;&#xBA74; &#xD130;&#xBBF8;&#xB110;&#xB85C; &#xCD9C;&#xB825;&#xD560; &#xC218; &#xC788;&#xACE0;
+standard streams &#xC774; &#xBAA8;&#xB450; redirect &#xB418;&#xC5B4;&#xC788;&#xB2E4;&#xACE0; &#xD558;&#xB354;&#xB77C;&#xB3C4; /dev/tty &#xB85C; &#xCD9C;&#xB825;&#xD558;&#xBA74; &#xD130;&#xBBF8;&#xB110;&#xB85C; &#xCD9C;&#xB825;&#xD560; &#xC218; &#xC788;&#xACE0;
 &#xB610;&#xD55C; /dev/tty &#xB97C; &#xC774;&#xC6A9;&#xD574; &#xD130;&#xBBF8;&#xB110;&#xB85C;&#xBD80;&#xD130; &#xC785;&#xB825;&#xC744; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p><code>echo hello &gt; /dev/tty</code> &#xC640; &#xAC19;&#xC774; &#xC9C1;&#xC811; /dev/tty &#xB85C; &#xCD9C;&#xB825;&#xD558;&#xB294; &#xAC83;&#xC740;
-&#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xD130;&#xBBF8;&#xB110;&#xC5D0; &#xD45C;&#xC2DC;&#xB294; &#xB418;&#xC9C0;&#xB9CC; &#xD30C;&#xC77C;&#xB85C; &#xC800;&#xC7A5;&#xD560; &#xC218;&#xB294; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">$ cat test.sh
+<p>&#xD55C;&#xAC00;&#xC9C0; &#xC911;&#xC694;&#xD55C; &#xC810;&#xC740; /dev/tty &#xB85C;&#xC758; &#xCD9C;&#xB825;&#xC740; standard streams &#xC744; &#xAC70;&#xCE58;&#xC9C0; &#xC54A;&#xACE0;
+&#xC9C1;&#xC811; &#xD130;&#xBBF8;&#xB110;&#xC5D0; &#xC4F0;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC7A1;&#xC544;&#xC11C; redirect &#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># /dev/tty &#xB85C;&#xC758; &#xCD9C;&#xB825;&#xC740; redirect &#xD560;&#xC218;&#xC5C6;&#xB2E4;.</span>
+$ { <span class="hljs-built_in">echo</span>  hello &gt; /dev/tty ;} &gt; /dev/null
+hello
 
+$ { <span class="hljs-built_in">echo</span>  hello &gt; /dev/tty ;} <span class="hljs-number">2</span>&gt; /dev/null
+hello
+
+<span class="hljs-comment"># &#xB530;&#xB77C;&#xC11C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD30C;&#xC77C;&#xB85C; &#xC800;&#xC7A5;&#xD560; &#xC218;&#xB3C4; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+$ cat test.sh
 <span class="hljs-built_in">echo</span> hello &gt; /dev/tty
 ----------------------------
 
-<span class="hljs-comment"># /dev/tty &#xB85C; &#xC9C1;&#xC811; &#xCD9C;&#xB825;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBC29;&#xBC95;&#xC73C;&#xB85C; &#xD30C;&#xC77C;&#xB85C; &#xC800;&#xC7A5;&#xD560; &#xC218; &#xC5C6;&#xB2E4;.</span>
-$ test.sh &gt; out      <span class="hljs-comment"># stdin</span>
-$ test.sh <span class="hljs-number">2</span>&gt; out     <span class="hljs-comment"># stderr</span>
-$ test.sh &amp;&gt; out     <span class="hljs-comment"># stdin, stderr (bash only)</span>
+$ ./test.sh &gt; out      <span class="hljs-comment"># stdin</span>
+hello
+$ ./test.sh <span class="hljs-number">2</span>&gt; out     <span class="hljs-comment"># stderr</span>
+hello
 </code></pre>
 <h2 id="configuring-tty-device">Configuring TTY device</h2>
 <p><code>tty</code> &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xD604;&#xC7AC; shell &#xC758; tty device &#xB97C; &#xC870;&#xD68C;&#xD560;&#xC218; &#xC788;&#xACE0;, <code>stty</code> &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD574; &#xC124;&#xC815;&#xAC12;&#xC744; &#xBCC0;&#xACBD;&#xD560;&#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. </p>

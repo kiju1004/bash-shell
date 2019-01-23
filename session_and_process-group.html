@@ -1307,11 +1307,19 @@ $ <span class="hljs-built_in">kill</span> -- -<span class="hljs-number">25517</s
 $ ps j -C ping
  PPID   PID  PGID   SID TTY      TPGID STAT   UID   TIME COMMAND
 </code></pre>
+<p><a name="setsid"></a></p>
 <h3 id="&#xC0C8;&#xB85C;&#xC6B4;-session-id-&#xB85C;-&#xC2E4;&#xD589;&#xD558;&#xAE30;">&#xC0C8;&#xB85C;&#xC6B4; session id &#xB85C; &#xC2E4;&#xD589;&#xD558;&#xAE30;</h3>
-<p>&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; background &#xB85C; &#xC2E4;&#xD589;&#xC2DC;&#xD0AC;&#xB54C; <code>setsid</code> &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xBA74; &#xC0C8;&#xB85C;&#xC6B4; sid, pgid &#xAC00; &#xD560;&#xB2F9;&#xB418;&#xACE0; ppid &#xB3C4; init &#xC73C;&#xB85C; &#xBC14;&#xB00C;&#xC5B4; &#xC2E4;&#xD589;&#xB429;&#xB2C8;&#xB2E4;. sid &#xAC00; &#xBC14;&#xB00C;&#xBBC0;&#xB85C; controlling terminal &#xC5D0;&#xC11C;&#xB3C4; &#xB5A8;&#xC5B4;&#xC838; &#xB098;&#xAC00;&#xACE0; parent &#xB3C4; init &#xC774; &#xB418;&#xBBC0;&#xB85C; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; daemon &#xC73C;&#xB85C; &#xC2E4;&#xD589;&#xC2DC;&#xD0A4;&#xB294; &#xACB0;&#xACFC;&#xB97C; &#xAC16;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">setsid daemon.sh &gt; /dev/null <span class="hljs-number">2</span>&gt;&amp;<span class="hljs-number">1</span> &lt; /dev/null &amp;
+<p>&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; background &#xB85C; &#xC2E4;&#xD589;&#xC2DC;&#xD0AC;&#xB54C; <code>setsid</code> &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xBA74; &#xC0C8;&#xB85C;&#xC6B4; SID, PGID &#xAC00; &#xD560;&#xB2F9;&#xB418;&#xACE0; PPID &#xB3C4; init &#xC73C;&#xB85C; &#xBC14;&#xB00C;&#xC5B4; &#xC2E4;&#xD589;&#xB429;&#xB2C8;&#xB2E4;. 
+SID &#xAC00; &#xBC14;&#xB00C;&#xBBC0;&#xB85C; controlling terminal &#xC5D0;&#xC11C;&#xB3C4; &#xB5A8;&#xC5B4;&#xC838; &#xB098;&#xAC00;&#xACE0; ( &#xB530;&#xB77C;&#xC11C; /dev/tty &#xB3C4; &#xC0AC;&#xC6A9;&#xBABB;&#xD568; ) parent &#xB3C4; init &#xC774; &#xB418;&#xBBC0;&#xB85C; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; daemon &#xC73C;&#xB85C; &#xC2E4;&#xD589;&#xC2DC;&#xD0A4;&#xB294; &#xD6A8;&#xACFC;&#xB97C; &#xAC16;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>&#xCC38;&#xC870; &#xB370;&#xBAAC;&#xB9CC;&#xB4E4;&#xAE30; : <a href="http://blog.n01se.net/blog-n01se-net-p-145.html" target="_blank">http://blog.n01se.net/blog-n01se-net-p-145.html</a></p>
+</blockquote>
+<pre><code class="lang-bash">$ setsid daemon.sh &gt; /dev/null <span class="hljs-number">2</span>&gt;&amp;<span class="hljs-number">1</span> &lt; /dev/null
 </code></pre>
-<p>&#xB370;&#xBAAC;&#xB9CC;&#xB4E4;&#xAE30; : <a href="http://blog.n01se.net/blog-n01se-net-p-145.html" target="_blank">http://blog.n01se.net/blog-n01se-net-p-145.html</a></p>
+<p>&#xD504;&#xB85C;&#xADF8;&#xB7A8; &#xC2E4;&#xD589;&#xC2DC; &#xB0B4;&#xBD80;&#xC801;&#xC73C;&#xB85C; setsid &#xC2DC;&#xC2A4;&#xD15C;&#xCF5C;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; visual studio code </p>
+<pre><code class="lang-bash">$ strace -qq <span class="hljs-operator">-f</span> <span class="hljs-operator">-e</span> setsid code . |&amp; grep setsid
+[pid  <span class="hljs-number">6006</span>] setsid()                    = <span class="hljs-number">6006</span>
+</code></pre>
 <h1 id="quiz">Quiz</h1>
 <p><code>ps axj</code> &#xBA85;&#xB839;&#xC744; &#xC2E4;&#xD589;&#xD574; &#xBCF4;&#xBA74; &#xB9E8; &#xC704;&#xC5D0;&#xC11C; &#xB2E4;&#xC74C; &#xB450; &#xD56D;&#xBAA9;&#xC744; &#xCC3E;&#xC744; &#xC218; &#xC788;&#xB294;&#xB370;&#xC694;.
 &#xD558;&#xB098;&#xB294; &#xC2DC;&#xC2A4;&#xD15C;&#xC758; &#xC2DC;&#xC791;&#xACFC; &#xC885;&#xB8CC;, &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xC0DD;&#xC131;, &#xBAA8;&#xB2C8;&#xD130;&#xB9C1;&#xC5D0; &#xAD00;&#xACC4;&#xB41C; init &#xC774;&#xACE0;
