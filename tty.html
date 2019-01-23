@@ -1574,13 +1574,13 @@ terminal device &#xB85C; &#xCD9C;&#xB825;&#xB41C;&#xB2E4;&#xACE0; &#xD560; &#xC2
 <p>&#xB450; &#xAC1C;&#xC758; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xB3D9;&#xC2DC;&#xC5D0; &#xD558;&#xB098;&#xC758; &#xD30C;&#xC77C;&#xC774;&#xB098;, &#xD30C;&#xC774;&#xD504;&#xC5D0; &#xC4F0;&#xAE30;&#xB97C; &#xD55C;&#xB2E4;&#xBA74; &#xC4F0;&#xC5EC;&#xC9C0;&#xB294; &#xB370;&#xC774;&#xD130;&#xC758; &#xC21C;&#xC11C;&#xB97C; &#xC608;&#xCE21;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. 
 &#xC704;&#xC758; &#xACBD;&#xC6B0;&#xB3C4; &#xB450; &#xAC1C;&#xC758; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xB3D9;&#xC2DC;&#xC5D0; &#xD558;&#xB098;&#xC758; device &#xD30C;&#xC77C;&#xC5D0; &#xC4F0;&#xAE30;&#xB97C; &#xD558;&#xC5EC; race condition &#xC774; &#xC77C;&#xC5B4;&#xB098;&#xB294; &#xC0C1;&#xD669;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <p><a name="hup"></a></p>
-<h2 id="hup-&#xC2E0;&#xD638;">HUP &#xC2E0;&#xD638;</h2>
-<p>HUP (hangup) &#xC2E0;&#xD638;&#xB294; &#xD130;&#xBBF8;&#xB110;&#xC774; &#xC5C6;&#xC5B4;&#xC84C;&#xC74C;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.
+<h2 id="sighup-&#xC2E0;&#xD638;">SIGHUP &#xC2E0;&#xD638;</h2>
+<p>SIGHUP (hangup) &#xC2E0;&#xD638;&#xB294; &#xD130;&#xBBF8;&#xB110;&#xC774; &#xC5C6;&#xC5B4;&#xC84C;&#xC74C;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.
 &#xD130;&#xBBF8;&#xB110;&#xC774; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xBA85;&#xB839;&#xC744; &#xC785;&#xB825;&#xD560; &#xC218;&#xB3C4;, &#xACB0;&#xACFC;&#xB97C; &#xCD9C;&#xB825;&#xD560; &#xC218;&#xB3C4; &#xC5C6;&#xC73C;&#xBBC0;&#xB85C;
 remote login &#xC5D0;&#xC11C; &#xB137;&#xD2B8;&#xC6CD;, &#xBAA8;&#xB380; &#xC5F0;&#xACB0;&#xC774; &#xB04A;&#xAE30;&#xAC70;&#xB098; &#xB610;&#xB294; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xD130;&#xBBF8;&#xB110; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC744; &#xC885;&#xB8CC;&#xC2DC;&#xD0A4;&#xBA74;
-shell &#xC5D0; HUP &#xC2E0;&#xD638;&#xAC00; &#xC804;&#xB2EC;&#xB429;&#xB2C8;&#xB2E4;.
-interactive shell &#xC774; HUP &#xC2E0;&#xD638;&#xB97C; &#xBC1B;&#xC73C;&#xBA74; &#xBAA8;&#xB4E0; stopped, running job &#xB4E4;&#xC5D0;&#xAC8C;&#xB3C4;
-HUP &#xC2E0;&#xD638;&#xB97C; &#xBCF4;&#xB0B4; &#xAC19;&#xC774; &#xC885;&#xB8CC;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.  </p>
+shell &#xC5D0; SIGHUP &#xC2E0;&#xD638;&#xAC00; &#xC804;&#xB2EC;&#xB429;&#xB2C8;&#xB2E4;.
+interactive shell &#xC774; SIGHUP &#xC2E0;&#xD638;&#xB97C; &#xBC1B;&#xC73C;&#xBA74; &#xBAA8;&#xB4E0; stopped, running job &#xB4E4;&#xC5D0;&#xAC8C;&#xB3C4;
+SIGHUP &#xC2E0;&#xD638;&#xB97C; &#xBCF4;&#xB0B4; &#xAC19;&#xC774; &#xC885;&#xB8CC;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.  </p>
 <h1 id="quiz">Quiz</h1>
 <p>&#xD130;&#xBBF8;&#xB110;&#xC5D0;&#xC11C; space &#xB294; &#xC785;&#xB825;&#xC774; &#xB418;&#xC9C0;&#xB9CC; tab &#xD0A4;&#xB294; &#xC785;&#xB825;&#xC774; &#xC548;&#xB418;&#xC8E0;.
 &#xC544;&#xB798; echo &#xBA85;&#xB839;&#xC744; &#xBCF4;&#xBA74;  \x09 ( tab )  escape &#xBB38;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0;&#xB3C4; &#xC54A;&#xC558;&#xB294;&#xB370; tab &#xBB38;&#xC790;&#xAC00; &#xC785;&#xB825;&#xB41C; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
