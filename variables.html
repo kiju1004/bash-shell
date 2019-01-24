@@ -1259,7 +1259,11 @@ FILE_PREFIX=<span class="hljs-variable">$ORIGINAL_FILE</span>-split   <span clas
 $ <span class="hljs-variable">$B</span>[tab]
 </code></pre>
 <p>&#xC815;&#xC758;&#xB41C; &#xBCC0;&#xC218; &#xC0AD;&#xC81C;&#xD558;&#xAE30;</p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">unset</span> -v &#xBCC0;&#xC218;&#xBA85;
+<pre><code class="lang-bash"><span class="hljs-comment"># unset &#xBA85;&#xB839; &#xC2E4;&#xD589;&#xC2DC; &#xC635;&#xC158;&#xC744; &#xC8FC;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xCCAB;&#xBC88;&#xC9F8;&#xB85C; &#xBCC0;&#xC218;&#xB97C; unset &#xC2DC;&#xB3C4;&#xD558;&#xACE0;</span>
+<span class="hljs-comment"># &#xC2E4;&#xD328;&#xD560; &#xACBD;&#xC6B0; &#xD568;&#xC218;&#xB97C; unset &#xC2DC;&#xB3C4;&#xD569;&#xB2C8;&#xB2E4;.</span>
+$ <span class="hljs-built_in">unset</span> &#xBCC0;&#xC218;&#xBA85;
+
+$ <span class="hljs-built_in">unset</span> -v &#xBCC0;&#xC218;&#xBA85;
 </code></pre>
 <h3 id="variable-states">Variable states</h3>
 <p>Shell &#xC5D0;&#xC11C;&#xB294; &#xBCC0;&#xC218;&#xC758; &#xC0C1;&#xD0DC;&#xB97C; 3 &#xAC00;&#xC9C0;&#xB85C; &#xAD6C;&#xBD84;&#xD574;&#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
@@ -1293,7 +1297,7 @@ $ asdfgh=<span class="hljs-number">123</span>               <span class="hljs-co
 $ [ -v asdfgh ]; <span class="hljs-built_in">echo</span> $?
 <span class="hljs-number">0</span>
 
-$ <span class="hljs-built_in">unset</span> -v asdfgh          <span class="hljs-comment"># unset &#xD588;&#xC73C;&#xBBC0;&#xB85C; &#xB2E4;&#xC2DC; 1&#xBC88; &#xC0C1;&#xD0DC;&#xAC00; &#xB429;&#xB2C8;&#xB2E4;.</span>
+$ <span class="hljs-built_in">unset</span> asdfgh          <span class="hljs-comment"># unset &#xD588;&#xC73C;&#xBBC0;&#xB85C; &#xB2E4;&#xC2DC; 1&#xBC88; &#xC0C1;&#xD0DC;&#xAC00; &#xB429;&#xB2C8;&#xB2E4;.</span>
 $ [ -v asdfgh ]; <span class="hljs-built_in">echo</span> $?
 <span class="hljs-number">1</span>
 </code></pre>
@@ -1335,7 +1339,7 @@ sh$ asdfgh=<span class="hljs-string">&quot;123&quot;</span>
 sh$ ( <span class="hljs-built_in">set</span> -u; : <span class="hljs-variable">$asdfgh</span> ) <span class="hljs-number">2</span>&gt; /dev/null; <span class="hljs-built_in">echo</span> $?
 <span class="hljs-number">0</span>
 
-sh$ <span class="hljs-built_in">unset</span> -v asdfgh
+sh$ <span class="hljs-built_in">unset</span> asdfgh
 sh$ ( <span class="hljs-built_in">set</span> -u; : <span class="hljs-variable">$asdfgh</span> ) <span class="hljs-number">2</span>&gt; /dev/null; <span class="hljs-built_in">echo</span> $?
 <span class="hljs-number">2</span>
 </code></pre>

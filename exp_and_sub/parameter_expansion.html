@@ -1365,7 +1365,7 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA[@]:-4
 $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA[@]-44 55 66}</span>
 <span class="hljs-number">11</span> <span class="hljs-number">22</span> <span class="hljs-number">33</span>
 
-$ AA=()                      <span class="hljs-comment"># &#xB610;&#xB294; unset -v AA</span>
+$ AA=()                      <span class="hljs-comment"># &#xB610;&#xB294; unset AA</span>
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA[@]:-44 55 66}</span>    <span class="hljs-comment"># AA &#xAC00; unset &#xB418;&#xC5B4; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xC0C1;&#xD0DC;&#xC774;&#xBBC0;&#xB85C;</span>
 <span class="hljs-number">44</span> <span class="hljs-number">55</span> <span class="hljs-number">66</span>                     <span class="hljs-comment"># &#xAC12;&#xC740; 44 55 66 &#xC774; &#xB41C;&#xB2E4;.</span>

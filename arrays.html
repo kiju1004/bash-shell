@@ -1247,7 +1247,7 @@
 array &#xAC00; &#xC0AC;&#xC6A9;&#xB418;&#xBBC0;&#xB85C; &#xCC38;&#xACE0;&#xC0BC;&#xC544; &#xBCF4;&#xC2DC;&#xBA74; &#xB420; &#xAC83; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>array &#xB294; index &#xB85C; &#xC22B;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; indexed array &#xC640; &#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xC0AC;&#xC6A9;&#xD560;&#xC218; &#xC788;&#xB294; associative array &#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
 indexed array &#xB294; &#xBCC4;&#xB2E4;&#xB978; &#xC124;&#xC815;&#xC5C6;&#xC774; &#xC0AC;&#xC6A9;&#xD560;&#xC218; &#xC788;&#xC73C;&#xB098; associative array &#xB294;  <code>declare -A &#xBCC0;&#xC218;&#xBA85;</code> &#xC73C;&#xB85C; &#xBA3C;&#xC800; &#xC120;&#xC5B8;&#xC744; &#xD574;&#xC918;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. 
-&#xD604;&#xC7AC; &#xC0AC;&#xC6A9;&#xC911;&#xC778; array &#xB97C; empty &#xB85C; &#xB9CC;&#xB4E4;&#xB54C; <code>AA=()</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294;&#xB370; &#xC774;&#xAC83;&#xC740; unset -v AA &#xC640; &#xB3D9;&#xC77C;&#xD55C; &#xD6A8;&#xACFC;&#xB97C; &#xAC16;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+&#xD604;&#xC7AC; &#xC0AC;&#xC6A9;&#xC911;&#xC778; array &#xB97C; empty &#xB85C; &#xB9CC;&#xB4E4;&#xB54C; <code>AA=()</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294;&#xB370; &#xC774;&#xAC83;&#xC740; unset AA &#xC640; &#xB3D9;&#xC77C;&#xD55C; &#xD6A8;&#xACFC;&#xB97C; &#xAC16;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <blockquote>
 <p>array &#xBCC0;&#xC218;&#xB294; export &#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
@@ -1454,15 +1454,15 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${#BB[@]}<
 </thead>
 <tbody>
 <tr>
-<td>array=()<br>unset -v array<br>unset -v &quot;array[@]&quot;</td>
+<td>array=()<br>unset array<br>unset &quot;array[@]&quot;</td>
 <td>array &#xC804;&#xCCB4;&#xB97C; &#xC0AD;&#xC81C;</td>
 </tr>
 <tr>
-<td>unset -v &quot;array[N]&quot;</td>
+<td>unset &quot;array[N]&quot;</td>
 <td>indexed array &#xC5D0;&#xC11C; N &#xBC88;&#xC9F8; &#xC6D0;&#xC18C;&#xB97C; &#xC0AD;&#xC81C;</td>
 </tr>
 <tr>
-<td>unset -v &quot;array[string]&quot;</td>
+<td>unset &quot;array[string]&quot;</td>
 <td>associative array &#xC5D0;&#xC11C; index &#xAC00; string &#xC778; &#xC6D0;&#xC18C;&#xB97C; &#xC0AD;&#xC81C;</td>
 </tr>
 </tbody>
@@ -1470,7 +1470,7 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${#BB[@]}<
 <p>array &#xC6D0;&#xC18C;&#xB97C; &#xC0AD;&#xC81C;&#xD558;&#xBA74; &#xC790;&#xB3D9;&#xC73C;&#xB85C; ${#array[@]} &#xAC12;&#xC5D0;&#xB3C4; &#xBC18;&#xC601;&#xC774; &#xB418;&#xACE0; for &#xBB38;&#xC744; &#xC774;&#xC6A9;&#xD574;&#xB3C4; &#xC0AD;&#xC81C;&#xB41C; &#xC6D0;&#xC18C;&#xB294; &#xB098;&#xD0C0;&#xB098;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098; &#xC0AD;&#xC81C;&#xB41C; &#xC6D0;&#xC18C;&#xC758; index &#xB294; &#xADF8;&#xB300;&#xB85C; &#xB0A8;&#xC544;&#xC788;&#xACE0; &#xB4A4;&#xC5D0;&#xC624;&#xB294; &#xC6D0;&#xC18C;&#xB4E4;&#xC758; index &#xAC12;&#xB4E4;&#xB3C4; &#xBC14;&#xB00C;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC2DC; array &#xB97C; &#xC7AC;&#xD560;&#xB2F9;&#xD558;&#xBA74; index &#xAC00; &#xC815;&#xB82C;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ AA=(<span class="hljs-number">11</span> <span class="hljs-number">22</span> <span class="hljs-number">33</span> <span class="hljs-number">44</span> <span class="hljs-number">55</span>)
 
-$ <span class="hljs-built_in">unset</span> -v <span class="hljs-string">&quot;AA[2]&quot;</span>
+$ <span class="hljs-built_in">unset</span> <span class="hljs-string">&quot;AA[2]&quot;</span>
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${#AA[@]}</span>                           <span class="hljs-comment"># &#xC0AD;&#xC81C;&#xD6C4; &#xC6D0;&#xC18C; &#xAC1C;&#xC218;&#xAC00; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xBC18;&#xC601;&#xB428;</span>
 <span class="hljs-number">4</span>                                      
@@ -1668,12 +1668,12 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${array[12
 $ touch array1               <span class="hljs-comment"># &#xD604;&#xC7AC; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC5D0; &#xC784;&#xC758;&#xB85C; array1 &#xD30C;&#xC77C;&#xC0DD;&#xC131;</span>
 
 <span class="hljs-comment"># unset &#xC744; &#xC2E4;&#xD589;&#xD558;&#xC600;&#xC73C;&#xB098; globbing &#xC5D0;&#xC758;&#xD574; array[12] &#xC774; array1 &#xD30C;&#xC77C;&#xACFC; &#xB9E4;&#xCE6D;&#xC774;&#xB418;&#xC5B4; </span>
-<span class="hljs-comment"># &#xC2E4;&#xC9C8;&#xC801;&#xC73C;&#xB85C; unset -v array1 &#xBA85;&#xB839;&#xACFC; &#xAC19;&#xAC8C;&#xB418;&#xC5B4; unset &#xC774; &#xB418;&#xC9C0; &#xC54A;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
-$ <span class="hljs-built_in">unset</span> -v array[<span class="hljs-number">12</span>]         
+<span class="hljs-comment"># &#xC2E4;&#xC9C8;&#xC801;&#xC73C;&#xB85C; unset array1 &#xBA85;&#xB839;&#xACFC; &#xAC19;&#xAC8C;&#xB418;&#xC5B4; unset &#xC774; &#xB418;&#xC9C0; &#xC54A;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+$ <span class="hljs-built_in">unset</span> array[<span class="hljs-number">12</span>]         
 $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${array[12]}</span>         
 <span class="hljs-number">300</span>                       
 
-$ <span class="hljs-built_in">unset</span> -v <span class="hljs-string">&apos;array[12]&apos;</span>       <span class="hljs-comment"># globbing &#xC744; disable &#xD558;&#xAE30;&#xC704;&#xD574; quote.</span>
+$ <span class="hljs-built_in">unset</span> <span class="hljs-string">&apos;array[12]&apos;</span>       <span class="hljs-comment"># globbing &#xC744; disable &#xD558;&#xAE30;&#xC704;&#xD574; quote.</span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${array[12]}</span>          <span class="hljs-comment"># &#xC774;&#xC81C; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; unset &#xC774;&#xB428;</span>
 </code></pre>
 <p>&#xB300;&#xC785; &#xC5F0;&#xC0B0;&#xC5D0;&#xC11C;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xB2E8;&#xC5B4;&#xBD84;&#xB9AC;, globbing &#xC774; &#xBC1C;&#xC0DD;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
