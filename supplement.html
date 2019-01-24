@@ -1242,13 +1242,15 @@
 <ul>
 <li><p>Subshell</p>
 </li>
-<li><p>Child process</p>
+<li><p>Child Process</p>
+</li>
+<li><p>Background Process</p>
 </li>
 <li><p>&#xBA85;&#xB839;&#xC5D0; &#xC120;&#xD589;&#xD558;&#xB294; &#xB300;&#xC785; &#xC5F0;&#xC0B0;</p>
 </li>
 <li><p><code>bash</code> &#xC640; <code>sh</code> &#xC5D0;&#xC11C;&#xC758; INT signal handler &#xAC00; &#xCC98;&#xB9AC;&#xB418;&#xB294; &#xBC29;&#xC2DD;&#xC758; &#xCC28;&#xC774;&#xC810;</p>
 </li>
-<li><p>zombie &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; wait &#xC2DC;&#xC2A4;&#xD15C;&#xCF5C; &#xD568;&#xC218;&#xC5D0; &#xC758;&#xD574; &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xD14C;&#xC774;&#xBE14;&#xC5D0;&#xC11C; &#xC815;&#xB9AC;&#xB418;&#xB294; &#xACFC;&#xC815;</p>
+<li><p>Zombie &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; wait &#xC2DC;&#xC2A4;&#xD15C;&#xCF5C; &#xD568;&#xC218;&#xC5D0; &#xC758;&#xD574; &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xD14C;&#xC774;&#xBE14;&#xC5D0;&#xC11C; &#xC815;&#xB9AC;&#xB418;&#xB294; &#xACFC;&#xC815;</p>
 </li>
 <li><p>Thread</p>
 </li>
@@ -1460,7 +1462,7 @@ kernel.yama.ptrace_scope = <span class="hljs-number">0</span>
 </code></pre>
 <p>bash &#xC758; &#xACBD;&#xC6B0; system call &#xC774; &#xB9CE;&#xC774; &#xBC1C;&#xC0DD;&#xD574; &#xBCF5;&#xC7A1;&#xD558;&#xBBC0;&#xB85C; sh &#xC744; &#xC774;&#xC6A9;&#xD574; trace &#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.
 strace &#xB294; <code>-e</code> &#xC635;&#xC158;&#xC744; &#xD1B5;&#xD574; &#xD2B9;&#xC815; system call &#xD568;&#xC218;&#xB9CC; &#xC9C0;&#xC815;&#xD560; &#xC218;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-&#xB610;&#xD55C; %file, %process, %network, %signal, %ipc, %desc, %memory &#xAC19;&#xC740; &#xADF8;&#xB8F9;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB610;&#xD55C; %file, %process, %network, %signal, %ipc, %memory &#xAC19;&#xC740; &#xADF8;&#xB8F9;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
 2 &#xAC1C;&#xC758; &#xD130;&#xBBF8;&#xB110;&#xC744; &#xC900;&#xBE44;&#xD55C; &#xD6C4; &#xCCAB; &#xBC88;&#xC9F8; &#xD130;&#xBBF8;&#xB110;&#xC5D0;&#xC11C; /bin/sh &#xBA85;&#xB839;&#xC744; &#xC2E4;&#xD589;&#xD574; sh &#xD504;&#xB86C;&#xD504;&#xD2B8;&#xB85C; &#xB4E4;&#xC5B4;&#xAC11;&#xB2C8;&#xB2E4;.</p>
 <p>1 . terminal 1 &#xC5D0;&#xC11C; sh &#xC744; &#xC2E4;&#xD589;&#xD55C; &#xD6C4; pid &#xB97C; &#xD655;&#xC778;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">sh$ <span class="hljs-built_in">echo</span> $$
@@ -1489,19 +1491,56 @@ sh$ ( date; date; date )
 &#xBE68;&#xAC04;&#xC0C9; &#xBC15;&#xC2A4;&#xB85C; &#xD45C;&#xC2DC;&#xB41C; &#xBD80;&#xBD84;&#xC744; &#xBCF4;&#xBA74; clone &#xD568;&#xC218;&#xAC00; &#xC5F0;&#xC774;&#xC5B4; &#xB450; &#xBC88; &#xC2E4;&#xD589;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xC5EC;&#xAE30;&#xC11C; &#xCCAB; &#xBC88;&#xC9F8; clone &#xC774; subshell &#xC5D0; &#xD574;&#xB2F9;&#xD558;&#xB294; &#xBD80;&#xBD84;&#xC785;&#xB2C8;&#xB2E4;.
 &#xADF8;&#xB9AC;&#xACE0; &#xB9C8;&#xC9C0;&#xB9C9; &#xBA85;&#xB839;&#xC740; clone &#xC5C6;&#xC774; &#xBC14;&#xB85C; exec &#xD558;&#xB294; &#xAC78; &#xBCFC; &#xC218; &#xC788;&#xB294;&#xB370; &#xC774;&#xAC83;&#xC740; subshell&apos;s clone &#xC774; &#xB0A8;&#xC544;&#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<h3 id="child-process">Child process</h3>
+<h3 id="child-process">Child Process</h3>
 <p>child process &#xAC00; &#xC0DD;&#xC131;&#xB420; &#xB54C; subshell &#xC758; &#xACBD;&#xC6B0;&#xB294; fork &#xACFC;&#xC815;&#xB9CC; &#xAC70;&#xCE58;&#xC9C0;&#xB9CC; &#xBA85;&#xB839; &#xC2E4;&#xD589;&#xC758; &#xACBD;&#xC6B0;&#xB294; fork-exec &#xACFC;&#xC815;&#xC744; &#xAC70;&#xCE69;&#xB2C8;&#xB2E4;.
-&#xC774;&#xB54C; parent process &#xB294; wait &#xD568;&#xC218;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xC5EC; child &#xAC00; &#xC885;&#xB8CC;&#xB420; &#xB54C;&#xAE4C;&#xC9C0;
+&#xC774;&#xB54C; parent process &#xB294; wait &#xD568;&#xC218;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xC5EC; child process &#xAC00; &#xC885;&#xB8CC;&#xB420; &#xB54C;&#xAE4C;&#xC9C0;
 &#xAE30;&#xB2E4;&#xB9AC;&#xB294;&#xB370;&#xC694;. &#xC544;&#xB798; &#xADF8;&#xB9BC;&#xC5D0;&#xC11C; &#xB179;&#xC0C9; &#xBC15;&#xC2A4; &#xBD80;&#xBD84;&#xC774; parent process &#xC5D0; &#xD574;&#xB2F9;&#xB429;&#xB2C8;&#xB2E4;.
-child &#xAC00; &#xC2E4;&#xD589;&#xC744; &#xB9C8;&#xCE58;&#xACE0; &#xC885;&#xB8CC;&#xD558;&#xAC8C; &#xB418;&#xBA74; parent &#xC758; wait &#xD568;&#xC218;&#xAC00; resume &#xB418;&#xBA74;&#xC11C;
-child &#xC758; PCB &#xC5D0; &#xC124;&#xC815;&#xB418;&#xC5B4; &#xC788;&#xB294; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC744; &#xAC00;&#xC838;&#xC624;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
-&#xB9CC;&#xC57D;&#xC5D0; &#xC774; &#xACFC;&#xC815;&#xC774; &#xCC98;&#xB9AC;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; child &#xB294; &#xC880;&#xBE44; &#xC0C1;&#xD0DC;&#xB85C; &#xACC4;&#xC18D; &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xD14C;&#xC774;&#xBE14;&#xC5D0; &#xB0A8;&#xC544;&#xC788;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
+child process &#xAC00; &#xC2E4;&#xD589;&#xC744; &#xB9C8;&#xCE58;&#xACE0; &#xC885;&#xB8CC;&#xD558;&#xAC8C; &#xB418;&#xBA74; parent &#xC758; wait &#xD568;&#xC218;&#xAC00; resume &#xB418;&#xBA74;&#xC11C;
+child process &#xC758; PCB &#xC5D0; &#xC124;&#xC815;&#xB418;&#xC5B4; &#xC788;&#xB294; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC744; &#xAC00;&#xC838;&#xC624;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
+&#xB9CC;&#xC57D;&#xC5D0; &#xC774; &#xACFC;&#xC815;&#xC774; &#xCC98;&#xB9AC;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; child process &#xB294; &#xC880;&#xBE44; &#xC0C1;&#xD0DC;&#xB85C; &#xACC4;&#xC18D; &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xD14C;&#xC774;&#xBE14;&#xC5D0; &#xB0A8;&#xC544;&#xC788;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <p>child process &#xC758; &#xC0C1;&#xD0DC;&#xAC00; &#xBCC0;&#xACBD;&#xB418;&#xC5B4; parent process &#xC5D0; SIGCHLD &#xC2E0;&#xD638;&#xAC00; &#xC804;&#xB2EC;&#xB418;&#xB294; &#xAC83;&#xB3C4; &#xBCFC; &#xC218; &#xC788;&#xB294;&#xB370;
 parent &#xC5D0;&#xC11C; SIGCHLD trap handler &#xB97C; &#xC124;&#xC815;&#xD558;&#xC600;&#xB2E4;&#xBA74; &#xC2E4;&#xD589;&#xB420; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash"><span class="hljs-comment"># &apos;date -@&apos; &#xC740; &#xC624;&#xB958;&#xB97C; &#xC704;&#xD55C; &#xBA85;&#xB839; &#xC2E4;&#xD589;</span>
-$ strace -qf <span class="hljs-operator">-e</span> %process sh -c <span class="hljs-string">&apos;date; date -@&apos;</span>  |&amp; vi -
+<pre><code class="lang-bash"><span class="hljs-comment"># terminal 2</span>
+$ strace -o child.strace <span class="hljs-operator">-e</span> %process,write <span class="hljs-operator">-f</span> -p <span class="hljs-number">1234</span>
+
+<span class="hljs-comment"># terminal 1</span>
+$ date; date -@    <span class="hljs-comment"># -@ &#xB294; &#xC624;&#xB958;&#xB97C; &#xC704;&#xD55C; &#xC635;&#xC158;</span>
 </code></pre>
 <p><img src="images/strace/strace-child-process.png" alt=""></p>
+<h3 id="background-process">Background Process</h3>
+<p><code>&amp;</code> &#xBB38;&#xC790;&#xB97C; &#xC774;&#xC6A9;&#xD574; background &#xB85C; child process &#xB97C; &#xC2E4;&#xD589;&#xD558;&#xBA74; parent &#xB294;
+child process &#xAC00; &#xC885;&#xB8CC;&#xB420; &#xB54C;&#xAE4C;&#xC9C0; &#xAE30;&#xB2E4;&#xB9AC;&#xC9C0; &#xC54A;&#xACE0; &#xBC14;&#xB85C; &#xB2E4;&#xC74C; &#xC791;&#xC5C5;&#xC744; &#xC9C4;&#xD589;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xBA3C;&#xC800; wait &#xD568;&#xC218;&#xC5D0; &#xB300;&#xD574; &#xC54C;&#xC544;&#xBCFC; &#xD544;&#xC694;&#xAC00; &#xC788;&#xB294;&#xB370;&#xC694;</p>
+<blockquote>
+<p>waitpid ( pid, wstatus, options );</p>
+</blockquote>
+<p>pid &#xB294; &#xAE30;&#xB2E4;&#xB9B4; child pid &#xB97C; &#xB9D0;&#xD558;&#xB294;&#xB370; &#xC774;&#xAC12;&#xC774; <code>-1</code> &#xBA74; any child process &#xAC00; &#xB429;&#xB2C8;&#xB2E4;.
+wstatus &#xC5D0;&#xB294; &#xD568;&#xC218; &#xC2E4;&#xD589; &#xACB0;&#xACFC;&#xB85C; child process &#xC758; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC774; &#xC5EC;&#xAE30;&#xC5D0; &#xC800;&#xC7A5;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># terminal 2</span>
+$ strace -o background.strace <span class="hljs-operator">-e</span> %process,write <span class="hljs-operator">-f</span> -p <span class="hljs-number">1234</span>
+
+<span class="hljs-comment"># terminal 1</span>
+$ date &amp;
+</code></pre>
+<p><img src="images/strace/strace-background-process.png" alt=""></p>
+<p>&#xBA3C;&#xC800; &#xBE44;&#xAD50;&#xB97C; &#xC704;&#xD574; &#xC55E;&#xC120; child process &#xC758; &#xACBD;&#xC6B0;&#xB97C; &#xBCF4;&#xBA74;</p>
+<ul>
+<li>2&#xBC88; &#xB77C;&#xC778;: <code>wait4(-1, &lt;unfinished ...&gt;</code>  &#xC5D0;&#xC11C; parent process &#xAC00; block &#xB410;&#xB2E4;&#xAC00; </li>
+<li>child process &#xAC00; &#xC885;&#xB8CC;&#xB41C; &#xD6C4;&#xC5D0;</li>
+<li>8&#xBC88; &#xB77C;&#xC778;: <code>&lt;... wait4 resumed&gt;</code> &#xC5D0;&#xC11C; &#xC2E4;&#xD589;&#xC774; &#xC7AC;&#xAC1C;&#xB418;&#xBA74;&#xC11C;</li>
+<li>9&#xBC88; &#xB77C;&#xC778;: &#xC5D0;&#xC11C; <code>SIGCHLD</code> &#xC2E0;&#xD638;&#xAC00; &#xC804;&#xB2EC;&#xB418;&#xB294;&#xB370;&#xC694;</li>
+</ul>
+<p>Background process &#xC758; &#xACBD;&#xC6B0;&#xB97C; &#xBCF4;&#xBA74; </p>
+<ul>
+<li>2&#xBC88; &#xB77C;&#xC778;: &#xC5D0;&#xC11C; wait &#xD568;&#xC218; &#xC2E4;&#xD589;&#xC774; &#xC644;&#xB8CC;&#xB418;&#xACE0;</li>
+<li>3&#xBC88; &#xB77C;&#xC778;: &#xC5D0;&#xC11C; &#xC774;&#xC5B4;&#xC11C; write &#xD568;&#xC218;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xB294; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774;&#xAC83;&#xC740; &#xB2E4;&#xC2DC; &#xB9D0;&#xD574;&#xC11C; prarent process &#xAC00; wait &#xD568;&#xC218;&#xC5D0; &#xC758;&#xD574; block &#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;&#xB294; &#xC758;&#xBBF8;&#xC778;&#xB370;&#xC694;</li>
+</ul>
+<p>wait &#xD568;&#xC218; &#xC2E4;&#xD589;&#xC2DC; &#xCD94;&#xAC00;&#xB41C; <code>WNOHANG</code> &#xC635;&#xC158;&#xC740; &#xC885;&#xB8CC;&#xB41C; child process &#xAC00; &#xC5C6;&#xC744; &#xACBD;&#xC6B0;
+&#xBC14;&#xB85C; return &#xB418;&#xAC8C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774;&#xD6C4; child process &#xAC00; &#xC885;&#xB8CC;&#xB418;&#xC5B4; <code>SIGCHLD</code> &#xC2E0;&#xD638;&#xAC00; prarent process &#xC5D0; &#xC804;&#xB2EC;&#xB418;&#xACE0;
+&#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC744; &#xAC00;&#xC838;&#xC624;&#xAE30; &#xC704;&#xD574; wait &#xD568;&#xC218;&#xAC00; &#xC2E4;&#xD589;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+( SIGCHLD &#xC2E0;&#xD638; &#xC804;&#xB2EC;&#xB418;&#xB294; &#xC21C;&#xC11C;&#xAC00; &#xD2C0;&#xB9AC;&#xC8E0; )</p>
 <h3 id="&#xBA85;&#xB839;&#xC5D0;-&#xC120;&#xD589;&#xD558;&#xB294;-&#xB300;&#xC785;&#xC5F0;&#xC0B0;">&#xBA85;&#xB839;&#xC5D0; &#xC120;&#xD589;&#xD558;&#xB294; &#xB300;&#xC785;&#xC5F0;&#xC0B0;</h3>
 <blockquote>
 <p>$ AAA=100 BBB=200 CCC=300 date</p>
