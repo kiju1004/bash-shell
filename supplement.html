@@ -1610,7 +1610,7 @@ B.sh........start
 <span class="hljs-comment"># &apos;-I3&apos; &#xC635;&#xC158;&#xC740; trace &#xC911;&#xC5D0; ctrl-c &#xB97C; &#xB204;&#xB97C; &#xACBD;&#xC6B0; strace &#xBA85;&#xB839; &#xC790;&#xCCB4;&#xAC00; &#xC885;&#xB8CC;&#xB418;&#xC9C0; &#xC54A;&#xAC8C; fatal siganl &#xC744;</span>
 <span class="hljs-comment"># block &#xD569;&#xB2C8;&#xB2E4;. &apos;-o&apos; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xACBD;&#xC6B0; &#xB514;&#xD3F4;&#xD2B8;&#xB85C; &#xC124;&#xC815;&#xB418;&#xC9C0;&#xB9CC; &#xC124;&#xBA85;&#xC744; &#xC704;&#xD574; &#xCD94;&#xAC00;&#xD558;&#xC600;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
 
-strace -o ./sh.strace <span class="hljs-operator">-e</span> %process,%signal,write <span class="hljs-operator">-f</span> -I3 ./A.sh
+$ strace -o sh.strace <span class="hljs-operator">-e</span> %process,%signal,write <span class="hljs-operator">-f</span> -I3 ./A.sh
 </code></pre>
 <p><img src="images/strace/strace-sh.png" alt=""></p>
 <ol>
