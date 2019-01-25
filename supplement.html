@@ -1516,7 +1516,7 @@ child process &#xAC00; &#xC885;&#xB8CC;&#xB420; &#xB54C;&#xAE4C;&#xC9C0; &#xAE30
 <blockquote>
 <p>waitpid ( pid, wstatus, options );</p>
 </blockquote>
-<p>pid &#xB294; &#xAE30;&#xB2E4;&#xB9B4; child pid &#xB97C; &#xB9D0;&#xD558;&#xB294;&#xB370; &#xC774;&#xAC12;&#xC774; <code>-1</code> &#xC774;&#xBA74; any child process &#xAC00; &#xB429;&#xB2C8;&#xB2E4;.
+<p>pid &#xB294; &#xAE30;&#xB2E4;&#xB9B4; child pid &#xB97C; &#xB9D0;&#xD558;&#xB294;&#xB370; &#xC774; &#xAC12;&#xC774; <code>-1</code> &#xC774;&#xBA74; any child process &#xAC00; &#xB429;&#xB2C8;&#xB2E4;.
 wstatus &#xC5D0;&#xB294; &#xD568;&#xC218; &#xC2E4;&#xD589; &#xACB0;&#xACFC;&#xB85C; child process &#xC758; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC774; &#xC5EC;&#xAE30;&#xC5D0; &#xC800;&#xC7A5;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># terminal 2</span>
 $ strace -o background.strace <span class="hljs-operator">-e</span> %process,write <span class="hljs-operator">-f</span> -p <span class="hljs-number">1234</span>
