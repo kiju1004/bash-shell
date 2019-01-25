@@ -1588,7 +1588,7 @@ lookahead  : (?=bar)  (?!bar)       <span class="hljs-comment"># &apos;=&apos; &
 <span class="hljs-number">5751</span>  &lt;... close resumed&gt; )             = <span class="hljs-number">0</span>
 <span class="hljs-number">5750</span>  &lt;... <span class="hljs-built_in">read</span> resumed&gt; <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-number">128</span>)       = <span class="hljs-number">0</span>
 
-$ grep -P -o <span class="hljs-string">&apos; \w+\(&apos;</span> sample.txt      
+$ grep -P -o <span class="hljs-string">&apos; [a-z0-9_]+\(&apos;</span> sample.txt      
 geteuid(    
 fstat(       <span class="hljs-comment"># &#xCD9C;&#xB825;&#xC5D0;&#xB3C4; `(` &#xBB38;&#xC790;&#xAC00; &#xBD99;&#xB294;&#xB2E4;.</span>
 write(
@@ -1596,7 +1596,7 @@ close(
 <span class="hljs-built_in">read</span>(
 
 <span class="hljs-comment"># lookahead &#xAE30;&#xB2A5;&#xC744; &#xC774;&#xC6A9;&#xD574; &#xCD9C;&#xB825;&#xC2DC;&#xC5D0;&#xB294; `(` &#xBB38;&#xC790;&#xB97C; &#xC81C;&#xAC70;</span>
-$ grep -P -o <span class="hljs-string">&apos; \w+(?=\()&apos;</span> sample.txt  
+$ grep -P -o <span class="hljs-string">&apos; [a-z0-9_]+(?=\()&apos;</span> sample.txt  
 geteuid
 fstat
 write
