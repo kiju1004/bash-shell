@@ -1563,21 +1563,22 @@ $ <span class="hljs-built_in">echo</span> helloworld | grep -bo l
 <p>&#xB530;&#xB77C;&#xC11C; <code>-abo</code> &#xC635;&#xC158;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xBA74; binary &#xD30C;&#xC77C;&#xB0B4;&#xC5D0;&#xC11C; &#xB9E4;&#xCE6D;&#xB418;&#xB294; &#xC704;&#xCE58;&#xC758; offset &#xAC12;&#xC744; &#xAD6C;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xD65C;&#xC6A9; &#xC608;&#xB294; <a href="precedence.html#quiz">&#xC5EC;&#xAE30;</a> &#xB97C; &#xCC38;&#xACE0; &#xD558;&#xC138;&#xC694;</p>
 <h4 id="perl-regular-expressions">Perl Regular Expressions</h4>
 <p>grep &#xBA85;&#xB839;&#xC740; <code>-P</code> &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; perl regexp &#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-regexp &#xC744; &#xC791;&#xC131;&#xD560;&#xB54C; &#xAE30;&#xC874;&#xC758; &#xAE30;&#xB2A5;&#xB9CC;&#xC73C;&#xB85C;&#xB294; &#xB2F5;&#xC774; &#xC798; &#xC548;&#xB098;&#xC624;&#xAC70;&#xB098; &#xC2DD;&#xC774; &#xBCF5;&#xC7A1;&#xD574;&#xC9C8; &#xACBD;&#xC6B0;
-perl regexp &#xCABD;&#xC744; &#xCC3E;&#xC544;&#xBCF4;&#xBA74; &#xC27D;&#xAC8C; &#xD574;&#xACB0;&#xB418;&#xB294; &#xACBD;&#xC6B0;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xC5EC;&#xAE30;&#xC11C;&#xB294; &#xB2E8;&#xC5B4;&#xB97C; &#xCD94;&#xCD9C;&#xD560;&#xB54C; &#xC720;&#xC6A9;&#xD558;&#xAC8C; &#xC0AC;&#xC6A9;&#xD560;&#xC218; &#xC788;&#xB294;
-lookbehind, lookahead &#xAE30;&#xB2A5;&#xC5D0; &#xB300;&#xD574;&#xC11C;&#xB9CC; &#xAC04;&#xB2E8;&#xD788; &#xC54C;&#xC544;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p>&#xCD94;&#xCD9C;&#xD558;&#xACE0;&#xC790; &#xD558;&#xB294; &#xC2A4;&#xD2B8;&#xB9C1;&#xC774; &#xAC00;&#xC6B4;&#xB370; &#xC704;&#xCE58;&#xD55C;&#xB2E4;&#xACE0; &#xD560;&#xACBD;&#xC6B0; lookbehind &#xC2DD;&#xC740; &#xC67C;&#xCABD;&#xC5D0;
+lookbehind, lookahead &#xAE30;&#xB2A5;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xC54C;&#xC544;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xCD94;&#xCD9C;&#xD558;&#xACE0;&#xC790; &#xD558;&#xB294; &#xC2A4;&#xD2B8;&#xB9C1;&#xC774; &#xAC00;&#xC6B4;&#xB370; &#xC704;&#xCE58;&#xD55C;&#xB2E4;&#xACE0; &#xD560;&#xACBD;&#xC6B0; lookbehind &#xC2DD;&#xC740; &#xC67C;&#xCABD;&#xC5D0;
 lookahead &#xC2DD;&#xC740; &#xC624;&#xB978;&#xCABD;&#xC5D0; &#xC704;&#xCE58;&#xD558;&#xACE0; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xC791;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">lookbehind : (?&lt;=foo) (?&lt;!foo)      <span class="hljs-comment"># lookbehind &#xB294; &apos;&lt;&apos; &#xBB38;&#xC790;&#xAC00; &#xBD99;&#xB294;&#xB2E4;. </span>
 
 lookahead  : (?=bar)  (?!bar)       <span class="hljs-comment"># &apos;=&apos; &#xB294; &#xAC19;&#xC744;&#xACBD;&#xC6B0;, &apos;!&apos; &#xB294; &#xAC19;&#xC9C0;&#xC54A;&#xC744;&#xACBD;&#xC6B0;</span>
 </code></pre>
 <p>&#xB2E4;&#xC74C;&#xC740; strace &#xCD9C;&#xB825;&#xC5D0;&#xC11C; &#xBC1C;&#xCDCC;&#xD55C; &#xB0B4;&#xC6A9;&#xC778;&#xB370; &#xC5EC;&#xAE30;&#xC11C; &#xD568;&#xC218;&#xBA85;&#xB9CC; &#xCD94;&#xCD9C;&#xD558;&#xB824;&#xACE0; &#xD569;&#xB2C8;&#xB2E4;.
-&#xD568;&#xC218;&#xBA85;&#xC740; &#xBC14;&#xB85C; &#xB4A4;&#xC5D0; &#xBD99;&#xC5B4;&#xC11C; <code>(</code> &#xBB38;&#xC790;&#xAC00; &#xC624;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC544;&#xB798; &#xCCAB;&#xBC88;&#xC9F8; &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xC27D;&#xAC8C; &#xCD94;&#xCD9C;&#xD560; &#xC218;&#xAC00; &#xC788;&#xC9C0;&#xB9CC;
+&#xD568;&#xC218;&#xBA85;&#xC740; &#xBC14;&#xB85C; &#xB4A4;&#xC5D0; &#xBD99;&#xC5B4;&#xC11C; <code>(</code> &#xBB38;&#xC790;&#xAC00; &#xC624;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC544;&#xB798; &#xCCAB;&#xBC88;&#xC9F8; &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xC27D;&#xAC8C; &#xCD94;&#xCD9C;&#xC774; &#xB418;&#xC9C0;&#xB9CC;
 &#xBB38;&#xC81C;&#xB294; &#xCD9C;&#xB825;&#xC5D0;&#xB3C4; <code>(</code> &#xBB38;&#xC790;&#xAC00; &#xBD99;&#xB294;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
 &#xB530;&#xB77C;&#xC11C; &#xB9E4;&#xCE6D; &#xC2DC;&#xC5D0;&#xB294; <code>(</code> &#xBB38;&#xC790;&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xC9C0;&#xB9CC; &#xCD9C;&#xB825; &#xC2DC;&#xC5D0;&#xB294; &#xC81C;&#xC678;&#xD558;&#xB294; &#xAC83;&#xC774; &#xD544;&#xC694;&#xD55C;&#xB370;
 &#xC774;&#xB54C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; &#xAE30;&#xB2A5;&#xC774; lookahead &#xC785;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p> &#xC2E4;&#xC81C; &#xC815;&#xD655;&#xD788; &#xCD94;&#xCD9C;&#xD558;&#xB824;&#xBA74; <code>sed -rn &apos;s/^[0-9]+ (\w+).*/\1/p&apos;</code> &#xB97C; &#xC774;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
 <pre><code class="lang-bash">$ cat sample.txt
 <span class="hljs-number">5751</span>  geteuid()                         = <span class="hljs-number">1000</span>
 <span class="hljs-number">5751</span>  fstat(<span class="hljs-number">1</span>, {st_mode=S_IFIFO|<span class="hljs-number">0600</span>, st_size=<span class="hljs-number">0</span>, ...}) = <span class="hljs-number">0</span>
@@ -1588,7 +1589,7 @@ lookahead  : (?=bar)  (?!bar)       <span class="hljs-comment"># &apos;=&apos; &
 <span class="hljs-number">5751</span>  &lt;... close resumed&gt; )             = <span class="hljs-number">0</span>
 <span class="hljs-number">5750</span>  &lt;... <span class="hljs-built_in">read</span> resumed&gt; <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-number">128</span>)       = <span class="hljs-number">0</span>
 
-$ grep -P -o <span class="hljs-string">&apos; [a-z0-9_]+\(&apos;</span> sample.txt      
+$ grep -P -o <span class="hljs-string">&apos; \w+\(&apos;</span> sample.txt      
 geteuid(    
 fstat(       <span class="hljs-comment"># &#xCD9C;&#xB825;&#xC5D0;&#xB3C4; `(` &#xBB38;&#xC790;&#xAC00; &#xBD99;&#xB294;&#xB2E4;.</span>
 write(
@@ -1596,7 +1597,7 @@ close(
 <span class="hljs-built_in">read</span>(
 
 <span class="hljs-comment"># lookahead &#xAE30;&#xB2A5;&#xC744; &#xC774;&#xC6A9;&#xD574; &#xCD9C;&#xB825;&#xC2DC;&#xC5D0;&#xB294; `(` &#xBB38;&#xC790;&#xB97C; &#xC81C;&#xAC70;</span>
-$ grep -P -o <span class="hljs-string">&apos; [a-z0-9_]+(?=\()&apos;</span> sample.txt  
+$ grep -P -o <span class="hljs-string">&apos; \w+(?=\()&apos;</span> sample.txt  
 geteuid
 fstat
 write
