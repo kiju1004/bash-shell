@@ -1668,7 +1668,7 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${linux}</
 hello
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${!linux}</span>    <span class="hljs-comment"># &apos;!linux&apos; &#xBD80;&#xBD84;&#xC774; &apos;hello&apos; &#xB85C; &#xBC14;&#xB010;&#xB2E4;&#xACE0; &#xC0DD;&#xAC01;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;. </span>
-<span class="hljs-number">123</span>
+<span class="hljs-number">123</span>                 <span class="hljs-comment"># !linux -&gt; $linux -&gt; hello</span>
 </code></pre>
 <p><code>sh</code> &#xC5D0;&#xC11C;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; eval &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD574;&#xC11C; indirection &#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ hello=<span class="hljs-number">123</span>
@@ -1689,7 +1689,7 @@ $ <span class="hljs-built_in">eval</span> <span class="hljs-built_in">echo</span
 </span>
 <span class="hljs-keyword">for</span> (( i = <span class="hljs-number">0</span>; i &lt;= <span class="hljs-variable">$#</span>; i++ )) 
 <span class="hljs-keyword">do</span>
-    <span class="hljs-built_in">echo</span> \$<span class="hljs-variable">$i</span> : <span class="hljs-variable">${!i}</span>              <span class="hljs-comment"># ${$i} &#xC774;&#xB807;&#xAC8C; &#xD558;&#xBA74; &#xC548;&#xB429;&#xB2C8;&#xB2E4;.</span>
+    <span class="hljs-built_in">echo</span> \$<span class="hljs-variable">$i</span> : <span class="hljs-variable">${!i}</span>              <span class="hljs-comment"># !i -&gt; $i -&gt; 0,1,2,3</span>
 <span class="hljs-keyword">done</span>
 
 -------------------------------
@@ -1707,6 +1707,7 @@ $ args.sh <span class="hljs-number">11</span> <span class="hljs-number">22</span
     <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span>
 
     <span class="hljs-built_in">local</span> ARR=( <span class="hljs-string">&quot;<span class="hljs-variable">${!2}</span>&quot;</span> )      <span class="hljs-comment"># &apos;!2&apos; &#xBD80;&#xBD84;&#xC774; &apos;AA[@]&apos; &#xB85C; &#xBC14;&#xB010;&#xB2E4;.</span>
+                               <span class="hljs-comment"># !2 -&gt; $2 -&gt; AA[@]</span>
 
     <span class="hljs-keyword">for</span> v <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;<span class="hljs-variable">${ARR[@]}</span>&quot;</span>; <span class="hljs-keyword">do</span>
         <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$v</span>&quot;</span>
