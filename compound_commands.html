@@ -1433,6 +1433,13 @@ yes &#xB97C; &#xC120;&#xD0DD;&#xD588;&#xC744; &#xACBD;&#xC6B0; run &#xD568;&#xC2
 num=$( ... )
 
 <span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$num</span>&quot;</span> <span class="hljs-operator">-ne</span> <span class="hljs-number">100</span> ]; <span class="hljs-keyword">then</span> check; <span class="hljs-keyword">fi</span> &amp;&amp; run
+
+<span class="hljs-comment"># &#xC704; &#xBB38;&#xC7A5;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740;&#xAC83; &#xC785;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$num</span>&quot;</span> <span class="hljs-operator">-ne</span> <span class="hljs-number">100</span> ]; <span class="hljs-keyword">then</span>
+    check &amp;&amp; run
+<span class="hljs-keyword">else</span> 
+    run
+<span class="hljs-keyword">fi</span>
 </code></pre>
 <h2 id="conditional-constructs">Conditional Constructs</h2>
 <h3 id="if">if</h3>
