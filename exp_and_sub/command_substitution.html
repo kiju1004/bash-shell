@@ -1376,6 +1376,35 @@ $ <span class="hljs-built_in">echo</span> -n $(cat file) | od <span class="hljs-
 <span class="hljs-number">0000000</span>   <span class="hljs-number">1</span>   <span class="hljs-number">1</span>   <span class="hljs-number">1</span>  nl   <span class="hljs-number">2</span>   <span class="hljs-number">2</span>   <span class="hljs-number">2</span>
 <span class="hljs-number">0000007</span>
 </code></pre>
+<h3 id="&#xBA85;&#xB839;&#xBB38;&#xC5D0;&#xC11C;-redirection-&#xBB38;&#xC790;&#xBCF4;&#xB2E4;&#xB3C4;-&#xBA3C;&#xC800;-&#xCC98;&#xB9AC;&#xB41C;&#xB2E4;">&#xBA85;&#xB839;&#xBB38;&#xC5D0;&#xC11C; redirection &#xBB38;&#xC790;&#xBCF4;&#xB2E4;&#xB3C4; &#xBA3C;&#xC800; &#xCC98;&#xB9AC;&#xB41C;&#xB2E4;.</h3>
+<p>redirection &#xBB38;&#xC790;&#xB294; shell &#xBA54;&#xD0C0;&#xBB38;&#xC790; &#xC911;&#xC5D0;&#xC11C; &#xCC98;&#xB9AC;&#xB418;&#xB294; &#xC6B0;&#xC120;&#xC21C;&#xC704;&#xAC00; &#xC81C;&#xC77C; &#xB192;&#xC740;&#xB370;
+&#xBA85;&#xB839;&#xCE58;&#xD658;&#xC740; &#xADF8;&#xBCF4;&#xB2E4; &#xBA3C;&#xC800; &#xCC98;&#xB9AC;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>redirection &#xC124;&#xC815;&#xC740; child process &#xC5D0; &#xC0C1;&#xC18D;&#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; subshell &#xC758; &#xACBD;&#xC6B0; date &#xBA85;&#xB839;&#xC758; &#xC624;&#xB958;&#xBA54;&#xC2DC;&#xC9C0;&#xAC00; 
+/dev/null &#xB85C; &#xC804;&#xB2EC;&#xB418;&#xC5B4; &#xD45C;&#xC2DC;&#xB418;&#xC9C0; &#xC54A;&#xC9C0;&#xB9CC; &#xBA85;&#xB839;&#xCE58;&#xD658;&#xC758; &#xACBD;&#xC6B0;&#xB294; redirection &#xBCF4;&#xB2E4; &#xBA3C;&#xC800; &#xCC98;&#xB9AC;&#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;
+&#xC624;&#xB958;&#xBA54;&#xC2DC;&#xC9C0;&#xAC00;  &#xD130;&#xBBF8;&#xB110;&#xB85C; &#xCD9C;&#xB825;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &apos;-@&apos; &#xB294; &#xC624;&#xB958;&#xB97C; &#xC704;&#xD55C; &#xC635;&#xC158;</span>
+$ ( date -@ ) <span class="hljs-number">2</span>&gt; /dev/null              <span class="hljs-comment"># subshell             </span>
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$( date -@ )</span>&quot;</span> <span class="hljs-number">2</span>&gt; /dev/null      <span class="hljs-comment"># &#xBA85;&#xB839;&#xCE58;&#xD658;</span>
+date: invalid option -- <span class="hljs-string">&apos;@&apos;</span>
+Try <span class="hljs-string">&apos;date --help&apos;</span> <span class="hljs-keyword">for</span> more information.
+</code></pre>
+<p>FD &#xC815;&#xBCF4;&#xB97C; &#xC0B4;&#xD3B4;&#xBCF4;&#xBA74; &#xBA85;&#xB839;&#xCE58;&#xD658;&#xC740; subshell &#xACFC; &#xB2EC;&#xB9AC; FD 2&#xBC88;&#xC774; &#xD130;&#xBBF8;&#xB110;&#xB85C; &#xC5F0;&#xACB0;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ ( ls <span class="hljs-operator">-l</span> /dev/fd/ ) <span class="hljs-number">2</span>&gt; /dev/null              
+total <span class="hljs-number">0</span>
+lrwx------ <span class="hljs-number">1</span> mug896 mug896 <span class="hljs-number">64</span> <span class="hljs-number">2019</span>-<span class="hljs-number">01</span>-<span class="hljs-number">27</span> <span class="hljs-number">19</span>:<span class="hljs-number">17</span> <span class="hljs-number">0</span> -&gt; /dev/pts/<span class="hljs-number">11</span>
+lrwx------ <span class="hljs-number">1</span> mug896 mug896 <span class="hljs-number">64</span> <span class="hljs-number">2019</span>-<span class="hljs-number">01</span>-<span class="hljs-number">27</span> <span class="hljs-number">19</span>:<span class="hljs-number">17</span> <span class="hljs-number">1</span> -&gt; /dev/pts/<span class="hljs-number">11</span>
+l-wx------ <span class="hljs-number">1</span> mug896 mug896 <span class="hljs-number">64</span> <span class="hljs-number">2019</span>-<span class="hljs-number">01</span>-<span class="hljs-number">27</span> <span class="hljs-number">19</span>:<span class="hljs-number">17</span> <span class="hljs-number">2</span> -&gt; /dev/null
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$( ls -l /dev/fd/ )</span>&quot;</span> <span class="hljs-number">2</span>&gt; /dev/null
+total <span class="hljs-number">0</span>
+lrwx------ <span class="hljs-number">1</span> mug896 mug896 <span class="hljs-number">64</span> <span class="hljs-number">2019</span>-<span class="hljs-number">01</span>-<span class="hljs-number">27</span> <span class="hljs-number">19</span>:<span class="hljs-number">17</span> <span class="hljs-number">0</span> -&gt; /dev/pts/<span class="hljs-number">11</span>
+l-wx------ <span class="hljs-number">1</span> mug896 mug896 <span class="hljs-number">64</span> <span class="hljs-number">2019</span>-<span class="hljs-number">01</span>-<span class="hljs-number">27</span> <span class="hljs-number">19</span>:<span class="hljs-number">17</span> <span class="hljs-number">1</span> -&gt; pipe:[<span class="hljs-number">2364343</span>]
+lrwx------ <span class="hljs-number">1</span> mug896 mug896 <span class="hljs-number">64</span> <span class="hljs-number">2019</span>-<span class="hljs-number">01</span>-<span class="hljs-number">27</span> <span class="hljs-number">19</span>:<span class="hljs-number">17</span> <span class="hljs-number">2</span> -&gt; /dev/pts/<span class="hljs-number">11</span>
+</code></pre>
+<p>&#xB530;&#xB77C;&#xC11C; &#xBA85;&#xB839;&#xCE58;&#xD658;&#xC758; &#xC624;&#xB958;&#xBA54;&#xC2DC;&#xC9C0;&#xB97C; /dev/null &#xC804;&#xB2EC;&#xD558;&#xB824;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;</p>
+<pre><code class="lang-bash">$ { <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$( date -@ )</span>&quot;</span> ;} <span class="hljs-number">2</span>&gt; /dev/null
+</code></pre>
 <h4 id="-filename-">$( &lt; filename )</h4>
 <p>&#xC774;&#xAC74; bash &#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xAE30;&#xB2A5;&#xC778;&#xB370; <code>$( cat filename )</code> &#xC758; &#xAC04;&#xB2E8; &#xBC84;&#xC804;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ cat file
