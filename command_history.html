@@ -1404,15 +1404,15 @@ $ !$
 <p>&#xB77C;&#xC778;&#xC744; &#xC9C0;&#xC815;&#xD55C; &#xB4A4;, &#xB610;&#xB294; &#xC778;&#xC218;&#xB4E4;&#xC744; &#xC9C0;&#xC815;&#xD55C; &#xB4A4;&#xC5D0; <code>:</code> &#xBB38;&#xC790;&#xB97C; &#xBD99;&#xC778; &#xD6C4; modifiers &#xB97C; &#xC801;&#xC6A9;&#xC2DC;&#xD0AC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h4 id="soldnew">s/old/new/</h4>
 <p>&#xC9C0;&#xC815;&#xD55C; &#xBA85;&#xB839;&#xB77C;&#xC778;&#xC5D0;&#xC11C; old &#xC5D0; &#xD574;&#xB2F9;&#xD558;&#xB294; &#xC2A4;&#xD2B8;&#xB9C1;&#xC744; new &#xB85C; &#xBCC0;&#xACBD;&#xD569;&#xB2C8;&#xB2E4;. new &#xBD80;&#xBD84;&#xC5D0; <code>&amp;</code> &#xBB38;&#xC790;&#xAC00; &#xC624;&#xBA74; old &#xB85C; &#xB300;&#xCCB4;&#xB429;&#xB2C8;&#xB2E4;. &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xCC98;&#xC74C;&#xC5D0; &#xB9E4;&#xCE6D;&#xB418;&#xB294; &#xD558;&#xB098;&#xB9CC; &#xC801;&#xC6A9;&#xB418;&#xBA70; &#xBAA8;&#xB450;&#xC5D0; &#xC801;&#xC6A9;&#xD558;&#xB824;&#xBA74; <code>g</code> &#xC635;&#xC158;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;. </p>
-<pre><code class="lang-bash">$ touch foo1 bar1 tmp1
+<pre><code class="lang-bash">$ mv foo.htm foo.html
 
 <span class="hljs-comment"># &#xCC98;&#xC74C; &#xD558;&#xB098;&#xB9CC; &#xBCC0;&#xACBD;&#xB41C;&#xB2E4;</span>
-$ !:s/<span class="hljs-number">1</span>/<span class="hljs-number">2</span>
-touch foo2 bar1 tmp1
+$ !:s/foo/bar
+mv bar.htm foo.html
 
 <span class="hljs-comment"># &apos;g&apos; &#xC635;&#xC158;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xBA74; &#xBAA8;&#xB450; &#xBCC0;&#xACBD;&#xB41C;&#xB2E4;.</span>
-$ !:gs/<span class="hljs-number">1</span>/<span class="hljs-number">2</span>
-touch foo2 bar2 tmp2
+$ !:gs/foo/bar
+mv bar.htm bar.html
 </code></pre>
 <h4 id="&#xD30C;&#xC77C;-&#xACBD;&#xB85C;&#xBA85;&#xC5D0;&#xC11C;-&#xD30C;&#xC77C;&#xBA85;-&#xBD84;&#xB958;&#xD558;&#xAE30;">&#xD30C;&#xC77C; &#xACBD;&#xB85C;&#xBA85;&#xC5D0;&#xC11C; &#xD30C;&#xC77C;&#xBA85; &#xBD84;&#xB958;&#xD558;&#xAE30;</h4>
 <pre><code class="lang-bash">$ cat /home/foo/readme.txt
