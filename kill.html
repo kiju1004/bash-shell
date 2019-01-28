@@ -1261,10 +1261,10 @@
 
 <span class="hljs-built_in">kill</span> <span class="hljs-number">4287</span>         <span class="hljs-comment"># &#xC2E0;&#xD638;&#xAC12;&#xC744; &#xC8FC;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xAE30;&#xBCF8;&#xAC12;&#xC740; TERM &#xC2E0;&#xD638;&#xAC00; &#xB41C;&#xB2E4;.</span>
 </code></pre>
-<h3 id="kill-&#xC2E0;&#xD638;&#xAC12;-pgid">kill &#xC2E0;&#xD638;&#xAC12; -pgid</h3>
-<p>kill &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD574; process group &#xC5D0; &#xC2E0;&#xD638;&#xB97C; &#xBCF4;&#xB0BC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB54C;&#xB294; pgid &#xC55E;&#xC5D0; <code>-</code> &#xBB38;&#xC790;&#xB97C; &#xBD99;&#xC5EC; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="kill-&#xC2E0;&#xD638;&#xAC12;-pgid">kill &#xC2E0;&#xD638;&#xAC12; -PGID</h3>
+<p>kill &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD574; process group &#xC5D0; &#xC2E0;&#xD638;&#xB97C; &#xBCF4;&#xB0BC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB54C;&#xB294; PGID &#xC55E;&#xC5D0; <code>-</code> &#xBB38;&#xC790;&#xB97C; &#xBD99;&#xC5EC; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-built_in">kill</span> -TERM -<span class="hljs-number">4287</span>
-<span class="hljs-comment"># &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xACBD;&#xC6B0;&#xB294; -4287 &#xC774; pgid &#xAC00; &#xC544;&#xB2C8;&#xB77C; &#xC2E0;&#xD638;&#xAC12;&#xC744; &#xB098;&#xD0C0;&#xB0B4;&#xB294; &#xC778;&#xC218;&#xB85C;</span>
+<span class="hljs-comment"># &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xACBD;&#xC6B0;&#xB294; -4287 &#xC774; PGID &#xAC00; &#xC544;&#xB2C8;&#xB77C; &#xC2E0;&#xD638;&#xAC12;&#xC744; &#xB098;&#xD0C0;&#xB0B4;&#xB294; &#xC778;&#xC218;&#xB85C;</span>
 <span class="hljs-comment"># &#xC778;&#xC2DD;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBC29;&#xC9C0;&#xD558;&#xAE30; &#xC704;&#xD574; -- &#xB97C; &#xBD99;&#xC785;&#xB2C8;&#xB2E4;.</span>
 <span class="hljs-comment"># &#xC2E0;&#xD638;&#xAC12;&#xC744; &#xC8FC;&#xC9C0; &#xC54A;&#xC558;&#xC73C;&#xBBC0;&#xB85C; &#xAE30;&#xBCF8;&#xAC12;&#xC778; TERM &#xC2E0;&#xD638;&#xAC00; &#xB429;&#xB2C8;&#xB2E4;.</span>
 <span class="hljs-built_in">kill</span> -- -<span class="hljs-number">4287</span>
@@ -1278,7 +1278,7 @@ $ <span class="hljs-built_in">kill</span> -<span class="hljs-number">0</span> <s
 bash: <span class="hljs-built_in">kill</span>: (<span class="hljs-number">32631</span>) - No such process       
 <span class="hljs-number">1</span>
 
-$ <span class="hljs-built_in">kill</span> -<span class="hljs-number">0</span> <span class="hljs-number">1</span>; <span class="hljs-built_in">echo</span> $?                    <span class="hljs-comment"># process &#xAC00; &#xC874;&#xC7AC;&#xD558;&#xB098; &#xC2E0;&#xD638;&#xB97C; &#xBCF4;&#xB0BC; &#xC218; &#xC788;&#xB294; &#xAD8C;&#xD55C;&#xC774; &#xC548;&#xB428;</span>
+$ <span class="hljs-built_in">kill</span> -<span class="hljs-number">0</span> <span class="hljs-number">1</span>; <span class="hljs-built_in">echo</span> $?                    <span class="hljs-comment"># process &#xAC00; &#xC874;&#xC7AC;&#xD558;&#xC9C0;&#xB9CC; &#xC2E0;&#xD638;&#xB97C; &#xBCF4;&#xB0BC; &#xC218; &#xC788;&#xB294; &#xAD8C;&#xD55C;&#xC774; &#xC548;&#xB428;</span>
 bash: <span class="hljs-built_in">kill</span>: (<span class="hljs-number">1</span>) - Operation not permitted   
 <span class="hljs-number">1</span>
 </code></pre>
