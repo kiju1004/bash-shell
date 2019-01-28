@@ -1623,20 +1623,20 @@ b333
     <span class="hljs-built_in">local</span> planets=<span class="hljs-string">&quot;mars jupiter saturn&quot;</span>
 
     <span class="hljs-keyword">if</span> [ <span class="hljs-variable">$COMP_CWORD</span> <span class="hljs-operator">-eq</span> <span class="hljs-number">1</span> ]; <span class="hljs-keyword">then</span>
-        COMPREPLY=( $(compgen -W <span class="hljs-string">&quot;<span class="hljs-variable">$options</span>&quot;</span> -- <span class="hljs-string">&quot;<span class="hljs-variable">$cur</span>&quot;</span>) )
+        COMPREPLY=( $(compgen -W <span class="hljs-string">&quot;<span class="hljs-variable">$options</span>&quot;</span> -- <span class="hljs-variable">$cur</span>) )
         <span class="hljs-built_in">return</span>
     <span class="hljs-keyword">fi</span>
 
     <span class="hljs-keyword">if</span> [ <span class="hljs-variable">$COMP_CWORD</span> <span class="hljs-operator">-eq</span> <span class="hljs-number">2</span> ]; <span class="hljs-keyword">then</span>
         <span class="hljs-keyword">case</span> <span class="hljs-variable">$prev</span> <span class="hljs-keyword">in</span>
             --fruit)
-                COMPREPLY=( $(compgen -W <span class="hljs-string">&quot;<span class="hljs-variable">$fruits</span>&quot;</span> -- <span class="hljs-string">&quot;<span class="hljs-variable">$cur</span>&quot;</span>) )
+                COMPREPLY=( $(compgen -W <span class="hljs-string">&quot;<span class="hljs-variable">$fruits</span>&quot;</span> -- <span class="hljs-variable">$cur</span>) )
                 ;;
             --animal)
-                COMPREPLY=( $(compgen -W <span class="hljs-string">&quot;<span class="hljs-variable">$animals</span>&quot;</span> -- <span class="hljs-string">&quot;<span class="hljs-variable">$cur</span>&quot;</span>) )
+                COMPREPLY=( $(compgen -W <span class="hljs-string">&quot;<span class="hljs-variable">$animals</span>&quot;</span> -- <span class="hljs-variable">$cur</span>) )
                 ;;
             --planet)
-                COMPREPLY=( $(compgen -W <span class="hljs-string">&quot;<span class="hljs-variable">$planets</span>&quot;</span> -- <span class="hljs-string">&quot;<span class="hljs-variable">$cur</span>&quot;</span>) )
+                COMPREPLY=( $(compgen -W <span class="hljs-string">&quot;<span class="hljs-variable">$planets</span>&quot;</span> -- <span class="hljs-variable">$cur</span>) )
                 ;;
         <span class="hljs-keyword">esac</span>
         <span class="hljs-built_in">return</span>
@@ -1658,7 +1658,7 @@ PID &#xBAA9;&#xB85D;&#xB3C4; &#xBCFC;&#xC218;&#xC788;&#xC73C;&#xBA74; &#xD3B8;&#
     <span class="hljs-keyword">case</span> <span class="hljs-variable">$CUR</span> <span class="hljs-keyword">in</span>
         -*) <span class="hljs-comment"># &apos;-&apos; &#xBB38;&#xC790;&#xB85C; &#xC2DC;&#xC791;&#xD558;&#xB294; &#xC2E0;&#xD638;&#xAC12; &#xC790;&#xB3D9;&#xC644;&#xC131; </span>
             WORDS=$( <span class="hljs-built_in">kill</span> <span class="hljs-operator">-l</span> | sed -rz <span class="hljs-string">&apos;s/[0-9]+\) SIG/-/g&apos;</span> )
-            COMPREPLY=( $(compgen -W <span class="hljs-string">&quot;<span class="hljs-variable">$WORDS</span>&quot;</span> -- <span class="hljs-string">&quot;<span class="hljs-variable">$CUR</span>&quot;</span>) )
+            COMPREPLY=( $(compgen -W <span class="hljs-string">&quot;<span class="hljs-variable">$WORDS</span>&quot;</span> -- <span class="hljs-variable">$CUR</span>) )
             ;;
         *)
             <span class="hljs-comment"># PID &#xBAA9;&#xB85D;&#xC740; &#xC790;&#xB3D9;&#xC644;&#xC131;&#xD560; &#xAC83;&#xC774; &#xC544;&#xB2C8;&#xBBC0;&#xB85C; &#xC55E;&#xC5D0; &#xBC88;&#xD638;&#xB97C; &#xBD99;&#xC5EC;&#xC11C; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</span>
@@ -1702,7 +1702,7 @@ complete -F _<span class="hljs-built_in">kill</span>2 <span class="hljs-built_in
     <span class="hljs-keyword">case</span> <span class="hljs-variable">$CUR</span> <span class="hljs-keyword">in</span>
         -*)
             WORDS=$( <span class="hljs-built_in">kill</span> <span class="hljs-operator">-l</span> | sed -rz <span class="hljs-string">&apos;s/[0-9]+\) SIG/-/g&apos;</span> )
-            COMPREPLY=( $(compgen -W <span class="hljs-string">&quot;<span class="hljs-variable">$WORDS</span>&quot;</span> -- <span class="hljs-string">&quot;<span class="hljs-variable">$CUR</span>&quot;</span>) )
+            COMPREPLY=( $(compgen -W <span class="hljs-string">&quot;<span class="hljs-variable">$WORDS</span>&quot;</span> -- <span class="hljs-variable">$CUR</span>) )
             ;;
 
         <span class="hljs-comment"># current &#xADF8;&#xB7EC;&#xB2C8;&#xAE4C; &#xD604;&#xC7AC; &#xCEE4;&#xC11C;&#xAC00; &#xC704;&#xCE58;&#xD55C; &#xACF3;&#xC758; &#xAC12;&#xC774; &#xC22B;&#xC790;&#xC778; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C; tab &#xD0A4;&#xB97C; &#xB20C;&#xB800;&#xC744;&#xACBD;&#xC6B0;</span>
