@@ -1623,12 +1623,12 @@ b333
     <span class="hljs-built_in">local</span> animals=<span class="hljs-string">&quot;lion tiger elephant&quot;</span>
     <span class="hljs-built_in">local</span> planets=<span class="hljs-string">&quot;mars jupiter saturn&quot;</span>
 
-    <span class="hljs-keyword">if</span> [ <span class="hljs-variable">${COMP_CWORD}</span> <span class="hljs-operator">-eq</span> <span class="hljs-number">1</span> ]; <span class="hljs-keyword">then</span>
+    <span class="hljs-keyword">if</span> [ <span class="hljs-variable">$COMP_CWORD</span> <span class="hljs-operator">-eq</span> <span class="hljs-number">1</span> ]; <span class="hljs-keyword">then</span>
         COMPREPLY=( $(compgen -W <span class="hljs-string">&quot;<span class="hljs-variable">$options</span>&quot;</span> -- <span class="hljs-string">&quot;<span class="hljs-variable">$cur</span>&quot;</span>) )
         <span class="hljs-built_in">return</span>
     <span class="hljs-keyword">fi</span>
 
-    <span class="hljs-keyword">if</span> [ <span class="hljs-variable">${COMP_CWORD}</span> <span class="hljs-operator">-eq</span> <span class="hljs-number">2</span> ]; <span class="hljs-keyword">then</span>
+    <span class="hljs-keyword">if</span> [ <span class="hljs-variable">$COMP_CWORD</span> <span class="hljs-operator">-eq</span> <span class="hljs-number">2</span> ]; <span class="hljs-keyword">then</span>
         <span class="hljs-keyword">case</span> <span class="hljs-variable">$prev</span> <span class="hljs-keyword">in</span>
             --fruit)
                 COMPREPLY=( $(compgen -W <span class="hljs-string">&quot;<span class="hljs-variable">$fruits</span>&quot;</span> -- <span class="hljs-string">&quot;<span class="hljs-variable">$cur</span>&quot;</span>) )
