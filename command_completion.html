@@ -1658,7 +1658,7 @@ PID &#xBAA9;&#xB85D;&#xB3C4; &#xBCFC;&#xC218;&#xC788;&#xC73C;&#xBA74; &#xD3B8;&#
 
     <span class="hljs-keyword">case</span> <span class="hljs-variable">$CUR</span> <span class="hljs-keyword">in</span>
         -*) <span class="hljs-comment"># &apos;-&apos; &#xBB38;&#xC790;&#xB85C; &#xC2DC;&#xC791;&#xD558;&#xB294; &#xC2E0;&#xD638;&#xAC12; &#xC790;&#xB3D9;&#xC644;&#xC131; </span>
-            WORDS=$( <span class="hljs-built_in">kill</span> <span class="hljs-operator">-l</span> | sed -r <span class="hljs-string">&apos;s/[0-9]+\) SIG/-/g&apos;</span> )
+            WORDS=$( <span class="hljs-built_in">kill</span> <span class="hljs-operator">-l</span> | sed -rz <span class="hljs-string">&apos;s/[0-9]+\) SIG/-/g&apos;</span> )
             COMPREPLY=( $(compgen -W <span class="hljs-string">&quot;<span class="hljs-variable">$WORDS</span>&quot;</span> -- <span class="hljs-string">&quot;<span class="hljs-variable">$CUR</span>&quot;</span>) )
             ;;
         *)
