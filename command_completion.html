@@ -1690,6 +1690,59 @@ complete -F _<span class="hljs-built_in">kill</span>2 <span class="hljs-built_in
 </video>
 
 
+<h1 id="3">3.</h1>
+<p>&#xC774;&#xBC88;&#xC5D0;&#xB294; 2&#xBC88; &#xC608;&#xC81C;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xBAA9;&#xB85D;&#xC774; &#xCD9C;&#xB825;&#xB410;&#xC744;&#xB54C; &#xBC88;&#xD638;&#xB97C; &#xC785;&#xB825;&#xD558;&#xBA74; 
+&#xD574;&#xB2F9; PID &#xC640; &#xBA85;&#xB839;&#xC774;&#xB984;&#xC774; &#xC785;&#xB825;&#xB418;&#xB294; &#xAC83;&#xC744; &#xD574;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774;&#xC804; &#xAC80;&#xC0C9; &#xACB0;&#xACFC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB294; global &#xBCC0;&#xC218;&#xC5D0; &#xC800;&#xC7A5;&#xD574; &#xB193;&#xB294;&#xAC83;&#xC774; 
+&#xD544;&#xC694;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC5EC;&#xAE30;&#xC11C;&#xB294; &#xD568;&#xC218;&#xBA85;&#xACFC; &#xB3D9;&#xC77C;&#xD55C; &#xBCC0;&#xC218;&#xC774;&#xB984;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC600;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-function"><span class="hljs-title">_kill3</span></span>() 
+{
+    <span class="hljs-built_in">local</span> CUR=<span class="hljs-variable">${COMP_WORDS[COMP_CWORD]}</span> WORDS
+    <span class="hljs-built_in">local</span> IFS=$<span class="hljs-string">&apos; \t\n&apos;</span>
+
+    <span class="hljs-keyword">case</span> <span class="hljs-variable">$CUR</span> <span class="hljs-keyword">in</span>
+        -*)
+            WORDS=$( <span class="hljs-built_in">kill</span> <span class="hljs-operator">-l</span> | sed -rz <span class="hljs-string">&apos;s/[0-9]+\) SIG/-/g&apos;</span> )
+            COMPREPLY=( $(compgen -W <span class="hljs-string">&quot;<span class="hljs-variable">$WORDS</span>&quot;</span> -- <span class="hljs-string">&quot;<span class="hljs-variable">$CUR</span>&quot;</span>) )
+            ;;
+
+        <span class="hljs-comment"># current &#xADF8;&#xB7EC;&#xB2C8;&#xAE4C; &#xD604;&#xC7AC; &#xCEE4;&#xC11C;&#xAC00; &#xC704;&#xCE58;&#xD55C; &#xACF3;&#xC758; &#xAC12;&#xC774; &#xC22B;&#xC790;&#xC778; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C; tab &#xD0A4;&#xB97C; &#xB20C;&#xB800;&#xC744;&#xACBD;&#xC6B0;</span>
+        <span class="hljs-comment"># &#xC774;&#xC804;&#xC5D0; $_kill3 &#xBCC0;&#xC218;&#xC5D0; &#xC124;&#xC815;&#xD574; &#xB193;&#xC740; &#xBAA9;&#xB85D;&#xC744; &#xC774;&#xC6A9;&#xD574; PID &#xC640; &#xBA85;&#xB839;&#xC774;&#xB984;&#xC744; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</span>
+        [<span class="hljs-number">0</span>-<span class="hljs-number">9</span>]|[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>][<span class="hljs-number">0</span>-<span class="hljs-number">9</span>]|[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>][<span class="hljs-number">0</span>-<span class="hljs-number">9</span>][<span class="hljs-number">0</span>-<span class="hljs-number">9</span>])
+            COMPREPLY=( <span class="hljs-string">&quot;<span class="hljs-variable">$(echo &quot;$_kill3&quot; | awk &apos;/^&apos;&quot;$CUR&quot;&apos;)</span>/{print <span class="hljs-variable">$2</span>,<span class="hljs-variable">$4</span>; exit}&apos;)&quot;</span> )
+            ;;
+
+        *)
+            WORDS=$( ps haxo pid,user,comm | awk <span class="hljs-string">&apos;BEGIN {IGNORECASE=1} 
+            $3~/&apos;</span><span class="hljs-string">&quot;<span class="hljs-variable">$CUR</span>&quot;</span><span class="hljs-string">&apos;/{a[i++]=$0} END{ 
+            if (isarray(a)) {
+                if (length(a) == 1) print a[0]
+                else { 
+                    len=length(i)
+                    for (i in a) 
+                        printf &quot;%0*d) %s\n&quot;, len, i, a[i]
+                }
+            }}&apos;</span>)
+
+            <span class="hljs-comment"># &#xC0DD;&#xC131;&#xB41C; &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xBAA9;&#xB85D;&#xC744; global &#xBCC0;&#xC218;&#xC778; $_kill3 &#xC5D0; &#xC800;&#xC7A5;&#xD574;&#xB193;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+            _<span class="hljs-built_in">kill</span>3=<span class="hljs-variable">$WORDS</span>
+
+            IFS=$<span class="hljs-string">&apos;\n&apos;</span>
+            COMPREPLY=( <span class="hljs-variable">$WORDS</span> )
+            ;;
+    <span class="hljs-keyword">esac</span>
+}
+
+complete -F _<span class="hljs-built_in">kill</span>3 <span class="hljs-built_in">kill</span>
+</code></pre>
+<video width="768" height="282" controls preload="auto">
+  <source src="images/completion_example2.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
+
+
 <h3 id="completion-&#xD65C;&#xC6A9;">Completion &#xD65C;&#xC6A9;</h3>
 <p>&#xC790;&#xB3D9;&#xC644;&#xC131; &#xAE30;&#xB2A5;&#xC744; &#xD65C;&#xC6A9;&#xD558;&#xC5EC; &#xC790;&#xC8FC; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xBA85;&#xB839; &#xC635;&#xC158;&#xC774;&#xB098;, &#xBB38;&#xC7A5;&#xC744; &#xD55C;&#xBC88;&#xC5D0; &#xC785;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.  </p>
 <pre><code class="lang-bash"><span class="hljs-comment"># ~/.bashrc.d &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC5D0; &#xB450;&#xC5B4; &#xC258; &#xC2E4;&#xD589;&#xC2DC; source &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xC77D;&#xC5B4; &#xB4E4;&#xC785;&#xB2C8;&#xB2E4;.</span>
