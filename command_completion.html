@@ -1677,7 +1677,7 @@ PID &#xBAA9;&#xB85D;&#xB3C4; &#xBCFC;&#xC218;&#xC788;&#xC73C;&#xBA74; &#xD3B8;&#
             <span class="hljs-comment"># COMPREPLAY array &#xBCC0;&#xC218;&#xC5D0; &#xC790;&#xB3D9;&#xC644;&#xC131; &#xB2E8;&#xC5B4;&#xAC00; &#xC124;&#xC815;&#xB420;&#xB54C; IFS &#xAC12;&#xC5D0;&#xB530;&#xB77C; &#xBD84;&#xB9AC;&#xAC00; &#xB429;&#xB2C8;&#xB2E4;.</span>
             <span class="hljs-comment"># &#xC5EC;&#xAE30;&#xC11C;&#xB294; PID &#xC640; &#xBA85;&#xB839;&#xC744; &#xAC19;&#xC774; &#xBCF4;&#xC5EC;&#xC918;&#xC57C; &#xD558;&#xBBC0;&#xB85C; IFS &#xAC12;&#xC744; newline &#xC73C;&#xB85C; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</span>
             IFS=$<span class="hljs-string">&apos;\n&apos;</span>
-            COMPREPLY=( $(compgen -W <span class="hljs-string">&quot;<span class="hljs-variable">$WORDS</span>&quot;</span> ) )
+            COMPREPLY=( <span class="hljs-variable">$WORDS</span> )
             ;;
     <span class="hljs-keyword">esac</span>
 }
