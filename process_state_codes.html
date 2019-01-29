@@ -1408,12 +1408,12 @@ page fault &#xAC00; &#xBC1C;&#xC0DD;&#xD560; &#xC218; &#xC788;&#xAE30; &#xB54C;&
 <p>&#xC544;&#xB798; &#xBA85;&#xB839;&#xC744; &#xC2E4;&#xD589;&#xD588;&#xC744; &#xB54C; &#xBCF4;&#xC774;&#xB294; &#xC22B;&#xC790;&#xB294; interrupt &#xAC00; &#xCC98;&#xB9AC;&#xB41C; &#xD69F;&#xC218;&#xB97C; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.
 &#xAC01; &#xCF54;&#xC5B4; &#xBCC4;&#xB85C; &#xC22B;&#xC790;&#xAC00; &#xD45C;&#xC2DC;&#xB418;&#xACE0; &#xC99D;&#xAC00;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ watch <span class="hljs-operator">-d</span> -n1 <span class="hljs-string">&apos;grep -C3 -i &quot;local timer interrupts&quot; /proc/interrupts&apos;</span>
-
+<span class="hljs-comment"># &#xB610;&#xB294;</span>
 $ watch <span class="hljs-operator">-d</span> -n1 <span class="hljs-string">&apos;tail -n20 /proc/interrupts&apos;</span>
 </code></pre>
 <p>&#xC704;&#xB85C; &#xB450; &#xBC88;&#xC9F8;&#xB294; &#xC800;&#xAC19;&#xC740; &#xACBD;&#xC6B0; IR-PCI-MSI 409600-edge enp0s25 &#xB137;&#xD06C;&#xC6CC;&#xD06C; &#xCE74;&#xB4DC;&#xB85C; &#xB418;&#xC5B4;&#xC788;&#xB294;&#xB370;
 &#xC778;&#xD130;&#xB137;&#xC5D0;&#xC11C; &#xD30C;&#xC77C;&#xC744; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;&#xD560; &#xB54C; &#xC870;&#xD68C;&#xD574; &#xBCF4;&#xBA74; &#xAC12;&#xC774; &#xD06C;&#xAC8C; &#xC99D;&#xAC00;&#xD558;&#xB294; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-&#xD0A4;&#xBCF4;&#xB4DC;, &#xB9C8;&#xC6B0;&#xC2A4;, &#xB514;&#xC2A4;&#xD06C;&#xB3C4; &#xD55C;&#xBC88; &#xCC3E;&#xC544;&#xBCF4;&#xC2DC;&#xACE0; &#xBC84;&#xD2BC;&#xC744; &#xB20C;&#xB800;&#xC744; &#xB54C; &#xBA87; &#xBC88; &#xC778;&#xD130;&#xB7FD;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xB294;&#xC9C0;&#xB3C4; &#xC54C;&#xC544;&#xBCF4;&#xC138;&#xC694;.</p>
+&#xD0A4;&#xBCF4;&#xB4DC;, &#xB9C8;&#xC6B0;&#xC2A4;, &#xB514;&#xC2A4;&#xD06C;&#xB3C4; &#xD55C;&#xBC88; &#xCC3E;&#xC544;&#xBCF4;&#xC2DC;&#xACE0; &#xBC84;&#xD2BC;&#xC744; &#xB20C;&#xB800;&#xC744; &#xB54C; &#xBA87; &#xBC88; &#xC778;&#xD130;&#xB7FD;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xB294;&#xC9C0; &#xC54C;&#xC544;&#xBCF4;&#xC138;&#xC694;.</p>
 <h3 id="&#xD504;&#xB85C;&#xC138;&#xC2A4;-&#xC0C1;&#xD0DC;-&#xBCC0;&#xD654;-&#xACFC;&#xC815;">&#xD504;&#xB85C;&#xC138;&#xC2A4; &#xC0C1;&#xD0DC; &#xBCC0;&#xD654; &#xACFC;&#xC815;</h3>
 <p><img src="images/process_state2.png" alt=""></p>
 
