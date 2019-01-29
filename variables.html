@@ -1317,13 +1317,6 @@ $ <span class="hljs-built_in">echo</span> $?           <span class="hljs-comment
 <span class="hljs-number">1</span>
 ............................................
 
-$ ( <span class="hljs-built_in">set</span> -u; <span class="hljs-variable">$asdfgh</span> &amp;&amp; <span class="hljs-built_in">echo</span> <span class="hljs-number">111</span>; <span class="hljs-built_in">echo</span> end... )
-bash: asdfgh: unbound variable
-
-$ <span class="hljs-built_in">echo</span> $?
-<span class="hljs-number">1</span>
-...........................................
-
 $ asdfgh=<span class="hljs-string">&quot;&quot;</span>         <span class="hljs-comment"># 2&#xBC88; &#xC0C1;&#xD0DC;&#xB294; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xC2E4;&#xD589;</span>
 $ ( <span class="hljs-built_in">set</span> -u; <span class="hljs-built_in">echo</span> <span class="hljs-number">111</span> <span class="hljs-variable">$asdfgh</span>; <span class="hljs-built_in">echo</span> end... )
 <span class="hljs-number">111</span>
