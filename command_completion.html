@@ -1653,6 +1653,8 @@ PID &#xBAA9;&#xB85D;&#xB3C4; &#xBCFC;&#xC218;&#xC788;&#xC73C;&#xBA74; &#xD3B8;&#
 <pre><code class="lang-bash"><span class="hljs-function"><span class="hljs-title">_kill2</span></span>() 
 {
     <span class="hljs-built_in">local</span> CUR=<span class="hljs-variable">${COMP_WORDS[COMP_CWORD]}</span> WORDS
+    <span class="hljs-comment"># &#xC790;&#xB3D9;&#xC644;&#xC131; &#xD568;&#xC218;&#xB294; &#xD604;&#xC7AC; shell &#xC5D0;&#xC11C; &#xC2E4;&#xD589;&#xB418;&#xBBC0;&#xB85C; &#xC601;&#xD5A5;&#xC744; &#xBBF8;&#xCE58;&#xC9C0; &#xC54A;&#xC73C;&#xB824;&#xBA74;</span>
+    <span class="hljs-comment"># local &#xB85C; &#xC124;&#xC815;&#xD574; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</span>
     <span class="hljs-built_in">local</span> IFS=$<span class="hljs-string">&apos; \t\n&apos;</span>
 
     <span class="hljs-keyword">case</span> <span class="hljs-variable">$CUR</span> <span class="hljs-keyword">in</span>
