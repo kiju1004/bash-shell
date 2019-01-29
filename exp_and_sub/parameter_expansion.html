@@ -1301,6 +1301,7 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA%/*}</
 $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA##*/}</span>              <span class="hljs-comment"># &#xD30C;&#xC77C;&#xBA85; &#xBD80;&#xBD84; &#xAD6C;&#xD558;&#xAE30;</span>
 bash_hacker.txt
 </code></pre>
+<p><a name="use_a_default_value"></a></p>
 <h3 id="use-a-default-value">Use a default value</h3>
 <blockquote>
 <p>${PARAMETER:-WORD}<br>${PARAMETER-WORD}</p>
@@ -1321,11 +1322,10 @@ bash_hacker.txt
     var=linux
 <span class="hljs-keyword">fi</span>
 </code></pre>
-<p>WORD &#xBD80;&#xBD84;&#xC5D0;&#xC11C;&#xB3C4; &#xBCC0;&#xC218; &#xD655;&#xC7A5;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<blockquote>
-<p>&#xCC38;&#xACE0;&#xB85C; <code>:-</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xC744;&#xAC83; &#xAC19;&#xC740;&#xACF3;&#xC5D0; <code>-</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xB97C; &#xBCFC; &#xC218;&#xAC00; &#xC788;&#xB294;&#xB370;&#xC694;.
-&#xC774;&#xAC83;&#xC740; 4.3BSD &#xC640; &#xC608;&#xC804; shell &#xC5D0;&#xC11C; <code>:-</code> &#xB97C; &#xCC98;&#xB9AC;&#xD558;&#xC9C0; &#xBABB;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xB77C;&#xACE0; &#xD569;&#xB2C8;&#xB2E4;.</p>
-</blockquote>
+<p><code>sh</code> &#xC5D0;&#xC11C;&#xB294; test &#xBA85;&#xB839;( <code>[</code> ) &#xC5D0;&#xC11C; &#xBCC0;&#xC218; &#xC874;&#xC7AC; &#xC5EC;&#xBD80;&#xB97C; &#xCCB4;&#xD06C;&#xD558;&#xB294;<code>-v</code> &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD560;&#xC218; &#xC5C6;&#xB294;&#xB370;
+&#xC774; &#xD45C;&#xD604;&#xC2DD;&#xC744; &#xD65C;&#xC6A9;&#xD558;&#xBA74; &#xAC04;&#xC811;&#xC801;&#xC73C;&#xB85C; &#xCCB4;&#xD06C; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C;&#xB4E4;&#xC5B4; <code>var=${AA-linux}</code> &#xB300;&#xC785;&#xC5F0;&#xC0B0;&#xC5D0;&#xC11C; var &#xBCC0;&#xC218;&#xAC00; linux &#xB85C; &#xC124;&#xC815; &#xB410;&#xB2E4;&#xBA74;
+&#xD604;&#xC7AC; &#xBCC0;&#xC218; AA &#xB294; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xC0C1;&#xD0DC;&#xC8E0;</p>
 <pre><code class="lang-bash">$ AA=ubuntu
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA:-fedora}</span>        <span class="hljs-comment"># AA &#xC5D0; &#xAC12;&#xC774; &#xC788;&#xC73C;&#xBA74; AA &#xAC12;&#xC744; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;</span>
@@ -1357,6 +1357,10 @@ $ AA=<span class="hljs-variable">${AA:-$(date +%Y)}</span>
 <span class="hljs-comment"># FCEDIT &#xBCC0;&#xC218;&#xAC12;&#xC774; &#xC5C6;&#xC73C;&#xBA74; EDITOR &#xBCC0;&#xC218;&#xAC12;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; EDITOR &#xBCC0;&#xC218;&#xAC12;&#xB3C4; &#xC5C6;&#xC73C;&#xBA74; vi &#xB97C; &#xC0AC;&#xC6A9;</span>
 $ AA=<span class="hljs-variable">${FCEDIT:-${EDITOR:-vi}</span>}
 </code></pre>
+<blockquote>
+<p>&#xCC38;&#xACE0;&#xB85C; <code>:-</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xC744;&#xAC83; &#xAC19;&#xC740;&#xACF3;&#xC5D0; <code>-</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xB97C; &#xBCFC; &#xC218;&#xAC00; &#xC788;&#xB294;&#xB370;&#xC694;.
+&#xC774;&#xAC83;&#xC740; 4.3BSD &#xC640; &#xC608;&#xC804; shell &#xC5D0;&#xC11C; <code>:-</code> &#xB97C; &#xCC98;&#xB9AC;&#xD558;&#xC9C0; &#xBABB;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xB77C;&#xACE0; &#xD569;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
 <p>Array &#xC758; &#xACBD;&#xC6B0; </p>
 <pre><code class="lang-bash">$ AA=( <span class="hljs-number">11</span> <span class="hljs-number">22</span> <span class="hljs-number">33</span> )
 
@@ -1413,6 +1417,9 @@ $ <span class="hljs-built_in">cd</span> <span class="hljs-variable">$TMPDIR</spa
 : <span class="hljs-variable">${BIN_PATH:=/usr/local/bin}</span>
 : <span class="hljs-variable">${CONFIG_PATH:=/usr/local/www}</span>
 : <span class="hljs-variable">${LOGFILE:=/var/log/abc.log}</span>
+
+<span class="hljs-comment"># &#xC2E4;&#xD589; &#xACB0;&#xACFC;&#xB85C; AA &#xAC12;&#xC774; linux &#xB85C; &#xC124;&#xC815;&#xB410;&#xB2E4;&#xBA74; &#xBCC0;&#xC218; AA &#xB294; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xC0C1;&#xD0DC;&#xC600;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC54C;&#xC218;&#xC788;&#xB2E4;.</span>
+: <span class="hljs-variable">${AA=linux}</span>
 </code></pre>
 <p>Array[@] &#xAC12;&#xC740; &#xB300;&#xC785;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ AA=()
