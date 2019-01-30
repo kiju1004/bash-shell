@@ -1301,6 +1301,22 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA%/*}</
 $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA##*/}</span>              <span class="hljs-comment"># &#xD30C;&#xC77C;&#xBA85; &#xBD80;&#xBD84; &#xAD6C;&#xD558;&#xAE30;</span>
 bash_hacker.txt
 </code></pre>
+<p>&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xD30C;&#xC77C; &#xC2E4;&#xD589;&#xC2DC; &#xB514;&#xB809;&#xD1A0;&#xB9AC; &#xAD6C;&#xD558;&#xB294; &#xBC29;&#xBC95;</p>
+<pre><code class="lang-bash"><span class="hljs-shebang">#!/bin/sh
+</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$PWD</span>&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$0</span>&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">${0%/*}</span>&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">${PWD}</span>/<span class="hljs-variable">${0%/*}</span>&quot;</span> 
+---------------------
+
+<span class="hljs-comment"># &#xB9CC;&#xC57D;&#xC5D0; current &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xAC00; &#xD648;&#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC778; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C; </span>
+<span class="hljs-comment"># Workspace/test/myscript.sh &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xC2E4;&#xD589;&#xD588;&#xB2E4;&#xACE0; &#xD558;&#xBA74; &#xACB0;&#xACFC;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</span>
+/home/mug896                       <span class="hljs-comment"># $PWD</span>
+Workspace/<span class="hljs-built_in">test</span>/myscript.sh         <span class="hljs-comment"># $0</span>
+Workspace/<span class="hljs-built_in">test</span>                     <span class="hljs-comment"># ${0%/*}</span>
+/home/mug896/Workspace/<span class="hljs-built_in">test</span>        <span class="hljs-comment"># ${PWD}/${0%/*}</span>
+</code></pre>
 <p><a name="use_a_default_value"></a></p>
 <h3 id="use-a-default-value">Use a default value</h3>
 <blockquote>
