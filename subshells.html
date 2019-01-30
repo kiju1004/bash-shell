@@ -1547,7 +1547,7 @@ subshell &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xC544;&#xB798; &#xB610; &#xD574;&#xB
 $ timeout <span class="hljs-number">10</span> strace <span class="hljs-operator">-f</span> -p <span class="hljs-number">1234</span> |&amp; vi -
 </code></pre>
 <p><img src="images/subshell_op1.png" alt=""></p>
-<pre><code class="lang-bash"><span class="hljs-comment"># { ;} &#xB97C; &#xC774;&#xC6A9;&#xD558;&#xBA74; subshell &#xC544;&#xB798;&#xC11C; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xC5EC; &#xC2E4;&#xD589;&#xB418;&#xBBC0;&#xB85C; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xC2E4;&#xD589;.</span>
+<pre><code class="lang-bash"><span class="hljs-comment"># { ;} &#xB97C; &#xC774;&#xC6A9;&#xD558;&#xBA74; subshell &#xC544;&#xB798;&#xC11C; &#xC0C8;&#xB85C;&#xC6B4; PGID &#xAC00; &#xC0DD;&#xC131;&#xB418;&#xC5EC; &#xC2E4;&#xD589;&#xB418;&#xBBC0;&#xB85C; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xC2E4;&#xD589;.</span>
 $ { timeout <span class="hljs-number">10</span> strace <span class="hljs-operator">-f</span> -p <span class="hljs-number">1234</span> ;} |&amp; vi -
 </code></pre>
 <p><img src="images/subshell_op2.png" alt=""></p>
