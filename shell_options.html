@@ -1555,6 +1555,25 @@ hello
 <h4 id="xpgecho">xpg_echo</h4>
 <p> echo &#xBA85;&#xB839;&#xC774; single, double quotes &#xBAA8;&#xB450;&#xC5D0;&#xC11C; &#xBC31;&#xC2AC;&#xB798;&#xC2DC;&#xB97C; &#xC774;&#xC6A9;&#xD55C; escape sequences &#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAC8C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <hr>
+<h3 id="multicharacter-options">Multi-character options</h3>
+<p>&#xC774; long &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD560;&#xB550; single-character options  &#xC774;&#xC804;&#xC5D0; &#xC704;&#xCE58;&#xD574;&#xC57C; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h4 id="rcfile-file">--rcfile file</h4>
+<p>interactive shell &#xC5D0;&#xC11C; /etc/bash.bashrc, ~/.bashrc &#xD30C;&#xC77C;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xB294; &#xB300;&#xC2E0;&#xC5D0;
+<code>--rcfile</code> &#xC635;&#xC158;&#xC5D0;&#xC11C; &#xC124;&#xC815;&#xD55C; &#xD30C;&#xC77C;&#xC744; &#xC2E4;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="noprofile">--noprofile</h4>
+<p>login shell &#xC5D0;&#xC11C; /etc/profile, ~/.bash_profile, ~/.bash_login, ~/.profile
+&#xD30C;&#xC77C;&#xC744; &#xC77D;&#xC5B4;&#xB4E4;&#xC774;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h4 id="norc">--norc</h4>
+<p>interactive shell &#xC5D0;&#xC11C; /etc/bash.bashrc, ~/.bashrc &#xCD08;&#xAE30;&#xD654; &#xD30C;&#xC77C;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.<br><code>sh</code> &#xC758; &#xACBD;&#xC6B0;&#xB294; &#xC774;&#xC635;&#xC158;&#xC774; &#xB514;&#xD3F4;&#xD2B8; &#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB9CC;&#xC57D;&#xC5D0; parent process &#xB85C;&#xBD80;&#xD130; &#xC804;&#xB2EC;&#xB418;&#xB294; &#xD658;&#xACBD;&#xBCC0;&#xC218;&#xB3C4; empty &#xB85C; &#xB9CC;&#xB4E4;&#xB824;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ env -i bash --norc
+
+<span class="hljs-comment"># login shell &#xC758; &#xACBD;&#xC6B0;</span>
+$ env -i bash --login --noprofile --norc
+</code></pre>
+<h4 id="noediting">--noediting</h4>
+<p>interactive shell &#xC5D0;&#xC11C; readline &#xAE30;&#xB2A5;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<hr>
 <p>&#xC0AC;&#xB78C;&#xB9C8;&#xB2E4; &#xCDE8;&#xD5A5;&#xC774; &#xB2E4;&#xB974;&#xACA0;&#xC9C0;&#xB9CC; &#xC124;&#xC815;&#xD574; &#xB193;&#xC73C;&#xBA74; &#xC720;&#xC6A9;&#xD558;&#xB2E4;&#xACE0; &#xC0DD;&#xAC01;&#xB418;&#xB294; &#xC635;&#xC158;&#xC744; &#xBA87;&#xAC00;&#xC9C0; &#xACE8;&#xB77C;&#xBCF4;&#xC558;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xD604;&#xC7AC; &#xC800;&#xB3C4; &#xC124;&#xC815;&#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC788;&#xB294; &#xC635;&#xC158;&#xB4E4;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">HISTCONTROL=ignoredups
 PROMPT_COMMAND=<span class="hljs-string">&apos;history -a&apos;</span>
