@@ -1456,7 +1456,7 @@ readline &#xD568;&#xC218;&#xC778; history-expand-line &#xACFC; <code>!#:$</code>
 <span class="hljs-comment"># F8 &#xD0A4; : &#xB9C8;&#xC9C0;&#xB9C9; &#xB2E8;&#xC5B4;</span>
 <span class="hljs-string">&quot;\e[19~&quot;</span>: <span class="hljs-string">&quot;\C-u<span class="hljs-variable">$( { !! ;} |&amp; awk &apos;$NF {W = $NF} END{print W}&apos;)</span>\e\C-e\C-a\C-y\C-e&quot;</span>
 <span class="hljs-comment"># Shift-F8 : &#xB9C8;&#xC9C0;&#xB9C9; &#xB77C;&#xC778;</span>
-<span class="hljs-string">&quot;\e[19;2~&quot;</span>: <span class="hljs-string">&quot;\C-u<span class="hljs-variable">$( { !! ;} |&amp; awk &apos;$NF {L = $0} END{print L}&apos;)</span>\e\C-e\C-a\C-y\C-e&quot;</span>
+<span class="hljs-string">&quot;\e[19;2~&quot;</span>: <span class="hljs-string">&quot;\C-u<span class="hljs-variable">$( { !! ;} |&amp; awk &apos;$0 {L = $0} END{print L}&apos;)</span>\e\C-e\C-a\C-y\C-e&quot;</span>
 <span class="hljs-comment"># Ctrl-F8 : &#xC804;&#xCCB4; &#xB0B4;&#xC6A9;</span>
 <span class="hljs-string">&quot;\e[19;5~&quot;</span>: <span class="hljs-string">&quot;\C-u<span class="hljs-variable">$( { !! ;} 2&gt;&amp;1)</span>\e\C-e\C-a\C-y\C-e&quot;</span>
 </code></pre>
