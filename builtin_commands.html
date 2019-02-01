@@ -1346,7 +1346,9 @@ AA.sh end...
 </blockquote>
 <ul>
 <li><p>&#xD504;&#xB85C;&#xADF8;&#xB7A8; loader &#xB77C;&#xACE0;&#xB3C4; &#xD558;&#xB294;&#xB370; &#xD604;&#xC7AC; shell process &#xB97C; command &#xB85C; &#xB300;&#xCCB4;&#xD569;&#xB2C8;&#xB2E4;.
-<code>ps</code> &#xBAA9;&#xB85D;&#xC5D0; &#xBCF4;&#xC774;&#xB294; &#xC774;&#xB984;&#xB3C4; &#xBC14;&#xB00C;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
+&#xADF8;&#xB7EC;&#xB2C8;&#xAE4C; &#xB514;&#xC2A4;&#xD06C;&#xC5D0;&#xC11C; &#xD504;&#xB85C;&#xADF8;&#xB7A8; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xC77D;&#xC5B4;&#xC640;&#xC11C; &#xD604;&#xC7AC; shell process &#xAC00; &#xCC28;&#xC9C0;&#xD558;&#xACE0; &#xC788;&#xB294;
+&#xBA54;&#xBAA8;&#xB9AC; &#xC8FC;&#xC18C;&#xACF5;&#xAC04;&#xC744; &#xB300;&#xCCB4;&#xD558;&#xB294;&#xAC83; &#xC785;&#xB2C8;&#xB2E4;.
+&#xB530;&#xB77C;&#xC11C; <code>ps</code> &#xBAA9;&#xB85D;&#xC5D0; &#xBCF4;&#xC774;&#xB294; &#xC774;&#xB984;&#xB3C4; &#xBC14;&#xB00C;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
 command &#xB97C; &#xC2E4;&#xD589;&#xD560;&#xC218; &#xC5C6;&#xC744;&#xACBD;&#xC6B0; &#xD504;&#xB86C;&#xD504;&#xD2B8; &#xC0C1;&#xC5D0;&#xC11C;&#xC640; &#xB2EC;&#xB9AC; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xC2E4;&#xD589;&#xC2DC;&#xC5D0;&#xB294; exit &#xB429;&#xB2C8;&#xB2E4;.
 ( exit &#xC744; &#xBC29;&#xC9C0;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; execfail &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD560;&#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. )   </p>
 </li>
@@ -1359,12 +1361,12 @@ command &#xB97C; &#xC2E4;&#xD589;&#xD560;&#xC218; &#xC5C6;&#xC744;&#xACBD;&#xC6B
 <li><code>-c</code> :  empty environment &#xC0C1;&#xD0DC;&#xB85C; &#xBA85;&#xB839;&#xC744; &#xC2E4;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.</li>
 <li><code>-l</code> :  login shell &#xB85C; &#xC2E4;&#xD589;&#xD569;&#xB2C8;&#xB2E4;. &#xBA85;&#xB839;&#xC774;&#xB984; &#xC55E;&#xC5D0; <code>-</code> &#xBB38;&#xC790;&#xAC00; &#xBD99;&#xAC8C;&#xB429;&#xB2C8;&#xB2E4;.</li>
 </ul>
-<pre><code class="lang-bash">$ ( <span class="hljs-built_in">exec</span> <span class="hljs-operator">-a</span> testps ps -o pid,ppid,cmd) 
+<pre><code class="lang-bash">$ ( <span class="hljs-built_in">exec</span> <span class="hljs-operator">-a</span> testps ps -o pid,ppid,cmd ) 
   PID  PPID CMD
 <span class="hljs-number">24889</span>  <span class="hljs-number">3379</span> /bin/bash
 <span class="hljs-number">28594</span> <span class="hljs-number">24889</span> testps -o pid,ppid,cmd          <span class="hljs-comment"># ps &#xBA85;&#xB839; &#xC774;&#xB984;&#xC774; testps &#xB85C; &#xBCC0;&#xACBD;</span>
 
-$ ( <span class="hljs-built_in">exec</span> <span class="hljs-operator">-l</span> <span class="hljs-operator">-a</span> testps ps -o pid,ppid,cmd)
+$ ( <span class="hljs-built_in">exec</span> <span class="hljs-operator">-l</span> <span class="hljs-operator">-a</span> testps ps -o pid,ppid,cmd )
   PID  PPID CMD
 <span class="hljs-number">24889</span>  <span class="hljs-number">3379</span> /bin/bash
 <span class="hljs-number">28611</span> <span class="hljs-number">24889</span> -testps -o pid,ppid,cmd         <span class="hljs-comment"># testps &#xC774;&#xB984;&#xC55E;&#xC5D0; &apos;-&apos; &#xBB38;&#xC790;&#xAC00; &#xBD99;&#xB294;&#xB2E4;</span>
