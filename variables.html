@@ -1287,7 +1287,7 @@ $ <span class="hljs-built_in">unset</span> -v &#xBCC0;&#xC218;&#xBA85;
 </code></pre>
 <p>&#xBCC0;&#xC218;&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xB294; 1&#xBC88; unset &#xC0C1;&#xD0DC;&#xC640; 2&#xBC88; null &#xAC12; &#xC0C1;&#xD0DC;&#xB294; &#xB2E4;&#xC74C; &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xAD6C;&#xBD84;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>unset &#xC0C1;&#xD0DC;&#xC77C; &#xACBD;&#xC6B0;&#xB294; <code>1</code> &#xC744; &#xADF8;&#xC678;&#xB294; <code>0</code> &#xC744; &#xB9AC;&#xD134;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ [ -v asdfgh ]; <span class="hljs-built_in">echo</span> $?   <span class="hljs-comment"># &#xD604;&#xC7AC; asdfgh &#xBCC0;&#xC218;&#xB294; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xC0C1;&#xD0DC; ( 1&#xBC88; &#xC0C1;&#xD0DC; )</span>
-<span class="hljs-number">1</span>                          <span class="hljs-comment"># ( &#xBCC0;&#xC218;&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xC744;&#xC218; &#xC788;&#xC73C;&#xBBC0;&#xB85C; &#xC774;&#xB984;&#xC55E;&#xC5D0; `$` &#xB97C; &#xBD99;&#xC774;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.)</span>
+<span class="hljs-number">1</span> 
 
 $ asdfgh=<span class="hljs-string">&quot;&quot;</span>                <span class="hljs-comment"># &#xBCC0;&#xC218;&#xB294; &#xC874;&#xC7AC;&#xD558;&#xB098; null &#xAC12;&#xC778; &#xC0C1;&#xD0DC; ( 2&#xBC88; &#xC0C1;&#xD0DC; )</span>
 $ [ -v asdfgh ]; <span class="hljs-built_in">echo</span> $?
