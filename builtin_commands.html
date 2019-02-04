@@ -1544,7 +1544,17 @@ $ compgen -v         <span class="hljs-comment"># &#xD604;&#xC7AC; &#xC258;&#xC5
 <blockquote>
 <p>compopt [-o|+o option] [-DE] [name ...]</p>
 </blockquote>
-<p> complete &#xC73C;&#xB85C; &#xB4F1;&#xB85D;&#xB418;&#xC5B4; &#xC0AC;&#xC6A9; &#xC911;&#xC778; &#xBA85;&#xB839; &#xC790;&#xB3D9;&#xC644;&#xC131; &#xC5D0;&#xB300;&#xD574;&#xC11C; &#xC635;&#xC158;&#xC744; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>complete &#xC73C;&#xB85C; &#xB4F1;&#xB85D;&#xB418;&#xC5B4; &#xC0AC;&#xC6A9; &#xC911;&#xC778; &#xBA85;&#xB839; &#xC790;&#xB3D9;&#xC644;&#xC131; &#xC5D0;&#xB300;&#xD574;&#xC11C; &#xC635;&#xC158;&#xC744; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+<code>-o</code> &#xC740; on &#xC744; &#xB098;&#xD0C0;&#xB0B4;&#xACE0;, <code>+o</code> &#xB294; off &#xB97C; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.
+<code>name</code> &#xC740; &#xC790;&#xB3D9;&#xC644;&#xC131;&#xC774; &#xC801;&#xC6A9;&#xB41C; &#xBA85;&#xB839;&#xC774;&#xB984; &#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD55C;&#xAC00;&#xC9C0; &#xC911;&#xC694;&#xD55C; &#xAE30;&#xB2A5;&#xC740; &#xC790;&#xB3D9;&#xD568;&#xC218; &#xB0B4;&#xC5D0;&#xC11C; name &#xC5C6;&#xC774; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xD604;&#xC7AC; tab &#xC2E4;&#xD589;&#xC5D0; &#xB300;&#xD574;&#xC11C;&#xB9CC;
+&#xC635;&#xC158;&#xC744; &#xC801;&#xC6A9;&#xC2DC;&#xD0AC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># clang &#xBA85;&#xB839;&#xC758; &#xC790;&#xB3D9;&#xC644;&#xC131;&#xC5D0; &#xB300;&#xD574;&#xC11C; nospace &#xC635;&#xC158;&#xC774; &#xC774;&#xD6C4; &#xC9C0;&#xC18D;&#xC801;&#xC73C;&#xB85C; &#xC801;&#xC6A9;&#xB41C;&#xB2E4;.</span>
+compopt -o nospace clang
+
+<span class="hljs-comment"># &#xD604;&#xC7AC; &#xC2E4;&#xD589;&#xC911;&#xC778; tab &#xC2E4;&#xD589;&#xC5D0; &#xB300;&#xD574;&#xC11C;&#xB9CC; &#xC635;&#xC158;&#xC774; &#xC801;&#xC6A9;&#xB41C;&#xB2E4;.</span>
+compopt -o nospace
+</code></pre>
 <h3 id="declare">declare</h3>
 <blockquote>
 <p>declare [-aAfFgilnrtux] [-p] [name[=value] ...]</p>
