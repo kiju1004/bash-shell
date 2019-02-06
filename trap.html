@@ -1713,12 +1713,12 @@ Sat Jan <span class="hljs-number">26</span> <span class="hljs-number">19</span>:
 Sat Jan <span class="hljs-number">26</span> <span class="hljs-number">19</span>:<span class="hljs-number">34</span>:<span class="hljs-number">50</span> KST <span class="hljs-number">2019</span>
 <span class="hljs-number">1111111111111</span>
 </code></pre>
-<p>&#xB9CC;&#xC57D;&#xC5D0; command_1 &#xBA85;&#xB839;&#xC774; &#xC885;&#xB8CC;&#xB410;&#xC744;&#xB54C; CHLD &#xC2E0;&#xD638;&#xB97C; trap &#xD574;&#xC11C; &#xB4A4;&#xCC98;&#xB9AC; &#xC791;&#xC5C5;&#xC73C;&#xB85C;
-command_2 &#xBA85;&#xB839;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xB824;&#xACE0; &#xD55C;&#xB2E4;&#xBA74; shell &#xC5D0;&#xC11C;&#xB294; &#xADF8;&#xB0E5; command_1, command_2
+<p>&#xB9CC;&#xC57D;&#xC5D0; command1 &#xBA85;&#xB839;&#xC774; &#xC885;&#xB8CC;&#xB410;&#xC744;&#xB54C; CHLD &#xC2E0;&#xD638;&#xB97C; trap &#xD574;&#xC11C; &#xB4A4;&#xCC98;&#xB9AC; &#xC791;&#xC5C5;&#xC73C;&#xB85C;
+command2 &#xBA85;&#xB839;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xB824;&#xACE0; &#xD55C;&#xB2E4;&#xBA74; shell &#xC5D0;&#xC11C;&#xB294; &#xADF8;&#xB0E5; command1, command2
 &#xBA85;&#xB839;&#xC744; &#xCC28;&#xB840;&#xB85C; &#xC2E4;&#xD589;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">$ ( <span class="hljs-built_in">set</span> -m; <span class="hljs-built_in">trap</span> <span class="hljs-string">&apos;command_2&apos;</span> CHLD; <span class="hljs-built_in">command</span>_1 ) 
+<pre><code class="lang-bash">$ ( <span class="hljs-built_in">set</span> -m; <span class="hljs-built_in">trap</span> <span class="hljs-string">&apos;command2&apos;</span> CHLD; <span class="hljs-built_in">command</span>1 ) 
 
-$ ( <span class="hljs-built_in">command</span>_1; <span class="hljs-built_in">command</span>_2; )
+$ ( <span class="hljs-built_in">command</span>1; <span class="hljs-built_in">command</span>2; )
 </code></pre>
 <h3 id="trap-handler-&#xB0B4;&#xC5D0;&#xC11C;&#xC758;-&#xC885;&#xB8CC;-&#xC0C1;&#xD0DC;-&#xAC12;">trap handler &#xB0B4;&#xC5D0;&#xC11C;&#xC758; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;</h3>
 <p>Ctrl-c &#xC5D0; &#xC758;&#xD574; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xC885;&#xB8CC;&#xB420; &#xB54C; EXIT handler &#xB0B4;&#xC5D0;&#xC11C;&#xB294; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC744; &#xAD6C;&#xD560; &#xC218;&#xAC00; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
