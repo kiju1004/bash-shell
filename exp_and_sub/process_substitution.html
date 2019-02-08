@@ -1478,8 +1478,8 @@ local &#xACFC; remote &#xD30C;&#xC77C;&#xC758; md5sum &#xAC12;&#xC774; &#xB2E4;&
     while (getline &lt; ARGV[2] &gt; 0) b[$1]=$0
     for (i in a) if ( !b[i] ) print a[i]
     for (i in b) if ( !a[i] ) print b[i]
-}&apos;</span> &lt;( find BUILD -type f -exec md5sum {} \; ) \
-&lt;( ssh user@remote <span class="hljs-string">&apos;find path/to/remote/BUILD -type f -exec md5sum {} \;&apos;</span> ) 
+}&apos;</span> &lt;( find BUILD -type f -exec md5sum {} + ) \
+&lt;( ssh user@remote <span class="hljs-string">&apos;find path/to/remote/BUILD -type f -exec md5sum {} +&apos;</span> ) 
 
 aeabb93eddf837d8dd45cbf94d0ef7d2  BUILD/pty_master_open.d
 e507a57525fabe57695683442ecde7e3  BUILD/pty_fork.o
