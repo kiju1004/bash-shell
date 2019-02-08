@@ -1461,6 +1461,32 @@ sync2=`mktemp`
 <span class="hljs-keyword">while</span> [ <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;<span class="hljs-variable">$sync1</span>&quot;</span> -o <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;<span class="hljs-variable">$sync2</span>&quot;</span> ]; <span class="hljs-keyword">do</span> sleep <span class="hljs-number">1</span>; <span class="hljs-keyword">done</span>
 <span class="hljs-built_in">echo</span> --- end <span class="hljs-number">2</span> ---
 </code></pre>
+<h1 id="quiz">Quiz</h1>
+<p><code>diff</code> &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xBA74; &#xAC04;&#xB2E8;&#xD788; &#xB450;&#xAC1C;&#xC758; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xB97C; &#xC11C;&#xB85C; &#xBE44;&#xAD50;&#xD560; &#xC218; &#xC788;&#xB294;&#xB370;&#xC694;.<br>&#xBE44;&#xAD50;&#xD558;&#xB824;&#xB294; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xAC00; remote &#xC11C;&#xBC84;&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xB294; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
+<pre><code class="lang-bash">$ diff -rq BUILD.<span class="hljs-number">1</span> BUILD.<span class="hljs-number">2</span>
+Only <span class="hljs-keyword">in</span> BUILD.<span class="hljs-number">1</span>/lib: libtlpi.a    <span class="hljs-comment"># BUILD.1 &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC5D0;&#xB9CC; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xD30C;&#xC77C;</span>
+Files BUILD.<span class="hljs-number">1</span>/lib/pty_fork.o and BUILD.<span class="hljs-number">2</span>/lib/pty_fork.o differ
+Files BUILD.<span class="hljs-number">1</span>/lib/pty_master_open.d and BUILD.<span class="hljs-number">2</span>/lib/pty_master_open.d differ
+</code></pre>
+<p>remote directory &#xB97C; &#xBE44;&#xAD50;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC5D0;&#xB294; &#xC5EC;&#xB7EC;&#xAC00;&#xC9C0;&#xAC00; &#xC788;&#xC9C0;&#xB9CC; &#xC5EC;&#xAE30;&#xC11C;&#xB294; 
+&#xD504;&#xB85C;&#xC138;&#xC2A4; &#xCE58;&#xD658;&#xACFC; awk &#xB97C; &#xC774;&#xC6A9;&#xD574;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.
+remote &#xD30C;&#xC77C;&#xC744; &#xBE44;&#xAD50;&#xD558;&#xB294; &#xAC83;&#xC774;&#xBBC0;&#xB85C; &#xD30C;&#xC77C;&#xC744; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;&#xD558;&#xC9C0; &#xC54A;&#xACE0; md5sum &#xC744; &#xC774;&#xC6A9;&#xD574; &#xBE44;&#xAD50;&#xD569;&#xB2C8;&#xB2E4;.
+local &#xACFC; remote &#xD30C;&#xC77C;&#xC758; md5sum &#xAC12;&#xC774; &#xB2E4;&#xB974;&#xB2E4;&#xB294; &#xAC83;&#xC740; &#xD30C;&#xC77C;&#xC774; &#xC218;&#xC815;&#xB418;&#xC5C8;&#xB2E4;&#xB294; &#xC758;&#xBBF8;&#xACE0;
+&#xC544;&#xB798; libtlpi.a &#xD30C;&#xC77C;&#xC740; remote &#xC5D0;&#xB9CC; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xD30C;&#xC77C;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { 
+    while (getline &lt; ARGV[1] &gt; 0) a[$1]=$0
+    while (getline &lt; ARGV[2] &gt; 0) b[$1]=$0
+    for (i in a) if ( !b[i] ) print a[i]
+    for (i in b) if ( !a[i] ) print b[i]
+}&apos;</span> &lt;( find BUILD -type f -exec md5sum {} \; ) \
+&lt;( ssh user@remote <span class="hljs-string">&apos;find path/to/remote/BUILD -type f -exec md5sum {} \;&apos;</span> ) 
+
+aeabb93eddf837d8dd45cbf94d0ef7d2  BUILD/pty_master_open.d
+e507a57525fabe57695683442ecde7e3  BUILD/pty_fork.o
+a0cc9039df2eab09f2b145e54070a081  path/to/remote/BUILD/libtlpi.a   <span class="hljs-comment"># remote &#xC5D0;&#xB9CC; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xD30C;&#xC77C;</span>
+a123503825f130377d49e594e3f73504  path/to/remote/BUILD/pty_fork.o
+bc2a1a57bae6472a1bb1655bd404244b  path/to/remote/BUILD/pty_master_open.d
+</code></pre>
 
                     
                     </section>
