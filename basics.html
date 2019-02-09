@@ -1577,6 +1577,9 @@ $ <span class="hljs-built_in">echo</span> hello world | cat test.txt -
 hello world
 ----------------------------------
 
+$ ssh user@remote <span class="hljs-string">&quot;cat path/to/remote/file&quot;</span> | diff - path/to/<span class="hljs-built_in">local</span>/file
+----------------------------------
+
 $ ps jf | vi -
 ----------------------------------
 
@@ -1585,9 +1588,6 @@ $ seq <span class="hljs-number">10</span> | paste - - -
 <span class="hljs-number">4</span>       <span class="hljs-number">5</span>       <span class="hljs-number">6</span>
 <span class="hljs-number">7</span>       <span class="hljs-number">8</span>       <span class="hljs-number">9</span>
 <span class="hljs-number">10</span>
-----------------------------------
-
-$ ssh user@remote <span class="hljs-string">&quot;cat path/to/remote/file&quot;</span> | diff - path/to/<span class="hljs-built_in">local</span>/file
 </code></pre>
 <ul>
 <li>&#xB2E4;&#xC74C;&#xC740; <code>-</code> &#xAC00; output &#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xC5B4; stdout &#xC744; &#xB098;&#xD0C0;&#xB0B4;&#xB294; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;.</li>
