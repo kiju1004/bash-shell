@@ -1473,6 +1473,11 @@ Files BUILD.<span class="hljs-number">1</span>/lib/pty_master_open.d and BUILD.<
 remote &#xD30C;&#xC77C;&#xC744; &#xBE44;&#xAD50;&#xD558;&#xB294; &#xAC83;&#xC774;&#xBBC0;&#xB85C; &#xD30C;&#xC77C;&#xC744; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;&#xD558;&#xC9C0; &#xC54A;&#xACE0; md5sum &#xC744; &#xC774;&#xC6A9;&#xD574; &#xBE44;&#xAD50;&#xD569;&#xB2C8;&#xB2E4;.
 local &#xACFC; remote &#xD30C;&#xC77C;&#xC758; md5sum &#xAC12;&#xC774; &#xB2E4;&#xB974;&#xB2E4;&#xB294; &#xAC83;&#xC740; &#xD30C;&#xC77C;&#xC774; &#xC218;&#xC815;&#xB418;&#xC5C8;&#xB2E4;&#xB294; &#xC758;&#xBBF8;&#xACE0;
 &#xC544;&#xB798; libtlpi.a &#xD30C;&#xC77C;&#xC740; remote &#xC5D0;&#xB9CC; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xD30C;&#xC77C;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>&#xC774; &#xBC29;&#xBC95;&#xC740; md5sum &#xAC12;&#xB9CC;&#xC744; &#xC774;&#xC6A9;&#xD574; &#xBE44;&#xAD50;&#xD558;&#xB294; &#xAC83;&#xC73C;&#xB85C; &#xB3D9;&#xC77C;&#xD55C; &#xB0B4;&#xC6A9;&#xC758; &#xD30C;&#xC77C;&#xC774; &#xC788;&#xC744; &#xACBD;&#xC6B0;
+( &#xC608;&#xB97C; &#xB4E4;&#xBA74; <code>cp</code> &#xC5D0; &#xC758;&#xD574; &#xC0DD;&#xC131;&#xB41C; ) &#xB294; &#xBE44;&#xAD50;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB610;&#xD55C; hash collision &#xC774; &#xC788;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. ( md5sum &#xC744; sha1sum &#xC774;&#xB098; &#xC774;&#xC0C1;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD574;&#xBCF4;&#xC138;&#xC694; )</p>
+</blockquote>
 <pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { 
     while (getline &lt; ARGV[1] &gt; 0) a[$1]=$0
     while (getline &lt; ARGV[2] &gt; 0) b[$1]=$0
