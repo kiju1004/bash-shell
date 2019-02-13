@@ -1479,8 +1479,7 @@ array &#xC758; index &#xB85C; &#xD558;&#xACE0; md5sum &#xAC12;&#xC744; value &#x
     dir1 = length(&quot;path/to/local/BUILD&quot;)+2
     dir2 = length(&quot;path/to/remote/BUILD&quot;)+2
     while (getline &lt; ARGV[1] &gt; 0) a[substr($2,dir1)] = $1  # $1 &#xB294; md5sum
-    while (getline &lt; ARGV[2] &gt; 0) { 
-        i = substr($2,dir2); b[i] = $1
+    while (getline &lt; ARGV[2] &gt; 0) { i = substr($2,dir2); b[i] = $1
         # a[i] &#xC758; &#xAC12;&#xC774; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;&#xB294; &#xAC83;&#xC740; b &#xC5D0;&#xB9CC; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xD30C;&#xC77C;
         if ( !a[i] ) { print &quot;&gt;&gt;&gt; Only &quot; i; delete a[i]; delete b[i]; continue }
         # a[i] &#xC640; b[i] &#xC758; md5sum &#xAC12;&#xC774; &#xB2E4;&#xB974;&#xB2E4;&#xB294; &#xAC83;&#xC740; &#xD30C;&#xC77C;&#xC774; &#xBCC0;&#xACBD;&#xB418;&#xC5C8;&#xB2E4;&#xB294; &#xC758;&#xBBF8;
