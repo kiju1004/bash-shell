@@ -1552,27 +1552,27 @@ $ seq <span class="hljs-number">5</span> | tac
 <span class="hljs-comment"># /var/log/dpkg.log &#xB85C;&#xADF8; &#xD30C;&#xC77C;&#xACFC; tac &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD574; &#xCD5C;&#xADFC; &#xC21C;&#xC73C;&#xB85C; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;.</span>
 $ cat dpkg-history.sh
 
-<span class="hljs-shebang">#!/bin/sh
+<span class="hljs-shebang">#!/bin/bash
 </span>
 FILE=/var/<span class="hljs-built_in">log</span>/dpkg.log
 GREP=<span class="hljs-string">&quot;grep -E --color=always&quot;</span>
-LES=<span class="hljs-string">&quot;less -FR&quot;</span>
+LESS+=<span class="hljs-string">&quot;-FRSXi&quot;</span>
 
 <span class="hljs-keyword">case</span> <span class="hljs-variable">$1</span> <span class="hljs-keyword">in</span>
     i)
-        tac <span class="hljs-variable">$FILE</span> | <span class="hljs-variable">$GREP</span> <span class="hljs-string">&apos; install &apos;</span> | <span class="hljs-variable">$LES</span>
+        tac <span class="hljs-variable">$FILE</span> | <span class="hljs-variable">$GREP</span> <span class="hljs-string">&apos; install &apos;</span> | less
         ;;
     u)
-        tac <span class="hljs-variable">$FILE</span> | <span class="hljs-variable">$GREP</span> <span class="hljs-string">&apos; upgrade &apos;</span> | <span class="hljs-variable">$LES</span>
+        tac <span class="hljs-variable">$FILE</span> | <span class="hljs-variable">$GREP</span> <span class="hljs-string">&apos; upgrade &apos;</span> | less
         ;;
     r)
-        tac <span class="hljs-variable">$FILE</span> | <span class="hljs-variable">$GREP</span> <span class="hljs-string">&apos; remove &apos;</span> | <span class="hljs-variable">$LES</span>
+        tac <span class="hljs-variable">$FILE</span> | <span class="hljs-variable">$GREP</span> <span class="hljs-string">&apos; remove &apos;</span> | less
         ;;
     p)
-        tac <span class="hljs-variable">$FILE</span> | <span class="hljs-variable">$GREP</span> <span class="hljs-string">&apos; purge &apos;</span> | <span class="hljs-variable">$LES</span>
+        tac <span class="hljs-variable">$FILE</span> | <span class="hljs-variable">$GREP</span> <span class="hljs-string">&apos; purge &apos;</span> | less
         ;;
     *)
-        tac <span class="hljs-variable">$FILE</span> | <span class="hljs-variable">$GREP</span> <span class="hljs-string">&apos; install | remove | upgrade | purge &apos;</span> | <span class="hljs-variable">$LES</span>
+        tac <span class="hljs-variable">$FILE</span> | <span class="hljs-variable">$GREP</span> <span class="hljs-string">&apos; install | remove | upgrade | purge &apos;</span> | less
         ;;
 <span class="hljs-keyword">esac</span>
 </code></pre>
