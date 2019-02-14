@@ -1556,22 +1556,23 @@ $ cat dpkg-history.sh
 </span>
 FILE=/var/<span class="hljs-built_in">log</span>/dpkg.log
 GREP=<span class="hljs-string">&quot;grep -E --color=always&quot;</span>
+LES=<span class="hljs-string">&quot;less -FR&quot;</span>
 
 <span class="hljs-keyword">case</span> <span class="hljs-variable">$1</span> <span class="hljs-keyword">in</span>
     i)
-        tac <span class="hljs-variable">$FILE</span> | <span class="hljs-variable">$GREP</span> <span class="hljs-string">&apos; install &apos;</span> | less
+        tac <span class="hljs-variable">$FILE</span> | <span class="hljs-variable">$GREP</span> <span class="hljs-string">&apos; install &apos;</span> | <span class="hljs-variable">$LES</span>
         ;;
     u)
-        tac <span class="hljs-variable">$FILE</span> | <span class="hljs-variable">$GREP</span> <span class="hljs-string">&apos; upgrade &apos;</span> | less
+        tac <span class="hljs-variable">$FILE</span> | <span class="hljs-variable">$GREP</span> <span class="hljs-string">&apos; upgrade &apos;</span> | <span class="hljs-variable">$LES</span>
         ;;
     r)
-        tac <span class="hljs-variable">$FILE</span> | <span class="hljs-variable">$GREP</span> <span class="hljs-string">&apos; remove &apos;</span> | less
+        tac <span class="hljs-variable">$FILE</span> | <span class="hljs-variable">$GREP</span> <span class="hljs-string">&apos; remove &apos;</span> | <span class="hljs-variable">$LES</span>
         ;;
     p)
-        tac <span class="hljs-variable">$FILE</span> | <span class="hljs-variable">$GREP</span> <span class="hljs-string">&apos; purge &apos;</span> | less
+        tac <span class="hljs-variable">$FILE</span> | <span class="hljs-variable">$GREP</span> <span class="hljs-string">&apos; purge &apos;</span> | <span class="hljs-variable">$LES</span>
         ;;
     *)
-        tac <span class="hljs-variable">$FILE</span> | <span class="hljs-variable">$GREP</span> <span class="hljs-string">&apos; install | remove | upgrade | purge &apos;</span> | less
+        tac <span class="hljs-variable">$FILE</span> | <span class="hljs-variable">$GREP</span> <span class="hljs-string">&apos; install | remove | upgrade | purge &apos;</span> | <span class="hljs-variable">$LES</span>
         ;;
 <span class="hljs-keyword">esac</span>
 </code></pre>
