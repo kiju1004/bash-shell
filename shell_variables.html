@@ -1400,11 +1400,18 @@ $ cat xtrace.txt
 <h4 id="compkey">COMP_KEY</h4>
 <p> &#xC790;&#xB3D9;&#xC644;&#xC131; &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBCC0;&#xC218;&#xB85C; completion &#xC2DC;&#xB3C4;&#xC2DC; &#xC0AC;&#xC6A9;&#xB41C; &#xD0A4;&#xAC12;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</p>
 <h4 id="compwordbreaks">COMP_WORDBREAKS</h4>
-<p> &#xC790;&#xB3D9;&#xC644;&#xC131; &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBCC0;&#xC218;&#xB85C; &#xD504;&#xB86C;&#xD504;&#xD2B8;&#xC5D0;&#xC11C; &#xD604;&#xC7AC;&#xAE4C;&#xC9C0; &#xC791;&#xC131;&#xD55C; &#xBA85;&#xB839;&#xC744; &#xB2E8;&#xC5B4;&#xB4E4;&#xB85C; &#xBD84;&#xB9AC;&#xD560;&#xB54C; &#xC774;&#xBCC0;&#xC218;&#xC5D0; &#xC788;&#xB294; &#xAC12;&#xB4E4;&#xC744; &#xAE30;&#xC900;&#xC73C;&#xB85C; &#xD569;&#xB2C8;&#xB2E4;. unset &#xD560;&#xACBD;&#xC6B0; &#xAE30;&#xB2A5;&#xC744; &#xC0C1;&#xC2E4;&#xD558;&#xBBC0;&#xB85C; &#xCD94;&#xD6C4;&#xC5D0; &#xB2E4;&#xC2DC; &#xAC12;&#xC744; &#xB300;&#xC785;&#xD574;&#xB3C4; &#xC801;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xAE30;&#xBCF8;&#xAC12;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC790;&#xB3D9;&#xC644;&#xC131; &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBCC0;&#xC218;&#xB85C; &#xC774; &#xAC12;&#xC5D0; &#xB530;&#xB77C; &#xC790;&#xB3D9;&#xC644;&#xC131; &#xB2E8;&#xC5B4;&#xAC00; &#xBD84;&#xB9AC; &#xB429;&#xB2C8;&#xB2E4;.
+unset &#xD560;&#xACBD;&#xC6B0; &#xAE30;&#xB2A5;&#xC744; &#xC0C1;&#xC2E4;&#xD558;&#xBBC0;&#xB85C; &#xCD94;&#xD6C4;&#xC5D0; &#xB2E4;&#xC2DC; &#xAC12;&#xC744; &#xB300;&#xC785;&#xD574;&#xB3C4; &#xC801;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xAE30;&#xBCF8;&#xAC12;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> -n <span class="hljs-string">&quot;<span class="hljs-variable">$COMP_WORDBREAKS</span>&quot;</span> | od -atx1
 <span class="hljs-number">0000000</span>  sp  ht  nl   <span class="hljs-string">&quot;   &apos;   &gt;   &lt;   =   ;   |   &amp;   (   :
          20  09  0a  22  27  3e  3c  3d  3b  7c  26  28  3a
 </span></code></pre>
+<p>&#xC774; &#xBCC0;&#xC218;&#xC758; &#xB2E8;&#xC810;&#xC740; global &#xBCC0;&#xC218;&#xB77C;&#xB294; &#xC810;&#xC785;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC2DC; &#xB9D0;&#xD574;&#xC11C; local &#xB85C; &#xC124;&#xC815;&#xD574; &#xC0AC;&#xC6A9;&#xD560; &#xACBD;&#xC6B0;
+&#xC801;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB530;&#xB77C;&#xC11C; &#xAC12;&#xC744; &#xBCC0;&#xACBD;&#xD574; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xAE30;&#xC874; &#xAC12;&#xC5D0;&#xB530;&#xB77C; &#xC791;&#xC131;&#xB41C; &#xB2E4;&#xB978; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC5D0; &#xC601;&#xD5A5;&#xC744; &#xC8FC;&#xACA0;&#xC8E0;.
+&#xC6D0;&#xB798;&#xB294; &#xC790;&#xB3D9;&#xC644;&#xC131; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB9C8;&#xB2E4; COMP_WORDBREAKS &#xAC12;&#xC744; &#xC124;&#xC815;&#xD574; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD558;&#xB294;&#xB370;
+&#xC0AC;&#xB78C;&#xB4E4;&#xC774; &#xADF8;&#xB807;&#xAC8C; &#xD558;&#xC9C0; &#xC54A;&#xC8E0;. &#xC774; &#xBCC0;&#xC218;&#xAC00; &#xC788;&#xB294;&#xC904;&#xB3C4; &#xBAA8;&#xB974;&#xACE0;</p>
 <h4 id="compwords">COMP_WORDS</h4>
 <p> &#xC790;&#xB3D9;&#xC644;&#xC131; &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBCC0;&#xC218;&#xB85C; &#xD504;&#xB86C;&#xD504;&#xD2B8;&#xC5D0;&#xC11C; &#xD604;&#xC7AC;&#xAE4C;&#xC9C0; &#xD0C0;&#xC785;&#xD55C; &#xBA85;&#xB839;&#xC758; &#xB2E8;&#xC5B4;&#xB4E4;&#xC744; &#xB2F4;&#xACE0;&#xC788;&#xB294; array &#xC785;&#xB2C8;&#xB2E4;.</p>
 <h4 id="compreply">COMPREPLY</h4>
