@@ -1415,8 +1415,12 @@ $ args.sh <span class="hljs-string">&quot;aa <span class="hljs-variable">${AA[*]
 ARR=(<span class="hljs-number">11</span> <span class="hljs-number">22</span> <span class="hljs-number">33</span>)
 
 <span class="hljs-keyword">for</span> idx <span class="hljs-keyword">in</span> <span class="hljs-variable">${!ARR[@]}</span>; <span class="hljs-keyword">do</span>
-    <span class="hljs-built_in">echo</span> ARR index : <span class="hljs-variable">$idx</span>, value : <span class="hljs-string">&quot;<span class="hljs-variable">${ARR[idx]}</span>&quot;</span>  <span class="hljs-comment"># ${ARR[$idx]} &#xB85C; &#xD574;&#xB3C4;&#xB428;</span>
+    <span class="hljs-built_in">echo</span> ARR index : <span class="hljs-variable">$idx</span>, value : <span class="hljs-string">&quot;<span class="hljs-variable">${ARR[$idx]}</span>&quot;</span>
 <span class="hljs-keyword">done</span>
+
+ARR index : <span class="hljs-number">0</span>, value : <span class="hljs-number">11</span>
+ARR index : <span class="hljs-number">1</span>, value : <span class="hljs-number">22</span>
+ARR index : <span class="hljs-number">2</span>, value : <span class="hljs-number">33</span>
 
 <span class="hljs-comment">######## associative array ########</span>
 
@@ -1425,8 +1429,12 @@ ARR=(<span class="hljs-number">11</span> <span class="hljs-number">22</span> <sp
 ARR=( [ab]=<span class="hljs-number">11</span> [<span class="hljs-built_in">cd</span>]=<span class="hljs-string">&quot;hello array&quot;</span> [ef]=<span class="hljs-number">22</span> )
 
 <span class="hljs-keyword">for</span> idx <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;<span class="hljs-variable">${!ARR[@]}</span>&quot;</span>; <span class="hljs-keyword">do</span>
-    <span class="hljs-built_in">echo</span> ARR index : <span class="hljs-string">&quot;<span class="hljs-variable">$idx</span>&quot;</span>, value : <span class="hljs-string">&quot;<span class="hljs-variable">${ARR[idx]}</span>&quot;</span> 
+    <span class="hljs-built_in">echo</span> ARR index : <span class="hljs-string">&quot;<span class="hljs-variable">$idx</span>&quot;</span>, value : <span class="hljs-string">&quot;<span class="hljs-variable">${ARR[$idx]}</span>&quot;</span> 
 <span class="hljs-keyword">done</span>
+
+ARR index : ef, value : <span class="hljs-number">22</span>
+ARR index : <span class="hljs-built_in">cd</span>, value : hello array
+ARR index : ab, value : <span class="hljs-number">11</span>
 </code></pre>
 <h4 id="array-&#xB300;&#xC785;&#xC5F0;&#xC0B0;">Array &#xB300;&#xC785;&#xC5F0;&#xC0B0;</h4>
 <p>array AA &#xB97C; BB &#xC5D0; &#xB300;&#xC785;&#xD560;&#xACBD;&#xC6B0; <code>BB=${AA[@]}</code> &#xC640; &#xAC19;&#xC774; &#xD558;&#xBA74; array &#xAC00; &#xC544;&#xB2C8;&#xB77C; AA &#xAC12; &#xC804;&#xCCB4;&#xAC00; BB &#xBCC0;&#xC218;&#xC5D0; &#xB300;&#xC785;&#xB429;&#xB2C8;&#xB2E4;. array &#xB300;&#xC785;&#xC744; &#xD558;&#xB824;&#xBA74; &#xD56D;&#xC0C1; <code>=( )</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
@@ -1488,10 +1496,11 @@ $ AA=( <span class="hljs-string">&quot;<span class="hljs-variable">${AA[@]}</spa
 $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA[1]}</span> :  <span class="hljs-variable">${AA[2]}</span> : <span class="hljs-variable">${AA[3]}</span>
 <span class="hljs-number">22</span> : <span class="hljs-number">44</span> : <span class="hljs-number">55</span>
 </code></pre>
-<p>null &#xAC12;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294; &#xC6D0;&#xC18C; &#xC0AD;&#xC81C;&#xD558;&#xAE30; : unset &#xD55C; &#xC6D0;&#xC18C;&#xB294; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xC6D0;&#xC18C;&#xC778; &#xBC18;&#xBA74;&#xC5D0; null &#xAC12;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294; &#xC6D0;&#xC18C;&#xB294; &#xC874;&#xC7AC;&#xD558;&#xACE0; &#xC788;&#xB294; &#xC6D0;&#xC18C;&#xC785;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC0AD;&#xC81C;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h5 id="null-&#xAC12;&#xC744;-&#xAC00;&#xC9C0;&#xACE0;-&#xC788;&#xB294;-&#xC6D0;&#xC18C;-&#xC0AD;&#xC81C;&#xD558;&#xAE30;">null &#xAC12;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294; &#xC6D0;&#xC18C; &#xC0AD;&#xC81C;&#xD558;&#xAE30;</h5>
+<p>unset &#xD55C; &#xC6D0;&#xC18C;&#xB294; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xC6D0;&#xC18C;&#xC778; &#xBC18;&#xBA74;&#xC5D0; null &#xAC12;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294; &#xC6D0;&#xC18C;&#xB294; &#xC874;&#xC7AC;&#xD558;&#xACE0; &#xC788;&#xB294; &#xC6D0;&#xC18C;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC0AD;&#xC81C;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ AA=<span class="hljs-string">&quot;:arch linux:::ubuntu linux::::fedora linux::&quot;</span>
 
-$ IFS=: <span class="hljs-built_in">read</span> -ra ARR &lt;&lt;&lt;  <span class="hljs-string">&quot;<span class="hljs-variable">$AA</span>&quot;</span>
+$ IFS=: <span class="hljs-built_in">read</span> <span class="hljs-operator">-a</span> ARR &lt;&lt;&lt;  <span class="hljs-string">&quot;<span class="hljs-variable">$AA</span>&quot;</span>
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${#ARR[@]}</span>
 <span class="hljs-number">10</span>
@@ -1714,7 +1723,7 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span 
 <span class="hljs-function"><span class="hljs-title">f2</span></span>() {
     <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span>
 
-    <span class="hljs-built_in">local</span> ARR=( <span class="hljs-string">&quot;<span class="hljs-variable">${!2}</span>&quot;</span> )      <span class="hljs-comment"># &apos;$2&apos; &#xAC12;&#xC740; &apos;AA[@]&apos;</span>
+    <span class="hljs-built_in">local</span> ARR=( <span class="hljs-string">&quot;<span class="hljs-variable">${!2}</span>&quot;</span> )      <span class="hljs-comment"># !2 -&gt; $2 -&gt; AA[@]</span>
 
     <span class="hljs-keyword">for</span> v <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;<span class="hljs-variable">${ARR[@]}</span>&quot;</span>; <span class="hljs-keyword">do</span>
         <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$v</span>&quot;</span>
