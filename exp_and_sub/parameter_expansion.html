@@ -1293,15 +1293,21 @@ this.is.a.inventory.tar
 $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA%%.*}</span>              <span class="hljs-comment"># &#xB4A4;&#xC5D0;&#xC11C; &#xBD80;&#xD130; longest match</span>
 this
 
-
 <span class="hljs-comment"># &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xB97C; &#xD3EC;&#xD568;&#xD55C; &#xD30C;&#xC77C;&#xBA85;&#xC5D0;&#xC11C; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC640; &#xD30C;&#xC77C;&#xBA85;&#xC744; &#xBD84;&#xB9AC;&#xD558;&#xAE30;</span>
-AA=<span class="hljs-string">&quot;/home/bash/bash_hacker.txt&quot;</span>
+AA=<span class="hljs-string">&quot;/home/mug896/bash.txt&quot;</span>
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA%/*}</span>               <span class="hljs-comment"># &#xB514;&#xB809;&#xD1A0;&#xB9AC; &#xBD80;&#xBD84; &#xAD6C;&#xD558;&#xAE30;</span>
-/home/bash
+/home/mug896
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA##*/}</span>              <span class="hljs-comment"># &#xD30C;&#xC77C;&#xBA85; &#xBD80;&#xBD84; &#xAD6C;&#xD558;&#xAE30;</span>
-bash_hacker.txt
+bash.txt
+
+<span class="hljs-comment"># &apos;~&apos; &#xBB38;&#xC790;&#xB294; escape &#xD574;&#xC57C;&#xD55C;&#xB2E4;.</span>
+$ AA=~temp
+$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA#~}</span>
+~temp
+$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA#\~}</span>
+temp
 </code></pre>
 <p>&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xD30C;&#xC77C; &#xC2E4;&#xD589;&#xC2DC; &#xB514;&#xB809;&#xD1A0;&#xB9AC; &#xAD6C;&#xD558;&#xB294; &#xBC29;&#xBC95;</p>
 <pre><code class="lang-bash"><span class="hljs-shebang">#!/bin/sh
