@@ -1602,13 +1602,17 @@ Arch Unix Ubuntu Linux Fedora Linux
 $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA//Linux/Unix}</span>              <span class="hljs-comment"># Linux &#xAC00; &#xBAA8;&#xB450; Unix &#xB85C; &#xBC14;&#xB00C;&#xC600;&#xB2E4;</span>
 Arch Unix Ubuntu Unix Fedora Unix
 
-$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA/Linux}</span>                    <span class="hljs-comment"># &#xBC14;&#xAFB8;&#xB294; &#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xC8FC;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xB9E4;&#xCE6D;&#xB418;&#xB294; &#xBD80;&#xBD84;&#xC774; &#xC0AD;&#xC81C;&#xB41C;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA/Linux/}</span>                   <span class="hljs-comment"># &#xBC14;&#xAFB8;&#xB294; &#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xC8FC;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xB9E4;&#xCE6D;&#xB418;&#xB294; &#xBD80;&#xBD84;&#xC774; &#xC0AD;&#xC81C;&#xB41C;&#xB2E4;.</span>
 Arch Ubuntu Linux Fedora Linux
 
-$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA//Linux}</span>                  
+$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA//Linux/}</span>                  
 Arch Ubuntu Fedora
 
------------------------------------------
+$ AA=foo456
+$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA//[^0-9]/}</span>        <span class="hljs-comment"># &#xC22B;&#xC790;&#xAC00; &#xC544;&#xB2CC; &#xBB38;&#xC790;&#xB97C; &#xBAA8;&#xB450; &#xC0AD;&#xC81C;</span>
+<span class="hljs-number">456</span>
+----------------------------------------------------
+
 $ AA=<span class="hljs-string">&quot;Linux Ubuntu Linux Fedora Linux&quot;</span>
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA/#Linux/XXX}</span>               <span class="hljs-comment"># &apos;#Linux&apos; &#xB294; &#xB9E8; &#xC55E; &#xB2E8;&#xC5B4;&#xB97C; &#xC758;&#xBBF8;</span>
