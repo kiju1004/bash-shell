@@ -1320,7 +1320,7 @@ $ find -type f -print0 | xargs -<span class="hljs-number">0</span> -i ls <span c
 <span class="hljs-string">&quot;\e[18~&quot;</span>: <span class="hljs-string">&quot;\C-k\C-uvi ~/.bashrc.d/aliases/aliases.sh\C-m&quot;</span>
 
 <span class="hljs-comment"># Shift-F7 &#xD0A4;&#xB97C; &#xB204;&#xB974;&#xBA74; source &#xBA85;&#xB839;&#xC73C;&#xB85C; alias &#xD30C;&#xC77C;&#xC744; &#xB2E4;&#xC2DC; &#xC77D;&#xC5B4;&#xB4E4;&#xC784;</span>
-<span class="hljs-string">&quot;\e[18;2~&quot;</span>: <span class="hljs-string">&quot;\C-k\C-uunalias <span class="hljs-variable">${!BASH_ALIASES[@]}</span>; for f in ~/.bashrc.d/aliases/*.sh; do source \&quot;<span class="hljs-variable">$f</span>\&quot;; done\C-m&quot;</span>
+<span class="hljs-string">&quot;\e[18;2~&quot;</span>: <span class="hljs-string">&quot;\C-k\C-uunalias -a; for f in ~/.bashrc.d/aliases/*.sh; do . \&quot;<span class="hljs-variable">$f</span>\&quot;; done\C-m&quot;</span>
 </code></pre>
 <p>aliases.sh &#xD30C;&#xC77C; &#xC608;&#xC81C;</p>
 <pre><code class="lang-bash"><span class="hljs-built_in">alias</span> ps3=<span class="hljs-string">&apos;ps fo user,ppid,pid,pgid,sid,tty,stat,args&apos;</span>
