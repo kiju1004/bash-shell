@@ -1530,9 +1530,9 @@ files=<span class="hljs-string">&quot;aaa.c bbb.c ccc.c&quot;</span>
 
 <span class="hljs-built_in">set</span> -- <span class="hljs-variable">$files</span>
 
-<span class="hljs-function"><span class="hljs-title">join</span></span>() { <span class="hljs-built_in">local</span> IFS=<span class="hljs-variable">$1</span>; <span class="hljs-built_in">shift</span>; <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;$*&quot;</span> ;}
+<span class="hljs-function"><span class="hljs-title">join2</span></span>() { <span class="hljs-built_in">local</span> IFS=<span class="hljs-variable">$1</span>; <span class="hljs-built_in">shift</span>; <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;$*&quot;</span> ;}
 
-join_files=$( join <span class="hljs-string">&quot;:&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$@</span>&quot;</span> )
+join_files=$( join2 <span class="hljs-string">&quot;:&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$@</span>&quot;</span> )
 <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$join_files</span>&quot;</span>
 
 <span class="hljs-comment">############# output #############</span>

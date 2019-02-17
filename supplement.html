@@ -1759,7 +1759,7 @@ CLONE_FS &#xC740; &#xD30C;&#xC77C;&#xC2DC;&#xC2A4;&#xD15C;&#xC744; &#xACF5;&#xC7
     <span class="hljs-keyword">pthread_t</span> threads[NUM_THREADS];
     <span class="hljs-keyword">int</span> rc;
     <span class="hljs-keyword">long</span> t;
-    <span class="hljs-keyword">for</span>(t=<span class="hljs-number">0</span>; t&lt;NUM_THREADS; t++){
+    <span class="hljs-keyword">for</span>(t=<span class="hljs-number">0</span>; t &lt; NUM_THREADS; t++){
        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;In main: creating thread %ld\n&quot;</span>, t);
        rc = pthread_create(&amp;threads[t], <span class="hljs-literal">NULL</span>, PrintHello, (<span class="hljs-keyword">void</span> *)t);
        <span class="hljs-keyword">if</span> (rc){
@@ -1774,9 +1774,9 @@ CLONE_FS &#xC740; &#xD30C;&#xC77C;&#xC2DC;&#xC2A4;&#xD15C;&#xC744; &#xACF5;&#xC7
 
 -------------------------------------------------
 
-$ gcc -o tls tls.c -l pthread
+$ gcc -o thread thread.c -l pthread
 
-$ strace -o thread.strace -f -e %process ./tls
+$ strace -o thread.strace -f -e %process ./thread
 </code></pre>
 <blockquote>
 <p>thread &#xB294; &#xAC01; &#xD558;&#xB4DC;&#xC6E8;&#xC5B4; &#xBC34;&#xB354;&#xB9C8;&#xB2E4; &#xAD6C;&#xD604;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC774; &#xB2EC;&#xB77C;&#xC11C; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBA38;&#xAC00; portable &#xD55C; &#xCF54;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD558;&#xAE30; &#xC5B4;&#xB824;&#xC6E0;&#xB2E4;&#xACE0; &#xD569;&#xB2C8;&#xB2E4;.

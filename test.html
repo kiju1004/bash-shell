@@ -1317,11 +1317,11 @@ $ [  ]; <span class="hljs-built_in">echo</span> $?
 <span class="hljs-number">1</span>
 $ [ <span class="hljs-string">&quot;&quot;</span> ]; <span class="hljs-built_in">echo</span> $?
 <span class="hljs-number">1</span>
-$ [ <span class="hljs-variable">$asdfgh</span> ]; <span class="hljs-built_in">echo</span> $?   <span class="hljs-comment"># &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xBCC0;&#xC218;</span>
+$ [ <span class="hljs-variable">$asdfgh</span> ]; <span class="hljs-built_in">echo</span> $?     <span class="hljs-comment"># &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xBCC0;&#xC218;</span>
 <span class="hljs-number">1</span>
 
 $ AA=<span class="hljs-string">&quot;&quot;</span>
-$ [ <span class="hljs-variable">$AA</span> ]; <span class="hljs-built_in">echo</span> $?       <span class="hljs-comment"># null &#xAC12; &#xBCC0;&#xC218;</span>
+$ [ <span class="hljs-string">&quot;<span class="hljs-variable">$AA</span>&quot;</span> ]; <span class="hljs-built_in">echo</span> $?       <span class="hljs-comment"># null &#xAC12; &#xBCC0;&#xC218;</span>
 <span class="hljs-number">1</span>
 
 <span class="hljs-comment">####### null &#xC774; &#xC544;&#xB2CC; &#xAC12;&#xC740; &#xBAA8;&#xB450; true &#xC774;&#xB2E4; #######</span>
@@ -1333,6 +1333,10 @@ $ [ <span class="hljs-number">1</span> ]; <span class="hljs-built_in">echo</span
 $ [ a ]; <span class="hljs-built_in">echo</span> $?
 <span class="hljs-number">0</span>
 $ [ -n ]; <span class="hljs-built_in">echo</span> $?
+<span class="hljs-number">0</span>
+
+$ AA=<span class="hljs-string">&quot; &quot;</span>
+$ [ <span class="hljs-string">&quot;<span class="hljs-variable">$AA</span>&quot;</span> ]; <span class="hljs-built_in">echo</span> $?
 <span class="hljs-number">0</span>
 </code></pre>
 <h3 id="false-&#xAC12;&#xC774;-0-">false &#xAC12;&#xC774; 0 ?</h3>

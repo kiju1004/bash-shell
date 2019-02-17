@@ -1415,7 +1415,7 @@ $ <span class="hljs-built_in">echo</span> $?
 <span class="hljs-number">1</span>
 </code></pre>
 <h3 id="&#xC608;&#xC81C;-">&#xC608;&#xC81C; )</h3>
-<p>&#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xC758; &#xACBD;&#xC6B0; num &#xBCC0;&#xC218;&#xC758; &#xAC12;&#xC774; 100 &#xC77C; &#xACBD;&#xC6B0;&#xB294; if &#xBE14;&#xB85D;&#xC5D0; &#xC9C4;&#xC785;&#xD558;&#xC9C0; &#xBABB;&#xD558;&#xBBC0;&#xB85C;
+<p>&#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xC758; &#xACBD;&#xC6B0; num &#xBCC0;&#xC218; &#xAC12;&#xC774; 100 &#xC77C; &#xACBD;&#xC6B0;&#xB294; if &#xBE14;&#xB85D;&#xC5D0; &#xC9C4;&#xC785;&#xD558;&#xC9C0; &#xBABB;&#xD558;&#xBBC0;&#xB85C;
 &#xBE14;&#xB85D; &#xAE30;&#xBCF8;&#xAC12;&#xC778; <code>0</code> &#xC774; &#xC801;&#xC6A9;&#xB418;&#xC5B4; &#xBC14;&#xB85C; run &#xD568;&#xC218;&#xAC00; &#xC2E4;&#xD589;&#xB429;&#xB2C8;&#xB2E4;.
 &#xADF8; &#xC678;&#xC758; &#xAC12;&#xC5D0; &#xB300;&#xD574;&#xC11C;&#xB294; if &#xBE14;&#xB85D;&#xC5D0; &#xC9C4;&#xC785;&#xC774; &#xB418;&#xC5B4; check &#xD568;&#xC218;&#xAC00; &#xC2E4;&#xD589;&#xB418;&#xACE0;
 &#xC0AC;&#xC6A9;&#xC790;&#xC5D0;&#xAC8C; yes, no &#xB97C; &#xBB3B;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
@@ -1436,8 +1436,9 @@ yes &#xB97C; &#xC120;&#xD0DD;&#xD588;&#xC744; &#xACBD;&#xC6B0; run &#xD568;&#xC2
 num=$( ... )
 
 <span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$num</span>&quot;</span> <span class="hljs-operator">-ne</span> <span class="hljs-number">100</span> ]; <span class="hljs-keyword">then</span> check; <span class="hljs-keyword">fi</span> &amp;&amp; run
+--------------------------------------------
 
-<span class="hljs-comment"># &#xC704; &#xBB38;&#xC7A5;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740;&#xAC83; &#xC785;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-comment"># &#xC704; &#xB9C8;&#xC9C0;&#xB9C9; &#xBB38;&#xC7A5;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740;&#xAC83; &#xC785;&#xB2C8;&#xB2E4;.</span>
 <span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$num</span>&quot;</span> <span class="hljs-operator">-ne</span> <span class="hljs-number">100</span> ]; <span class="hljs-keyword">then</span>
     check &amp;&amp; run
 <span class="hljs-keyword">else</span> 
