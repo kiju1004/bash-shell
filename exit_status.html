@@ -1251,10 +1251,15 @@ $ <span class="hljs-number">0</span> &amp;&amp; <span class="hljs-built_in">echo
 <span class="hljs-number">0</span>: <span class="hljs-built_in">command</span> not found
 </code></pre>
 <p>&#xBA85;&#xB839;&#xC758; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC740; <code>$?</code> &#xBCC0;&#xC218;&#xB97C; &#xD1B5;&#xD574; &#xC54C;&#xC544;&#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">$ <span class="hljs-literal">true</span>; <span class="hljs-built_in">echo</span> $?       <span class="hljs-comment"># &#xC815;&#xC0C1; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC740; &apos;0&apos;</span>
+<pre><code class="lang-bash">$ date
+Wed Feb <span class="hljs-number">20</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span>:<span class="hljs-number">04</span> KST <span class="hljs-number">2019</span>
+$ <span class="hljs-built_in">echo</span> $?                      <span class="hljs-comment"># &#xC815;&#xC0C1; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC740; &apos;0&apos;</span>
 <span class="hljs-number">0</span>
 
-$ <span class="hljs-literal">false</span>; <span class="hljs-built_in">echo</span> $?      <span class="hljs-comment"># &apos;0&apos; &#xC774;&#xC678;&#xC758; &#xAC12;&#xC740; &#xBE44;&#xC815;&#xC0C1; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;</span>
+$ date -@
+date: invalid option -- <span class="hljs-string">&apos;@&apos;</span>
+Try <span class="hljs-string">&apos;date --help&apos;</span> <span class="hljs-keyword">for</span> more information.
+$ <span class="hljs-built_in">echo</span> $?                      <span class="hljs-comment"># &apos;0&apos; &#xC774;&#xC678;&#xC758; &#xAC12;&#xC740; &#xBE44;&#xC815;&#xC0C1; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;</span>
 <span class="hljs-number">1</span>
 ..........................................................
 
@@ -1288,7 +1293,8 @@ test &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD574; &#xC9C1;&#xC811; <code>$?
 <p>script &#xD30C;&#xC77C;&#xC774;&#xB098; subshell &#xC740; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xC0C8;&#xB85C; &#xC0DD;&#xC131;&#xB418;&#xB294; &#xAC83;&#xC774;&#xBBC0;&#xB85C; 
 &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC744; &#xC9C0;&#xC815;&#xD560;&#xB54C; <code>exit</code> &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xD569;&#xB2C8;&#xB2E4;.
 function &#xC774;&#xB098; source &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xC77D;&#xC5B4;&#xB4E4;&#xC774;&#xB294; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; <code>return</code> &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xD569;&#xB2C8;&#xB2E4;.
-&#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; &#xC2E4;&#xD589;&#xB41C; &#xBA85;&#xB839;&#xC758; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC774; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+&#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; &#xC2E4;&#xD589;&#xB41C; &#xBA85;&#xB839;&#xC758; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC774; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.
+&#xB530;&#xB77C;&#xC11C; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xC791;&#xC131;&#xC2DC; &#xC9C1;&#xC811; <code>$?</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xB418;&#xB294; &#xACBD;&#xC6B0;&#xB294; &#xB9CE;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># &#xB9C8;&#xC9C0;&#xB9C9; &#xBA85;&#xB839;&#xC758; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC774; &#xC0AC;&#xC6A9;&#xB418;&#xBBC0;&#xB85C; &#xB530;&#xB85C; return &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC5C6;&#xB2E4;.</span>
 <span class="hljs-function"><span class="hljs-title">command_exist</span></span> () {
     <span class="hljs-built_in">which</span> <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span> &gt; /dev/null;
@@ -1311,14 +1317,14 @@ function &#xC774;&#xB098; source &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xC77D;&#xC5B
 }
 ---------------------------------------
 
-$ <span class="hljs-function"><span class="hljs-title">f1</span></span>() { <span class="hljs-literal">true</span> &amp;&amp; <span class="hljs-built_in">return</span>; <span class="hljs-built_in">echo</span> end... ;}     <span class="hljs-comment"># true &#xAC00; &#xC885;&#xB8CC;&#xC0C1;&#xD0DC; &#xAC12;&#xC774; &#xB41C;&#xB2E4;.</span>
-$ f1
-$ <span class="hljs-built_in">echo</span> $?
+$ <span class="hljs-function"><span class="hljs-title">func1</span></span>() { <span class="hljs-literal">true</span> &amp;&amp; <span class="hljs-built_in">return</span>; <span class="hljs-built_in">echo</span> end... ;}   
+$ func1
+$ <span class="hljs-built_in">echo</span> $?     <span class="hljs-comment"># &#xB9C8;&#xC9C0;&#xB9C9;&#xC5D0; &#xC2E4;&#xD589;&#xB41C; true &#xBA85;&#xB839;&#xC758; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC774; &#xB41C;&#xB2E4;.</span>
 <span class="hljs-number">0</span>
 
-$ <span class="hljs-function"><span class="hljs-title">f1</span></span>() { <span class="hljs-literal">false</span> || <span class="hljs-built_in">return</span>; <span class="hljs-built_in">echo</span> end... ;}    <span class="hljs-comment"># false &#xAC00; &#xC885;&#xB8CC;&#xC0C1;&#xD0DC; &#xAC12;&#xC774; &#xB41C;&#xB2E4;.</span>
-$ f1
-$ <span class="hljs-built_in">echo</span> $?
+$ <span class="hljs-function"><span class="hljs-title">func1</span></span>() { <span class="hljs-literal">false</span> || <span class="hljs-built_in">return</span>; <span class="hljs-built_in">echo</span> end... ;}  
+$ func1
+$ <span class="hljs-built_in">echo</span> $?     <span class="hljs-comment"># &#xB9C8;&#xC9C0;&#xB9C9;&#xC5D0; &#xC2E4;&#xD589;&#xB41C; false &#xBA85;&#xB839;&#xC758; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC774; &#xB41C;&#xB2E4;.</span>
 <span class="hljs-number">1</span>
 
 $ ( <span class="hljs-literal">true</span> &amp;&amp; <span class="hljs-built_in">exit</span>; <span class="hljs-built_in">echo</span> end... ); <span class="hljs-built_in">echo</span> $?
