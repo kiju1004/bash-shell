@@ -1583,6 +1583,11 @@ $ sh -c <span class="hljs-string">&apos;AA=200; echo $AA&apos;</span>  <span cla
 <span class="hljs-number">110</span>M    /home/mug896/.cache/apt-file 
 ...
 ...
+
+<span class="hljs-comment"># &#xC704; &#xBA85;&#xB839;&#xC740; &#xC2E4;&#xC81C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xAC04;&#xB2E8;&#xD788; &#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &apos;*&apos; &#xBB38;&#xC790; &#xB4A4;&#xC758; &apos;/&apos; &#xB294; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xB97C; &#xB098;&#xD0C0;&#xB0C4;</span>
+$ du -hs ~/.cache/*/ | sort -hr      
+<span class="hljs-comment"># &apos;.&apos; &#xC73C;&#xB85C; &#xC2DC;&#xC791;&#xD558;&#xB294; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xB3C4; &#xD3EC;&#xD568;&#xD560; &#xACBD;&#xC6B0;</span>
+$ du -hs ~/.cache/{*/,.*[^.]*/} | sort -hr
 </code></pre>
 <p>&#xC704;&#xC640; &#xB3D9;&#xC77C;&#xD55C; &#xC5ED;&#xD560;&#xC744; &#xD558;&#xB294; &#xBA85;&#xB839;&#xC744; single, double quotes &#xC744; &#xBE44;&#xAD50;&#xD574;&#xBCF4;&#xAE30; &#xC704;&#xD574;
 <code>sh -c</code> &#xB97C; &#xC774;&#xC6A9;&#xD574; &#xC791;&#xC131;&#xD55C; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
@@ -1640,7 +1645,7 @@ sed -r <span class="hljs-string">&apos;s/&apos;</span><span class="hljs-string">
 <code>sh -c &apos;...&apos;</code> &#xB0B4;&#xC5D0;&#xC11C; &#xC2E4;&#xD589;&#xB418;&#xB294; awk &#xBA85;&#xB839;&#xC5D0;&#xC11C;&#xB3C4; single quotes &#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p><a name="example"></a></p>
 <pre><code class="lang-bash">$ find * -name <span class="hljs-string">&apos;Packages*&apos;</span> -type f -exec \
-    sh -c <span class="hljs-string">&apos;echo $(md5sum -b &quot;{}&quot; | awk &apos;</span>\<span class="hljs-string">&apos;&apos;</span>{<span class="hljs-built_in">print</span> <span class="hljs-variable">$1</span>}<span class="hljs-string">&apos;\&apos;</span><span class="hljs-string">&apos;) $(stat -c %s &quot;{}&quot;) &quot;{}&quot;&apos;</span> \;
+    sh -c <span class="hljs-string">&apos;echo $(md5sum &quot;{}&quot; | awk &apos;</span>\<span class="hljs-string">&apos;&apos;</span>{<span class="hljs-built_in">print</span> <span class="hljs-variable">$1</span>}<span class="hljs-string">&apos;\&apos;</span><span class="hljs-string">&apos;) $(stat -c %s &quot;{}&quot;) &quot;{}&quot;&apos;</span> \;
 
 b49dd0f63bca9b3a139c5af3dd94c816 <span class="hljs-number">380</span> Packages
 e805c26ff46c6e138e3<span class="hljs-built_in">cd</span>198cff281ea <span class="hljs-number">301</span> Packages.bz2
