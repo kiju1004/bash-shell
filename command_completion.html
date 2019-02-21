@@ -1515,16 +1515,16 @@ $ hello foo&amp;bar.cvs
 <p>&#xC774;&#xB984;&#xC744; &#xC644;&#xC131;&#xD558;&#xACE0; &#xB098;&#xBA74; &#xB2E4;&#xC74C; &#xC774;&#xB984;&#xC744; &#xC704;&#xD574; &#xACF5;&#xBC31;&#xC744; &#xB744;&#xC6B0;&#xAC8C; &#xB418;&#xB294;&#xB370;&#xC694;. &#xC774; &#xC635;&#xC158;&#xC740; &#xADF8;&#xAC78; &#xBC29;&#xC9C0;&#xD569;&#xB2C8;&#xB2E4;.</p>
 </li>
 </ul>
-<pre><code class="lang-bash">$ complete -W <span class="hljs-string">&apos;aaa bbb ccc&apos;</span>  hello
+<pre><code class="lang-bash">$ complete -W <span class="hljs-string">&apos;aaa= bbb= ccc=&apos;</span>  hello
 
 <span class="hljs-comment"># &#xC774;&#xB984;&#xC744; &#xC644;&#xC131;&#xD558;&#xACE0; &#xB098;&#xBA74; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xACF5;&#xBC31;&#xC744; &#xB744;&#xC6B4;&#xB2E4;.</span>
-$ hello aaa [stop] 
+$ hello aaa= [stop] 
 
 <span class="hljs-comment"># &#xC774;&#xBC88;&#xC5D0;&#xB294; -o nospace &#xC635;&#xC158; &#xC0AC;&#xC6A9;</span>
-$ complete -o nospace -W <span class="hljs-string">&apos;aaa bbb ccc&apos;</span>  hello
+$ complete -o nospace -W <span class="hljs-string">&apos;aaa= bbb= ccc=&apos;</span>  hello
 
 <span class="hljs-comment"># &#xC774;&#xB984;&#xC744; &#xC644;&#xC131;&#xD558;&#xACE0; &#xB098;&#xC11C; &#xACF5;&#xBC31;&#xC744; &#xB744;&#xC6B0;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</span>
-$ hello aaa[stop]
+$ hello aaa=[stop]
 </code></pre>
 <ul>
 <li><p><strong>plusdirs</strong>  </p>
