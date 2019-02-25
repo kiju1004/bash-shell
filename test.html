@@ -1457,7 +1457,10 @@ $ [[ -n <span class="hljs-string">&quot;<span class="hljs-variable">$AA</span>&q
 <h1 id="quiz">Quiz</h1>
 <p>test &#xBA85;&#xB839;&#xC5D0;&#xC11C; &#xAC12;&#xC744; &#xBE44;&#xAD50;&#xD560; &#xB54C; 8 &#xC9C4;&#xC218;, 16 &#xC9C4;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
 <p><code>$(( ... ))</code> <a href="special_expressions.html">&#xD2B9;&#xC218; &#xD45C;&#xD604;&#xC2DD;</a>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">test</span> <span class="hljs-number">255</span> <span class="hljs-operator">-eq</span> $(( <span class="hljs-number">0</span>xff )) &amp;&amp; <span class="hljs-built_in">echo</span> Y           <span class="hljs-comment"># 16 &#xC9C4;&#xC218;</span>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> $(( <span class="hljs-number">0</span>xff ))
+<span class="hljs-number">255</span>
+
+$ <span class="hljs-built_in">test</span> <span class="hljs-number">255</span> <span class="hljs-operator">-eq</span> $(( <span class="hljs-number">0</span>xff )) &amp;&amp; <span class="hljs-built_in">echo</span> Y           <span class="hljs-comment"># 16 &#xC9C4;&#xC218;</span>
 Y
 
 $ <span class="hljs-built_in">test</span> <span class="hljs-number">255</span> <span class="hljs-operator">-eq</span> $(( <span class="hljs-number">0377</span> )) &amp;&amp; <span class="hljs-built_in">echo</span> Y           <span class="hljs-comment"># 8 &#xC9C4;&#xC218;</span>
@@ -1465,6 +1468,13 @@ Y
 
 $ <span class="hljs-built_in">test</span> $(( <span class="hljs-number">0377</span> )) <span class="hljs-operator">-eq</span> $(( <span class="hljs-number">0</span>xff )) &amp;&amp; <span class="hljs-built_in">echo</span> Y
 Y
+--------------------------------------------
+
+$ readelf -WS /bin/date | grep interp
+  [ <span class="hljs-number">1</span>] .interp           PROGBITS        <span class="hljs-number">00000000000002</span>a8 <span class="hljs-number">0002</span>a8 <span class="hljs-number">00001</span>c <span class="hljs-number">00</span>   A  <span class="hljs-number">0</span>   <span class="hljs-number">0</span>  <span class="hljs-number">1</span>
+
+$ dd skip=$((<span class="hljs-number">0</span>x2a8)) bs=<span class="hljs-number">1</span> count=$((<span class="hljs-number">0</span>x1c)) <span class="hljs-keyword">if</span>=/bin/date <span class="hljs-number">2</span>&gt; /dev/null
+/lib64/ld-linux-x86-<span class="hljs-number">64</span>.so.<span class="hljs-number">2</span>
 </code></pre>
 
                     
