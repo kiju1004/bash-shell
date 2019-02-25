@@ -1475,6 +1475,25 @@ $ readelf -WS /bin/date | grep interp
 
 $ dd skip=$((<span class="hljs-number">0</span>x2a8)) bs=<span class="hljs-number">1</span> count=$((<span class="hljs-number">0</span>x1c)) <span class="hljs-keyword">if</span>=/bin/date <span class="hljs-number">2</span>&gt; /dev/null
 /lib64/ld-linux-x86-<span class="hljs-number">64</span>.so.<span class="hljs-number">2</span>
+
+$ readelf -SW /bin/date | sed -n <span class="hljs-string">&apos;/plt /{/AX/p}&apos;</span>
+  [<span class="hljs-number">12</span>] .plt              PROGBITS        <span class="hljs-number">0000000000003020</span> <span class="hljs-number">003020</span> <span class="hljs-number">0004</span>c0 <span class="hljs-number">10</span>  AX  <span class="hljs-number">0</span>   <span class="hljs-number">0</span> <span class="hljs-number">16</span>
+
+$ dd skip=$((<span class="hljs-number">0</span>x3020)) bs=<span class="hljs-number">1</span> count=$((<span class="hljs-number">0</span>x4c0)) <span class="hljs-keyword">if</span>=/bin/date <span class="hljs-number">2</span>&gt; /dev/null | ndisasm -b <span class="hljs-number">64</span> - 
+<span class="hljs-number">00000000</span>  FF354A7D0100      push qword [rel <span class="hljs-number">0</span>x17d50]
+<span class="hljs-number">00000006</span>  FF254C7D0100      jmp [rel <span class="hljs-number">0</span>x17d58]
+<span class="hljs-number">0000000</span>C  <span class="hljs-number">0</span>F1F4000          nop dword [rax+<span class="hljs-number">0</span>x0]
+<span class="hljs-number">00000010</span>  FF254A7D0100      jmp [rel <span class="hljs-number">0</span>x17d60]
+<span class="hljs-number">00000016</span>  <span class="hljs-number">6800000000</span>        push qword <span class="hljs-number">0</span>x0
+<span class="hljs-number">0000001</span>B  E9E0FFFFFF        jmp <span class="hljs-number">0</span>x0
+<span class="hljs-number">00000020</span>  FF25427D0100      jmp [rel <span class="hljs-number">0</span>x17d68]
+<span class="hljs-number">00000026</span>  <span class="hljs-number">6801000000</span>        push qword <span class="hljs-number">0</span>x1
+<span class="hljs-number">0000002</span>B  E9D0FFFFFF        jmp <span class="hljs-number">0</span>x0
+<span class="hljs-number">00000030</span>  FF253A7D0100      jmp [rel <span class="hljs-number">0</span>x17d70]
+<span class="hljs-number">00000036</span>  <span class="hljs-number">6802000000</span>        push qword <span class="hljs-number">0</span>x2
+<span class="hljs-number">0000003</span>B  E9C0FFFFFF        jmp <span class="hljs-number">0</span>x0
+. . .
+. . .
 </code></pre>
 
                     
