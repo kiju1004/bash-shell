@@ -1385,20 +1385,28 @@ TWO
 THREE
 </code></pre>
 <h3 id="sort-&#xBA85;&#xB839;">sort &#xBA85;&#xB839;</h3>
-<p>sort, wc, column &#xAC19;&#xC740; &#xBA85;&#xB839;&#xB4E4;&#xC740; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xD30C;&#xC774;&#xD504;&#xC5D0; &#xC5F0;&#xACB0;&#xB41C; &#xC774;&#xC804; &#xBA85;&#xB839;&#xC758; &#xCD9C;&#xB825;&#xC744;
+<p>sort, column &#xAC19;&#xC740; &#xBA85;&#xB839;&#xB4E4;&#xC740; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xD30C;&#xC774;&#xD504;&#xC5D0; &#xC5F0;&#xACB0;&#xB41C; &#xC774;&#xC804; &#xBA85;&#xB839;&#xC758; &#xCD9C;&#xB825;&#xC744;
 &#xBAA8;&#xB450; &#xBC84;&#xD37C;&#xB9C1; &#xD55C;&#xD6C4;&#xC5D0; &#xC5F0;&#xC0B0;&#xC744; &#xD574;&#xC57C; &#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC774;&#xC804; &#xBA85;&#xB839; &#xC2E4;&#xD589;&#xC774; &#xC885;&#xB8CC;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xCD9C;&#xB825;&#xC774; &#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xB2E4;&#xC74C;&#xC744; &#xBCF4;&#xC2DC;&#xBA74; <code>tr</code> &#xBA85;&#xB839;&#xC758; &#xACBD;&#xC6B0; &#xB370;&#xC774;&#xD130;&#xAC00; &#xC785;&#xB825;&#xB410;&#xC744;&#xB54C; &#xBC14;&#xB85C; &#xACB0;&#xACFC;&#xAC00; &#xCD9C;&#xB825;&#xB418;&#xC9C0;&#xB9CC;
-<code>wc</code> &#xBA85;&#xB839;&#xC758; &#xACBD;&#xC6B0;&#xB294; <code>exec 3&gt;&amp;-</code> &#xC73C;&#xB85C; FD &#xB97C; close &#xD574;&#xC57C; &#xACB0;&#xACFC;&#xAC00; &#xCD9C;&#xB825;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<code>sort</code> &#xBA85;&#xB839;&#xC758; &#xACBD;&#xC6B0;&#xB294; FD &#xB97C; close &#xD574;&#xC57C; &#xACB0;&#xACFC;&#xAC00; &#xCD9C;&#xB825;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">exec</span> <span class="hljs-number">3</span>&gt; &gt;( tr a-z A-Z )
 $ <span class="hljs-built_in">echo</span> hello &gt;&amp;<span class="hljs-number">3</span>
 HELLO
 $ <span class="hljs-built_in">exec</span> <span class="hljs-number">3</span>&gt;&amp;-
 -------------------------
 
-$ <span class="hljs-built_in">exec</span> <span class="hljs-number">3</span>&gt; &gt;( wc )
-$ <span class="hljs-built_in">echo</span> hello &gt;&amp;<span class="hljs-number">3</span> 
-$ <span class="hljs-built_in">exec</span> <span class="hljs-number">3</span>&gt;&amp;-              <span class="hljs-comment"># FD &#xB97C; close &#xD574;&#xC57C; &#xCD9C;&#xB825;&#xC774;&#xB41C;&#xB2E4;.</span>
-      <span class="hljs-number">1</span>       <span class="hljs-number">1</span>       <span class="hljs-number">6</span>
+$ <span class="hljs-built_in">exec</span> <span class="hljs-number">3</span>&gt; &gt;( sort )
+$ shuf -i <span class="hljs-number">1</span>-<span class="hljs-number">9</span> &gt;&amp;<span class="hljs-number">3</span>
+$ <span class="hljs-built_in">exec</span> <span class="hljs-number">3</span>&gt;&amp;-          <span class="hljs-comment"># FD &#xB97C; close &#xD574;&#xC57C; &#xCD9C;&#xB825;&#xC774;&#xB41C;&#xB2E4;.</span>
+<span class="hljs-number">1</span>
+<span class="hljs-number">2</span>
+<span class="hljs-number">3</span>
+<span class="hljs-number">4</span>
+<span class="hljs-number">5</span>
+<span class="hljs-number">6</span>
+<span class="hljs-number">7</span>
+<span class="hljs-number">8</span>
+<span class="hljs-number">9</span>
 </code></pre>
 <h2 id="buffer-sizes">Buffer sizes</h2>
 <p>Default Buffer sizes</p>
