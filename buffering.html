@@ -1315,7 +1315,7 @@ dd, cat &#xBA85;&#xB839;&#xAC19;&#xC774; i/o &#xC5D0; stream &#xC744; &#xC0AC;&#
 
 $ <span class="hljs-built_in">echo</span> bar &gt;&amp; <span class="hljs-variable">${COPROC[1]}</span>
 
-$ <span class="hljs-built_in">read</span> -r res &lt;&amp; <span class="hljs-variable">${COPROC[0]}</span>
+$ <span class="hljs-built_in">read</span> res &lt;&amp; <span class="hljs-variable">${COPROC[0]}</span>
 ^C
 --------------------------------
 
@@ -1324,7 +1324,7 @@ $ coproc awk <span class="hljs-string">&apos;{ print $1 + $2 }&apos;</span>
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> &gt;&amp; <span class="hljs-variable">${COPROC[1]}</span>
 
-$ <span class="hljs-built_in">read</span> -r res &lt;&amp; <span class="hljs-variable">${COPROC[0]}</span>
+$ <span class="hljs-built_in">read</span> res &lt;&amp; <span class="hljs-variable">${COPROC[0]}</span>
 ^C
 </code></pre>
 <p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; <code>-u | --unbuffered</code> &#xC635;&#xC158;, <code>fflush()</code> &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD574;&#xACB0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
@@ -1333,7 +1333,7 @@ $ <span class="hljs-built_in">read</span> -r res &lt;&amp; <span class="hljs-var
 
 $ <span class="hljs-built_in">echo</span> bar &gt;&amp; <span class="hljs-variable">${COPROC[1]}</span>
 
-$ <span class="hljs-built_in">read</span> -r res &lt;&amp; <span class="hljs-variable">${COPROC[0]}</span>
+$ <span class="hljs-built_in">read</span> res &lt;&amp; <span class="hljs-variable">${COPROC[0]}</span>
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$res</span>
 foobar
@@ -1344,7 +1344,7 @@ $ coproc awk <span class="hljs-string">&apos;{ print $1 + $2; fflush() }&apos;</
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> &gt;&amp; <span class="hljs-variable">${COPROC[1]}</span>
 
-$ <span class="hljs-built_in">read</span> -r res &lt;&amp; <span class="hljs-variable">${COPROC[0]}</span>
+$ <span class="hljs-built_in">read</span> res &lt;&amp; <span class="hljs-variable">${COPROC[0]}</span>
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$res</span>
 <span class="hljs-number">3</span>
