@@ -1439,7 +1439,9 @@ $ ls <span class="hljs-operator">-l</span> outfile
 -rw-rw-r-- <span class="hljs-number">1</span> mug896 mug896 <span class="hljs-number">65536</span> <span class="hljs-number">08.03</span>.<span class="hljs-number">2015</span> <span class="hljs-number">15</span>:<span class="hljs-number">33</span> outfile
 </code></pre>
 <h3 id="multiple-writers-and-readers">Multiple writers and readers</h3>
-<p>Pipe &#xB294; &#xB370;&#xC774;&#xD130; &#xC190;&#xC2E4; &#xC5C6;&#xC774; multiple writers, multiple readers &#xB97C; &#xAC00;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB54C; &#xC785;&#xB825;&#xB418;&#xB294; &#xC21C;&#xC11C;, &#xCD9C;&#xB825;&#xB418;&#xB294; &#xC21C;&#xC11C;&#xB294; &#xC608;&#xCE21;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC74C;&#xC740; multiple writers, single reader &#xC758; &#xC608;&#xC785;&#xB2C8;&#xB2E4;.   </p>
+<p>Pipe &#xB294; &#xB370;&#xC774;&#xD130; &#xC190;&#xC2E4; &#xC5C6;&#xC774; multiple writers, multiple readers &#xB97C; &#xAC00;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB54C; &#xC785;&#xB825;&#xB418;&#xB294; &#xC21C;&#xC11C;, &#xCD9C;&#xB825;&#xB418;&#xB294; &#xC21C;&#xC11C;&#xB294; &#xC608;&#xCE21;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB2E4;&#xC74C;&#xC740; multiple writers, single reader &#xC758; &#xC608;&#xC785;&#xB2C8;&#xB2E4;.   </p>
 <pre><code class="lang-bash">$ <span class="hljs-keyword">while</span> :; <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span>  $(( i++ )); sleep <span class="hljs-number">1</span>; <span class="hljs-keyword">done</span> &gt; mypipe &amp;
 [<span class="hljs-number">1</span>] <span class="hljs-number">23084</span>
 
@@ -1462,6 +1464,27 @@ $ cat mypipe
 <span class="hljs-number">7</span>
 --- <span class="hljs-number">5</span>
 ...
+</code></pre>
+<p>&#xB2E4;&#xC74C;&#xC740; mutiple readers, single writer &#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ cat mypipe &gt; x1 &amp;       <span class="hljs-comment"># reader 1</span>
+[<span class="hljs-number">1</span>] <span class="hljs-number">10797</span>
+
+$ cat mypipe &gt; x2 &amp;       <span class="hljs-comment"># reader 2</span>
+[<span class="hljs-number">2</span>] <span class="hljs-number">10814</span>
+
+<span class="hljs-comment"># &#xC804;&#xCCB4; 10&#xB9CC; &#xB77C;&#xC778; &#xC785;&#xB825;</span>
+$ <span class="hljs-keyword">for</span> (( i=<span class="hljs-number">1</span>; i&lt;=<span class="hljs-number">100000</span>; i++ )) <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> <span class="hljs-variable">$i</span>; <span class="hljs-keyword">done</span> &gt; mypipe
+[<span class="hljs-number">1</span>]-  Done                    cat mypipe &gt; x1
+[<span class="hljs-number">2</span>]+  Done                    cat mypipe &gt; x2
+
+$ ls <span class="hljs-operator">-l</span> x1 x2
+-rw-rw-r-- <span class="hljs-number">1</span> mug896 mug896 <span class="hljs-number">262006</span> <span class="hljs-number">2019</span>-<span class="hljs-number">03</span>-<span class="hljs-number">04</span> <span class="hljs-number">12</span>:<span class="hljs-number">43</span> x1
+-rw-rw-r-- <span class="hljs-number">1</span> mug896 mug896 <span class="hljs-number">326889</span> <span class="hljs-number">2019</span>-<span class="hljs-number">03</span>-<span class="hljs-number">04</span> <span class="hljs-number">12</span>:<span class="hljs-number">43</span> x2
+
+$ wc <span class="hljs-operator">-l</span> x1 x2
+ <span class="hljs-number">44354</span> x1
+ <span class="hljs-number">55646</span> x2
+<span class="hljs-number">100000</span> total         <span class="hljs-comment"># &#xC804;&#xCCB4; &#xC785;&#xB825;&#xB41C; &#xB77C;&#xC778;&#xC218;&#xC640; &#xAC19;&#xB2E4;.</span>
 </code></pre>
 <h3 id="&#xC591;&#xBC29;&#xD5A5;-&#xD1B5;&#xC2E0;">&#xC591;&#xBC29;&#xD5A5; &#xD1B5;&#xC2E0;</h3>
 <p>&#xD30C;&#xC774;&#xD504;&#xB294; &#xB2E8;&#xBC29;&#xD5A5;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xB450; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xC11C;&#xB85C; &#xB300;&#xD654;&#xB97C; &#xB098;&#xB204;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB294; &#xB450;&#xAC1C;&#xC758; &#xD30C;&#xC774;&#xD504;&#xAC00; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.
