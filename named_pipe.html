@@ -1387,6 +1387,30 @@ $ <span class="hljs-keyword">while</span> :; <span class="hljs-keyword">do</span
 <span class="hljs-number">7</span>
 ...
 </code></pre>
+<h3 id="&#xD65C;&#xC6A9;-&#xC608;&#xC81C;-">&#xD65C;&#xC6A9; &#xC608;&#xC81C; )</h3>
+<h4 id="1">1.</h4>
+<p>&#xB2E4;&#xC74C;&#xC740; named pipe &#xB97C; &#xC774;&#xC6A9;&#xD574; &#xC911;&#xB2E8; &#xC5C6;&#xC774; &#xB370;&#xC774;&#xD130; &#xCC98;&#xB9AC;&#xD558;&#xB294; &#xC608;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<video width="768" height="212" controls preload="auto">
+  <source src="images/named_pipe1.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
+
+<h4 id="2">2.</h4>
+<p>&#xC774;&#xBC88;&#xC5D0;&#xB294; fifo_data, fifo_even, fifo_odd 3&#xAC1C;&#xB97C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC11C; &#xD504;&#xB85C;&#xC138;&#xC2A4; A &#xAC00;
+fifo_data &#xC5D0; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC785;&#xB825;&#xD558;&#xBA74; &#xD504;&#xB85C;&#xC138;&#xC2A4; B &#xB294; &#xC785;&#xB825;&#xBC1B;&#xC740; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC9DD;&#xC218;&#xC640; &#xD640;&#xC218;&#xB85C; &#xBD84;&#xB958;&#xD574;&#xC11C;
+fifo_even, fifo_odd &#xB85C; &#xAC01;&#xAC01; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.
+&#xD504;&#xB85C;&#xC138;&#xC2A4; C &#xB294; fifo_even &#xB85C;&#xBD80;&#xD130; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC785;&#xB825;&#xBC1B;&#xC544; &#xC9DD;&#xC218;&#xB97C; &#xCC98;&#xB9AC;&#xD558;&#xACE0;
+&#xD504;&#xB85C;&#xC138;&#xC2A4; D &#xB294; fifo_odd &#xB85C;&#xBD80;&#xD130; &#xD640;&#xC218;&#xB97C; &#xCC98;&#xB9AC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<video width="768" height="212" controls preload="auto">
+  <source src="images/named_pipe2.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
+
+
 <h3 id="pipe-buffer-size">Pipe buffer size</h3>
 <p>Reader &#xAC00; &#xC5C6;&#xB294; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C; writer &#xAC00; &#xD30C;&#xC774;&#xD504;&#xC5D0; &#xC4F0;&#xAE30;&#xB97C; &#xD558;&#xBA74; &#xCEE4;&#xB110;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; pipe buffer size &#xB97C; &#xC54C;&#xC544;&#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.  <code>ulimit -a</code> &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xC870;&#xD68C;&#xD574; &#xBCF4;&#xBA74; pipe size &#xAC00; 8 * 512 bytes = 4096 &#xB85C; &#xB098;&#xC624;&#xC9C0;&#xB9CC; &#xB9AC;&#xB205;&#xC2A4;&#xC758; &#xACBD;&#xC6B0; 16 &#xAC1C;&#xAE4C;&#xC9C0; &#xBC84;&#xD37C;&#xB97C; &#xD560;&#xB2F9;&#xD574; &#xC0AC;&#xC6A9;&#xD558;&#xBBC0;&#xB85C; 4096 * 16 = 65,536 &#xAE4C;&#xC9C0; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;. &#xC5EC;&#xAE30;&#xC11C; 4096 &#xC740; &#xC5EC;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xB3D9;&#xC2DC;&#xC5D0; &#xAC19;&#xC740; &#xD30C;&#xC77C;&#xC5D0; write &#xD560;&#xB54C; &#xB370;&#xC774;&#xD130;&#xAC00; &#xC11C;&#xB85C; &#xACB9;&#xCE58;&#xC9C0; &#xC54A;&#xACE0; atomic &#xD558;&#xAC8C; &#xC4F8; &#xC218; &#xC788;&#xB294; &#xD06C;&#xAE30;&#xC5D0; &#xD574;&#xB2F9;&#xD569;&#xB2C8;&#xB2E4;. </p>
 <pre><code class="lang-bash">$ grep PIPE_BUF /usr/include/linux/limits.h 
