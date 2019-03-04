@@ -1445,7 +1445,9 @@ $ ls <span class="hljs-operator">-l</span> outfile
 <p>Pipe &#xB294; &#xB370;&#xC774;&#xD130; &#xC190;&#xC2E4; &#xC5C6;&#xC774; multiple writers, multiple readers &#xB97C; &#xAC00;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xC774;&#xB54C; &#xC785;&#xB825;&#xB418;&#xB294; &#xC21C;&#xC11C;, &#xCD9C;&#xB825;&#xB418;&#xB294; &#xC21C;&#xC11C;&#xB294; &#xC608;&#xCE21;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xB2E4;&#xC74C;&#xC740; multiple writers, single reader &#xC758; &#xC608;&#xC785;&#xB2C8;&#xB2E4;.   </p>
-<pre><code class="lang-bash">$ <span class="hljs-keyword">while</span> :; <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span>  $(( i++ )); sleep <span class="hljs-number">1</span>; <span class="hljs-keyword">done</span> &gt; mypipe &amp;
+<pre><code class="lang-bash">$ mkfifo mypipe
+
+$ <span class="hljs-keyword">while</span> :; <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span>  $(( i++ )); sleep <span class="hljs-number">1</span>; <span class="hljs-keyword">done</span> &gt; mypipe &amp;
 [<span class="hljs-number">1</span>] <span class="hljs-number">23084</span>
 
 $ <span class="hljs-keyword">while</span> :; <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span>  --- $(( i++ )); sleep <span class="hljs-number">1</span>; <span class="hljs-keyword">done</span> &gt; mypipe &amp;
