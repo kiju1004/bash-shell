@@ -1248,7 +1248,7 @@
 <li>printf <code>%b</code> &#xC5D0;&#xC11C;</li>
 </ul>
 <blockquote>
-<p><code>sh</code> &#xC5D0;&#xC11C;&#xB294; echo &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD560;&#xB54C; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; <code>&quot; &quot;</code> , <code>&apos; &apos;</code> &#xC5D0;&#xC11C; escape &#xBB38;&#xC790;&#xAC00; &#xCC98;&#xB9AC; &#xB429;&#xB2C8;&#xB2E4;.<br>&#xB530;&#xB85C; &#xBA85;&#xB839;&#xC5D0; -e &#xC635;&#xC158;&#xC774; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><code>sh</code> &#xC5D0;&#xC11C;&#xB294; echo &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD560;&#xB54C; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; <code>&quot; &quot;</code> , <code>&apos; &apos;</code> &#xC5D0;&#xC11C; &#xBAA8;&#xB450; escape &#xBB38;&#xC790;&#xAC00; &#xCC98;&#xB9AC; &#xB429;&#xB2C8;&#xB2E4;.<br>&#xB530;&#xB85C; &#xBA85;&#xB839;&#xC5D0; -e &#xC635;&#xC158;&#xC774; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
 <table>
 <thead>
@@ -1401,6 +1401,7 @@ bash$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</sp
 ABC
 .............................................................
 
+<span class="hljs-comment"># $&apos; &apos; quotes &#xC758; &#xACBD;&#xC6B0;</span>
 bash$ <span class="hljs-built_in">echo</span> $<span class="hljs-string">&apos;\101\102\103&apos;</span>   
 ABC
 bash$ <span class="hljs-built_in">echo</span> $<span class="hljs-string">&apos;\0101\0102\0103&apos;</span>      <span class="hljs-comment"># \0&lt;NNN&gt; 8 &#xC9C4;&#xC218; &#xC548;&#xB428;</span>
