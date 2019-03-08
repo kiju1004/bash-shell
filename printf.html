@@ -1304,16 +1304,13 @@ $ <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;&lt;
 &lt; <span class="hljs-number">22</span> &gt;
 &lt; <span class="hljs-number">33</span> &gt;
 
-$ <span class="hljs-function"><span class="hljs-title">args</span></span>() { 
-        <span class="hljs-built_in">echo</span> COUNT: <span class="hljs-variable">$#</span>
-        <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;ARG: %s\n&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$@</span>&quot;</span>
-}
-
-$ args <span class="hljs-number">11</span> <span class="hljs-number">22</span> <span class="hljs-number">33</span>
-COUNT: <span class="hljs-number">3</span>
-ARG: <span class="hljs-number">11</span>
-ARG: <span class="hljs-number">22</span>
-ARG: <span class="hljs-number">33</span>
+$ <span class="hljs-built_in">printf</span> <span class="hljs-string">&apos;%s\n&apos;</span> /bin/*
+/bin/bash
+/bin/brltty
+/bin/btrfs
+/bin/btrfsck
+. . .
+. . .
 </code></pre>
 <p><a name="format_tags"></a></p>
 <h2 id="format-tags">Format Tags</h2>
