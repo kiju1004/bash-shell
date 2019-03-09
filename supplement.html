@@ -1837,6 +1837,27 @@ minor number &#xAC00; &#xBAA8;&#xB450; &#xB2E4;&#xB978; &#xAC83;&#xC744; &#xC54C
 &#xC774; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xC774;&#xC6A9;&#xD574; openGL &#xAC19;&#xC740; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xB9CC;&#xB4E4;&#xACE0; &#xC0AC;&#xC6A9;&#xC790;&#xB294; openGL &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC;
 &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC744; &#xC81C;&#xC791;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <p><a href="https://en.wikipedia.org/wiki/File:Linux_API.svg" target="_blank"><img src="images/Linux_API2.png" alt=""></a></p>
+<h1 id="2">2.</h1>
+<p>&#xBA85;&#xB839;&#xBB38;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; &#xC778;&#xC218;&#xC758; &#xD06C;&#xAE30;&#xB294; &#xC5BC;&#xB9C8;&#xAE4C;&#xC9C0; &#xAC00;&#xB2A5;&#xD560;&#xAE4C;&#xC694;?</p>
+<p>xargs &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xBA74; &#xAC04;&#xB2E8;&#xD788; &#xC870;&#xD68C;&#xD574;&#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ xargs --show-limits
+Your environment variables take up <span class="hljs-number">5676</span> bytes
+POSIX upper <span class="hljs-built_in">limit</span> on argument length (this system): <span class="hljs-number">2089428</span>
+POSIX smallest allowable upper <span class="hljs-built_in">limit</span> on argument length (all systems): <span class="hljs-number">4096</span>
+Maximum length of <span class="hljs-built_in">command</span> we could actually use: <span class="hljs-number">2083752</span>
+Size of <span class="hljs-built_in">command</span> buffer we are actually using: <span class="hljs-number">131072</span>
+Maximum parallelism (--max-procs must be no greater): <span class="hljs-number">2147483647</span>
+</code></pre>
+<p>&#xD14C;&#xC2A4;&#xD2B8;&#xB97C; &#xD574;&#xBCF4;&#xBA74; &#xC778;&#xC218; &#xD558;&#xB098;&#xC758; &#xD06C;&#xAE30;&#xB294; <code>131072</code> &#xB97C; &#xB118;&#xC744; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;
+&#xC774; &#xD06C;&#xAE30;&#xB97C; &#xB118;&#xC5B4;&#xC11C;&#xBA74; <code>Argument list too long</code> &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.
+&#xBA85;&#xB839; &#xB77C;&#xC778;&#xC5D0; &#xC774; &#xD06C;&#xAE30;&#xC758; &#xC778;&#xC218;&#xB97C; &#xACC4;&#xC18D; &#xB354;&#xD574;&#xBCF4;&#xBA74; <code>2083752</code> &#xC815;&#xB3C4;&#xAE4C;&#xC9C0; &#xCD94;&#xAC00;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774;&#xAC83;&#xC740; exec &#xC2DC;&#xC2A4;&#xD15C;&#xCF5C;&#xC5D0; &#xC804;&#xB2EC;&#xB418;&#xB294; &#xAC12;&#xC774;&#xBBC0;&#xB85C; &#xD658;&#xACBD; &#xBCC0;&#xC218;&#xB294; &#xC81C;&#xC678;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.
+&#xD14C;&#xC2A4;&#xD2B8;&#xC5D0;&#xB294; /bin/echo &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD588;&#xB294;&#xB370; builtin echo &#xBA85;&#xB839;&#xC758; &#xACBD;&#xC6B0;&#xB294;
+exec &#xC2DC;&#xC2A4;&#xD15C;&#xCF5C;&#xC774; &#xC0AC;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBBC0;&#xB85C; &#xC774;&#xC640; &#xAC19;&#xC740; &#xC81C;&#xD55C;&#xC774; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>xargs &#xC640; find &#xBA85;&#xB839;&#xC758; -exec &#xC561;&#xC158;&#xC5D0;&#xC11C; &#xBA85;&#xB839;&#xC774; &#xC2E4;&#xD589;&#xB420; &#xB54C;&#xB294; &#xC790;&#xB3D9;&#xC73C;&#xB85C; limit &#xC744; &#xCCB4;&#xD06C;&#xD574;
+&#xBD84;&#xB9AC;&#xD574; &#xC2E4;&#xD589;&#xD558;&#xBBC0;&#xB85C; &#xC804;&#xB2EC;&#xB418;&#xB294; &#xC778;&#xC218;&#xC758; &#xAC1C;&#xC218;&#xAC00; &#xB108;&#xBB34; &#xB9CE;&#xC9C0; &#xC54A;&#xC744;&#xAE4C; &#xAC71;&#xC815;&#xD558;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB429;&#xB2C8;&#xB2E4;. 
+&#xC774;&#xB54C; limit &#xAC12;&#xC5D0;&#xB294; <code>131072</code> &#xC774; &#xC0AC;&#xC6A9;&#xB418;&#xB294;&#xB370; &#xC774; &#xAC12;&#xC744; &#xB118;&#xC5B4;&#xC124; &#xACBD;&#xC6B0; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xC0C8;&#xB85C; &#xC0DD;&#xC131;&#xB418;&#xC5B4; 
+&#xC2E4;&#xD589;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <h3 id="vi-&#xC5D0;&#xB514;&#xD130;-&#xC124;&#xC815;-tip">vi &#xC5D0;&#xB514;&#xD130; &#xC124;&#xC815; tip</h3>
 <p>strace &#xCD9C;&#xB825;&#xC744; &#xC778;&#xC2DD;&#xD574;&#xC11C; &#xC790;&#xB3D9;&#xC73C;&#xB85C; highlight &#xD574;&#xC8FC;&#xB294; &#xC124;&#xC815;&#xC785;&#xB2C8;&#xB2E4;.<br>/usr/share/vim/vim80/scripts.vim  &#xD30C;&#xC77C;&#xC5D0;&#xC11C; &#xC544;&#xB798; &#xB77C;&#xC778;&#xC744; &#xCC3E;&#xC544;&#xC11C; &#xBCC0;&#xACBD;&#xD574; &#xC90D;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-vim">  <span class="hljs-string">&quot; Strace &#xBCC0;&#xACBD; &#xC804;

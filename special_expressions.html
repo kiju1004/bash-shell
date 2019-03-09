@@ -1266,7 +1266,7 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${A[0]}</s
 <span class="hljs-number">9</span>
 
 <span class="hljs-comment"># &#xBA85;&#xB839; &#xCE58;&#xD658;&#xB3C4; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;</span>
-$ <span class="hljs-built_in">echo</span> $(( $( date | awk <span class="hljs-string">&apos;{print $NF}&apos;</span> ) + <span class="hljs-number">1000</span> ))
+$ <span class="hljs-built_in">echo</span> $(( `date | awk <span class="hljs-string">&apos;{print $NF}&apos;</span>` + <span class="hljs-number">1000</span> ))
 <span class="hljs-number">3019</span>
 </code></pre>
 <p><code>$(( ))</code> <code>(( ))</code> &#xC740; &#xC0DD;&#xAE34;&#xAC74; &#xC18C;&#xAD04;&#xD638;&#xB85C; &#xC0DD;&#xACBC;&#xC9C0;&#xB9CC; subshell &#xC774; &#xC544;&#xB2CC; &#xD604;&#xC7AC; shell &#xC5D0;&#xC11C; &#xC2E4;&#xD589;&#xB429;&#xB2C8;&#xB2E4;.
