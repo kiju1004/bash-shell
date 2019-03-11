@@ -1360,29 +1360,29 @@ BASH_XTRACEFD=<span class="hljs-number">3</span>         <span class="hljs-comme
 
 <span class="hljs-built_in">set</span> -x
 
-date -%Y                <span class="hljs-comment"># error &#xBA54;&#xC2DC;&#xC9C0; &#xBC1C;&#xC0DD; </span>
+date -@                 <span class="hljs-comment"># error &#xBA54;&#xC2DC;&#xC9C0; &#xBC1C;&#xC0DD; </span>
 AA=<span class="hljs-number">100</span>
 BB=<span class="hljs-number">200</span>
 CC=`expr <span class="hljs-variable">$AA</span> + <span class="hljs-variable">$BB</span>`
-date -%Y                <span class="hljs-comment"># error &#xBA54;&#xC2DC;&#xC9C0; &#xBC1C;&#xC0DD;</span>
+date -@                 <span class="hljs-comment"># error &#xBA54;&#xC2DC;&#xC9C0; &#xBC1C;&#xC0DD;</span>
 
 <span class="hljs-built_in">set</span> -
 ----------------------------------------
 
 <span class="hljs-comment"># &#xC624;&#xB958; &#xBA54;&#xC2DC;&#xC9C0;&#xB294; &#xAE30;&#xC874;&#xB300;&#xB85C; stderr &#xB85C; &#xCD9C;&#xB825;</span>
 $ ./test.sh 
-date: invalid option -- <span class="hljs-string">&apos;%&apos;</span>
+date: invalid option -- <span class="hljs-string">&apos;@&apos;</span>
 Try <span class="hljs-string">&apos;date --help&apos;</span> <span class="hljs-keyword">for</span> more information.
-date: invalid option -- <span class="hljs-string">&apos;%&apos;</span>
+date: invalid option -- <span class="hljs-string">&apos;@&apos;</span>
 Try <span class="hljs-string">&apos;date --help&apos;</span> <span class="hljs-keyword">for</span> more information.
 
 $ cat xtrace.txt 
-+ date -%Y
++ date -@
 + AA=<span class="hljs-number">100</span>
 + BB=<span class="hljs-number">200</span>
 ++ expr <span class="hljs-number">100</span> + <span class="hljs-number">200</span>
 + CC=<span class="hljs-number">300</span>
-+ date -%Y
++ date -@
 + <span class="hljs-built_in">set</span> -
 </code></pre>
 <h4 id="childmax">CHILD_MAX</h4>

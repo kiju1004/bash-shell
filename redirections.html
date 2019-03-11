@@ -1707,16 +1707,16 @@ cat: x: No such file or directory
 </code></pre>
 <p>&#xD14C;&#xC2A4;&#xD2B8; &#xD574;&#xBCF4;&#xAE30;</p>
 <pre><code class="lang-bash"><span class="hljs-function"><span class="hljs-title">f1</span></span>() {
-    <span class="hljs-built_in">echo</span> yes;
-    <span class="hljs-built_in">echo</span> error &gt;&amp;<span class="hljs-number">2</span>;
+    <span class="hljs-built_in">echo</span> yes
+    <span class="hljs-built_in">echo</span> error &gt;&amp;<span class="hljs-number">2</span>
 }
 
 $ color f1
 yes       <span class="hljs-comment"># stdout &#xC740; &#xD770;&#xC0C9;&#xC73C;&#xB85C; &#xCD9C;&#xB825;</span>
 error     <span class="hljs-comment"># stderr &#xB294; &#xBE68;&#xAC04;&#xC0C9;&#xC73C;&#xB85C; &#xCD9C;&#xB825;</span>
 
-$ color date -%Y
-date: invalid option -- <span class="hljs-string">&apos;%&apos;</span>     <span class="hljs-comment"># &#xBE68;&#xAC04;&#xC0C9;&#xC73C;&#xB85C; &#xCD9C;&#xB825;</span>
+$ color date -@
+date: invalid option -- <span class="hljs-string">&apos;@&apos;</span>     <span class="hljs-comment"># &#xBE68;&#xAC04;&#xC0C9;&#xC73C;&#xB85C; &#xCD9C;&#xB825;</span>
 </code></pre>
 <p>&#xBB38;&#xC81C;&#xC810; : &#xBA85;&#xB839;&#xC758; &#xCD9C;&#xB825;&#xC774; &quot;&#xC815;&#xC0C1;&#xBA54;&#xC2DC;&#xC9C0;; &#xC5D0;&#xB7EC;&#xBA54;&#xC2DC;&#xC9C0;; &#xC815;&#xC0C1;&#xBA54;&#xC2DC;&#xC9C0;; &#xC5D0;&#xB7EC;&#xBA54;&#xC2DC;&#xC9C0;;&quot; &#xC21C;&#xC11C;&#xB85C; &#xCD9C;&#xB825;&#xB420;&#xACBD;&#xC6B0;
 &#xD30C;&#xC774;&#xD504;&#xB85C; &#xC778;&#xD574; &#xBA54;&#xC2DC;&#xC9C0; &#xC21C;&#xC11C;&#xAC00; &#xC720;&#xC9C0;&#xB418;&#xC9C0; &#xC54A;&#xACE0; &quot;&#xC815;&#xC0C1;&#xBA54;&#xC2DC;&#xC9C0;; &#xC815;&#xC0C1;&#xBA54;&#xC2DC;&#xC9C0;; &#xC5D0;&#xB7EC;&#xBA54;&#xC2DC;&#xC9C0;; &#xC5D0;&#xB7EC;&#xBA54;&#xC2DC;&#xC9C0;;&quot; &#xB85C; &#xCD9C;&#xB825;</p>
