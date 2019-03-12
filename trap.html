@@ -1285,8 +1285,8 @@ KILL(9) &#xC2E0;&#xD638;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xBC14;&#xB85
 <li>SIGCONT</li>
 </ul>
 <h2 id="pseudo-signals">Pseudo signals</h2>
-<p>&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xC791;&#xC131;&#xD560; &#xB54C; trap &#xBA85;&#xB839;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; &#xC2E0;&#xD638;&#xB4E4;&#xC744; <a href="signal_table.html">signal table</a> &#xC5D0;&#xC11C; &#xCC3E;&#xC544;&#xBCF4;&#xBA74;
-<a href="signal_table.html#termination_signals">Termination Signals</a>, <a href="signal_table.html#job_control_signals">Job Control Signals</a> &#xCE74;&#xD14C;&#xACE0;&#xB9AC;&#xC5D0; &#xC788;&#xB294; &#xC2E0;&#xD638;&#xB4E4; &#xC815;&#xB3C4;&#xC785;&#xB2C8;&#xB2E4;.
+<p>&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xC791;&#xC131;&#xD560; &#xB54C; trap &#xBA85;&#xB839;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; &#xC2E0;&#xD638;&#xB4E4;&#xC744; <a href="signals_table.html">signal table</a> &#xC5D0;&#xC11C; &#xCC3E;&#xC544;&#xBCF4;&#xBA74;
+<a href="signals_table.html#termination_signals">Termination Signals</a>, <a href="signals_table.html#job_control_signals">Job Control Signals</a> &#xCE74;&#xD14C;&#xACE0;&#xB9AC;&#xC5D0; &#xC788;&#xB294; &#xC2E0;&#xD638;&#xB4E4; &#xC815;&#xB3C4;&#xC785;&#xB2C8;&#xB2E4;.
 &#xD14C;&#xC774;&#xBE14;&#xC744; &#xBCF4;&#xBA74; &#xC54C; &#xC218; &#xC788;&#xB4EF;&#xC774; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xAC00; &#xC885;&#xB8CC;&#xB420; &#xB54C; &#xC2E4;&#xD589;&#xB418;&#xB294; handler &#xB97C; &#xB4F1;&#xB85D;&#xD558;&#xB824;&#xBA74; HUP, INT, QUIT, TERM &#xC2E0;&#xD638;&#xB97C; &#xBAA8;&#xB450; &#xB4F1;&#xB85D;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.
 &#xADF8;&#xB9AC;&#xACE0; &#xC815;&#xC0C1; &#xC885;&#xB8CC;&#xB420; &#xACBD;&#xC6B0;&#xC5D0;&#xB3C4; &#xC2E4;&#xD589;&#xC774; &#xB3FC;&#xC57C; &#xD558;&#xBBC0;&#xB85C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC791;&#xC131;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-shebang">#!/bin/bash
@@ -1393,6 +1393,20 @@ end---
 <h4 id="exit-&#xC2E0;&#xD638;&#xC640;-&#xB2E4;&#xB978;-&#xC2E0;&#xD638;&#xB97C;-&#xD568;&#xAED8;-&#xB4F1;&#xB85D;&#xD558;&#xBA74;">EXIT &#xC2E0;&#xD638;&#xC640; &#xB2E4;&#xB978; &#xC2E0;&#xD638;&#xB97C; &#xD568;&#xAED8; &#xB4F1;&#xB85D;&#xD558;&#xBA74;?</h4>
 <p>EXIT &#xC2E0;&#xD638;&#xC640; INT &#xC2E0;&#xD638;&#xB97C; &#xD568;&#xAED8; &#xB4F1;&#xB85D;&#xD588;&#xB2E4;&#xBA74; Ctrl-c &#xC5D0; &#xC758;&#xD55C; &#xC885;&#xB8CC; &#xC2DC; INT  handler &#xAC00; &#xBA3C;&#xC800; &#xC2E4;&#xD589;&#xB418;&#xACE0;
 &#xB9C8;&#xC9C0;&#xB9C9;&#xC5D0; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xAC00; &#xC885;&#xB8CC;&#xB420; &#xB54C; EXIT handler &#xAC00; &#xC2E4;&#xD589;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ cat trap.sh
+<span class="hljs-shebang">#!/bin/bash</span>
+<span class="hljs-built_in">trap</span> <span class="hljs-string">&apos;echo trap handler ...&apos;</span> INT EXIT
+<span class="hljs-built_in">echo</span> start...
+cat
+<span class="hljs-built_in">echo</span> end...
+-------------------------------------
+
+$ ./trap.sh 
+start...
+^C<span class="hljs-built_in">trap</span> handler ...      <span class="hljs-comment"># INT handler</span>
+end...
+<span class="hljs-built_in">trap</span> handler ...        <span class="hljs-comment"># EXIT handler</span>
+</code></pre>
 <p><a name="quotes"></a></p>
 <h3 id="trap-handler-&#xC124;&#xC815;&#xC2DC;-quotes-&#xC758;-&#xC0AC;&#xC6A9;">trap handler &#xC124;&#xC815;&#xC2DC; quotes &#xC758; &#xC0AC;&#xC6A9;</h3>
 <p>trap handler &#xB97C; &#xC124;&#xC815;&#xD560;&#xB54C; double quotes &#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC124;&#xC815; &#xB2F9;&#xC2DC;&#xC5D0; &#xBCC0;&#xC218;&#xAC12;&#xC774; &#xD655;&#xC7A5;&#xB418;&#xC5B4; &#xC815;&#xC758;&#xAC00; &#xB418;&#xBBC0;&#xB85C; &#xC2E4;&#xD589; &#xC2DC;&#xC5D0; &#xC6D0;&#xD558;&#xB294; &#xAC12;&#xC774; &#xD45C;&#xC2DC;&#xB418;&#xC9C0; &#xC54A;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
