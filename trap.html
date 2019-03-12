@@ -1316,19 +1316,34 @@ trap &#xC5D0; EXIT &#xC2E0;&#xD638;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#x
 &#xADF8;&#xB7EC;&#xBBC0;&#xB85C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; EXIT &#xC2E0;&#xD638;&#xB97C; subshell &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xACE0; &#xD558;&#xB354;&#xB77C;&#xB3C4;
 Ctrl-c &#xC885;&#xB8CC;&#xC2DC; &#xB9C8;&#xC9C0;&#xB9C9; <code>echo end...</code> &#xB294; &#xC2E4;&#xD589;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xB610;&#xD55C; EXIT &#xC2E0;&#xD638;&#xB294; pseudo signal &#xB85C; ignore &#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash"><span class="hljs-shebang">#!/bin/bash
-</span>
+<pre><code class="lang-bash">$ cat ./test.sh
+<span class="hljs-shebang">#!/bin/bash</span>
 <span class="hljs-built_in">echo</span> start...
 
 ( <span class="hljs-built_in">trap</span> <span class="hljs-string">&apos;echo trap subshell...&apos;</span> EXIT; cat; <span class="hljs-built_in">echo</span> <span class="hljs-number">111</span> )
 
 <span class="hljs-built_in">echo</span> end...
 
-<span class="hljs-comment">########## &#xC2E4;&#xD589;&#xACB0;&#xACFC; ###########</span>
-
 $ ./test.sh 
 start...
 ^C<span class="hljs-built_in">trap</span> subshell...
+--------------------------------------------------
+
+$ cat ./test.sh
+<span class="hljs-shebang">#!/bin/bash
+</span>
+<span class="hljs-built_in">trap</span> <span class="hljs-string">&apos;echo trap handler...&apos;</span> EXIT       <span class="hljs-comment"># trap &#xCD94;&#xAC00;</span>
+
+<span class="hljs-built_in">echo</span> start...
+
+( <span class="hljs-built_in">trap</span> <span class="hljs-string">&apos;echo trap subshell...&apos;</span> EXIT; cat; <span class="hljs-built_in">echo</span> <span class="hljs-number">111</span> )
+
+<span class="hljs-built_in">echo</span> end...
+
+$ ./test.sh
+start...
+^C<span class="hljs-built_in">trap</span> subshell...        
+<span class="hljs-built_in">trap</span> handler...          <span class="hljs-comment"># EXIT handler &#xB9CC; &#xC2E4;&#xD589;&#xB41C;&#xB2E4;.</span>
 </code></pre>
 <p>Bash &#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xD558;&#xB294; pseudo-signals &#xC5D0;&#xB294; EXIT &#xC678;&#xC5D0; &#xD568;&#xC218;&#xB098; source &#xD55C; &#xD30C;&#xC77C;&#xC5D0;&#xC11C; return &#xD560;&#xB54C; &#xC0AC;&#xC6A9;&#xD560;&#xC218; &#xC788;&#xB294; RETURN &#xC2E0;&#xD638;, &#xBA85;&#xB839;&#xC774; 0 &#xC774; &#xC544;&#xB2CC; &#xAC12;&#xC73C;&#xB85C; &#xC885;&#xB8CC;&#xD588;&#xC744;&#xB54C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; ERR &#xC2E0;&#xD638;, &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xB514;&#xBC84;&#xAE45;&#xC5D0; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; DEBUG &#xC2E0;&#xD638;&#xB97C; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB4E4; &#xC2E0;&#xD638; &#xC124;&#xC815;&#xC740; subshell &#xAE4C;&#xC9C0; &#xC801;&#xC6A9;&#xB420; &#xC218; &#xC788;&#xC73C;&#xBA70;( functrace, errtrace &#xC635;&#xC158; &#xC124;&#xC815;&#xC2DC; ),  child process &#xC5D0;&#xB294; &#xC801;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <table>
@@ -1341,7 +1356,7 @@ start...
 <tbody>
 <tr>
 <td style="text-align:center">EXIT</td>
-<td>shell &#xC774; exit &#xD560;&#xB54C; &#xBC1C;&#xC0DD;. ( subshell &#xC5D0;&#xB3C4; &#xC801;&#xC6A9; &#xAC00;&#xB2A5; )</td>
+<td>shell &#xC774; &#xC885;&#xB8CC;&#xD560; &#xB54C; &#xBC1C;&#xC0DD;. ( subshell &#xC5D0;&#xB3C4; &#xC801;&#xC6A9; &#xAC00;&#xB2A5; )</td>
 </tr>
 <tr>
 <td style="text-align:center">ERR</td>
@@ -1393,7 +1408,7 @@ end---
 <h4 id="exit-&#xC2E0;&#xD638;&#xC640;-&#xB2E4;&#xB978;-&#xC2E0;&#xD638;&#xB97C;-&#xD568;&#xAED8;-&#xB4F1;&#xB85D;&#xD558;&#xBA74;">EXIT &#xC2E0;&#xD638;&#xC640; &#xB2E4;&#xB978; &#xC2E0;&#xD638;&#xB97C; &#xD568;&#xAED8; &#xB4F1;&#xB85D;&#xD558;&#xBA74;?</h4>
 <p>EXIT &#xC2E0;&#xD638;&#xC640; INT &#xC2E0;&#xD638;&#xB97C; &#xD568;&#xAED8; &#xB4F1;&#xB85D;&#xD588;&#xB2E4;&#xBA74; Ctrl-c &#xC5D0; &#xC758;&#xD55C; &#xC885;&#xB8CC; &#xC2DC; INT  handler &#xAC00; &#xBA3C;&#xC800; &#xC2E4;&#xD589;&#xB418;&#xACE0;
 &#xB9C8;&#xC9C0;&#xB9C9;&#xC5D0; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xAC00; &#xC885;&#xB8CC;&#xB420; &#xB54C; EXIT handler &#xAC00; &#xC2E4;&#xD589;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">$ cat trap.sh
+<pre><code class="lang-bash">$ cat test.sh
 <span class="hljs-shebang">#!/bin/bash</span>
 <span class="hljs-built_in">trap</span> <span class="hljs-string">&apos;echo trap handler ...&apos;</span> INT EXIT
 <span class="hljs-built_in">echo</span> start...
@@ -1401,7 +1416,7 @@ cat
 <span class="hljs-built_in">echo</span> end...
 -------------------------------------
 
-$ ./trap.sh 
+$ ./test.sh 
 start...
 ^C<span class="hljs-built_in">trap</span> handler ...      <span class="hljs-comment"># INT handler</span>
 end...
