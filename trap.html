@@ -1754,25 +1754,6 @@ trap handler &#xC2E4;&#xD589; &#xD6C4;&#xC5D0; <code>echo 111</code> &#xBA85;&#x
 <pre><code class="lang-bash">$ ( <span class="hljs-built_in">trap</span> <span class="hljs-string">&apos;exit 0&apos;</span> INT; cat ); <span class="hljs-built_in">echo</span> <span class="hljs-built_in">exit</span> : $?
 ^C<span class="hljs-built_in">exit</span> : <span class="hljs-number">0</span>
 </code></pre>
-<h3 id="pgid-&#xB97C;-&#xBCC0;&#xACBD;&#xD558;&#xC5EC;-child-process-&#xC2E4;&#xD589;">PGID &#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xC5EC; child process &#xC2E4;&#xD589;</h3>
-<p>&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; a.sh -&gt; b.sh -&gt; c.sh -&gt; d.sh  &#xC21C;&#xC11C;&#xB85C; &#xC2E4;&#xD589;&#xD558;&#xC5EC; &#xD604;&#xC7AC; sleep &#xC0C1;&#xD0DC;&#xC5D0; &#xC788;&#xB2E4;&#xBA74;
-Ctrl-c &#xB97C; &#xB204;&#xB97C;&#xACBD;&#xC6B0; <a href="tty.html#tty_driver">tty driver</a> &#xC5D0; &#xC758;&#xD574; 
-INT &#xC2E0;&#xD638;&#xAC00; foreground process group &#xC5D0; &#xC804;&#xB2EC;&#xB418;&#xC5B4;  4&#xAC1C;&#xC758; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB294; &#xBAA8;&#xB450; &#xC885;&#xB8CC;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
-&#xC774;&#xB54C; &#xB9CC;&#xC57D;&#xC5D0; b.sh &#xC5D0;&#xC11C; c.sh &#xC744; &#xC2E4;&#xD589;&#xD560;&#xB54C; pgid &#xB97C; &#xBCC0;&#xACBD;&#xD560;&#xC218; &#xC788;&#xB2E4;&#xBA74; 
-c.sh &#xACFC; d.sh &#xAE4C;&#xC9C0;&#xB9CC; &#xC885;&#xB8CC;&#xD558;&#xACE0; a.sh, b.sh &#xC740; &#xB098;&#xBA38;&#xC9C0; &#xBA85;&#xB839;&#xC774; &#xC2E4;&#xD589;&#xB418;&#xAC8C; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-( c.sh, d.sh &#xB9CC; foreground process group &#xC774; &#xB418;&#xBBC0;&#xB85C; )</p>
-<p>shell &#xC5D0;&#xC11C;&#xB294; setsid &#xC678;&#xBD80; &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; sid, pgid &#xB97C; &#xBCC0;&#xACBD;&#xD574; &#xBA85;&#xB839;&#xC744; &#xC2E4;&#xD589;&#xD560;&#xC218; &#xC788;&#xC9C0;&#xB9CC;
-setpgid &#xAC19;&#xC740; &#xBA85;&#xB839;&#xC740; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
-&#xD558;&#xC9C0;&#xB9CC; &#xAC04;&#xC811;&#xC801;&#xC73C;&#xB85C; <code>set -o monitor</code> &#xC635;&#xC158; &#xC124;&#xC815;&#xC744; &#xD1B5;&#xD574;&#xC11C; &#xC774;&#xD6C4;&#xC5D0; &#xC2E4;&#xD589;&#xB418;&#xB294; &#xBA85;&#xB839;&#xC774;
-&#xB2E4;&#xB978; pgid &#xB97C; &#xAC16;&#xAC8C; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">---------- b.sh ---------
-<span class="hljs-shebang">#!/bin/bash</span>
-...
-...
-<span class="hljs-built_in">set</span> -o monitor
-./c.sh            <span class="hljs-comment"># c.sh &#xC740; &#xB2E4;&#xB978; pgid &#xB85C; &#xC2E4;&#xD589;&#xB41C;&#xB2E4;</span>
-...
-</code></pre>
 
                     
                     </section>
