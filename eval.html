@@ -1416,6 +1416,18 @@ $ <span class="hljs-built_in">eval</span> <span class="hljs-built_in">echo</span
 $ <span class="hljs-variable">$AA</span>=<span class="hljs-number">100</span>
 BB=<span class="hljs-number">100</span>: <span class="hljs-built_in">command</span> not found
 </code></pre>
+<p>&#xB2E4;&#xC74C;&#xC740; indirection &#xC744; &#xD65C;&#xC6A9;&#xD558;&#xC5EC; &#xB9C8;&#xC9C0;&#xB9C9; &#xC778;&#xC218; &#xAC12;&#xC744; file &#xBCC0;&#xC218;&#xC5D0; &#xB300;&#xC785;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ cat test.sh
+<span class="hljs-shebang">#!/bin/sh
+</span>
+<span class="hljs-built_in">eval</span> file=<span class="hljs-string">&apos;$&apos;</span><span class="hljs-variable">$#</span>
+
+<span class="hljs-built_in">echo</span> file : <span class="hljs-string">&quot;<span class="hljs-variable">$file</span>&quot;</span>
+--------------------------
+
+$ ./test.sh <span class="hljs-operator">-a</span> -b data.txt
+file : data.txt
+</code></pre>
 <h3 id="&#xD568;&#xC218;&#xB97C;-&#xB9CC;&#xB4E4;&#xC5B4;-&#xC2E4;&#xD589;">&#xD568;&#xC218;&#xB97C; &#xB9CC;&#xB4E4;&#xC5B4; &#xC2E4;&#xD589;</h3>
 <pre><code class="lang-bash">$ <span class="hljs-function"><span class="hljs-title">main</span></span>() {
 &gt;     <span class="hljs-built_in">local</span> fbody=<span class="hljs-string">&apos;() { echo &quot;function name is : $FUNCNAME&quot;; }&apos;</span>
