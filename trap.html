@@ -1471,9 +1471,7 @@ exit &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD574; &#xC885;&#xB8CC;&#xD558;&
 ...
 </code></pre>
 <p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC124;&#xC815;&#xD55C;&#xB2E4;&#xBA74; Ctrl-c &#xB85C; &#xC885;&#xB8CC;&#xB97C; &#xC2DC;&#xB3C4;&#xD560; &#xACBD;&#xC6B0;&#xB294; &#xD638;&#xCD9C;&#xB418;&#xC9C0;&#xB9CC;
-exit, &#xC815;&#xC0C1; &#xC885;&#xB8CC; &#xC2DC;&#xC5D0;&#xB294; &#xD638;&#xCD9C;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
-&#xC5EC;&#xAE30;&#xC11C; &#xD55C;&#xAC00;&#xC9C0; &#xC8FC;&#xBAA9;&#xD574;&#xC57C; &#xB420; &#xC810;&#xC740; bash &#xC758; &#xACBD;&#xC6B0;&#xB294; Ctrl-c &#xC5D0; &#xC758;&#xD574; trap handler &#xAC00; &#xC2E4;&#xD589;&#xB41C; &#xD6C4;&#xC5D0;
-&#xBC14;&#xB85C; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xC804;&#xCCB4;&#xAC00; &#xC885;&#xB8CC;&#xB418;&#xC9C0;&#xB9CC; sh &#xC758; &#xACBD;&#xC6B0;&#xB294; &#xC774;&#xC5B4;&#xC11C; &#xB098;&#xBA38;&#xC9C0; &#xBA85;&#xB839;&#xC774; &#xC2E4;&#xD589;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+exit, &#xC815;&#xC0C1; &#xC885;&#xB8CC; &#xC2DC;&#xC5D0;&#xB294; &#xD638;&#xCD9C;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-shebang">#!/bin/sh</span>
 <span class="hljs-built_in">trap</span> <span class="hljs-string">&apos;echo trap handler...&apos;</span> HUP INT QUIT TERM
 <span class="hljs-built_in">echo</span> start...
@@ -1483,7 +1481,7 @@ cat
 $ ./test.sh 
 start...
 ^C<span class="hljs-built_in">trap</span> handler...      <span class="hljs-comment"># &apos;^C&apos; &#xB294; cat &#xBA85;&#xB839;&#xC5D0;&#xC11C; Ctrl-c &#xC785;&#xB825;</span>
-end...                 <span class="hljs-comment"># bash &#xCC98;&#xB7FC; &#xBC14;&#xB85C; &#xC885;&#xB8CC;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xB098;&#xBA38;&#xC9C0; &#xBA85;&#xB839;&#xC774; &#xC2E4;&#xD589;&#xB41C;&#xB2E4;.</span>
+end...
 -----------------------------------------------------------------------------
 
 <span class="hljs-comment"># trap handler &#xC5D0; exit &#xC744; &#xCD94;&#xAC00;&#xD558;&#xBA74; &#xB098;&#xBA38;&#xC9C0; &#xBA85;&#xB839;&#xC774; &#xC2E4;&#xD589;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBC29;&#xC9C0;&#xD560; &#xC218; &#xC788;&#xB2E4;.</span>
@@ -1503,7 +1501,7 @@ Ctrl-c &#xB85C; &#xC885;&#xB8CC;&#xB97C; &#xC2DC;&#xB3C4;&#xD560; &#xACBD;&#xC6B
 EXIT &#xC2E0;&#xD638;&#xC5D0; &#xC758;&#xD574; &#xD55C;&#xBC88;, &#xB450; &#xBC88; &#xD638;&#xCD9C;&#xB418;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ cat test.sh
 <span class="hljs-shebang">#!/bin/sh</span>
-<span class="hljs-built_in">trap</span> <span class="hljs-string">&apos;echo trap handler...; exit&apos;</span> EXIT HUP INT QUIT TERM
+<span class="hljs-built_in">trap</span> <span class="hljs-string">&apos;echo trap handler...; exit&apos;</span> HUP INT QUIT TERM EXIT
 <span class="hljs-built_in">echo</span> start...
 cat 
 <span class="hljs-built_in">echo</span> end...
@@ -1619,16 +1617,16 @@ B.sh, A.sh &#xC758; &#xB098;&#xBA38;&#xC9C0; &#xBA85;&#xB839;&#xB4E4;&#xC740; &#
 <pre><code class="lang-bash">------- B.sh -------
 <span class="hljs-shebang">#!/bin/bash</span>
 <span class="hljs-built_in">echo</span> B.sh ------ start
-ping <span class="hljs-number">1.1</span>.<span class="hljs-number">1.0</span>
+ping <span class="hljs-number">1.1</span>.<span class="hljs-number">1.1</span>
 <span class="hljs-built_in">echo</span> B.sh ------ end
 ---------------------
 
 $ ./A.sh
 A.sh --- start
 B.sh ------ start
-PING <span class="hljs-number">1.1</span>.<span class="hljs-number">1.0</span> (<span class="hljs-number">1.1</span>.<span class="hljs-number">1.0</span>) <span class="hljs-number">56</span>(<span class="hljs-number">84</span>) bytes of data.
+PING <span class="hljs-number">1.1</span>.<span class="hljs-number">1.1</span> (<span class="hljs-number">1.1</span>.<span class="hljs-number">1.1</span>) <span class="hljs-number">56</span>(<span class="hljs-number">84</span>) bytes of data.
 ^C
---- <span class="hljs-number">1.1</span>.<span class="hljs-number">1.0</span> ping statistics ---
+--- <span class="hljs-number">1.1</span>.<span class="hljs-number">1.1</span> ping statistics ---
 <span class="hljs-number">2</span> packets transmitted, <span class="hljs-number">0</span> received, <span class="hljs-number">100</span>% packet loss, time <span class="hljs-number">999</span>ms
 
 B.sh ------ end    <span class="hljs-comment"># ping &#xBA85;&#xB839;&#xB9CC; &#xC885;&#xB8CC;&#xB418;&#xACE0; B.sh, A.sh &#xB098;&#xBA38;&#xC9C0; &#xBA85;&#xB839;&#xC774; &#xBAA8;&#xB450; &#xC2E4;&#xD589;&#xB41C;&#xB2E4;.</span>
@@ -1646,16 +1644,16 @@ default handler &#xB97C; &#xC2E4;&#xD589;&#xD558;&#xC9C0; &#xC54A;&#xAE30; &#xB5
 <span class="hljs-built_in">trap</span> <span class="hljs-string">&apos;echo trap INT in B.sh; trap - INT; kill -INT $$&apos;</span> INT
 
 <span class="hljs-built_in">echo</span> B.sh ------ start
-ping <span class="hljs-number">1.1</span>.<span class="hljs-number">1.0</span>
+ping <span class="hljs-number">1.1</span>.<span class="hljs-number">1.1</span>
 <span class="hljs-built_in">echo</span> B.sh ------ end
 ---------------------
 
 $ ./A.sh         
 A.sh --- start
 B.sh ------ start
-PING <span class="hljs-number">1.1</span>.<span class="hljs-number">1.0</span> (<span class="hljs-number">1.1</span>.<span class="hljs-number">1.0</span>) <span class="hljs-number">56</span>(<span class="hljs-number">84</span>) bytes of data.
+PING <span class="hljs-number">1.1</span>.<span class="hljs-number">1.1</span> (<span class="hljs-number">1.1</span>.<span class="hljs-number">1.1</span>) <span class="hljs-number">56</span>(<span class="hljs-number">84</span>) bytes of data.
 ^C
---- <span class="hljs-number">1.1</span>.<span class="hljs-number">1.0</span> ping statistics ---
+--- <span class="hljs-number">1.1</span>.<span class="hljs-number">1.1</span> ping statistics ---
 <span class="hljs-number">2</span> packets transmitted, <span class="hljs-number">0</span> received, <span class="hljs-number">100</span>% packet loss, time <span class="hljs-number">999</span>ms
 
 <span class="hljs-built_in">trap</span> INT <span class="hljs-keyword">in</span> B.sh  <span class="hljs-comment"># ping &#xBA85;&#xB839;&#xACFC; &#xD568;&#xAED8; B.sh, A.sh &#xC774; &#xBAA8;&#xB450; &#xAC19;&#xC774; &#xC885;&#xB8CC; &#xB418;&#xC5C8;&#xB2E4;.</span>
@@ -1666,16 +1664,16 @@ PING <span class="hljs-number">1.1</span>.<span class="hljs-number">1.0</span> (
 <span class="hljs-built_in">echo</span> A.sh --- start
 (
 <span class="hljs-built_in">trap</span> <span class="hljs-string">&apos;trap - INT; kill -INT $BASHPID&apos;</span> INT
-ping <span class="hljs-number">1.1</span>.<span class="hljs-number">1.0</span>
+ping <span class="hljs-number">1.1</span>.<span class="hljs-number">1.1</span>
 )
 <span class="hljs-built_in">echo</span> A.sh --- end
 --------------------
 
 $ ./A.sh      <span class="hljs-comment"># Ctrl-c &#xD0A4;&#xB97C; &#xC785;&#xB825;&#xD588;&#xC744;&#xB54C; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xC804;&#xCCB4;&#xAC00; &#xC885;&#xB8CC;&#xB429;&#xB2C8;&#xB2E4;.</span>
 A.sh --- start
-PING <span class="hljs-number">1.1</span>.<span class="hljs-number">1.0</span> (<span class="hljs-number">1.1</span>.<span class="hljs-number">1.0</span>) <span class="hljs-number">56</span>(<span class="hljs-number">84</span>) bytes of data.
+PING <span class="hljs-number">1.1</span>.<span class="hljs-number">1.1</span> (<span class="hljs-number">1.1</span>.<span class="hljs-number">1.1</span>) <span class="hljs-number">56</span>(<span class="hljs-number">84</span>) bytes of data.
 ^C
---- <span class="hljs-number">1.1</span>.<span class="hljs-number">1.0</span> ping statistics ---
+--- <span class="hljs-number">1.1</span>.<span class="hljs-number">1.1</span> ping statistics ---
 <span class="hljs-number">2</span> packets transmitted, <span class="hljs-number">0</span> received, <span class="hljs-number">100</span>% packet loss, time <span class="hljs-number">999</span>ms
 
 
@@ -1687,7 +1685,7 @@ sh &#xC5D0;&#xC11C;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xBAA8;&#x
 ------- A.sh -------
 <span class="hljs-shebang">#!/bin/sh</span>
 <span class="hljs-built_in">echo</span> A.sh --- start
-ping <span class="hljs-number">1.1</span>
+ping <span class="hljs-number">1.1</span>.<span class="hljs-number">1.1</span>
 <span class="hljs-built_in">echo</span> A.sh --- end
 --------------------
 </code></pre>
