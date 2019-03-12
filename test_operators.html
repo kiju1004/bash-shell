@@ -1242,7 +1242,7 @@
                         <h2 id="test-operators">Test Operators</h2>
 <p>&#xC774; &#xC5F0;&#xC0B0;&#xC790;&#xB4E4;&#xC740;  <code>test</code>, <code>[</code> builtin &#xBA85;&#xB839;&#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xAC83;&#xC73C;&#xB85C; <code>[[ ]]</code> &#xC5D0;&#xC11C;&#xB3C4; &#xB3D9;&#xC77C;&#xD558;&#xAC8C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>( &#xB2E8; <code>-a</code>, <code>-o</code> &#xC5F0;&#xC0B0;&#xC790;&#xB294; &#xC81C;&#xC678;.  <code>[[ ]]</code> &#xC5D0;&#xC11C;&#xB294; &#xC790;&#xCCB4; <code>&amp;&amp;</code> , <code>||</code> &#xC5F0;&#xC0B0;&#xC790;&#xB97C; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.)</p>
 <h3 id="file-tests">File Tests</h3>
-<p>&#xD30C;&#xC77C;&#xC774; &#xC2E4;&#xD589;&#xD30C;&#xC77C;&#xC778;&#xC9C0; &#xD14C;&#xC2A4;&#xD2B8;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; <code>-x</code> &#xC774;&#xB098; <code>-r</code>, <code>-w</code> &#xC5F0;&#xC0B0;&#xC790;&#xB294; 
+<p>&#xD30C;&#xC77C;&#xC774; &#xC2E4;&#xD589;&#xD30C;&#xC77C;&#xC778;&#xC9C0; &#xD14C;&#xC2A4;&#xD2B8;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; <code>-x</code> &#xB098; <code>-r</code>, <code>-w</code> &#xC5F0;&#xC0B0;&#xC790;&#xB294; 
 &#xD30C;&#xC77C;&#xC758; <code>drwxrwxr-x</code> &#xBAA8;&#xB4DC; &#xAC12;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xD310;&#xB2E8;&#xD569;&#xB2C8;&#xB2E4;.
 &#xADF8;&#xB7EC;&#xBBC0;&#xB85C; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xB3C4; &#xD14C;&#xC2A4;&#xD2B8;&#xC5D0; &#xC131;&#xACF5;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xB97C; &#xC81C;&#xC678;&#xD558;&#xACE0; &#xC2E4;&#xD589; &#xD30C;&#xC77C;&#xC778;&#xC9C0; &#xD14C;&#xC2A4;&#xD2B8;&#xD558;&#xB824;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD569;&#xB2C8;&#xB2E4;.</p>
@@ -1358,15 +1358,32 @@
 </tr>
 </tbody>
 </table>
+<h3 id="&#xC608;&#xC81C;-">&#xC608;&#xC81C; )</h3>
+<p>&#xB2E4;&#xC74C;&#xC740; &#xB450;&#xAC1C;&#xC758; &#xD30C;&#xC77C;&#xC744; &#xC778;&#xC218;&#xB85C; &#xBC1B;&#xB294; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC5D0;&#xC11C; test &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD574; &#xCCB4;&#xD06C;&#xD558;&#xB294; &#xC608;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-shebang">#!/bin/sh
+</span>
+<span class="hljs-built_in">test</span> <span class="hljs-variable">$#</span> != <span class="hljs-number">2</span> &amp;&amp; { <span class="hljs-built_in">echo</span> two arguments required; <span class="hljs-built_in">exit</span> <span class="hljs-number">1</span> ;}
+<span class="hljs-keyword">for</span> file
+<span class="hljs-keyword">do</span>
+  <span class="hljs-built_in">test</span> <span class="hljs-string">&quot;X<span class="hljs-variable">$file</span>&quot;</span> = X- &amp;&amp; <span class="hljs-built_in">continue</span>   <span class="hljs-comment"># &#xC778;&#xC218;&#xB85C; &apos;-&apos; &#xAC00; &#xC0AC;&#xC6A9;&#xB420; &#xACBD;&#xC6B0;</span>
+  <span class="hljs-built_in">test</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;<span class="hljs-variable">$file</span>&quot;</span> || { <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$file</span>&quot;</span> is not exist; <span class="hljs-built_in">exit</span> <span class="hljs-number">1</span> ;}
+  <span class="hljs-built_in">test</span> <span class="hljs-operator">-d</span> <span class="hljs-string">&quot;<span class="hljs-variable">$file</span>&quot;</span> &amp;&amp; { <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$file</span>&quot;</span> is a directory; <span class="hljs-built_in">exit</span> <span class="hljs-number">1</span> ;}
+  <span class="hljs-built_in">test</span> -r <span class="hljs-string">&quot;<span class="hljs-variable">$file</span>&quot;</span> || { <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$file</span>&quot;</span> is not readable; <span class="hljs-built_in">exit</span> <span class="hljs-number">1</span> ;}
+<span class="hljs-keyword">done</span>
+. . . .
+. . . .
+</code></pre>
 <h3 id="string-tests">String Tests</h3>
 <p>&#xBCF4;&#xD1B5; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D; &#xC5B8;&#xC5B4;&#xC5D0;&#xC11C; <code>&lt;</code> , <code>&gt;</code> &#xB294; &#xC22B;&#xC790;&#xB97C; &#xBE44;&#xAD50;&#xD560;&#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xB294;&#xB370; shell &#xC5D0;&#xC11C;&#xB294; &#xD2B9;&#xC774;&#xD558;&#xAC8C; &#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xBE44;&#xAD50;&#xD558;&#xB294;&#xB370;  &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.
 &#xC0DD;&#xAC01; &#xAC19;&#xC544;&#xC11C;&#xB294; &#xC2A4;&#xD2B8;&#xB9C1; &#xC5F0;&#xC0B0;&#xC790;&#xC640; &#xC0B0;&#xC220;&#xC5F0;&#xC0B0;&#xC790;&#xAC00; &#xC11C;&#xB85C; &#xBC14;&#xB00C;&#xC5C8;&#xC73C;&#xBA74; &#xD5F7;&#xAC08;&#xB9AC;&#xC9C0; &#xC54A;&#xACE0; &#xC88B;&#xC744;&#xAC83; &#xAC19;&#xC740;&#xB370; &#xC0AC;&#xC2E4; &#xC774;&#xAC83;&#xB3C4; &#xC54C;&#xACE0;&#xBCF4;&#xBA74; shell &#xC2A4;&#xD2B8;&#xB9BD;&#xD2B8;&#xAC00; &#xAC16;&#xB294; &#xADFC;&#xBCF8;&#xC801;&#xC778; &#xD55C;&#xACC4;&#xC785;&#xB2C8;&#xB2E4;.
-&#xC65C;&#xB0D0;&#xD558;&#xBA74; shell &#xC5D0;&#xC11C;&#xB294; <code>&lt;=</code> , <code>&gt;=</code> &#xC640; &#xAC19;&#xC740; &#xC5F0;&#xC0B0;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC5B4;&#xB835;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB807;&#xAC8C; &#xC0AC;&#xC6A9;&#xD558;&#xAC8C; &#xB418;&#xBA74;  <code>=</code> &#xAC00; &#xD30C;&#xC77C;&#xBA85;&#xC774; &#xB418;&#xACE0; <code>&lt;</code> , <code>&gt;</code> &#xAC00; redirection &#xAE30;&#xD638;&#xAC00; &#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;. </p>
+&#xC65C;&#xB0D0;&#xD558;&#xBA74; shell &#xC5D0;&#xC11C;&#xB294; <code>&lt;=</code> , <code>&gt;=</code> &#xC640; &#xAC19;&#xC740; &#xC5F0;&#xC0B0;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;&#xAC00; &#xC5B4;&#xB835;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB807;&#xAC8C; &#xC0AC;&#xC6A9;&#xD558;&#xAC8C; &#xB418;&#xBA74;  <code>=</code> &#xAC00; &#xD30C;&#xC77C;&#xBA85;&#xC774; &#xB418;&#xACE0; <code>&lt;</code> , <code>&gt;</code> &#xAC00; redirection &#xAE30;&#xD638;&#xAC00; &#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;. </p>
 <blockquote>
-<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; expr &#xBA85;&#xB839;&#xC740; &#xC0B0;&#xC220;&#xC5F0;&#xC0B0;&#xC744; &#xD558;&#xB294; &#xBA85;&#xB839;&#xC778;&#xB370; &#xC5F0;&#xC0B0;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xB294;  &#xBAA8;&#xB450;  <code>\&lt;</code> <code>\&lt;=</code> <code>\&gt;</code> <code>=\&gt;</code> <code>\&amp;</code> <code>\|</code> <code>\*</code>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; expr &#xBA85;&#xB839;&#xC740; &#xC0B0;&#xC220;&#xC5F0;&#xC0B0;&#xC744; &#xD558;&#xB294; &#xBA85;&#xB839;&#xC778;&#xB370; &#xC5F0;&#xC0B0;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD560;&#xB54C;  &#xBAA8;&#xB450;  <code>\&lt;</code> <code>\&lt;=</code> <code>\&gt;</code> <code>=\&gt;</code> <code>\&amp;</code> <code>\|</code> <code>\*</code>
 &#xC640; &#xAC19;&#xC774; escape  &#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
-<p><code>&lt;</code> , <code>&gt;</code> &#xC5F0;&#xC0B0;&#xC790;&#xB294; &#xC0AC;&#xC804;&#xC801;&#xC73C;&#xB85C; (lexicographically) &#xBE44;&#xAD50;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC22B;&#xC790;&#xB97C; &#xBE44;&#xAD50;&#xD558;&#xB294;&#xB370; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC548;&#xB429;&#xB2C8;&#xB2E4; (100 &#xBCF4;&#xB2E4; 2 &#xAC00; &#xD06C;&#xB2E4;&#xACE0; &#xB098;&#xC635;&#xB2C8;&#xB2E4;). &#xB610;&#xD55C; shell redirection &#xBA54;&#xD0C0;&#xBB38;&#xC790;&#xC640; &#xCDA9;&#xB3CC;&#xD558;&#xBBC0;&#xB85C; &#xC0AC;&#xC6A9;&#xD560;&#xB550; escape &#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><code>&lt;</code> , <code>&gt;</code> &#xC5F0;&#xC0B0;&#xC790;&#xB294; &#xC0AC;&#xC804;&#xC801;&#xC73C;&#xB85C; (lexicographically) &#xBE44;&#xAD50;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC22B;&#xC790;&#xB97C; &#xBE44;&#xAD50;&#xD558;&#xB294;&#xB370; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC548;&#xB429;&#xB2C8;&#xB2E4; (<code>100</code> &#xBCF4;&#xB2E4; <code>2</code> &#xAC00; &#xD06C;&#xB2E4;&#xACE0; &#xB098;&#xC635;&#xB2C8;&#xB2E4;).
+&#xB610;&#xD55C; shell redirection &#xBA54;&#xD0C0;&#xBB38;&#xC790;&#xC640; &#xCDA9;&#xB3CC;&#xD558;&#xBBC0;&#xB85C; &#xC0AC;&#xC6A9;&#xD560;&#xB550; escape &#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <table>
 <thead>
 <tr>
@@ -1490,7 +1507,7 @@
 </tbody>
 </table>
 <h4 id="&#xBCC0;&#xC218;&#xAC12;&#xC774;-&#xC5F0;&#xC0B0;&#xC790;&#xC640;-&#xAC19;&#xC740;-&#xBB38;&#xC790;&#xC77C;-&#xACBD;&#xC6B0;">&#xBCC0;&#xC218;&#xAC12;&#xC774; &#xC5F0;&#xC0B0;&#xC790;&#xC640; &#xAC19;&#xC740; &#xBB38;&#xC790;&#xC77C; &#xACBD;&#xC6B0;</h4>
-<p>&#xD14C;&#xC2A4;&#xD2B8; &#xBA85;&#xB839;&#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBCC0;&#xC218;&#xAC12;&#xC774; &#xC5F0;&#xC0B0;&#xC790;&#xC640; &#xAC19;&#xC740; &#xC2A4;&#xD2B8;&#xB9C1;&#xC77C; &#xACBD;&#xC6B0;
+<p>&#xD14C;&#xC2A4;&#xD2B8; &#xBA85;&#xB839;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBCC0;&#xC218;&#xAC12;&#xC774; &#xC5F0;&#xC0B0;&#xC790;&#xC640; &#xAC19;&#xC740; &#xC2A4;&#xD2B8;&#xB9C1;&#xC77C; &#xACBD;&#xC6B0;
 &#xC61B;&#xB0A0; &#xBC84;&#xC804;&#xC758; test &#xBA85;&#xB839;&#xC5D0;&#xC11C;&#xB294; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD55C;&#xB2E4;&#xACE0; &#xD569;&#xB2C8;&#xB2E4;.
 &#xB530;&#xB77C;&#xC11C; &#xBB38;&#xC81C;&#xB97C; &#xD574;&#xACB0;&#xD558;&#xAE30; &#xC704;&#xD574; &#xBCC0;&#xC218; &#xC55E;&#xC5D0; &#xD2B9;&#xC815; &#xBB38;&#xC790;&#xB97C; &#xD3EC;&#xD568;&#xD574;&#xC11C; &#xC791;&#xC131;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># $var &#xAC12;&#xC774; -a &#xC774;&#xB77C;&#xBA74; [ -a = &quot;&quot; ] &#xAC00; &#xB418;&#xC5B4; &#xC61B;&#xB0A0; &#xBC84;&#xC804;&#xC758; test &#xBA85;&#xB839;&#xC5D0;&#xC11C; &#xC624;&#xB958; &#xBC1C;&#xC0DD;</span>
