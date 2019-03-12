@@ -1736,9 +1736,9 @@ $ ( <span class="hljs-built_in">command</span>1; <span class="hljs-built_in">com
 <p>Ctrl-c &#xC5D0; &#xC758;&#xD574; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xC885;&#xB8CC;&#xB420; &#xB54C; EXIT handler &#xB0B4;&#xC5D0;&#xC11C;&#xB294; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC744; &#xAD6C;&#xD560; &#xC218;&#xAC00; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC544;&#xB798; EXIT &#xC2E0;&#xD638;&#xC758; &#xACBD;&#xC6B0;&#xB97C; &#xBCF4;&#xBA74; cat &#xBA85;&#xB839;&#xC5D0;&#xC11C; &#xC2E4;&#xD589;&#xC774; &#xC911;&#xB2E8;&#xB42C;&#xC744;&#xB54C; Ctrl-c &#xB85C; &#xC885;&#xB8CC;&#xD560; &#xACBD;&#xC6B0;
 &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC774; &#xC81C;&#xB300;&#xB85C; &#xD45C;&#xC2DC;&#xB418;&#xC9C0; &#xC54A;&#xB294; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-&#xB610;&#xD55C; EXIT handler &#xB294; default INT handler &#xC5D0;&#xC758;&#xD574; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xAC00; &#xC885;&#xB8CC;&#xB420;&#xB54C; &#xC2E4;&#xD589;&#xB418;&#xBBC0;&#xB85C;
+&#xB610;&#xD55C; EXIT handler &#xB294; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xAC00; &#xC885;&#xB8CC;&#xB420;&#xB54C; &#xC2E4;&#xD589;&#xB418;&#xBBC0;&#xB85C;
 &#xB4A4;&#xC774;&#xC740; <code>echo 111</code> &#xBA85;&#xB839;&#xC740; &#xC2E4;&#xD589;&#xB418;&#xC9C0; &#xC54A;&#xB294; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
-<pre><code class="lang-bash">$ ( <span class="hljs-built_in">trap</span> <span class="hljs-string">&apos;echo exit : $?&apos;</span> EXIT; cat; <span class="hljs-built_in">echo</span> <span class="hljs-number">111</span> ); <span class="hljs-built_in">echo</span> <span class="hljs-number">222</span>   <span class="hljs-comment"># EXIT &#xC2E0;&#xD638;</span>
+<pre><code class="lang-bash">$ ( <span class="hljs-built_in">trap</span> <span class="hljs-string">&apos;echo exit : $?&apos;</span> EXIT; cat; <span class="hljs-built_in">echo</span> <span class="hljs-number">111</span> )   <span class="hljs-comment"># EXIT &#xC2E0;&#xD638;</span>
 ^C<span class="hljs-built_in">exit</span> : <span class="hljs-number">0</span>
 
 $ <span class="hljs-built_in">echo</span> $?
@@ -1750,7 +1750,7 @@ trap handler &#xC2E4;&#xD589; &#xD6C4;&#xC5D0; <code>echo 111</code> &#xBA85;&#x
 ^C<span class="hljs-built_in">exit</span> : <span class="hljs-number">130</span>
 <span class="hljs-number">111</span>
 </code></pre>
-<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD558;&#xBA74; &#xD2B9;&#xC815; &#xBA85;&#xB839;&#xC758; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC744; trap handler &#xC5D0;&#xC11C; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB530;&#xB77C;&#xC11C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD558;&#xBA74; &#xD2B9;&#xC815; &#xBA85;&#xB839;&#xC758; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC744; trap handler &#xC5D0;&#xC11C; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ ( <span class="hljs-built_in">trap</span> <span class="hljs-string">&apos;exit 0&apos;</span> INT; cat ); <span class="hljs-built_in">echo</span> <span class="hljs-built_in">exit</span> : $?
 ^C<span class="hljs-built_in">exit</span> : <span class="hljs-number">0</span>
 </code></pre>
