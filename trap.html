@@ -1406,8 +1406,8 @@ end---
 <h4 id="err-debug">ERR, DEBUG</h4>
 <p><a href="debugging.html">Debugging</a> &#xBA54;&#xB274; &#xCC38;&#xC870;</p>
 <h4 id="exit-&#xC2E0;&#xD638;&#xC640;-&#xB2E4;&#xB978;-&#xC2E0;&#xD638;&#xB97C;-&#xD568;&#xAED8;-&#xB4F1;&#xB85D;&#xD558;&#xBA74;">EXIT &#xC2E0;&#xD638;&#xC640; &#xB2E4;&#xB978; &#xC2E0;&#xD638;&#xB97C; &#xD568;&#xAED8; &#xB4F1;&#xB85D;&#xD558;&#xBA74;?</h4>
-<p>EXIT &#xC2E0;&#xD638;&#xC640; INT &#xC2E0;&#xD638;&#xB97C; &#xD568;&#xAED8; &#xB4F1;&#xB85D;&#xD588;&#xB2E4;&#xBA74; Ctrl-c &#xC5D0; &#xC758;&#xD55C; &#xC885;&#xB8CC; &#xC2DC; INT  handler &#xAC00; &#xBA3C;&#xC800; &#xC2E4;&#xD589;&#xB418;&#xACE0;
-&#xB9C8;&#xC9C0;&#xB9C9;&#xC5D0; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xAC00; &#xC885;&#xB8CC;&#xB420; &#xB54C; EXIT handler &#xAC00; &#xC2E4;&#xD589;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>EXIT &#xC2E0;&#xD638;&#xC640; INT &#xC2E0;&#xD638;&#xB97C; &#xD568;&#xAED8; &#xB4F1;&#xB85D;&#xD588;&#xB2E4;&#xBA74; Ctrl-c &#xC5D0; &#xC758;&#xD55C; &#xC885;&#xB8CC; &#xC2DC; INT &#xC2E0;&#xD638;&#xC5D0; &#xC758;&#xD574; &#xD55C;&#xBC88; &#xC2E4;&#xD589;&#xB418;&#xACE0;
+&#xB9C8;&#xC9C0;&#xB9C9;&#xC5D0; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xAC00; &#xC885;&#xB8CC;&#xB420; &#xB54C; EXIT &#xC2E0;&#xD638;&#xC5D0; &#xC758;&#xD574; &#xD55C;&#xBC88; &#xC2E4;&#xD589;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ cat test.sh
 <span class="hljs-shebang">#!/bin/bash</span>
 <span class="hljs-built_in">trap</span> <span class="hljs-string">&apos;echo trap handler ...&apos;</span> INT EXIT
@@ -1418,9 +1418,9 @@ cat
 
 $ ./test.sh 
 start...
-^C<span class="hljs-built_in">trap</span> handler ...      <span class="hljs-comment"># INT handler</span>
+^C<span class="hljs-built_in">trap</span> handler ...      <span class="hljs-comment"># INT &#xC2E0;&#xD638;&#xC5D0; &#xD55C;&#xBC88;</span>
 end...
-<span class="hljs-built_in">trap</span> handler ...        <span class="hljs-comment"># EXIT handler</span>
+<span class="hljs-built_in">trap</span> handler ...        <span class="hljs-comment"># EXIT &#xB54C; &#xD55C;&#xBC88;</span>
 </code></pre>
 <p><a name="quotes"></a></p>
 <h3 id="trap-handler-&#xC124;&#xC815;&#xC2DC;-quotes-&#xC758;-&#xC0AC;&#xC6A9;">trap handler &#xC124;&#xC815;&#xC2DC; quotes &#xC758; &#xC0AC;&#xC6A9;</h3>
