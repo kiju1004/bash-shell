@@ -1287,6 +1287,10 @@ fork &#xC740; &#xD604;&#xC7AC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC640; &#xB3D9;
 &#xBCC0;&#xACBD; &#xC5C6;&#xC774; &#xADF8;&#xB300;&#xB85C; &#xB098;&#xC624;&#xAC8C; &#xB418;&#xACE0; export &#xD558;&#xC9C0; &#xC54A;&#xC740; &#xBCC0;&#xC218;&#xB098; &#xD568;&#xC218;&#xB4E4;&#xB3C4; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
 &#xC774; &#xC0C1;&#xD0DC;&#xAC00; &#xBC14;&#xB85C; subshell &#xC785;&#xB2C8;&#xB2E4;.
 subshell &#xC5D0;&#xC11C; &#xBA85;&#xB839;&#xC774; &#xC2E4;&#xD589;&#xB420; &#xB54C;&#xB294; $BASHPID &#xAC00; &#xC0C8;&#xB85C; &#xC0DD;&#xC131;&#xB41C; pid &#xB85C; &#xC124;&#xC815;&#xB418;&#xC5B4; &#xC2E4;&#xD589;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>&#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; awk &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC744; &#xC2E4;&#xD589; &#xC911;&#xC5D0; fork &#xC744; &#xD558;&#xAC8C; &#xB418;&#xBA74; &#xD604;&#xC7AC; &#xC2E4;&#xD589; &#xC911;&#xC778; awk 
+&#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xACFC; &#xB3D9;&#xC77C;&#xD55C; &#xC0C1;&#xD0DC;&#xC758; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xC0DD;&#xC131;&#xB418;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
 <h3 id="3-exec-&#xB2E8;&#xACC4;">3. exec &#xB2E8;&#xACC4;</h3>
 <p>&#xC0C8;&#xB85C;&#xC6B4; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xC0DD;&#xC131;&#xB41C; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C; &#xAE30;&#xC874; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC758; &#xC8FC;&#xC18C;&#xACF5;&#xAC04;&#xC744; &#xC0AD;&#xC81C;&#xD558;&#xACE0; &#xC0C8;&#xB85C; &#xC2E4;&#xD589;&#xB420; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC744;
 &#xBA54;&#xBAA8;&#xB9AC;&#xB85C; &#xB85C;&#xB4DC;&#xD558;&#xC5EC; &#xC2E4;&#xD589;&#xC2DC;&#xD0A4;&#xB294; &#xAC83;&#xC774; exec &#xC785;&#xB2C8;&#xB2E4;.
@@ -1332,8 +1336,22 @@ Mon Dec <span class="hljs-number">28</span> <span class="hljs-number">13</span>:
     <span class="hljs-built_in">export</span> LESS_TERMCAP_se=$<span class="hljs-string">&apos;\e[0m&apos;</span>            <span class="hljs-comment"># end standout-mode</span>
     <span class="hljs-built_in">export</span> LESS_TERMCAP_me=$<span class="hljs-string">&apos;\e[0m&apos;</span>            <span class="hljs-comment"># end mode</span>
 
-    <span class="hljs-built_in">exec</span> man <span class="hljs-string">&quot;<span class="hljs-variable">$@</span>&quot;</span>
+    <span class="hljs-built_in">exec</span> man <span class="hljs-string">&quot;<span class="hljs-variable">$@</span>&quot;</span>         <span class="hljs-comment"># &#xD604;&#xC7AC; subshell &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB97C; &#xC774;&#xC6A9;&#xD574; man &#xBA85;&#xB839;&#xC744; &#xC2E4;&#xD589;</span>
 )
+</code></pre>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xD30C;&#xC77C;&#xB85C; &#xC791;&#xC131;&#xD560; &#xACBD;&#xC6B0;&#xB3C4; &#xC774;&#xBBF8; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00;
+&#xC2E4;&#xD589; &#xC911;&#xC5D0; &#xC788;&#xACE0; <code>man</code> &#xBA85;&#xB839; &#xC774;&#xD6C4;&#xC5D0;&#xB294; &#xB354; &#xC774;&#xC0C1; &#xC2E4;&#xD589;&#xD560; &#xBA85;&#xB839;&#xC774; &#xC5C6;&#xC73C;&#xBBC0;&#xB85C;
+&#xD604;&#xC7AC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB97C; &#xC774;&#xC6A9;&#xD574; exec &#xC73C;&#xB85C; &#xC2E4;&#xD589;&#xD558;&#xB294;&#xAC8C; &#xD6A8;&#xC728;&#xC801;&#xC774;&#xACA0;&#xC8E0;</p>
+<pre><code class="lang-bash">$ cat man
+<span class="hljs-shebang">#!/bin/bash
+</span>
+<span class="hljs-built_in">export</span> LESS_TERMCAP_md=$<span class="hljs-string">&apos;\e[01;38;5;74m&apos;</span>
+<span class="hljs-built_in">export</span> LESS_TERMCAP_us=$<span class="hljs-string">&apos;\e[04;38;5;146m&apos;</span>
+. . . .
+. . . .
+
+<span class="hljs-comment"># /usr/bin/man &quot;$@&quot;        &lt;--- &#xC2E4;&#xD589;&#xC744; &#xC704;&#xD574; &#xB610; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB97C; &#xC0DD;&#xC131;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC5C6;&#xB2E4;</span>
+<span class="hljs-built_in">exec</span> /usr/bin/man <span class="hljs-string">&quot;<span class="hljs-variable">$@</span>&quot;</span>     &lt;--- &#xD604;&#xC7AC; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB97C; &#xC774;&#xC6A9;&#xD574; &#xC2E4;&#xD589;
 </code></pre>
 <h4 id="subshell-&#xACFC;-child-process-&#xAD6C;&#xBD84;">subshell &#xACFC; child process &#xAD6C;&#xBD84;</h4>
 <p>subshell &#xB3C4; parent &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xC0DD;&#xC131;&#xB41C; &#xC790;&#xC2E0;&#xC758; pid &#xB97C; &#xAC16;&#xB294; child process &#xC785;&#xB2C8;&#xB2E4;.
