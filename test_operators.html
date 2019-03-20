@@ -1249,7 +1249,7 @@
 <pre><code class="lang-bash">$ <span class="hljs-keyword">if</span> [ <span class="hljs-operator">-f</span> <span class="hljs-string">&quot;<span class="hljs-variable">$file</span>&quot;</span> <span class="hljs-operator">-a</span> -x <span class="hljs-string">&quot;<span class="hljs-variable">$file</span>&quot;</span> ]; <span class="hljs-keyword">then</span> ... <span class="hljs-keyword">fi</span>
 </code></pre>
 <blockquote>
-<p>&#xC5F0;&#xC0B0;&#xC790;&#xB294; test -fx &quot;$file&quot; &#xC640; &#xAC19;&#xC774; &#xB450; &#xAC1C;&#xB97C; &#xBD99;&#xC5EC; &#xC4F0;&#xAE30; &#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC5F0;&#xC0B0;&#xC790;&#xB294; test -fx &quot;$file&quot; &#xC640; &#xAC19;&#xC774; &#xB450;&#xAC1C;&#xB97C; &#xBD99;&#xC5EC; &#xC4F0;&#xAE30; &#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
 <p>test &#xB418;&#xB294; &#xD30C;&#xC77C;&#xC774; symbolic link &#xC77C;&#xACBD;&#xC6B0; <code>-L</code>, <code>-h</code> &#xC5F0;&#xC0B0;&#xC790;&#xB294; &#xB9C1;&#xD06C; &#xC790;&#xCCB4;&#xB97C; &#xD14C;&#xC2A4;&#xD2B8;&#xD558;&#xACE0; &#xB098;&#xBA38;&#xC9C0;&#xB294; &#xB9C1;&#xD06C;&#xC5D0; &#xC5F0;&#xACB0;&#xB41C; &#xB300;&#xC0C1; &#xD30C;&#xC77C;&#xC744; &#xD14C;&#xC2A4;&#xD2B8;&#xD569;&#xB2C8;&#xB2E4;. </p>
 <table>
@@ -1358,6 +1358,14 @@
 </tr>
 </tbody>
 </table>
+<p>&#xD30C;&#xC77C;&#xC774;&#xB098; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xB294;&#xC9C0; &#xCCB4;&#xD06C;&#xD560;&#xB54C; <code>readlink</code> &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+<code>readlink</code> &#xBA85;&#xB839;&#xC740; &#xACBD;&#xB85C;&#xC5D0; symbolic link &#xAC00; &#xD3EC;&#xD568;&#xB420; &#xACBD;&#xC6B0; &#xBAA8;&#xB450; &#xCD94;&#xC801;&#xD558;&#xC5EC; physical &#xACBD;&#xB85C;&#xB97C; &#xCD9C;&#xB825;&#xD574; &#xC90D;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ readlink <span class="hljs-operator">-e</span> /usr/bin/awk
+/usr/bin/gawk
+
+$ readlink <span class="hljs-operator">-e</span> /lib64/ld-linux-x86-<span class="hljs-number">64</span>.so.<span class="hljs-number">2</span> 
+/lib/x86_64-linux-gnu/ld-<span class="hljs-number">2.28</span>.so
+</code></pre>
 <h3 id="&#xC608;&#xC81C;-">&#xC608;&#xC81C; )</h3>
 <p>&#xB2E4;&#xC74C;&#xC740; &#xB450;&#xAC1C;&#xC758; &#xD30C;&#xC77C;&#xC744; &#xC778;&#xC218;&#xB85C; &#xBC1B;&#xB294; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC5D0;&#xC11C; test &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD574; &#xC778;&#xC218;&#xB97C; &#xCCB4;&#xD06C;&#xD558;&#xB294; &#xC608;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xD30C;&#xC77C;&#xC740; <code>&lt;( ... )</code> &#xB098; named pipe &#xAC00; &#xC62C;&#xC218; &#xC788;&#xC73C;&#xBBC0;&#xB85C; <code>-f</code> &#xB85C; &#xCCB4;&#xD06C;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xB514;&#xB809;&#xD1A0;&#xB9AC; &#xC5EC;&#xBD80;&#xB9CC;
 &#xCCB4;&#xD06C;&#xD558;&#xC600;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
