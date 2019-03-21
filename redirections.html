@@ -1805,6 +1805,11 @@ $ ls | tee file                 <span class="hljs-comment"># stdout &#xACFC; fil
 
 $ ls | tee file1 file2 file3    <span class="hljs-comment"># stdout &#xACFC; file1 file2 file3 &#xB85C; &#xCD9C;&#xB825;</span>
 
+$ tee file1 file2 file3 &lt;&lt;END   <span class="hljs-comment"># stdout &#xACFC; file1 file2 file3 &#xB85C; &#xCD9C;&#xB825;</span>
+&gt; <span class="hljs-number">111</span>
+&gt; <span class="hljs-number">222</span>
+&gt; END
+
 $ ps -ef | tee &gt;(awk <span class="hljs-string">&apos;$1 == &quot;tom&quot;&apos;</span> &gt; toms-procs.txt) \
                &gt;(awk <span class="hljs-string">&apos;$1 == &quot;root&quot;&apos;</span> &gt; roots-procs.txt) \
                &gt;(awk <span class="hljs-string">&apos;$1 == &quot;httpd&quot;&apos;</span> &gt; httpd-procs.txt)
