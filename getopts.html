@@ -1992,6 +1992,41 @@ Breakpoint <span class="hljs-number">1</span>, main () at hello.c:<span class="h
 
 <span class="hljs-comment"># &#xB514;&#xBC84;&#xAE45;&#xC774; &#xC548;&#xB418;&#xBA74; -static &#xC73C;&#xB85C; &#xBE4C;&#xB4DC;&#xD574; &#xBCF4;&#xC138;&#xC694;</span>
 </code></pre>
+<p>&#xD55C;&#xAC00;&#xC9C0; tip &#xC73C;&#xB85C; <code>binfmt-support</code> &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xC124;&#xCE58;&#xD558;&#xBA74; static &#xC73C;&#xB85C; &#xBE4C;&#xB4DC;&#xB41C; &#xC2E4;&#xD589;&#xD30C;&#xC77C;&#xC758; &#xACBD;&#xC6B0;
+qemu-arm &#xBA85;&#xB839; &#xC5C6;&#xC774;&#xB3C4; &#xD504;&#xB86C;&#xD504;&#xD2B8; &#xC0C1;&#xC5D0;&#xC11C; &#xC9C1;&#xC811; &#xC2E4;&#xD589;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+dynamic link &#xB85C; &#xBE4C;&#xB4DC;&#xB41C; &#xC2E4;&#xD589;&#xD30C;&#xC77C;&#xB3C4; &#xAC00;&#xB2A5;&#xD55C;&#xB370; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC124;&#xC815;&#xD574; &#xC8FC;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">mkdir /etc/qemu-binfmt
+ln <span class="hljs-operator">-s</span> /usr/arm-linux-gnueabihf /etc/qemu-binfmt/arm
+ln <span class="hljs-operator">-s</span> /usr/aarch64-linux-gnu /etc/qemu-binfmt/aarch64
+ln <span class="hljs-operator">-s</span> /usr/mips-linux-gnu /etc/qemu-binfmt/mips
+ln <span class="hljs-operator">-s</span> /usr/mips64-linux-gnuabi64 /etc/qemu-binfmt/mips64
+ln <span class="hljs-operator">-s</span> /usr/powerpc-linux-gnu /etc/qemu-binfmt/ppc
+ln <span class="hljs-operator">-s</span> /usr/powerpc64-linux-gnu /etc/qemu-binfmt/ppc64
+ln <span class="hljs-operator">-s</span> /usr/sparc64-linux-gnu /etc/qemu-binfmt/sparc64
+ln <span class="hljs-operator">-s</span> /usr/riscv64-linux-gnu /etc/qemu-binfmt/riscv64
+</code></pre>
+<blockquote>
+<p>&#xCC38;&#xACE0;&#xB85C; dynamic link &#xB85C; &#xBE4C;&#xB4DC;&#xB41C; big endian &#xC2E4;&#xD589;&#xD30C;&#xC77C;&#xC758; &#xACBD;&#xC6B0; &#xC2E4;&#xD589;&#xC2DC; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774;&#xAC83;&#xC740; &#xC2E4;&#xD589; &#xC2DC;&#xC5D0; &#xC2DC;&#xC2A4;&#xD15C;&#xC758; /etc/ld.so.cache (little endian) &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC778;&#xB370;&#xC694;.
+&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xCC98;&#xB9AC;&#xD574;&#xC8FC;&#xBA74; &#xC624;&#xB958;&#xB97C; &#xBC29;&#xC9C0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<pre><code class="lang-bash">mkdir /usr/arm-linux-gnueabihf/etc
+touch /usr/arm-linux-gnueabihf/etc/ld.so.cache
+mkdir /usr/aarch64-linux-gnu/etc
+touch /usr/aarch64-linux-gnu/etc/ld.so.cache
+mkdir /usr/mips-linux-gnu/etc
+touch /usr/mips-linux-gnu/etc/ld.so.cache
+mkdir /usr/mips64-linux-gnu/etc
+touch /usr/mips64-linux-gnu/etc/ld.so.cache
+mkdir /usr/powerpc-linux-gnu/etc
+touch /usr/powerpc-linux-gnu/etc/ld.so.cache
+mkdir /usr/powerpc64-linux-gnu/etc
+touch /usr/powerpc64-linux-gnu/ld.so.cache
+mkdir /usr/sparc64-linux-gnu/etc
+touch /usr/sparc64-linux-gnu/ld.so.cache
+mkdir /usr/riscv64-linux-gnu/etc
+touch /usr/riscv64-linux-gnu/ld.so.cache
+</code></pre>
 
                     
                     </section>
