@@ -1556,7 +1556,7 @@ cursor_invisible=`tput civis`
     awk <span class="hljs-string">&apos;BEGIN{ printf &quot;[ %3d%% ]\n&quot;,&apos;</span><span class="hljs-variable">$2</span><span class="hljs-string">&apos;*(100/&apos;</span><span class="hljs-variable">$progress_bar</span><span class="hljs-string">&apos;) }&apos;</span>
 }
 
-<span class="hljs-built_in">declare</span> -A file
+<span class="hljs-built_in">declare</span> -A file     <span class="hljs-comment"># associative array &#xB97C; &#xC0DD;&#xC131;&#xD558;&#xACE0; &#xAC12;&#xC744; 0 &#xC73C;&#xB85C; &#xCD08;&#xAE30;&#xD654; &#xD569;&#xB2C8;&#xB2E4;.</span>
 <span class="hljs-keyword">for</span> ((i=<span class="hljs-number">1</span>; i&lt;=<span class="hljs-variable">$num_of_files</span>; i++)) <span class="hljs-keyword">do</span> 
     file[file<span class="hljs-variable">$i</span>]=<span class="hljs-number">0</span>
 <span class="hljs-keyword">done</span>
