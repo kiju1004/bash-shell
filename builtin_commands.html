@@ -1775,15 +1775,10 @@ hello    world
 &#xC22B;&#xC790;&#xB77C;&#xB3C4; concatenation &#xC774; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ cnt=<span class="hljs-number">100</span>
 
-$ cnt+=<span class="hljs-number">1</span>
+$ cnt+=<span class="hljs-number">20</span>
 
-$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$cnt</span>    <span class="hljs-comment"># 100 &#xC774; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xCC98;&#xB9AC;&#xB418;&#xC5B4; concatenation &#xB41C;&#xB2E4;.</span>
-<span class="hljs-number">1001</span>
-
-$ cnt+=<span class="hljs-number">2</span>
-
-$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$cnt</span>
-<span class="hljs-number">10012</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$cnt</span>    <span class="hljs-comment"># &#xC22B;&#xC790;&#xAC00; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xCC98;&#xB9AC;&#xB418;&#xC5B4; concatenation &#xB41C;&#xB2E4;.</span>
+<span class="hljs-number">10020</span>
 </code></pre>
 <p>&#xC774;&#xB54C; <code>-i</code> &#xC635;&#xC158;&#xC744; &#xC774;&#xC6A9;&#xD574; integer &#xC18D;&#xC131;&#xC744; &#xC124;&#xC815;&#xD558;&#xBA74; &#xC0B0;&#xC220;&#xC5F0;&#xC0B0;&#xC744; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ <span class="hljs-function"><span class="hljs-title">f1</span></span>() {
@@ -1791,17 +1786,13 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$cnt</span
     <span class="hljs-built_in">local</span> -i cnt=<span class="hljs-number">100</span>      <span class="hljs-comment"># cnt &#xBCC0;&#xC218;&#xC758; &#xC18D;&#xC131;&#xC744; integer &#xB85C; &#xC124;&#xC815;</span>
     <span class="hljs-built_in">echo</span> <span class="hljs-variable">$cnt</span>
 
-    cnt+=<span class="hljs-number">1</span>                <span class="hljs-comment"># integer &#xC18D;&#xC131;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC73C;&#xBBC0;&#xB85C;</span>
-    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$cnt</span>             <span class="hljs-comment"># cnt=$(( cnt + 1 )) &#xB85C; &#xD558;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB41C;&#xB2E4;.</span>
-
-    cnt+=<span class="hljs-number">2</span>
-    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$cnt</span>
+    cnt+=<span class="hljs-number">20</span>               <span class="hljs-comment"># integer &#xC18D;&#xC131;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC73C;&#xBBC0;&#xB85C;</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$cnt</span>             <span class="hljs-comment"># cnt=$(( cnt + 20 )) &#xB85C; &#xD558;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB41C;&#xB2E4;.</span>
 }
 
 $ f1
 <span class="hljs-number">100</span>
-<span class="hljs-number">101</span>
-<span class="hljs-number">103</span>
+<span class="hljs-number">120</span>
 </code></pre>
 <h3 id="logout">logout</h3>
 <blockquote>
