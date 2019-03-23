@@ -1561,14 +1561,12 @@ compopt -o nospace
 </blockquote>
 <p> &#xBCC0;&#xC218;&#xB97C; &#xC120;&#xC5B8;&#xD558;&#xACE0; &#xC18D;&#xC131;&#xC744; &#xC801;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xAC12;&#xC744; &#xB300;&#xC785;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xC0C1;&#xD0DC; (unset &#xC0C1;&#xD0DC;) &#xB85C; &#xB0A8;&#xC2B5;&#xB2C8;&#xB2E4;.
  &#xBCC0;&#xC218;, array &#xC758; &#xD604;&#xC7AC; &#xC18D;&#xC131;&#xACFC; &#xAC12;&#xC744; &#xBCF4;&#xAC70;&#xB098; &#xD568;&#xC218;&#xC815;&#xC758;&#xB97C; &#xBCFC;&#xB54C;&#xB3C4; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xC720;&#xD6A8;&#xD558;&#xC9C0; &#xC54A;&#xC740; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAC70;&#xB098; &#xAC12;&#xC744; &#xB300;&#xC785;&#xD560;&#xB54C; &#xC624;&#xB958;&#xAC00; &#xB098;&#xBA74; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC73C;&#xB85C; non-zero &#xB97C; &#xB9AC;&#xD134;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<blockquote>
-<p>sh &#xC5D0;&#xC11C;&#xB294; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xD568;&#xC218; &#xB0B4;&#xC5D0;&#xC11C; local &#xC740; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-</blockquote>
+<p><code>sh</code> &#xC5D0;&#xC11C;&#xB294; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xD568;&#xC218; &#xB0B4;&#xC5D0;&#xC11C; local &#xC740; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <ul>
 <li>Associative array &#xB97C; &#xB9CC;&#xB4E4;&#xB54C;&#xB294; <code>declare -A</code> &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.  </li>
-<li>&#xD568;&#xC218; &#xB0B4;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xBA74; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; <code>local</code> &#xBCC0;&#xC218;&#xB85C; &#xC124;&#xC815;&#xB429;&#xB2C8;&#xB2E4;.<br><code>-g</code> &#xC635;&#xC158;&#xC73C;&#xB85C; global &#xBCC0;&#xC218;&#xB85C; &#xC124;&#xC815; &#xD560;&#xC218;&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
-<li><code>declare -n</code> &#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; named reference &#xAE30;&#xB2A5;&#xC744; &#xC774;&#xC6A9;&#xD560;&#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
-<li><code>declare -t -f &#xD568;&#xC218;&#xBA85;</code> &#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xD574;&#xB2F9; &#xD568;&#xC218;&#xC5D0;&#xC11C; DEBUG, RETRUN trap &#xC744; &#xD560;&#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xD568;&#xC218; &#xB0B4;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xBA74; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; <code>local</code> &#xBCC0;&#xC218;&#xB85C; &#xC124;&#xC815;&#xB429;&#xB2C8;&#xB2E4;.<br>( <code>-g</code> &#xC635;&#xC158;&#xC73C;&#xB85C; global &#xBCC0;&#xC218;&#xB85C; &#xC124;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. )</li>
+<li><code>declare -n</code> &#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; named reference &#xAE30;&#xB2A5;&#xC744; &#xC774;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li><code>declare -t -f &#xD568;&#xC218;&#xBA85;</code> &#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xD574;&#xB2F9; &#xD568;&#xC218;&#xC5D0;&#xC11C; DEBUG, RETRUN trap &#xC744; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
 </ul>
 <p><strong>Options:</strong>  </p>
 <table>
@@ -1667,6 +1665,50 @@ compopt -o nospace
 </blockquote>
 <p>builtin &#xBA85;&#xB839;&#xC744; disable &#xB610;&#xB294; enable &#xC2DC;&#xD0A4;&#xB294;&#xB370; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.
 builtin &#xBA85;&#xB839;&#xACFC; &#xB3D9;&#xC77C;&#xD55C; &#xC774;&#xB984;&#xC758; &#xC678;&#xBD80; &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xACE0;&#xC790; &#xD560; &#xB54C; &#xC774; &#xBA85;&#xB839;&#xC73C;&#xB85C; builtin &#xBA85;&#xB839;&#xC744; disable &#xC2DC;&#xD0AC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">enable</span>      <span class="hljs-comment"># &#xD604;&#xC7AC; enable &#xB418;&#xC5B4;&#xC788;&#xB294; builtin &#xBA85;&#xB839;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-built_in">enable</span> .      <span class="hljs-comment"># disable &#xB418;&#xC5B4; &#xC788;&#xB294; &#xBA85;&#xB839;&#xB3C4; &#xD568;&#xAED8;&#xBCF4;&#xB824;&#xBA74; &apos;-a&apos; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-built_in">enable</span> :
+<span class="hljs-built_in">enable</span> [
+<span class="hljs-built_in">enable</span> <span class="hljs-built_in">alias</span>
+<span class="hljs-built_in">enable</span> <span class="hljs-built_in">bg</span>
+. . . 
+. . .
+$ <span class="hljs-built_in">type</span> <span class="hljs-operator">-a</span> <span class="hljs-built_in">echo</span>
+<span class="hljs-built_in">echo</span> is a shell <span class="hljs-built_in">builtin</span>
+<span class="hljs-built_in">echo</span> is /bin/<span class="hljs-built_in">echo</span>
+
+$ <span class="hljs-built_in">enable</span> -n <span class="hljs-built_in">echo</span>         <span class="hljs-comment"># echo builtin &#xBA85;&#xB839;&#xC744; disable &#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;.</span>
+
+$ <span class="hljs-built_in">type</span> <span class="hljs-operator">-a</span> <span class="hljs-built_in">echo</span>
+<span class="hljs-built_in">echo</span> is /bin/<span class="hljs-built_in">echo</span>
+
+$ <span class="hljs-built_in">enable</span> <span class="hljs-built_in">echo</span>            <span class="hljs-comment"># &#xB2E4;&#xC2DC; echo &#xBA85;&#xB839;&#xC744; enable &#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;.</span>
+
+$ <span class="hljs-built_in">enable</span> | grep <span class="hljs-built_in">echo</span>
+<span class="hljs-built_in">enable</span> <span class="hljs-built_in">echo</span>
+</code></pre>
+<p>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC81C;&#xACF5;&#xB418;&#xB294; builtin &#xBA85;&#xB839; &#xC678;&#xC5D0; <code>bash-builtins</code> &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xC124;&#xCE58;&#xD558;&#xBA74;
+&#xCD94;&#xAC00;&#xC801;&#xC73C;&#xB85C; &#xBA85;&#xB839;&#xC744; builtin &#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB610;&#xD55C; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC9C1;&#xC811; &#xC81C;&#xC791;&#xD558;&#xC5EC; builtin &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xB294;&#xB370;
+<code>dpkg -L bash-builtins</code> &#xCD9C;&#xB825;&#xC5D0;&#xC11C; &#xC608;&#xC81C; &#xC18C;&#xC2A4;&#xB97C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><code>-f</code>        Load builtin NAME from shared object FILENAME</li>
+<li><code>-d</code>        Remove a builtin loaded with -f</li>
+</ul>
+<pre><code class="lang-bash">$ sudo apt install bash-builtins
+
+<span class="hljs-comment"># &#xC0AC;&#xC6A9;&#xD560;&#xC218; &#xC788;&#xB294; &#xBA85;&#xB839;&#xC758; &#xBAA9;&#xB85D;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+$ ls <span class="hljs-operator">-l</span> /usr/lib/bash/
+
+<span class="hljs-comment"># /usr/lib/bash/sleep &#xD30C;&#xC77C;&#xC744; &#xB85C;&#xB4DC;&#xD558;&#xC5EC; builtin &#xC73C;&#xB85C; enable &#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;.</span>
+$ <span class="hljs-built_in">enable</span> <span class="hljs-operator">-f</span> /usr/lib/bash/sleep sleep
+
+$ <span class="hljs-built_in">type</span> <span class="hljs-operator">-a</span> sleep
+sleep is a shell <span class="hljs-built_in">builtin</span>
+sleep is /bin/sleep
+
+$ <span class="hljs-built_in">enable</span> <span class="hljs-operator">-d</span> sleep        <span class="hljs-comment"># &apos;-f&apos; &#xC635;&#xC158;&#xC73C;&#xB85C; &#xB85C;&#xB4DC;&#xD55C; &#xD30C;&#xC77C;&#xC744; remove &#xD569;&#xB2C8;&#xB2E4;.</span>
+</code></pre>
 <h3 id="false">false</h3>
 <blockquote>
 <p>false</p>
@@ -1729,20 +1771,37 @@ hello    world
 <p>local [option] name[=value] ...</p>
 </blockquote>
 <p>local &#xBCC0;&#xC218;&#xB97C; &#xC124;&#xC815;&#xD560;&#xB54C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xBBC0;&#xB85C; &#xD568;&#xC218; &#xB0B4;&#xC5D0;&#xC11C;&#xB9CC; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br><code>declare</code> &#xBA85;&#xB839;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC635;&#xC158;&#xB4E4;&#xC744; &#xB3D9;&#xC77C;&#xD558;&#xAC8C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
-<pre><code class="lang-bash">$ <span class="hljs-function"><span class="hljs-title">f1</span></span>() {
-    <span class="hljs-built_in">local</span> -i cnt     <span class="hljs-comment"># -i : cnt &#xBCC0;&#xC218;&#xC758; &#xC18D;&#xC131;&#xC744; integer &#xB85C; &#xC124;&#xC815;</span>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; bash &#xC5D0;&#xC11C; <code>+=</code> &#xC5F0;&#xC0B0;&#xC790;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xCC98;&#xB9AC;&#xD558;&#xBBC0;&#xB85C;
+&#xC22B;&#xC790;&#xB77C;&#xB3C4; concatenation &#xC774; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ cnt=<span class="hljs-number">100</span>
 
-    cnt=<span class="hljs-number">100</span>
+$ cnt+=<span class="hljs-number">1</span>
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$cnt</span>    <span class="hljs-comment"># 100 &#xC774; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xCC98;&#xB9AC;&#xB418;&#xC5B4; concatenation &#xB41C;&#xB2E4;.</span>
+<span class="hljs-number">1001</span>
+
+$ cnt+=<span class="hljs-number">2</span>
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$cnt</span>
+<span class="hljs-number">10012</span>
+</code></pre>
+<p>&#xC774;&#xB54C; <code>-i</code> &#xC635;&#xC158;&#xC744; &#xC774;&#xC6A9;&#xD574; integer &#xC18D;&#xC131;&#xC744; &#xC124;&#xC815;&#xD558;&#xBA74; &#xC0B0;&#xC220;&#xC5F0;&#xC0B0;&#xC744; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ <span class="hljs-function"><span class="hljs-title">f1</span></span>() {
+
+    <span class="hljs-built_in">local</span> -i cnt=<span class="hljs-number">100</span>      <span class="hljs-comment"># cnt &#xBCC0;&#xC218;&#xC758; &#xC18D;&#xC131;&#xC744; integer &#xB85C; &#xC124;&#xC815;</span>
     <span class="hljs-built_in">echo</span> <span class="hljs-variable">$cnt</span>
 
-    cnt=cnt+<span class="hljs-number">1</span>        <span class="hljs-comment"># cnt &#xBCC0;&#xC218;&#xB294; integer &#xC18D;&#xC131;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC73C;&#xBBC0;&#xB85C;</span>
-                     <span class="hljs-comment"># cnt=$(( cnt + 1 )) &#xB85C; &#xD558;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB41C;&#xB2E4;.</span>
+    cnt+=<span class="hljs-number">1</span>                <span class="hljs-comment"># integer &#xC18D;&#xC131;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC73C;&#xBBC0;&#xB85C;</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$cnt</span>             <span class="hljs-comment"># cnt=$(( cnt + 1 )) &#xB85C; &#xD558;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB41C;&#xB2E4;.</span>
+
+    cnt+=<span class="hljs-number">2</span>
     <span class="hljs-built_in">echo</span> <span class="hljs-variable">$cnt</span>
 }
 
 $ f1
 <span class="hljs-number">100</span>
 <span class="hljs-number">101</span>
+<span class="hljs-number">103</span>
 </code></pre>
 <h3 id="logout">logout</h3>
 <blockquote>
@@ -1896,6 +1955,9 @@ $ <span class="hljs-literal">true</span>
 $ <span class="hljs-built_in">echo</span> $?
 <span class="hljs-number">0</span>
 </code></pre>
+<h3 id="times">times</h3>
+<p>Display process times.  </p>
+<p>Prints the accumulated user and system times for the shell and all of its child processes.</p>
 <h3 id="type">type</h3>
 <blockquote>
 <p>type [-afptP] name [name ...]</p>
