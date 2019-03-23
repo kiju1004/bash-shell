@@ -1414,26 +1414,30 @@ $ <span class="hljs-built_in">let</span> res+=<span class="hljs-number">20</span
 $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$res</span>
 <span class="hljs-number">120</span>
 </code></pre>
-<p>&#xB610;&#xD55C; &#xC0B0;&#xC220;&#xC5F0;&#xC0B0;&#xC744; &#xD560;&#xB54C; <code>$(( ))</code> <code>(( ))</code> &#xB97C; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xBCF4;&#xB2E4; let &#xC744; &#xC774;&#xC6A9;&#xD558;&#xBA74; 
+<p>&#xC0B0;&#xC220;&#xC5F0;&#xC0B0;&#xC744; &#xD560;&#xB54C; <code>$(( ))</code> <code>(( ))</code> &#xB97C; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xBCF4;&#xB2E4; let &#xC744; &#xC774;&#xC6A9;&#xD558;&#xBA74; 
 &#xC2DD;&#xC774; &#xC880;&#xB354; &#xAC04;&#xB2E8;&#xD574;&#xC9D1;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">(( i++ ))        res=$(( var + <span class="hljs-number">1</span> ))
 
 <span class="hljs-built_in">let</span> i++          <span class="hljs-built_in">let</span> res=var+<span class="hljs-number">1</span>
 </code></pre>
 <p>let &#xC740; &#xD55C;&#xC904;&#xC5D0; &#xC5EC;&#xB7EC; &#xAC1C;&#xC758; &#xC0B0;&#xC220;&#xC2DD;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-&#xC774;&#xB54C; &#xD558;&#xB098;&#xC758; &#xC0B0;&#xC220;&#xC2DD;&#xC740; &#xD558;&#xB098;&#xC758; &#xC778;&#xC218;&#xC640; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xC5B4;&#xC57C; &#xD558;&#xBBC0;&#xB85C; 
+&#xC774;&#xB54C; &#xD558;&#xB098;&#xC758; &#xC2DD;&#xC740; &#xD558;&#xB098;&#xC758; &#xC778;&#xC218;&#xC640; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xC5B4;&#xC57C; &#xD558;&#xBBC0;&#xB85C; 
 &#xC2DD;&#xC744; &#xC4F8;&#xB54C;&#xB294; &#xACF5;&#xBC31; &#xC5C6;&#xC774; &#xBD99;&#xC5EC; &#xC368;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. 
 &#xD558;&#xC9C0;&#xB9CC; quotes &#xC744; &#xC774;&#xC6A9;&#xD558;&#xBA74; &#xACF5;&#xBC31;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">let</span> var = <span class="hljs-number">1</span> + <span class="hljs-number">2</span>
 bash: <span class="hljs-built_in">let</span>: =: syntax error: operand expected (error token is <span class="hljs-string">&quot;=&quot;</span>)
 $ <span class="hljs-built_in">let</span> var += <span class="hljs-number">1</span>
 bash: <span class="hljs-built_in">let</span>: +=: syntax error: operand expected (error token is <span class="hljs-string">&quot;+=&quot;</span>)
+$ <span class="hljs-built_in">let</span> var=<span class="hljs-number">1</span>+<span class="hljs-number">2</span>      <span class="hljs-comment"># &#xC2DD;&#xC744; &#xC4F8;&#xB550; &#xACF5;&#xBC31;&#xC5C6;&#xC774; &#xBD99;&#xC5EC;&#xC368;&#xC57C; &#xD55C;&#xB2E4;</span>
+OK
 
-$ <span class="hljs-built_in">let</span> var=<span class="hljs-number">1</span>+<span class="hljs-number">3</span>
-$ <span class="hljs-built_in">let</span> var=<span class="hljs-number">1</span>+<span class="hljs-number">3</span> <span class="hljs-string">&quot;res = (var == 5 ? 10 : 20)&quot;</span>    <span class="hljs-comment"># &#xD55C;&#xC904;&#xC5D0; &#xC5EC;&#xB7EC;&#xAC1C;&#xC758; &#xC2DD;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;.</span>
+$ <span class="hljs-built_in">let</span> aa=<span class="hljs-number">100</span> bb=<span class="hljs-number">200</span> res=aa+bb                <span class="hljs-comment"># &#xD55C;&#xC904;&#xC5D0; &#xC5EC;&#xB7EC;&#xAC1C;&#xC758; &#xC2DD;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$res</span>
+<span class="hljs-number">300</span>
+$ <span class="hljs-built_in">let</span> var=<span class="hljs-number">1</span>+<span class="hljs-number">3</span> <span class="hljs-string">&quot;res = (var == 5 ? 10 : 20)&quot;</span>   <span class="hljs-comment"># quotes &#xC744;&#xD558;&#xBA74; &#xACF5;&#xBC31;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;.</span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$res</span>
 <span class="hljs-number">20</span>
-$ <span class="hljs-built_in">let</span> <span class="hljs-string">&quot;var++, res = (var == 5 ? 10 : 20)&quot;</span>     <span class="hljs-comment"># quotes &#xC744;&#xD558;&#xBA74; &#xACF5;&#xBC31;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;.</span>
+$ <span class="hljs-built_in">let</span> <span class="hljs-string">&quot;var++, res = (var == 5 ? 10 : 20)&quot;</span> 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$res</span>
 <span class="hljs-number">10</span>
 $ <span class="hljs-built_in">let</span> <span class="hljs-string">&quot;2 &lt; 1&quot;</span>; <span class="hljs-built_in">echo</span> $?
