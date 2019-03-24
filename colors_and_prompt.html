@@ -1654,7 +1654,7 @@ cursor_invisible=`tput civis`
     awk -v num=<span class="hljs-string">&quot;<span class="hljs-variable">$num_of_files</span>&quot;</span> -v pbar=<span class="hljs-string">&quot;<span class="hljs-variable">$progress_bar</span>&quot;</span> <span class="hljs-string">&apos;BEGIN{ 
          for ( f=1; f&lt;=num; f++ ) {
              split( ENVIRON[&quot;file&quot; f], a, &quot;=&quot;)  # NdhW2npQAV=12 &#xD615;&#xD0DC;&#xC758; &#xD658;&#xACBD;&#xBCC0;&#xC218; &#xAC12;&#xC5D0;&#xC11C;
-             fname=a[1]; cpos=a[2]              # &#xD568;&#xC218;&#xBA85;&#xACFC; cur_pos &#xAC12;&#xC744; &#xAD6C;&#xD569;&#xB2C8;&#xB2E4;.
+             fname = a[1]; cpos = a[2]          # &#xD568;&#xC218;&#xBA85;&#xACFC; cur_pos &#xAC12;&#xC744; &#xAD6C;&#xD569;&#xB2C8;&#xB2E4;.
              printf &quot;%-8s |&quot;, fname
              for ( i=1; i&lt;=cpos; i++ ) printf &quot;=&quot;; printf &quot;&gt;&quot;
              space =  pbar - cpos + 2 

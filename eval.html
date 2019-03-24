@@ -1255,6 +1255,11 @@ foo bar
 
 $ $( <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;AA=100&quot;</span> )
 AA=<span class="hljs-number">100</span>: <span class="hljs-built_in">command</span> not found
+
+$ <span class="hljs-keyword">for</span> (( i=<span class="hljs-number">1</span>; i&lt;=<span class="hljs-number">5</span>; i++ )) <span class="hljs-keyword">do</span> AA<span class="hljs-variable">$i</span>=$((<span class="hljs-variable">$i</span> * <span class="hljs-number">100</span>)); <span class="hljs-keyword">done</span>
+AA1=<span class="hljs-number">100</span>: <span class="hljs-built_in">command</span> not found
+AA2=<span class="hljs-number">200</span>: <span class="hljs-built_in">command</span> not found
+. . . .
 </code></pre>
 <p>&#xC774;&#xB7F4; &#xB54C; eval &#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">eval</span> <span class="hljs-string">&quot;<span class="hljs-variable">$( echo &quot;if test 1 -eq 1; then echo equal; fi&quot; )</span>&quot;</span>
@@ -1263,6 +1268,12 @@ equal
 $ <span class="hljs-built_in">eval</span> <span class="hljs-string">&quot;<span class="hljs-variable">$( echo &quot;AA=100&quot; )</span>&quot;</span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$AA</span>
 <span class="hljs-number">100</span>
+
+$ <span class="hljs-keyword">for</span> (( i=<span class="hljs-number">1</span>; i&lt;=<span class="hljs-number">5</span>; i++ )) <span class="hljs-keyword">do</span> <span class="hljs-built_in">eval</span> AA<span class="hljs-variable">$i</span>=$((<span class="hljs-variable">$i</span> * <span class="hljs-number">100</span>)); <span class="hljs-keyword">done</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$AA1</span>
+<span class="hljs-number">100</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$AA2</span>
+<span class="hljs-number">200</span>
 </code></pre>
 <p>awk &#xB294; child process &#xB85C; &#xC2E4;&#xD589;&#xB418;&#xBBC0;&#xB85C; &#xC2E4;&#xD589; &#xC911;&#xC5D0; &#xD604;&#xC7AC; shell &#xC758; &#xBCC0;&#xC218;&#xAC12;&#xC744; &#xC124;&#xC815;&#xD560; &#xC218; &#xC5C6;&#xB294;&#xB370;&#xC694;.
 &#xD558;&#xC9C0;&#xB9CC; eval &#xBA85;&#xB839;&#xC744; &#xD65C;&#xC6A9;&#xD558;&#xBA74; shell &#xBCC0;&#xC218;&#xAC12;&#xC744; &#xC124;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
@@ -1288,27 +1299,13 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$AA</span>
 <span class="hljs-comment"># eval &#xACFC; awk &#xB97C; &#xD65C;&#xC6A9;&#xD558;&#xC5EC; &#xAC04;&#xB2E8;&#xD788; &#xC791;&#xC131;</span>
 <span class="hljs-keyword">for</span> tuple <span class="hljs-keyword">in</span> \
     . . .
-    . . .
 <span class="hljs-keyword">do</span>
     <span class="hljs-built_in">eval</span> <span class="hljs-string">&quot;<span class="hljs-variable">$( echo &quot;$tuple&quot; | 
     awk -F, &apos;{ printf &quot;model=%s; stepping=%s; ucode=%s;&quot;,$1,strtonum($2)</span>,<span class="hljs-variable">$3</span> }&apos; )&quot;</span>
     <span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$cpu_model</span>&quot;</span> = <span class="hljs-string">&quot;<span class="hljs-variable">$model</span>&quot;</span> ] &amp;&amp; [ <span class="hljs-string">&quot;<span class="hljs-variable">$cpu_stepping</span>&quot;</span> = <span class="hljs-string">&quot;<span class="hljs-variable">$stepping</span>&quot;</span> ]
     <span class="hljs-keyword">then</span>
         . . . .
-        . . . .
 <span class="hljs-keyword">done</span>
-</code></pre>
-<p>&#xCC38;&#xACE0;&#xB85C; local, declare &#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC;&#xB3C4; &#xBCC0;&#xC218;&#xAC12;&#xC744; &#xC124;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<blockquote>
-<p>sh &#xC740; &#xD568;&#xC218; &#xB0B4;&#xC5D0;&#xC11C; local &#xB9CC; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-</blockquote>
-<pre><code class="lang-bash">$ <span class="hljs-function"><span class="hljs-title">f1</span></span>() {
-    <span class="hljs-built_in">local</span> $( awk <span class="hljs-string">&apos;BEGIN{ print &quot;AA=100 BB=*&quot; }&apos;</span> ) 
-    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$AA</span> : <span class="hljs-variable">$BB</span>&quot;</span>
-}
-
-$ f1
-<span class="hljs-number">100</span> : *
 </code></pre>
 <h3 id="eval-&#xBA85;&#xB839;&#xC758;-&#xC2E4;&#xD589;&#xB2E8;&#xACC4;">eval &#xBA85;&#xB839;&#xC758; &#xC2E4;&#xD589;&#xB2E8;&#xACC4;</h3>
 <p>eval &#xBA85;&#xB839;&#xC740; &#xC8FC;&#xC5B4;&#xC9C4; &#xC778;&#xC218;&#xB4E4;&#xC744; &#xC77D;&#xC5B4; &#xB4E4;&#xC778; &#xD6C4; &#xC2E4;&#xD589;&#xD569;&#xB2C8;&#xB2E4;. &#xC5EC;&#xAE30;&#xC11C; &#xC8FC;&#xBAA9;&#xD574;&#xC57C; &#xB420; &#xC810;&#xC740; &#xB450; &#xB2E8;&#xACC4;&#xB97C; &#xAC70;&#xCCD0;&#xC11C; &#xC2E4;&#xD589;&#xC774; &#xB41C;&#xB2E4;&#xB294; &#xC810;&#xC785;&#xB2C8;&#xB2E4;. &#xCCAB;&#xC9F8;. &#xC77D;&#xC5B4;&#xB4E4;&#xC774;&#xB294; &#xB2E8;&#xACC4; , &#xB458;&#xC9F8;. &#xC2E4;&#xD589;&#xD558;&#xB294; &#xB2E8;&#xACC4;.  &#xADF8;&#xB798;&#xC11C; &#xACB0;&#xACFC;&#xC801;&#xC73C;&#xB85C; &#xC778;&#xC218;&#xBD80;&#xBD84;&#xC5D0;&#xC11C; &#xD655;&#xC7A5;&#xACFC; &#xCE58;&#xD658;&#xC774; &#xB450;&#xBC88; &#xC77C;&#xC5B4;&#xB098;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;. &#xC77D;&#xC5B4;&#xB4E4;&#xC77C; &#xB54C; &#xD55C;&#xBC88; &#xC2E4;&#xD589;&#xD560; &#xB54C; &#xD55C;&#xBC88;.</p>
@@ -1340,7 +1337,7 @@ $ <span class="hljs-built_in">eval</span> <span class="hljs-built_in">echo</span
 <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span>
 </code></pre>
 <p>&#xBA85;&#xB839;&#xC5D0; &#xC120;&#xD589;&#xD558;&#xB294; &#xB300;&#xC785;&#xC5F0;&#xC0B0;&#xC744; &#xC774;&#xC6A9;&#xD560; &#xB54C;&#xB3C4; eval &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-&#xBA85;&#xB839; &#xC55E;&#xC5D0;&#xC11C; &#xB300;&#xC785;&#xD55C; &#xAC12;&#xC740; &#xBA85;&#xB839;&#xC774; &#xC2E4;&#xD589;&#xB41C; &#xD6C4;&#xC5D0;&#xC57C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294;&#xB370; &#xB2E4;&#xC74C;&#xC758; &#xACBD;&#xC6B0;&#xB294; echo &#xBA85;&#xB839;&#xC774; &#xC2E4;&#xD589;&#xB418;&#xAE30; &#xC804;&#xC5D0; $A, $B, $C &#xBCC0;&#xC218;&#xD655;&#xC7A5;&#xC774; &#xC77C;&#xC5B4;&#xB098;&#xC11C; &#xAE30;&#xC874;&#xC758; &#xAC12;&#xC744; &#xD45C;&#xC2DC;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;. </p>
+&#xBA85;&#xB839; &#xC55E;&#xC5D0;&#xC11C; &#xB300;&#xC785;&#xD55C; &#xAC12;&#xC740; &#xBA85;&#xB839;&#xC774; &#xC2E4;&#xD589;&#xB41C; &#xD6C4;&#xC5D0;&#xC57C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294;&#xB370; &#xB2E4;&#xC74C;&#xC758; &#xACBD;&#xC6B0;&#xB294; echo &#xBA85;&#xB839;&#xC774; &#xC2E4;&#xD589;&#xB418;&#xAE30; &#xC804;&#xC5D0; <code>$A</code>, <code>$B</code>, <code>$C</code> &#xBCC0;&#xC218;&#xD655;&#xC7A5;&#xC774; &#xC77C;&#xC5B4;&#xB098;&#xC11C; &#xAE30;&#xC874;&#xC758; &#xAC12;&#xC744; &#xD45C;&#xC2DC;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;. </p>
 <pre><code class="lang-bash">$ A=<span class="hljs-number">1</span> B=<span class="hljs-number">2</span> C=<span class="hljs-number">3</span>
 $ A=<span class="hljs-number">4</span> B=<span class="hljs-number">5</span> C=<span class="hljs-number">6</span> <span class="hljs-built_in">echo</span> <span class="hljs-variable">$A</span> <span class="hljs-variable">$B</span> <span class="hljs-variable">$C</span>
 <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>
@@ -1348,8 +1345,7 @@ $ A=<span class="hljs-number">4</span> B=<span class="hljs-number">5</span> C=<s
 <p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; eval &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xD574;&#xACB0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ A=<span class="hljs-number">1</span> B=<span class="hljs-number">2</span> C=<span class="hljs-number">3</span>
 
-<span class="hljs-comment"># 1. eval &#xBA85;&#xB839; read &#xB2E8;&#xACC4;&#xC5D0; quotes &#xC774; &#xC0AD;&#xC81C;&#xB41C;&#xB2E4;</span>
-<span class="hljs-comment"># echo $A $B $C</span>
+<span class="hljs-comment"># 1. eval &#xBA85;&#xB839; read &#xB2E8;&#xACC4;&#xC5D0; quotes &#xC774; &#xC0AD;&#xC81C;&#xB41C;&#xB2E4; : echo $A $B $C</span>
 <span class="hljs-comment"># 2. &#xC2E4;&#xD589;&#xB2E8;&#xACC4; : &#xC774;&#xBBF8; eval &#xBA85;&#xB839;&#xC774; &#xC2E4;&#xD589;&#xC911;&#xC5D0; &#xC788;&#xC73C;&#xBBC0;&#xB85C; &#xB300;&#xC785;&#xD55C; &#xAC12;&#xC774; &#xC0AC;&#xC6A9;&#xB41C;&#xB2E4;.</span>
 $ A=<span class="hljs-number">4</span> B=<span class="hljs-number">5</span> C=<span class="hljs-number">6</span> <span class="hljs-built_in">eval</span> <span class="hljs-string">&apos;echo $A $B $C&apos;</span>
 <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span>
@@ -1357,16 +1353,15 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$A</span> 
 <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>
 </code></pre>
 <h3 id="&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;-&#xC2E4;&#xD589;-&#xC911;&#xC5D0;-&#xBA85;&#xB839;&#xBB38;&#xC744;-&#xB9CC;&#xB4E4;&#xC5B4;-&#xC2E4;&#xD589;&#xD558;&#xAE30;">&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xC2E4;&#xD589; &#xC911;&#xC5D0; &#xBA85;&#xB839;&#xBB38;&#xC744; &#xB9CC;&#xB4E4;&#xC5B4; &#xC2E4;&#xD589;&#xD558;&#xAE30;</h3>
-<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xACBD;&#xC6B0; <code>&quot;*.sh&quot;</code> &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB41C; double quotes &#xC774; &#xBA85;&#xB839; &#xC2E4;&#xD589;&#xC2DC; &#xC81C;&#xAC70;&#xB418;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB294;
-eval &#xBA85;&#xB839;&#xC774; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">$ AA=<span class="hljs-string">&apos;find * -name&apos;</span>
+<p><code>find . -name &quot;*.sh&quot;</code> &#xBA85;&#xB839;&#xBB38;&#xC744; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xB9CC;&#xB4E4;&#xC5B4;&#xC11C; &#xC2E4;&#xD589;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ AA=<span class="hljs-string">&apos;find . -name&apos;</span>
 
 $ BB=<span class="hljs-string">&apos;&quot;*.sh&quot;&apos;</span>
 
 $ <span class="hljs-built_in">eval</span> <span class="hljs-string">&quot;<span class="hljs-variable">$AA</span> <span class="hljs-variable">$BB</span>&quot;</span>
-args.sh
-sub.sh
-test.sh
+./args.sh
+./sub/foo.sh
+./tmp/bar.sh
 ...
 ...
 </code></pre>
@@ -1422,11 +1417,11 @@ BB=<span class="hljs-number">100</span>: <span class="hljs-built_in">command</sp
 </span>
 <span class="hljs-built_in">eval</span> file=<span class="hljs-string">&apos;$&apos;</span><span class="hljs-variable">$#</span>
 
-<span class="hljs-built_in">echo</span> file : <span class="hljs-string">&quot;<span class="hljs-variable">$file</span>&quot;</span>
+<span class="hljs-built_in">echo</span> file name : <span class="hljs-string">&quot;<span class="hljs-variable">$file</span>&quot;</span>
 --------------------------
 
 $ ./test.sh <span class="hljs-operator">-a</span> -b data.txt
-file : data.txt
+file name : data.txt
 </code></pre>
 <h3 id="&#xD568;&#xC218;&#xB97C;-&#xB9CC;&#xB4E4;&#xC5B4;-&#xC2E4;&#xD589;">&#xD568;&#xC218;&#xB97C; &#xB9CC;&#xB4E4;&#xC5B4; &#xC2E4;&#xD589;</h3>
 <pre><code class="lang-bash">$ <span class="hljs-function"><span class="hljs-title">main</span></span>() {
