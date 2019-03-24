@@ -1567,7 +1567,7 @@ cursor_invisible=`tput civis`
 <span class="hljs-built_in">printf</span> `tput indn <span class="hljs-variable">$num_of_files</span>`     <span class="hljs-comment"># indn : Scroll forward #num lines</span>
 
 <span class="hljs-built_in">declare</span> -i <span class="hljs-built_in">exit</span>_count=<span class="hljs-number">0</span>
-<span class="hljs-keyword">while</span> IFS=: <span class="hljs-built_in">read</span> <span class="hljs-operator">-a</span> arr; <span class="hljs-keyword">do</span>
+<span class="hljs-keyword">while</span> IFS=: <span class="hljs-built_in">read</span> <span class="hljs-operator">-a</span> arr &lt; <span class="hljs-variable">$fifo</span>; <span class="hljs-keyword">do</span>
     fname=<span class="hljs-variable">${arr[0]}</span> value=<span class="hljs-variable">${arr[1]}</span>
     file[<span class="hljs-variable">$fname</span>]=<span class="hljs-variable">$value</span>
     <span class="hljs-comment"># &#xB2E4;&#xC2DC; $num_of_files &#xAC1C;&#xC218;&#xB9CC;&#xD07C; &#xCEE4;&#xC11C;&#xB97C; &#xC62C;&#xB824;&#xC11C; &#xC704;&#xC5D0;&#xC11C;&#xBD80;&#xD130; &#xCC28;&#xB840;&#xB85C; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</span>
@@ -1581,7 +1581,7 @@ cursor_invisible=`tput civis`
         <span class="hljs-built_in">exit</span>_count+=<span class="hljs-number">1</span>
         [ <span class="hljs-variable">$exit_count</span> <span class="hljs-operator">-eq</span> <span class="hljs-variable">$num_of_files</span> ] &amp;&amp; <span class="hljs-built_in">break</span>
     <span class="hljs-keyword">fi</span>
-<span class="hljs-keyword">done</span> &lt; <span class="hljs-variable">$fifo</span>
+<span class="hljs-keyword">done</span>
 
 <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;<span class="hljs-variable">$cursor_visible</span>&quot;</span>
 

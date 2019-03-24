@@ -1604,7 +1604,7 @@ $ exec 3&gt;&amp;-
 
 mypipe=/tmp/mypipe_$$
 mkfifo <span class="hljs-variable">$mypipe</span>
-<span class="hljs-built_in">exec</span> {FD}&lt;&gt; <span class="hljs-variable">$mypipe</span>    <span class="hljs-comment"># FD &#xB97C; named pipe &#xC5D0; &#xC5F0;&#xACB0;</span>
+<span class="hljs-built_in">exec</span> {fd1}&lt;&gt; <span class="hljs-variable">$mypipe</span>    <span class="hljs-comment"># fd1 &#xB97C; named pipe &#xC5D0; &#xC5F0;&#xACB0;</span>
 
 num_of_<span class="hljs-built_in">jobs</span>=<span class="hljs-number">10</span>
 
@@ -1631,7 +1631,7 @@ i=<span class="hljs-number">1</span>
 <span class="hljs-built_in">echo</span> <span class="hljs-variable">$i</span> <span class="hljs-built_in">jobs</span> <span class="hljs-keyword">done</span> !!!
 </code></pre>
 <blockquote>
-<p><code>&gt; $mypipe</code> &#xC640; <code>&lt; $mypipe</code> &#xB300;&#xC2E0;&#xC5D0; <code>&gt;&amp; $FD</code> &#xC640; <code>&lt;&amp; $FD</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xB3C4; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p><code>&gt; $mypipe</code> &#xC640; <code>&lt; $mypipe</code> &#xB300;&#xC2E0;&#xC5D0; <code>&gt;&amp; $fd1</code> &#xC640; <code>&lt;&amp; $fd1</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xB3C4; &#xB429;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
 <h1 id="quiz">Quiz</h1>
 <p>named pipe &#xC5D0; FD &#xB97C; &#xC5F0;&#xACB0;&#xD55C; &#xD6C4;&#xC5D0; &#xD30C;&#xC77C;&#xC744; &#xC0AD;&#xC81C;&#xD558;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xB420;&#xAE4C;&#xC694;?</p>
