@@ -1551,13 +1551,13 @@ cursor_invisible=`tput civis`
 <span class="hljs-keyword">done</span>
 
 <span class="hljs-function"><span class="hljs-title">draw</span></span>() {
-    awk -v fname=<span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span> -v value=<span class="hljs-string">&quot;<span class="hljs-variable">$2</span>&quot;</span> -v pbar=<span class="hljs-string">&quot;<span class="hljs-variable">$progress_bar</span>&quot;</span> \
+    awk -v fname=<span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span> -v cpos=<span class="hljs-string">&quot;<span class="hljs-variable">$2</span>&quot;</span> -v pbar=<span class="hljs-string">&quot;<span class="hljs-variable">$progress_bar</span>&quot;</span> \
     <span class="hljs-string">&apos;BEGIN{ 
         printf &quot;%-8s |&quot;, fname
-        for ( i=1; i&lt;=value; i++ ) printf &quot;=&quot;; printf &quot;&gt;&quot;
-        space =  pbar - value + 2 
+        for ( i=1; i&lt;=cpos; i++ ) printf &quot;=&quot;; printf &quot;&gt;&quot;
+        space =  pbar - cpos + 2 
         for ( i=1; i&lt;=space; i++ ) printf &quot; &quot;
-        printf &quot;[ %3d%% ]\n&quot;, 100 * (value / pbar) 
+        printf &quot;[ %3d%% ]\n&quot;, 100 * (cpos / pbar) 
     }&apos;</span>
 }
 
@@ -1572,8 +1572,8 @@ cursor_invisible=`tput civis`
 
 <span class="hljs-built_in">declare</span> -i <span class="hljs-built_in">exit</span>_count=<span class="hljs-number">0</span>
 <span class="hljs-keyword">while</span> IFS=: <span class="hljs-built_in">read</span> <span class="hljs-operator">-a</span> arr; <span class="hljs-keyword">do</span>
-    fname=<span class="hljs-variable">${arr[0]}</span> value=<span class="hljs-variable">${arr[1]}</span>
-    file[<span class="hljs-variable">$fname</span>]=<span class="hljs-variable">$value</span>
+    fname=<span class="hljs-variable">${arr[0]}</span> cur_pos=<span class="hljs-variable">${arr[1]}</span>
+    file[<span class="hljs-variable">$fname</span>]=<span class="hljs-variable">$cur_pos</span>
     <span class="hljs-comment"># &#xB2E4;&#xC2DC; $num_of_files &#xAC1C;&#xC218;&#xB9CC;&#xD07C; &#xCEE4;&#xC11C;&#xB97C; &#xC62C;&#xB824;&#xC11C; &#xC704;&#xC5D0;&#xC11C;&#xBD80;&#xD130; &#xCC28;&#xB840;&#xB85C; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</span>
     <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;<span class="hljs-variable">$move_cursor_up</span>&quot;</span>
     <span class="hljs-keyword">for</span> idx <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;<span class="hljs-variable">${!file[@]}</span>&quot;</span>; <span class="hljs-keyword">do</span>
@@ -1581,7 +1581,7 @@ cursor_invisible=`tput civis`
     <span class="hljs-keyword">done</span>
     <span class="hljs-comment"># &#xAC01; &#xD30C;&#xC77C;&#xC758; $cur_pos &#xAC12;&#xC774; $progress_bar &#xC640; &#xAC19;&#xB2E4;&#xB294; &#xAC83;&#xC740; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;&#xAC00; &#xC644;&#xB8CC;&#xB418;&#xC5C8;&#xB2E4;&#xB294; &#xB73B;&#xC774;&#xBBC0;&#xB85C;</span>
     <span class="hljs-comment"># exit_count &#xC5D0; &#xCD94;&#xAC00;&#xD558;&#xACE0;, exit_count &#xAC12;&#xC774; &#xD30C;&#xC77C; &#xAC1C;&#xC218;&#xC640; &#xAC19;&#xC544;&#xC9C0;&#xBA74; break &#xD569;&#xB2C8;&#xB2E4;.</span>
-    <span class="hljs-keyword">if</span> [ <span class="hljs-variable">$value</span> <span class="hljs-operator">-eq</span> <span class="hljs-variable">$progress_bar</span> ]; <span class="hljs-keyword">then</span>
+    <span class="hljs-keyword">if</span> [ <span class="hljs-variable">$cur_pos</span> <span class="hljs-operator">-eq</span> <span class="hljs-variable">$progress_bar</span> ]; <span class="hljs-keyword">then</span>
         <span class="hljs-built_in">exit</span>_count+=<span class="hljs-number">1</span>
         [ <span class="hljs-variable">$exit_count</span> <span class="hljs-operator">-eq</span> <span class="hljs-variable">$num_of_files</span> ] &amp;&amp; <span class="hljs-built_in">break</span>
     <span class="hljs-keyword">fi</span>
