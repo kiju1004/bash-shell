@@ -1309,7 +1309,7 @@ $             <span class="hljs-comment"># Broken pipe &#xC5D0;&#xB7EC;&#xB85C; 
 </code></pre>
 <p>&#xC704;&#xC640; &#xB3D9;&#xC77C;&#xD55C; &#xC0C1;&#xD669;&#xC774; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; read &#xBA85;&#xB839;&#xC744; while &#xBB38;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
 <code>read line &lt; mypipe</code> &#xBA85;&#xB839;&#xC774; &#xC2E4;&#xD589;&#xC744; &#xC644;&#xB8CC;&#xD558;&#xBA74; mypipe &#xC640;&#xC758; &#xC5F0;&#xACB0;&#xC774; &#xB04A;&#xAE30;&#xBBC0;&#xB85C;
-Broken pipe &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.
+writer &#xAC00; Broken pipe &#xC5D0;&#xB7EC;&#xB85C; &#xC885;&#xB8CC;&#xB429;&#xB2C8;&#xB2E4;.
 &#xB530;&#xB77C;&#xC11C; &#xB450; &#xBC88;&#xC9F8;&#xC640; &#xAC19;&#xC774; mypipe &#xB97C; while &#xBB38;&#xC758; done &#xD0A4;&#xC6CC;&#xB4DC;&#xC5D0; &#xC5F0;&#xACB0;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ <span class="hljs-keyword">for</span> (( i=<span class="hljs-number">1</span>; i&lt;=<span class="hljs-number">10</span>; i++ )) <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> <span class="hljs-variable">$i</span>; <span class="hljs-keyword">done</span> &gt; mypipe &amp;
 [<span class="hljs-number">1</span>] <span class="hljs-number">22564</span>
@@ -1319,7 +1319,7 @@ $ <span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span
 <span class="hljs-number">2</span>
 <span class="hljs-number">3</span>
 [<span class="hljs-number">1</span>]+  Broken pipe             <span class="hljs-keyword">for</span> ((i=<span class="hljs-number">1</span>; i&lt;=<span class="hljs-number">10</span>; i++ ))
----------------------------------------------------------
+--------------------------------------------------------------------
 
 $ <span class="hljs-keyword">for</span> (( i=<span class="hljs-number">1</span>; i&lt;=<span class="hljs-number">10</span>; i++ )) <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> <span class="hljs-variable">$i</span>; <span class="hljs-keyword">done</span> &gt; mypipe &amp;
 [<span class="hljs-number">1</span>] <span class="hljs-number">22597</span>
