@@ -1554,8 +1554,7 @@ cursor_invisible=`tput civis`
     awk -v fname=<span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span> -v value=<span class="hljs-string">&quot;<span class="hljs-variable">$2</span>&quot;</span> -v pbar=<span class="hljs-string">&quot;<span class="hljs-variable">$progress_bar</span>&quot;</span> \
     <span class="hljs-string">&apos;BEGIN{ 
         printf &quot;%-8s |&quot;, fname
-        for ( i=1; i&lt;=value; i++ ) printf &quot;=&quot;
-        printf &quot;&gt;&quot;
+        for ( i=1; i&lt;=value; i++ ) printf &quot;=&quot;; printf &quot;&gt;&quot;
         space =  pbar - value + 2 
         for ( i=1; i&lt;=space; i++ ) printf &quot; &quot;
         printf &quot;[ %3d%% ]\n&quot;, value * (100 / pbar) 
