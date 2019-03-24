@@ -1652,7 +1652,7 @@ num_of_<span class="hljs-built_in">jobs</span>=<span class="hljs-number">10</spa
 <span class="hljs-keyword">done</span>
 
 i=<span class="hljs-number">1</span>
-<span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> -r res; <span class="hljs-keyword">do</span> 
+<span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> -r res; <span class="hljs-keyword">do</span>
     <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$res</span>&quot;</span>
     [ <span class="hljs-variable">$i</span> <span class="hljs-operator">-eq</span> <span class="hljs-variable">$num_of_jobs</span> ] &amp;&amp; <span class="hljs-built_in">break</span> 
     <span class="hljs-built_in">let</span> i++
@@ -1661,7 +1661,7 @@ i=<span class="hljs-number">1</span>
 <span class="hljs-built_in">echo</span> <span class="hljs-variable">$i</span> <span class="hljs-built_in">jobs</span> <span class="hljs-keyword">done</span> !!!
 </code></pre>
 <blockquote>
-<p><code>&gt; $mypipe</code> &#xC640; <code>&lt; $mypipe</code> &#xB300;&#xC2E0;&#xC5D0; <code>&gt;&amp; $fd1</code> &#xC640; <code>&lt;&amp; $fd1</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xB3C4; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p><code>&gt; $mypipe</code> &#xC640; <code>&lt; $mypipe</code> &#xB300;&#xC2E0;&#xC5D0; <code>&gt;&amp; $fd1</code> &#xC640; <code>&lt;&amp; $fd1</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xB3C4; &#xB429;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xBC29;&#xBC95;&#xC740; while &#xBB38;&#xC5D0;&#xC11C; <code>$mypipe</code> &#xB97C; done &#xD0A4;&#xC6CC;&#xB4DC;&#xC5D0; &#xC5F0;&#xACB0;&#xD558;&#xC9C0; &#xC54A;&#xACE0; <code>read res &lt; $mypipe</code> &#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
 <h1 id="quiz">Quiz</h1>
 <p>named pipe &#xC5D0; FD &#xB97C; &#xC5F0;&#xACB0;&#xD55C; &#xD6C4;&#xC5D0; &#xD30C;&#xC77C;&#xC744; &#xC0AD;&#xC81C;&#xD558;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xB420;&#xAE4C;&#xC694;?</p>
