@@ -1632,7 +1632,7 @@ $ exec 3&gt;&amp;-
 </span>
 <span class="hljs-built_in">trap</span> <span class="hljs-string">&apos;rm -f $mypipe&apos;</span> EXIT
 
-mypipe=/tmp/mypipe_$$
+mypipe=`mktemp`
 mkfifo <span class="hljs-variable">$mypipe</span>
 <span class="hljs-built_in">exec</span> {fd1}&lt;&gt; <span class="hljs-variable">$mypipe</span>    <span class="hljs-comment"># fd1 &#xB97C; named pipe &#xC5D0; &#xC5F0;&#xACB0;</span>
 
