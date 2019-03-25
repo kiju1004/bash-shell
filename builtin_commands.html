@@ -1484,13 +1484,13 @@ $ ( <span class="hljs-built_in">exec</span> <span class="hljs-operator">-l</span
     <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span>
     <span class="hljs-built_in">local</span> frame=<span class="hljs-number">0</span>
     <span class="hljs-keyword">while</span> <span class="hljs-built_in">caller</span> <span class="hljs-variable">$frame</span>; <span class="hljs-keyword">do</span>
-        <span class="hljs-built_in">let</span> frame++;
+        <span class="hljs-built_in">let</span> frame++
     <span class="hljs-keyword">done</span>
 }
 
-<span class="hljs-function"><span class="hljs-title">foo1</span></span>() { die <span class="hljs-string">&quot;*** an error occured ***&quot;</span>; }
-<span class="hljs-function"><span class="hljs-title">foo2</span></span>() { foo1; }
-<span class="hljs-function"><span class="hljs-title">foo3</span></span>() { foo2; }
+<span class="hljs-function"><span class="hljs-title">foo1</span></span>() { die <span class="hljs-string">&quot;*** an error occured ***&quot;</span> ;}
+<span class="hljs-function"><span class="hljs-title">foo2</span></span>() { foo1 ;}
+<span class="hljs-function"><span class="hljs-title">foo3</span></span>() { foo2 ;}
 
 foo3
 ------------------------------------------
