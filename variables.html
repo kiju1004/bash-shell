@@ -1432,6 +1432,17 @@ $ sudo cat /dev/input/mice | od -tx1
 <p>NUL &#xBB38;&#xC790;&#xB294; <a href="http://en.cppreference.com/w/cpp/language/ascii" target="_blank">ascii table</a> &#xC0C1;&#xC5D0; \x00 &#xAC12;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294; A (\x41), B (\x42) &#xC640; &#xAC19;&#xC740; &#xAC12;&#xC785;&#xB2C8;&#xB2E4;.
 &#xBC18;&#xBA74;&#xC5D0; &#xBCF8;&#xBB38;&#xC5D0; &#xC0AC;&#xC6A9;&#xB41C; null &#xAC12;&#xC740; empty &#xAC12;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
+<h1 id="quiz">Quiz</h1>
+<p>&#xC544;&#xB798;&#xC640; &#xAC19;&#xC774; &#xB300;&#xC785; &#xC5F0;&#xC0B0;&#xC744; &#xD558;&#xAC8C; &#xB418;&#xBA74; &#xBCC0;&#xC218;&#xC640; value &#xB294; &#xC5B4;&#xB5BB;&#xAC8C; &#xAD6C;&#xBD84;&#xB420;&#xAE4C;&#xC694;?</p>
+<pre><code class="lang-bash">$ AA=BB=CC
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$AA</span>      <span class="hljs-comment"># &#xBCC0;&#xC218; AA &#xC758; &#xAC12;&#xC740; BB=CC &#xAC00; &#xB41C;&#xB2E4;.</span>
+BB=CC
+$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$BB</span>
+$
+$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$CC</span>
+$
+</code></pre>
 
                     
                     </section>
