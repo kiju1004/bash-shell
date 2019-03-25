@@ -1663,8 +1663,9 @@ compopt -o nospace
 <blockquote>
 <p>enable [-a] [-dnps] [-f filename] [name ...]</p>
 </blockquote>
-<p>builtin &#xBA85;&#xB839;&#xC744; disable &#xB610;&#xB294; enable &#xC2DC;&#xD0A4;&#xB294;&#xB370; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.
-builtin &#xBA85;&#xB839;&#xACFC; &#xB3D9;&#xC77C;&#xD55C; &#xC774;&#xB984;&#xC758; &#xC678;&#xBD80; &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xACE0;&#xC790; &#xD560; &#xB54C; &#xC774; &#xBA85;&#xB839;&#xC73C;&#xB85C; builtin &#xBA85;&#xB839;&#xC744; disable &#xC2DC;&#xD0AC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>builtin &#xBA85;&#xB839;&#xC744; enable &#xB610;&#xB294; disable &#xC2DC;&#xD0A4;&#xB294;&#xB370; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.
+&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC81C;&#xACF5;&#xB418;&#xB294; builtin &#xBA85;&#xB839; &#xC678;&#xC5D0; <code>bash-builtins</code> &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xC124;&#xCE58;&#xD558;&#xBA74; &#xCD94;&#xAC00;&#xC801;&#xC73C;&#xB85C; &#xBA85;&#xB839;&#xC744; builtin &#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+builtin &#xBA85;&#xB839;&#xACFC; &#xB3D9;&#xC77C;&#xD55C; &#xC774;&#xB984;&#xC758; &#xC678;&#xBD80; &#xBA85;&#xB839;&#xC774; &#xC788;&#xC744;&#xACBD;&#xC6B0; builtin &#xBA85;&#xB839;&#xC744; disable &#xC2DC;&#xD0A4;&#xBA74; &#xC678;&#xBD80; &#xBA85;&#xB839;&#xC774; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">enable</span>      <span class="hljs-comment"># &#xD604;&#xC7AC; enable &#xB418;&#xC5B4;&#xC788;&#xB294; builtin &#xBA85;&#xB839;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
 <span class="hljs-built_in">enable</span> .      <span class="hljs-comment"># disable &#xB418;&#xC5B4; &#xC788;&#xB294; &#xBA85;&#xB839;&#xB3C4; &#xD568;&#xAED8;&#xBCF4;&#xB824;&#xBA74; &apos;-a&apos; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</span>
 <span class="hljs-built_in">enable</span> :
@@ -1687,9 +1688,8 @@ $ <span class="hljs-built_in">enable</span> <span class="hljs-built_in">echo</sp
 $ <span class="hljs-built_in">enable</span> | grep <span class="hljs-built_in">echo</span>
 <span class="hljs-built_in">enable</span> <span class="hljs-built_in">echo</span>
 </code></pre>
-<p>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC81C;&#xACF5;&#xB418;&#xB294; builtin &#xBA85;&#xB839; &#xC678;&#xC5D0; <code>bash-builtins</code> &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xC124;&#xCE58;&#xD558;&#xBA74;
-&#xCD94;&#xAC00;&#xC801;&#xC73C;&#xB85C; &#xBA85;&#xB839;&#xC744; builtin &#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-&#xB610;&#xD55C; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC9C1;&#xC811; &#xC81C;&#xC791;&#xD558;&#xC5EC; builtin &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xB294;&#xB370;
+<p>&#xB2E4;&#xC74C;&#xC740; <code>bash-builtins</code> &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xC124;&#xCE58;&#xD558;&#xC5EC; sleep &#xBA85;&#xB839;&#xC744; builtin &#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC608;&#xC785;&#xB2C8;&#xB2E4;.
+builtin &#xBA85;&#xB839;&#xC740; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC9C1;&#xC811; &#xC81C;&#xC791;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xB294;&#xB370;
 <code>dpkg -L bash-builtins</code> &#xCD9C;&#xB825;&#xC5D0;&#xC11C; &#xC608;&#xC81C; &#xC18C;&#xC2A4;&#xB97C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <ul>
 <li><code>-f</code>        Load builtin NAME from shared object FILENAME</li>
