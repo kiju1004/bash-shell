@@ -1318,7 +1318,7 @@ $ <span class="hljs-built_in">echo</span> -n <span class="hljs-string">&quot;<sp
 </code></pre>
 <h4 id="&#xB300;&#xC785;&#xD55C;-&#xAC12;&#xC740;-&#xBA85;&#xB839;&#xC774;-&#xC2E4;&#xD589;&#xB3FC;&#xC57C;-&#xC801;&#xC6A9;&#xB41C;&#xB2E4;">&#xB300;&#xC785;&#xD55C; &#xAC12;&#xC740; &#xBA85;&#xB839;&#xC774; &#xC2E4;&#xD589;&#xB3FC;&#xC57C; &#xC801;&#xC6A9;&#xB41C;&#xB2E4;.</h4>
 <p>&#xB2E4;&#xC74C;&#xC740; &#xB300;&#xC785; &#xC5F0;&#xC0B0;&#xC774; &#xC801;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB370;&#xC694;.
-&#xC774;&#xC720;&#xB294; echo &#xBA85;&#xB839;&#xC774; &#xC2DC;&#xC791;&#xD558;&#xAE30; &#xC804;&#xC5D0; &#xC778;&#xC218; &#xBD80;&#xBD84;&#xC5D0;&#xC11C; $A $B $C &#xBCC0;&#xC218;&#xD655;&#xC7A5;&#xC774; &#xC77C;&#xC5B4;&#xB098;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.</p>
+&#xC774;&#xC720;&#xB294; echo &#xBA85;&#xB839;&#xC774; &#xC2DC;&#xC791;&#xD558;&#xAE30; &#xC804;&#xC5D0; &#xC778;&#xC218; &#xBD80;&#xBD84;&#xC5D0;&#xC11C; <code>$A</code> <code>$B</code> <code>$C</code> &#xBCC0;&#xC218;&#xD655;&#xC7A5;&#xC774; &#xC77C;&#xC5B4;&#xB098;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ A=<span class="hljs-number">1</span> B=<span class="hljs-number">2</span> C=<span class="hljs-number">3</span>
 $ A=<span class="hljs-number">4</span> B=<span class="hljs-number">5</span> C=<span class="hljs-number">6</span> <span class="hljs-built_in">echo</span> <span class="hljs-variable">$A</span> <span class="hljs-variable">$B</span> <span class="hljs-variable">$C</span>       <span class="hljs-comment"># &#xB300;&#xC785;&#xD55C; &#xAC12;&#xC774; &#xC801;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</span>
 <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>
@@ -1339,18 +1339,31 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$A</span> 
 <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>
 </code></pre>
 <p>&#xD65C;&#xC6A9;&#xD558;&#xC5EC; array &#xAC12;&#xC744; &#xB2E4;&#xB8F0;&#xB54C;&#xB3C4; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash"><span class="hljs-shebang">#!/bin/bash 
-</span>
-r_num=<span class="hljs-number">1</span>
+<pre><code class="lang-bash">$ cat data
+<span class="hljs-number">111</span>:<span class="hljs-number">222</span>:<span class="hljs-number">333</span>
+aaa:bbb:ccc:ddd
+xxx:yyy
 
+$ cat test.sh
+<span class="hljs-shebang">#!/bin/bash </span>
+r_num=<span class="hljs-number">1</span>
 <span class="hljs-built_in">set</span> <span class="hljs-operator">-f</span>
 <span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> -r record; <span class="hljs-keyword">do</span>
-    IFS=: <span class="hljs-built_in">eval</span> <span class="hljs-string">&apos;fields=($record)&apos;</span>
-    IFS=@ <span class="hljs-built_in">eval</span> <span class="hljs-string">&apos;echo &quot;&gt;&gt;&gt; ${fields[*]}&quot;&apos;</span>
+    IFS=: <span class="hljs-built_in">eval</span> <span class="hljs-string">&apos;fields=( $record )&apos;</span>        <span class="hljs-comment"># &apos;:&apos; &#xB97C; &#xAD6C;&#xBD84;&#xC790;&#xB85C; &#xD544;&#xB4DC;&#xB97C; &#xBD84;&#xB9AC;&#xD574; array &#xC0DD;&#xC131;</span>
+    IFS=@ <span class="hljs-built_in">eval</span> <span class="hljs-string">&apos;echo &quot;&gt;&gt;&gt; ${fields[*]}&quot;&apos;</span>   <span class="hljs-comment"># &#xD544;&#xB4DC; &#xAD6C;&#xBD84;&#xC790;&#xB97C; &apos;@&apos; &#xB85C;&#xD574;&#xC11C; &#xCD9C;&#xB825;</span>
     <span class="hljs-built_in">echo</span> record <span class="hljs-variable">$r_num</span> has <span class="hljs-variable">${#fields[@]}</span> fields
     <span class="hljs-built_in">let</span> r_num++
-<span class="hljs-keyword">done</span> &lt; datafile
+<span class="hljs-keyword">done</span> &lt; data
 <span class="hljs-built_in">set</span> +f
+----------------------------------------------
+
+$ ./test.sh 
+&gt;&gt;&gt; <span class="hljs-number">111</span>@<span class="hljs-number">222</span>@<span class="hljs-number">333</span>
+record <span class="hljs-number">1</span> has <span class="hljs-number">3</span> fields
+&gt;&gt;&gt; aaa@bbb@ccc@ddd
+record <span class="hljs-number">2</span> has <span class="hljs-number">4</span> fields
+&gt;&gt;&gt; xxx@yyy
+record <span class="hljs-number">3</span> has <span class="hljs-number">2</span> fields
 </code></pre>
 <h3 id="uniq-sort-u-&#xCC28;&#xC774;">uniq, sort -u &#xCC28;&#xC774;</h3>
 <p>&#xD30C;&#xC77C; &#xB0B4;&#xC6A9; &#xC911;&#xC5D0;&#xC11C; &#xC911;&#xBCF5;&#xB418;&#xC5B4; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xB77C;&#xC778;&#xB4E4;&#xC744; &#xD558;&#xB098;&#xC758; uniq &#xD55C; &#xB77C;&#xC778;&#xB9CC; &#xB0A8;&#xAE30;&#xACE0; &#xCD9C;&#xB825;&#xD558;&#xACE0;&#xC790; &#xD560; &#xB54C;&#xB294;
