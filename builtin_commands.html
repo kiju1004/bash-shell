@@ -1477,30 +1477,30 @@ $ ( <span class="hljs-built_in">exec</span> <span class="hljs-operator">-l</span
 <p>caller [expr]</p>
 </blockquote>
 <p> &#xD604;&#xC7AC; &#xC2E4;&#xD589;&#xC911;&#xC778; &#xD568;&#xC218;&#xC758; call stack &#xC744; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;. &#xC778;&#xC218;&#xC5C6;&#xC774; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xB77C;&#xC778;&#xB118;&#xBC84;, &#xD30C;&#xC77C;&#xC774;&#xB984; (<code>${BASH_LINENO[0]} ${BASH_SOURCE[1]}</code>) &#xC744; &#xD45C;&#xC2DC;&#xD558;&#xACE0; &#xC22B;&#xC790;&#xB97C; &#xC778;&#xC218;&#xB85C; &#xC8FC;&#xBA74; &#xB77C;&#xC778;&#xB118;&#xBC84;, &#xD638;&#xCD9C;&#xD568;&#xC218;, &#xD30C;&#xC77C;&#xC774;&#xB984; (<code>${BASH_LINENO[$i]} ${FUNCNAME[$i+1]} ${BASH_SOURCE[$i+1]}</code>) &#xC744; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;. stack trace &#xC5D0; &#xC0AC;&#xC6A9;&#xD560;&#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash"><span class="hljs-shebang">#!/bin/bash
+<pre><code class="lang-bash">$ cat ./caller.sh
+<span class="hljs-shebang">#!/bin/bash
 </span>
 <span class="hljs-function"><span class="hljs-title">die</span></span>() {
-  <span class="hljs-built_in">local</span> frame=<span class="hljs-number">0</span>
-  <span class="hljs-keyword">while</span> <span class="hljs-built_in">caller</span> <span class="hljs-variable">$frame</span>; <span class="hljs-keyword">do</span>
-    ((frame++));
-  <span class="hljs-keyword">done</span>
-  <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;$*&quot;</span>
-  <span class="hljs-built_in">exit</span> <span class="hljs-number">1</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span>
+    <span class="hljs-built_in">local</span> frame=<span class="hljs-number">0</span>
+    <span class="hljs-keyword">while</span> <span class="hljs-built_in">caller</span> <span class="hljs-variable">$frame</span>; <span class="hljs-keyword">do</span>
+        <span class="hljs-built_in">let</span> frame++;
+    <span class="hljs-keyword">done</span>
 }
 
-<span class="hljs-function"><span class="hljs-title">f1</span></span>() { die <span class="hljs-string">&quot;*** an error occured ***&quot;</span>; }
-<span class="hljs-function"><span class="hljs-title">f2</span></span>() { f1; }
-<span class="hljs-function"><span class="hljs-title">f3</span></span>() { f2; }
+<span class="hljs-function"><span class="hljs-title">foo1</span></span>() { die <span class="hljs-string">&quot;*** an error occured ***&quot;</span>; }
+<span class="hljs-function"><span class="hljs-title">foo2</span></span>() { foo1; }
+<span class="hljs-function"><span class="hljs-title">foo3</span></span>() { foo2; }
 
-f3
+foo3
+------------------------------------------
 
-<span class="hljs-comment">################ output #################</span>
-
-<span class="hljs-number">12</span> f1 ./callertest.sh
-<span class="hljs-number">13</span> f2 ./callertest.sh
-<span class="hljs-number">14</span> f3 ./callertest.sh
-<span class="hljs-number">16</span> main ./callertest.sh
+$ ./caller.sh 
 *** an error occured ***
+<span class="hljs-number">12</span> foo1 ./caller.sh
+<span class="hljs-number">13</span> foo2 ./caller.sh
+<span class="hljs-number">14</span> foo3 ./caller.sh
+<span class="hljs-number">16</span> main ./caller.sh
 </code></pre>
 <h3 id="command">command</h3>
 <blockquote>
