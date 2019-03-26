@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Named Pipe | Introduction</title>
+        <title>Named PIPE | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -52,7 +52,7 @@
         
     <div class="book"
         data-level="11.4"
-        data-chapter-title="Named Pipe"
+        data-chapter-title="Named PIPE"
         data-filepath="named_pipe.md"
         data-basepath="."
 
@@ -868,7 +868,7 @@
                         
                             <b>11.3.</b>
                         
-                        Pipe
+                        PIPE
                     </a>
             
             
@@ -883,7 +883,7 @@
                         
                             <b>11.4.</b>
                         
-                        Named Pipe
+                        Named PIPE
                     </a>
             
             
@@ -1239,7 +1239,7 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="named-pipe">Named Pipe</h1>
+                        <h1 id="named-pipe">Named PIPE</h1>
 <p><code>|</code> &#xD30C;&#xC774;&#xD504;&#xB97C; &#xC774;&#xC6A9;&#xD574; &#xBA85;&#xB839;&#xB4E4;&#xC744; &#xC5F0;&#xACB0;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xD558;&#xAC70;&#xB098; &#xBA85;&#xB839;, &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xCE58;&#xD658;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xBA85;&#xB839; &#xC2E4;&#xD589; &#xC911;&#xC5D0; &#xC790;&#xB3D9;&#xC73C;&#xB85C; pipe &#xAC00; &#xC0DD;&#xC131;&#xB418;&#xC5B4; &#xC0AC;&#xC6A9;&#xB41C; &#xD6C4; &#xC0AC;&#xB77C;&#xC9C0;&#xAC8C; &#xB418;&#xB294;&#xB370;&#xC694;.
 &#xC774;&#xB54C; &#xC0DD;&#xC131;&#xB418;&#xB294; &#xD30C;&#xC774;&#xD504;&#xB97C; &#xC774;&#xB984;&#xC774; &#xC5C6;&#xB2E4;&#xACE0; &#xD574;&#xC11C; unnamed pipe &#xB610;&#xB294; anonymous pipe &#xB77C;&#xACE0; &#xD569;&#xB2C8;&#xB2E4;.
 &#xC774;&#xC5D0; &#xBC18;&#xD574; named pipe &#xB294; &#xC9C1;&#xC811; &#xD30C;&#xC774;&#xD504;&#xB97C; &#xD30C;&#xC77C;&#xB85C; &#xB9CC;&#xB4E4;&#xC5B4; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.
@@ -1265,8 +1265,8 @@ $ nc <span class="hljs-operator">-l</span> localhost <span class="hljs-number">8
 $ nc <span class="hljs-operator">-l</span> localhost <span class="hljs-number">8080</span> &lt; mypipe | nc ftp.debian.com <span class="hljs-number">80</span> &gt; mypipe
 </code></pre>
 <p>&#xC774;&#xB807;&#xAC8C; named pipe &#xB97C; &#xC774;&#xC6A9;&#xD558;&#xBA74; &#xAE30;&#xC874;&#xC758; <code>|</code> &#xD30C;&#xC774;&#xD504;&#xB97C; &#xD1B5;&#xD574;&#xC11C; &#xD558;&#xC9C0; &#xBABB;&#xD558;&#xB294; &#xC791;&#xC5C5;&#xB4E4;&#xC744; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<h2 id="pipe-&#xB294;-fifo">Pipe &#xB294; FIFO</h2>
-<p>Pipe &#xB294; FIFO ( First In First Out ) &#xD615;&#xC2DD;&#xC73C;&#xB85C; &#xB370;&#xC774;&#xD130;&#xAC00; &#xC804;&#xB2EC;&#xB429;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB2C8;&#xAE4C; &#xC81C;&#xC77C; &#xBA3C;&#xC800; pipe &#xB85C; &#xB4E4;&#xC5B4;&#xAC04; &#xB370;&#xC774;&#xD130;&#xAC00; pipe &#xB97C; &#xC77D;&#xAC8C; &#xB418;&#xBA74; &#xC81C;&#xC77C; &#xBA3C;&#xC800; &#xAC12;&#xC73C;&#xB85C; &#xB098;&#xC624;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;. </p>
+<h2 id="pipe-&#xB294;-fifo">PIPE &#xB294; FIFO</h2>
+<p>PIPE &#xB294; FIFO ( First In First Out ) &#xD615;&#xC2DD;&#xC73C;&#xB85C; &#xB370;&#xC774;&#xD130;&#xAC00; &#xC804;&#xB2EC;&#xB429;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB2C8;&#xAE4C; &#xC81C;&#xC77C; &#xBA3C;&#xC800; pipe &#xB85C; &#xB4E4;&#xC5B4;&#xAC04; &#xB370;&#xC774;&#xD130;&#xAC00; pipe &#xB97C; &#xC77D;&#xAC8C; &#xB418;&#xBA74; &#xC81C;&#xC77C; &#xBA3C;&#xC800; &#xAC12;&#xC73C;&#xB85C; &#xB098;&#xC624;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;. </p>
 <pre><code class="lang-bash">$ mkfifo mypipe
 <span class="hljs-comment"># FD &#xB97C; &#xC5F0;&#xACB0;&#xD558;&#xBA74; &#xBC84;&#xD37C;&#xAC00; &#xCC28;&#xAE30; &#xC804;&#xAE4C;&#xC9C0; block &#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</span>
 $ <span class="hljs-built_in">exec</span> <span class="hljs-number">3</span>&lt;&gt; mypipe  
@@ -1284,7 +1284,7 @@ $ <span class="hljs-built_in">read</span> line &lt; mypipe; <span class="hljs-bu
 
 $ <span class="hljs-built_in">exec</span> <span class="hljs-number">3</span>&gt;&amp;-
 </code></pre>
-<h2 id="pipe-&#xB294;-block-&#xB41C;&#xB2E4;">Pipe &#xB294; block &#xB41C;&#xB2E4;.</h2>
+<h2 id="pipe-&#xB294;-block-&#xB41C;&#xB2E4;">PIPE &#xB294; block &#xB41C;&#xB2E4;.</h2>
 <p>&#xC704;&#xC758; FIFO &#xC608;&#xC5D0;&#xC11C; &#xB370;&#xC774;&#xD130;&#xB97C; mypipe &#xB85C; &#xC785;&#xB825;&#xD560;&#xB54C; <code>exec 3&lt;&gt; mypipe</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xAC78; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xAC83;&#xC740; pipe &#xB85C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC804;&#xB2EC;&#xD560; &#xB54C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC77D;&#xB294; &#xC0C1;&#xB300;&#xD3B8;&#xC774; &#xC5C6;&#xC73C;&#xBA74; block &#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;. &#xC55E;&#xC11C; &#xC774;&#xC57C;&#xAE30;&#xD588;&#xC9C0;&#xB9CC; pipe &#xB294; &#xD30C;&#xC77C;&#xACFC; &#xB2EC;&#xB9AC; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC800;&#xC7A5;&#xD558;&#xC9C0; &#xC54A;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC77D;&#xB294; &#xC0C1;&#xB300;&#xD3B8;&#xC774; &#xC5C6;&#xC73C;&#xBA74; &#xC791;&#xC5C5;&#xC774; &#xC911;&#xB2E8;&#xB429;&#xB2C8;&#xB2E4;. &#xB610;&#xD55C; writer &#xAC00; &#xC5C6;&#xB294; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C; &#xC77D;&#xAE30;&#xB97C; &#xC2DC;&#xB3C4;&#xD560; &#xB54C;&#xB3C4; block &#xB429;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC2DC; &#xB9D0;&#xD574; pipe &#xB294; writer &#xC640; reader &#xAC00; &#xC11C;&#xB85C; &#xC5F0;&#xACB0;&#xB418;&#xC5B4; &#xC788;&#xC5B4;&#xC57C; &#xC791;&#xC5C5;&#xC774; &#xC9C4;&#xD589;&#xB420; &#xC218; &#xC788;&#xC73C;&#xBA70; writer &#xAC00; &#xC4F0;&#xAE30;&#xB97C; &#xC644;&#xB8CC;&#xD558;&#xACE0; &#xC885;&#xB8CC;&#xD558;&#xAC8C; &#xB418;&#xBA74; reader &#xB3C4; &#xD568;&#xAED8; &#xC885;&#xB8CC;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <h4 id="broken-pipe-&#xC5D0;&#xB7EC;">Broken pipe &#xC5D0;&#xB7EC;</h4>
 <p>writer &#xC640; reader &#xAC00; &#xC11C;&#xB85C; pipe &#xC5D0; &#xC5F0;&#xACB0;&#xB418;&#xC5B4; writer &#xAC00; &#xC9C0;&#xC18D;&#xC801;&#xC73C;&#xB85C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC4F0;&#xACE0; &#xC788;&#xB294; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C; reader &#xAC00; &#xC885;&#xB8CC; &#xD558;&#xAC8C; &#xB418;&#xBA74; Broken pipe &#xC5D0;&#xB7EC;&#xB85C; writer &#xAC00; &#xC885;&#xB8CC;&#xB429;&#xB2C8;&#xB2E4;.  </p>
@@ -1478,7 +1478,7 @@ fifo_even, fifo_odd &#xB85C; &#xAC01;&#xAC01; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#
 <pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;@load &quot;time&quot;; { gsub(/^|$/,&quot;#&quot;); print; sleep(0.01) }
     END { print &quot;end...&quot; }&apos;</span> fifo_even
 </code></pre>
-<h3 id="pipe-buffer-size">Pipe buffer size</h3>
+<h3 id="pipe-buffer-size">PIPE buffer size</h3>
 <p>Reader &#xAC00; &#xC5C6;&#xB294; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C; writer &#xAC00; &#xD30C;&#xC774;&#xD504;&#xC5D0; &#xC4F0;&#xAE30;&#xB97C; &#xD558;&#xBA74; &#xCEE4;&#xB110;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; pipe buffer size &#xB97C; &#xC54C;&#xC544;&#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.  <code>ulimit -a</code> &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xC870;&#xD68C;&#xD574; &#xBCF4;&#xBA74; pipe size &#xAC00; 8 * 512 bytes = 4096 &#xB85C; &#xB098;&#xC624;&#xC9C0;&#xB9CC; &#xB9AC;&#xB205;&#xC2A4;&#xC758; &#xACBD;&#xC6B0; 16 &#xAC1C;&#xAE4C;&#xC9C0; &#xBC84;&#xD37C;&#xB97C; &#xD560;&#xB2F9;&#xD574; &#xC0AC;&#xC6A9;&#xD558;&#xBBC0;&#xB85C; 4096 * 16 = 65,536 &#xAE4C;&#xC9C0; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;. &#xC5EC;&#xAE30;&#xC11C; 4096 &#xC740; &#xC5EC;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xB3D9;&#xC2DC;&#xC5D0; &#xAC19;&#xC740; &#xD30C;&#xC77C;&#xC5D0; write &#xD560;&#xB54C; &#xB370;&#xC774;&#xD130;&#xAC00; &#xC11C;&#xB85C; &#xACB9;&#xCE58;&#xC9C0; &#xC54A;&#xACE0; atomic &#xD558;&#xAC8C; &#xC4F8; &#xC218; &#xC788;&#xB294; &#xD06C;&#xAE30;&#xC5D0; &#xD574;&#xB2F9;&#xD569;&#xB2C8;&#xB2E4;. </p>
 <pre><code class="lang-bash">$ grep PIPE_BUF /usr/include/linux/limits.h 
 <span class="hljs-comment">#define PIPE_BUF        4096    /* # bytes in atomic write to a pipe */</span>
@@ -1506,7 +1506,7 @@ $ ls <span class="hljs-operator">-l</span> outfile
 -rw-rw-r-- <span class="hljs-number">1</span> mug896 mug896 <span class="hljs-number">65536</span> <span class="hljs-number">08.03</span>.<span class="hljs-number">2015</span> <span class="hljs-number">15</span>:<span class="hljs-number">33</span> outfile
 </code></pre>
 <h3 id="multiple-writers-and-readers">Multiple writers and readers</h3>
-<p>Pipe &#xB294; &#xB370;&#xC774;&#xD130; &#xC190;&#xC2E4; &#xC5C6;&#xC774; multiple writers, multiple readers &#xB97C; &#xAC00;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+<p>PIPE &#xB294; &#xB370;&#xC774;&#xD130; &#xC190;&#xC2E4; &#xC5C6;&#xC774; multiple writers, multiple readers &#xB97C; &#xAC00;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xC774;&#xB54C; &#xC785;&#xB825;&#xB418;&#xB294; &#xC21C;&#xC11C;, &#xCD9C;&#xB825;&#xB418;&#xB294; &#xC21C;&#xC11C;&#xB294; &#xC608;&#xCE21;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xB2E4;&#xC74C;&#xC740; multiple writers, single reader &#xC758; &#xC608;&#xC785;&#xB2C8;&#xB2E4;.   </p>
 <pre><code class="lang-bash">$ mkfifo mypipe
@@ -1839,7 +1839,7 @@ lr-x------ <span class="hljs-number">1</span> mug896 mug896 <span class="hljs-nu
         </div>
 
         
-        <a href="./pipe.html" class="navigation navigation-prev " aria-label="Previous page: Pipe"><i class="fa fa-angle-left"></i></a>
+        <a href="./pipe.html" class="navigation navigation-prev " aria-label="Previous page: PIPE"><i class="fa fa-angle-left"></i></a>
         
         
         <a href="./buffering.html" class="navigation navigation-next " aria-label="Next page: Buffering"><i class="fa fa-angle-right"></i></a>
