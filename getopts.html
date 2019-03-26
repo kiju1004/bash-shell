@@ -2022,22 +2022,48 @@ mask ffffffffffffff00fffffffffffffffffeffffff
 &#xC774;&#xAC83;&#xC740; &#xC2E4;&#xD589; &#xC2DC;&#xC5D0; &#xC2DC;&#xC2A4;&#xD15C;&#xC758; /etc/ld.so.cache (little endian) &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC778;&#xB370;&#xC694;.
 &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xCC98;&#xB9AC;&#xD574;&#xC8FC;&#xBA74; &#xC624;&#xB958;&#xB97C; &#xBC29;&#xC9C0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
-<pre><code class="lang-bash">mkdir /usr/arm-linux-gnueabihf/etc
-touch /usr/arm-linux-gnueabihf/etc/ld.so.cache
-mkdir /usr/aarch64-linux-gnu/etc
-touch /usr/aarch64-linux-gnu/etc/ld.so.cache
-mkdir /usr/mips-linux-gnu/etc
+<pre><code class="lang-bash">mkdir /usr/mips-linux-gnu/etc
 touch /usr/mips-linux-gnu/etc/ld.so.cache
-mkdir /usr/mips64-linux-gnu/etc
-touch /usr/mips64-linux-gnu/etc/ld.so.cache
-mkdir /usr/powerpc-linux-gnu/etc
-touch /usr/powerpc-linux-gnu/etc/ld.so.cache
-mkdir /usr/powerpc64-linux-gnu/etc
-touch /usr/powerpc64-linux-gnu/ld.so.cache
 mkdir /usr/sparc64-linux-gnu/etc
 touch /usr/sparc64-linux-gnu/ld.so.cache
-mkdir /usr/riscv64-linux-gnu/etc
-touch /usr/riscv64-linux-gnu/ld.so.cache
+. . . .
+. . . .
+</code></pre>
+<h4 id="docker-&#xD65C;&#xC6A9;&#xD558;&#xAE30;">Docker &#xD65C;&#xC6A9;&#xD558;&#xAE30;</h4>
+<p>&#xB3C4;&#xCEE4;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xBA74; x86 &#xC774;&#xC678;&#xC758; arm32v5, arm32v7, arm64v8, ppc64le, s390x &#xC544;&#xD0A4;&#xD14D;&#xCCD0; &#xC2DC;&#xC2A4;&#xD15C;&#xC744;
+&#xC720;&#xC800;&#xBAA8;&#xB4DC;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+base &#xC2DC;&#xC2A4;&#xD15C; &#xB514;&#xB809;&#xD1A0;&#xB9AC; &#xAD6C;&#xC870;&#xAC00; &#xC0DD;&#xC131;&#xB418;&#xACE0; &#xD544;&#xC694;&#xD55C; &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xC124;&#xCE58;&#xD574; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xD130;&#xBBF8;&#xB110;&#xC5D0;&#xC11C; <code>ps</code> &#xBA85;&#xB839;&#xC744; &#xC2E4;&#xD589;&#xD574; &#xBCF4;&#xBA74; <code>/usr/bin/qemu-aarch64-static</code> &#xC5D0;&#xC758;&#xD574; bash &#xAC00;
+&#xC2E4;&#xD589;&#xB41C; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xAD00;&#xB828;&#xC8FC;&#xC18C;: <a href="https://hub.docker.com/r/arm64v8/debian/" target="_blank">https://hub.docker.com/r/arm64v8/debian/</a></p>
+<pre><code class="lang-bash">$ docker pull arm64v8/debian
+. . . .
+
+$ docker run -ti arm64v8/debian     
+
+root@f6a0542a2fd9:/<span class="hljs-comment"># ls</span>
+bin   dev  home  media  opt   root  sbin  sys  usr
+boot  etc  lib   mnt    proc  run   srv   tmp  var
+
+root@f6a0542a2fd9:/<span class="hljs-comment"># apt update</span>
+Get:<span class="hljs-number">1</span> http://security-cdn.debian.org/debian-security stretch/updates InRelease [<span class="hljs-number">94.3</span> kB]   
+Ign:<span class="hljs-number">2</span> http://cdn-fastly.deb.debian.org/debian stretch InRelease                            
+. . . .
+
+root@f6a0542a2fd9:/<span class="hljs-comment"># apt install procps file            </span>
+Reading package lists... Done
+Building dependency tree       
+. . . .
+
+root@f6a0542a2fd9:/<span class="hljs-comment"># ps ax</span>
+  PID TTY      STAT   TIME COMMAND
+    <span class="hljs-number">1</span> pts/<span class="hljs-number">0</span>    Ssl    <span class="hljs-number">0</span>:<span class="hljs-number">00</span> /usr/bin/qemu-aarch64-static /bin/bash
+  <span class="hljs-number">211</span> ?        Rl+    <span class="hljs-number">0</span>:<span class="hljs-number">00</span> /bin/ps ax
+
+root@f6a0542a2fd9:/<span class="hljs-comment"># file /bin/ls</span>
+/bin/ls: ELF <span class="hljs-number">64</span>-bit LSB shared object, ARM aarch64, version <span class="hljs-number">1</span> (SYSV), dynamically linked,
+interpreter /lib/ld-linux-aarch64.so.<span class="hljs-number">1</span>, <span class="hljs-keyword">for</span> GNU/Linux <span class="hljs-number">3.7</span>.<span class="hljs-number">0</span>,
+BuildID[sha1]=a242161239cb1f4ea9b8a7455013295e5473e3ec, stripped
 </code></pre>
 
                     
