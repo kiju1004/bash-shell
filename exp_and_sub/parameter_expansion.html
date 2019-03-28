@@ -1770,6 +1770,44 @@ foo <span class="hljs-number">11</span> <span class="hljs-string">&apos;AA[@]&ap
 <span class="hljs-number">44</span>
 <span class="hljs-number">55</span>
 </code></pre>
+<h1 id="quiz">Quiz</h1>
+<p>16 &#xC9C4;&#xC218;&#xC5D0;&#xC11C; Most Significant Byte ( &#xC81C;&#xC77C; &#xC67C;&#xCABD; &#xBB38;&#xC790; ) &#xAC00; 8 &#xC774;&#xC0C1;&#xC774;&#xBA74; 
+sign bit &#xC774; 1 &#xC774; &#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC74C;&#xC218;&#xAC00; &#xB418;&#xB294;&#xB370;&#xC694;.
+16 &#xC9C4;&#xC218; &#xAC12;&#xC744; &#xBD80;&#xD638; &#xC788;&#xB294; &#xC815;&#xC218;&#xAC12;&#xC73C;&#xB85C; &#xD45C;&#xC2DC;&#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># MSB &#xAC12;&#xC774; 8 &#xBBF8;&#xB9CC;&#xC774;&#xBA74; &#xBC14;&#xB85C; hex &#xAC12;&#xC744; &#xC815;&#xC218;&#xB85C; &#xCD9C;&#xB825;&#xD558;&#xACE0;</span>
+$ <span class="hljs-built_in">echo</span> $(( <span class="hljs-number">0</span>x7f ))
+<span class="hljs-number">127</span>
+$ <span class="hljs-built_in">echo</span> $(( <span class="hljs-number">0</span>x7fff ))
+<span class="hljs-number">32767</span>
+
+<span class="hljs-comment"># MSB &#xAC12;&#xC774; 8 &#xC774;&#xC0C1;&#xC774;&#xBA74; &#xC74C;&#xC218;&#xAC00; &#xB418;&#xBBC0;&#xB85C; &#xC785;&#xB825;&#xB41C; &#xC218;&#xC758; &#xC790;&#xB9AC;&#xC218;&#xC5D0; &#xB9DE;&#xCD94;&#xC5B4; &#xBE7C;&#xAE30;&#xB97C; &#xD574;&#xC900;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> $(( <span class="hljs-number">0</span>x8f - <span class="hljs-number">0</span>xff - <span class="hljs-number">1</span> ))         <span class="hljs-comment"># 2 &#xC790;&#xB9AC;</span>
+-<span class="hljs-number">113</span>
+$ <span class="hljs-built_in">echo</span> $(( <span class="hljs-number">0</span>x8fff - <span class="hljs-number">0</span>xffff - <span class="hljs-number">1</span> ))     <span class="hljs-comment"># 4 &#xC790;&#xB9AC;</span>
+-<span class="hljs-number">28673</span>
+
+<span class="hljs-function"><span class="hljs-title">hex2int</span></span>() { 
+    <span class="hljs-built_in">local</span> n=<span class="hljs-variable">${1#0[xX]}</span>   <span class="hljs-comment"># &#xC785;&#xB825;&#xAC12;&#xC774; 0x, 0X &#xB85C; &#xC2DC;&#xC791;&#xD560; &#xACBD;&#xC6B0; &#xC81C;&#xAC70;</span>
+    <span class="hljs-built_in">local</span> m=<span class="hljs-variable">${n:0:1}</span>     <span class="hljs-comment"># MSB &#xAC12; &#xCD94;&#xCD9C;</span>
+    <span class="hljs-built_in">local</span> f=$(<span class="hljs-built_in">printf</span> <span class="hljs-string">&apos;%.sf&apos;</span> $(seq $(<span class="hljs-built_in">printf</span> <span class="hljs-variable">$n</span> | wc -c )))  <span class="hljs-comment"># &#xC790;&#xB9AC;&#xC218; &#xB9CC;&#xD07C; f &#xBB38;&#xC790; &#xC0DD;&#xC131;</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">test</span> $(( <span class="hljs-number">0</span>x<span class="hljs-variable">$m</span> )) -ge <span class="hljs-number">8</span>; <span class="hljs-keyword">then</span>
+        <span class="hljs-built_in">echo</span> $(( <span class="hljs-number">0</span>x<span class="hljs-variable">$n</span> - <span class="hljs-number">0</span>x<span class="hljs-variable">$f</span> - <span class="hljs-number">1</span> )) 
+    <span class="hljs-keyword">else</span>
+        <span class="hljs-built_in">printf</span> <span class="hljs-string">&apos;%d\n&apos;</span> <span class="hljs-number">0</span>x<span class="hljs-variable">$n</span>
+    <span class="hljs-keyword">fi</span>
+}
+
+<span class="hljs-comment">##################### &#xC2E4;&#xD589; &#xACB0;&#xACFC; ###################</span>
+
+$ hex2int <span class="hljs-number">0</span>xff
+-<span class="hljs-number">1</span>
+$ hex2int <span class="hljs-number">0</span>xfe
+-<span class="hljs-number">2</span>
+$ hex2int <span class="hljs-number">0</span>x79
+<span class="hljs-number">121</span>
+$ hex2int <span class="hljs-number">0</span>x78
+<span class="hljs-number">120</span>
+</code></pre>
 
                     
                     </section>

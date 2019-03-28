@@ -1323,9 +1323,9 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$AA</span>
 </code></pre>
 <h4 id="8-&#xC9C4;&#xC218;-16-&#xC9C4;&#xC218;-&#xC5F0;&#xC0B0;">8 &#xC9C4;&#xC218;, 16 &#xC9C4;&#xC218; &#xC5F0;&#xC0B0;</h4>
 <p>&#xC22B;&#xC790;&#xAC00; <code>0</code> &#xC73C;&#xB85C; &#xC2DC;&#xC791;&#xD558;&#xBA74; 8 &#xC9C4;&#xC218;&#xB85C;, <code>0x</code> &#xB85C; &#xC2DC;&#xC791;&#xD558;&#xBA74; 16 &#xC9C4;&#xC218;&#xB85C; &#xC778;&#xC2DD;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> $(( <span class="hljs-number">010</span> ))
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> $(( <span class="hljs-number">010</span> ))      <span class="hljs-comment"># &#xB610;&#xB294; $(( 8#10 ))</span>
 <span class="hljs-number">8</span>
-$ <span class="hljs-built_in">echo</span> $(( <span class="hljs-number">0</span>x10 ))
+$ <span class="hljs-built_in">echo</span> $(( <span class="hljs-number">0</span>x10 ))     <span class="hljs-comment"># &#xB610;&#xB294; $(( 16#10 ))</span>
 <span class="hljs-number">16</span>
 
 $ <span class="hljs-built_in">echo</span> $(( <span class="hljs-number">010</span> + <span class="hljs-number">011</span> ))
