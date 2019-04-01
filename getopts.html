@@ -1840,9 +1840,9 @@ object &#xD30C;&#xC77C;&#xC774;&#xB098; &#xC2E4;&#xD589;&#xD30C;&#xC77C;&#xC744;
     cat &lt;&lt;END 
 
 Usage: $(basename <span class="hljs-string">&quot;<span class="hljs-variable">$0</span>&quot;</span>) [<span class="hljs-operator">-a</span> arch] [<span class="hljs-operator">-f</span> func] [-c] [-h] file
------------------------------------------------------------
-arch: arm armhf arm64 mips mips64 ppc ppc64 sparc64 riscv64
------------------------------------------------------------
+-----------------------------------------------------------------
+arch: arm armhf arm64 mips mips64 ppc ppc64 s390x sparc64 riscv64
+-----------------------------------------------------------------
 END
 
     <span class="hljs-built_in">exit</span> <span class="hljs-number">1</span>
@@ -1922,6 +1922,11 @@ options=$(getopt -o a:f:ch -- <span class="hljs-string">&quot;<span class="hljs-
     ppc)
         gcc=powerpc-linux-gnu-gcc
         objdump=powerpc-linux-gnu-objdump
+        ;;
+
+    s390x)
+        gcc=s390x-linux-gnu-gcc
+        objdump=s390x-linux-gnu-objdump
         ;;
 
     riscv64)
