@@ -1301,6 +1301,22 @@ PCB &#xC758; &#xC2E0;&#xD638; &#xD56D;&#xBAA9;&#xC744; &#xC870;&#xD68C;&#xD558;&
 interrupt, system call &#xCC98;&#xB9AC;&#xB97C; &#xC704;&#xD574;&#xC11C;&#xB294; kernel mode &#xC9C4;&#xC785;&#xACFC; user mode
 &#xBCF5;&#xADC0;&#xAC00; &#xC218;&#xBC18;&#xB418;&#xBBC0;&#xB85C; &#xD604;&#xC7AC; &#xC2E4;&#xD589; &#xC911;&#xC5D0; &#xC788;&#xB294; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB77C;&#xB3C4; &#xC2E0;&#xD638;&#xAC00; &#xCC98;&#xB9AC;&#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
+<pre><code class="lang-bash"><span class="hljs-comment"># sh &#xC5D0;&#xC11C; CHLD trap &#xC124;&#xC815;</span>
+sh$ <span class="hljs-built_in">trap</span> <span class="hljs-string">&apos;echo trap CHLD ....... &apos;</span> CHLD
+
+<span class="hljs-comment"># &apos;;&apos; &#xB97C; &#xC774;&#xC6A9;&#xD574; sleep &#xBA85;&#xB839;&#xC774; &#xCC28;&#xB840;&#xB85C; &#xC2E4;&#xD589;&#xB418;&#xACE0; &#xC885;&#xB8CC;&#xB418;&#xC5B4; 2 &#xBC88; trap &#xC774; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.</span>
+sh$ sleep <span class="hljs-number">1</span>; sleep <span class="hljs-number">1</span>;
+<span class="hljs-built_in">trap</span> CHLD .......
+<span class="hljs-built_in">trap</span> CHLD .......
+
+<span class="hljs-comment"># &#xC774;&#xBC88;&#xC5D0;&#xB294; background &#xB85C; &#xB450; &#xAC1C;&#xC758; sleep &#xBA85;&#xB839;&#xC744; &#xB3D9;&#xC2DC;&#xC5D0; &#xC2E4;&#xD589;&#xC2DC;&#xD0A8; &#xD6C4; 1 &#xCD08;&#xD6C4;&#xC5D0; enter &#xD0A4;&#xB97C; &#xB20C;&#xB7EC;&#xBCF4;&#xBA74;</span>
+<span class="hljs-comment"># &#xC2E0;&#xD638; &#xD558;&#xB098;&#xB97C; &#xC783;&#xC5B4;&#xBC84;&#xB824;&#xC11C; trap &#xC774; &#xD55C;&#xBC88;&#xB9CC; &#xBC1C;&#xC0DD;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+sh$ sleep <span class="hljs-number">1</span> &amp; sleep <span class="hljs-number">1</span> &amp;
+sh$ 
+<span class="hljs-built_in">trap</span> CHLD .......
+[<span class="hljs-number">2</span>] + Done                       sleep <span class="hljs-number">1</span>
+[<span class="hljs-number">1</span>] + Done                       sleep <span class="hljs-number">1</span>
+</code></pre>
 <h3 id="signal-handler">Signal handler</h3>
 <p>Signal &#xC774; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0; &#xC804;&#xB2EC;&#xB418;&#xC5C8;&#xC744;&#xB54C; &#xC2E4;&#xD589;&#xB418;&#xB294; &#xCF54;&#xB4DC;&#xB97C; signal handler &#xB77C;&#xACE0; &#xD569;&#xB2C8;&#xB2E4;.
 &#xBAA8;&#xB4E0; signal &#xC740; default action &#xC744; &#xC704;&#xD55C; signal handler &#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
