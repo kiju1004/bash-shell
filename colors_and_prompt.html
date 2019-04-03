@@ -1616,9 +1616,9 @@ export &#xD55C; &#xD658;&#xACBD; &#xBCC0;&#xC218;&#xB294; &#xD504;&#xB85C;&#xC13
 <span class="hljs-function"><span class="hljs-title">adjust_start</span></span>() {
     <span class="hljs-built_in">local</span> lines=`tput lines`
     <span class="hljs-keyword">if</span> [ <span class="hljs-variable">$lines</span> -le <span class="hljs-variable">$num_of_files</span> ]; <span class="hljs-keyword">then</span>
-        <span class="hljs-built_in">export</span> start=$(( num_of_files - lines +<span class="hljs-number">1</span> ))  
+        <span class="hljs-built_in">export</span> start=$(( num_of_files - lines +<span class="hljs-number">2</span> ))  
     <span class="hljs-keyword">else</span>
-        <span class="hljs-built_in">export</span> start=<span class="hljs-number">0</span>
+        <span class="hljs-built_in">export</span> start=<span class="hljs-number">1</span>
     <span class="hljs-keyword">fi</span>
 }
 
@@ -1665,7 +1665,7 @@ adjust_start
     <span class="hljs-comment"># &#xD558;&#xB098;&#xC758; awk &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xC9C1;&#xC811; &#xD30C;&#xC77C; &#xAC1C;&#xC218;&#xB9CC;&#xD07C; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</span>
     awk -v fnum=<span class="hljs-string">&quot;<span class="hljs-variable">$num_of_files</span>&quot;</span> -v pbar=<span class="hljs-string">&quot;<span class="hljs-variable">$progress_bar</span>&quot;</span> <span class="hljs-string">&apos;BEGIN{ 
          # &#xD604;&#xC7AC; &#xD130;&#xBBF8;&#xB110; rows &#xC218;&#xAC00; &#xD30C;&#xC77C; &#xAC1C;&#xC218;&#xBCF4;&#xB2E4; &#xC791;&#xC744; &#xACBD;&#xC6B0; + start &#xBD80;&#xD130; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.
-         for ( f=1 + ENVIRON[&quot;start&quot;]; f&lt;=fnum; f++ ) {
+         for ( f=ENVIRON[&quot;start&quot;]; f&lt;=fnum; f++ ) {
              split( ENVIRON[&quot;file&quot; f], a, &quot;=&quot;)  # NdhW2npQAV=12 &#xD615;&#xD0DC;&#xC758; &#xD658;&#xACBD;&#xBCC0;&#xC218; &#xAC12;&#xC5D0;&#xC11C;
              fname = a[1]; cpos = a[2]          # &#xD568;&#xC218;&#xBA85;&#xACFC; cur_pos &#xAC12;&#xC744; &#xAD6C;&#xD569;&#xB2C8;&#xB2E4;.
              printf &quot;%-8s |&quot;, fname
