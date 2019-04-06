@@ -1478,7 +1478,7 @@ $ readelf -WS /bin/date | grep interp
 $ dd skip=$((<span class="hljs-number">0</span>x2a8)) bs=<span class="hljs-number">1</span> count=$((<span class="hljs-number">0</span>x1c)) <span class="hljs-keyword">if</span>=/bin/date <span class="hljs-number">2</span>&gt; /dev/null
 /lib64/ld-linux-x86-<span class="hljs-number">64</span>.so.<span class="hljs-number">2</span>
 
-$ readelf -SW /bin/date | sed -n <span class="hljs-string">&apos;/plt /{/AX/p}&apos;</span>
+$ readelf -SW /bin/date | grep <span class="hljs-string">&apos; .plt &apos;</span>
   [<span class="hljs-number">12</span>] .plt              PROGBITS        <span class="hljs-number">0000000000003020</span> <span class="hljs-number">003020</span> <span class="hljs-number">0004</span>c0 <span class="hljs-number">10</span>  AX  <span class="hljs-number">0</span>   <span class="hljs-number">0</span> <span class="hljs-number">16</span>
 
 $ dd skip=$((<span class="hljs-number">0</span>x3020)) bs=<span class="hljs-number">1</span> count=$((<span class="hljs-number">0</span>x4c0)) <span class="hljs-keyword">if</span>=/bin/date <span class="hljs-number">2</span>&gt; /dev/null | ndisasm -b <span class="hljs-number">64</span> - 
