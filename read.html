@@ -1272,14 +1272,14 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$v4</span>
 <span class="hljs-number">4</span>
 </code></pre>
 <p>read &#xBA85;&#xB839;&#xC740; IFS &#xAC12;&#xC5D0; &#xB530;&#xB77C; &#xB2E8;&#xC5B4;&#xB97C; &#xBD84;&#xB9AC; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">$ IFS=<span class="hljs-string">&apos;:|@&apos;</span> <span class="hljs-built_in">read</span> -r c1 c2 c3 c4 &lt;&lt;&lt; <span class="hljs-string">&quot;red:green|blue@white&quot;</span>
+<pre><code class="lang-bash">$ IFS=<span class="hljs-string">&apos;:|@&apos;</span> <span class="hljs-built_in">read</span> c1 c2 c3 c4 &lt;&lt;&lt; <span class="hljs-string">&quot;red:green|blue@white&quot;</span>
 $ <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;c1: %s, c2: %s, c3: %s, c4: %s\n&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$c1</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$c2</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$c3</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$c4</span>&quot;</span>
 c1: red, c2: green, c3: blue, c4: white
 
 ---------------------------------------------------------------------------
 
 datetime=<span class="hljs-string">&quot;2008:07:04 00:34:45&quot;</span>
-IFS=<span class="hljs-string">&apos;: &apos;</span> <span class="hljs-built_in">read</span> -r year month day hour minute second &lt;&lt;&lt; <span class="hljs-string">&quot;<span class="hljs-variable">$datetime</span>&quot;</span>
+IFS=<span class="hljs-string">&apos;: &apos;</span> <span class="hljs-built_in">read</span> year month day hour minute second &lt;&lt;&lt; <span class="hljs-string">&quot;<span class="hljs-variable">$datetime</span>&quot;</span>
 </code></pre>
 <p>&#xD30C;&#xC774;&#xD504;&#xC5D0; &#xC5F0;&#xACB0;&#xB41C; &#xBA85;&#xB839;&#xC740; subshell &#xC5D0;&#xC11C; &#xC2E4;&#xD589;&#xB418;&#xBBC0;&#xB85C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> | <span class="hljs-built_in">read</span> v1 v2 v3
@@ -1305,7 +1305,7 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$v1</span>
 empty    space    
     empty    space
 
-$ <span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> -r  line; <span class="hljs-keyword">do</span>    <span class="hljs-comment"># &#xB77C;&#xC778; &#xC55E;,&#xB4A4; &#xACF5;&#xBC31;&#xC774; &#xC5C6;&#xC5B4;&#xC9C4;&#xB2E4;.</span>
+$ <span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> line; <span class="hljs-keyword">do</span>    <span class="hljs-comment"># &#xB77C;&#xC778; &#xC55E;,&#xB4A4; &#xACF5;&#xBC31;&#xC774; &#xC5C6;&#xC5B4;&#xC9C4;&#xB2E4;.</span>
     <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;X<span class="hljs-variable">${line}</span>X&quot;</span>
 <span class="hljs-keyword">done</span> &lt; test.txt
 
@@ -1313,7 +1313,7 @@ Xempty    spaceX
 Xempty    spaceX
 
 <span class="hljs-comment"># IFS &#xAC12;&#xC744; NUL &#xB85C; &#xC124;&#xC815;&#xD574;&#xC57C; &#xB77C;&#xC778; &#xC55E;,&#xB4A4; &#xACF5;&#xBC31;&#xC774; &#xC720;&#xC9C0;&#xB41C;&#xB2E4;.</span>
-$ <span class="hljs-keyword">while</span> IFS= <span class="hljs-built_in">read</span> -r  line; <span class="hljs-keyword">do</span>
+$ <span class="hljs-keyword">while</span> IFS= <span class="hljs-built_in">read</span> line; <span class="hljs-keyword">do</span>
     <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;X<span class="hljs-variable">${line}</span>X&quot;</span>
 <span class="hljs-keyword">done</span> &lt; test.txt
 
@@ -1324,18 +1324,16 @@ X    empty    spaceX
 <ul>
 <li><strong>-r</strong> : &#xC77D;&#xC5B4; &#xB4E4;&#xC774;&#xB294; &#xB370;&#xC774;&#xD130;&#xC5D0;&#xC11C; <code>\</code> &#xBB38;&#xC790;&#xB97C; &#xC774;&#xC6A9;&#xD55C; escape &#xC744; disable &#xD569;&#xB2C8;&#xB2E4; (raw read).  </li>
 </ul>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">read</span> v       <span class="hljs-comment"># -r &#xC635;&#xC158; &#xBBF8;&#xC0AC;&#xC6A9;</span>
-xxx\t\nyyy     <span class="hljs-comment"># &#xC785;&#xB825;</span>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">read</span> v &lt;&lt;&lt; <span class="hljs-string">&apos;xxx\t\nyyy&apos;</span>       <span class="hljs-comment"># -r &#xC635;&#xC158; &#xBBF8;&#xC0AC;&#xC6A9;</span>
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$v</span>&quot;</span>
 xxxtnyyy       <span class="hljs-comment"># &#xCD9C;&#xB825;</span>
 ---------------------------------------
 
-$ <span class="hljs-built_in">read</span> -r v    <span class="hljs-comment"># -r &#xC635;&#xC158; &#xC0AC;&#xC6A9;</span>
-xxx\t\nyyy     <span class="hljs-comment"># &#xC785;&#xB825;</span>
+$ <span class="hljs-built_in">read</span> -r v &lt;&lt;&lt; <span class="hljs-string">&apos;xxx\t\nyyy&apos;</span>    <span class="hljs-comment"># -r &#xC635;&#xC158; &#xC0AC;&#xC6A9;</span>
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$v</span>&quot;</span>
-xxx\t\nyyy     <span class="hljs-comment"># &#xCD9C;&#xB825;( &#xC785;&#xB825;&#xB41C; &#xADF8;&#xB300;&#xB85C; &#xCD9C;&#xB825; )</span>
+xxx\t\nyyy     <span class="hljs-comment"># &#xC785;&#xB825;&#xB41C; &#xADF8;&#xB300;&#xB85C; &#xCD9C;&#xB825;</span>
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;<span class="hljs-variable">$v</span>&quot;</span>
 xxx
@@ -1370,7 +1368,7 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${arr[1]}<
 <span class="hljs-number">2</span>
 
 <span class="hljs-comment"># IFS &#xAC00; &#xB370;&#xC774;&#xD0C0; &#xB9C8;&#xC9C0;&#xB9C9;&#xC5D0; &#xC62C; &#xACBD;&#xC6B0; &#xB9C8;&#xC9C0;&#xB9C9; &#xD544;&#xB4DC;&#xB294; &#xD56D;&#xBAA9;&#xC5D0;&#xC11C; &#xC81C;&#xC678;&#xB429;&#xB2C8;&#xB2E4;.</span>
-$ IFS=, <span class="hljs-built_in">read</span> <span class="hljs-operator">-a</span> arr &lt;&lt;&lt; <span class="hljs-string">&quot;1,2,3,4,&quot;</span> 
+$ IFS=, <span class="hljs-built_in">read</span> -r <span class="hljs-operator">-a</span> arr &lt;&lt;&lt; <span class="hljs-string">&quot;1,2,3,4,&quot;</span> 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${#arr[@]}</span>
 <span class="hljs-number">4</span>
 </code></pre>
