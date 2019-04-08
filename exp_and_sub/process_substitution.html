@@ -1468,11 +1468,11 @@ Only <span class="hljs-keyword">in</span> BUILD.<span class="hljs-number">1</spa
 Files BUILD.<span class="hljs-number">1</span>/lib/pty_fork.o and BUILD.<span class="hljs-number">2</span>/lib/pty_fork.o differ
 Files BUILD.<span class="hljs-number">1</span>/lib/pty_master_open.d and BUILD.<span class="hljs-number">2</span>/lib/pty_master_open.d differ
 </code></pre>
-<p>remote &#xD30C;&#xC77C;&#xC744; &#xBE44;&#xAD50;&#xD558;&#xB294; &#xAC83;&#xC774;&#xBBC0;&#xB85C; &#xD30C;&#xC77C;&#xC744; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;&#xD558;&#xC9C0; &#xC54A;&#xACE0; md5sum &#xC744; &#xC774;&#xC6A9;&#xD574; &#xBE44;&#xAD50;&#xD569;&#xB2C8;&#xB2E4;.
-local &#xACFC; remote &#xD30C;&#xC77C;&#xC758; &#xACF5;&#xD1B5;&#xB41C; &#xD30C;&#xC77C;&#xBA85; &#xBD80;&#xBD84;&#xC744;
-array &#xC758; index &#xB85C; &#xD558;&#xACE0; md5sum &#xAC12;&#xC744; value &#xB85C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>rsync &#xBA85;&#xB839;&#xC758; --dry-run &#xC635;&#xC158;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC774; &#xC788;&#xC9C0;&#xB9CC; &#xC5EC;&#xAE30;&#xC11C;&#xB294; &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xCE58;&#xD658;&#xC744; &#xC774;&#xC6A9;&#xD574; &#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.
+remote &#xD30C;&#xC77C;&#xC744; &#xBE44;&#xAD50;&#xD558;&#xB294; &#xAC83;&#xC774;&#xBBC0;&#xB85C; &#xD30C;&#xC77C;&#xC744; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;&#xD558;&#xC9C0; &#xC54A;&#xACE0; md5sum &#xC744; &#xC774;&#xC6A9;&#xD574; &#xBE44;&#xAD50;&#xD569;&#xB2C8;&#xB2E4;.
+awk &#xC5D0;&#xC11C; &#xD30C;&#xC77C; &#xACBD;&#xB85C;&#xB97C; array &#xC758; index &#xB85C; &#xD558;&#xACE0; md5sum &#xAC12;&#xC744; value &#xB85C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <blockquote>
-<p>find &#xBA85;&#xB839;&#xC5D0; &#xC0AC;&#xC6A9;&#xB41C; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xBA85;&#xC744; awk &#xC5D0;&#xB3C4; &#xC801;&#xC5B4;&#xC8FC;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>hash collision &#xC774; &#xC788;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. ( md5sum &#xC744; sha1sum &#xC774;&#xB098; &#xC774;&#xC0C1;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD574;&#xBCF4;&#xC138;&#xC694; )</p>
+<p>hash collision &#xC774; &#xC788;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. ( md5sum &#xC744; sha1sum &#xC774;&#xB098; &#xC774;&#xC0C1;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD574;&#xBCF4;&#xC138;&#xC694; )</p>
 </blockquote>
 <pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { 
     # find &#xBA85;&#xB839;&#xC5D0; &#xC0AC;&#xC6A9;&#xB41C; local, remote &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xB97C; &#xC5EC;&#xAE30;&#xB3C4; &#xC785;&#xB825;&#xD574;&#xC90D;&#xB2C8;&#xB2E4;.
