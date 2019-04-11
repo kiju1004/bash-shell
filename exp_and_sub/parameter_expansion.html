@@ -1790,7 +1790,7 @@ $ <span class="hljs-built_in">echo</span> $(( <span class="hljs-number">0</span>
     <span class="hljs-built_in">local</span> n=<span class="hljs-variable">${1#0[xX]}</span>   <span class="hljs-comment"># &#xC785;&#xB825;&#xAC12;&#xC774; 0x, 0X &#xB85C; &#xC2DC;&#xC791;&#xD560; &#xACBD;&#xC6B0; &#xC81C;&#xAC70;</span>
     <span class="hljs-built_in">local</span> m=<span class="hljs-variable">${n:0:1}</span>     <span class="hljs-comment"># MSB &#xAC12; &#xCD94;&#xCD9C;</span>
     <span class="hljs-keyword">if</span> <span class="hljs-built_in">test</span> $(( <span class="hljs-number">0</span>x<span class="hljs-variable">$m</span> )) -ge <span class="hljs-number">8</span>; <span class="hljs-keyword">then</span>
-        <span class="hljs-built_in">echo</span> $(( <span class="hljs-number">0</span>x<span class="hljs-variable">$n</span> - <span class="hljs-number">0</span>x<span class="hljs-variable">${n//?/f}</span> - <span class="hljs-number">1</span> )) 
+        <span class="hljs-built_in">echo</span> $(( <span class="hljs-number">0</span>x<span class="hljs-variable">$n</span> - <span class="hljs-number">0</span>x<span class="hljs-variable">${n//?/f}</span> - <span class="hljs-number">1</span> ))   <span class="hljs-comment"># &apos;?&apos; &#xB294; glob &#xBB38;&#xC790;</span>
     <span class="hljs-keyword">else</span>
         <span class="hljs-built_in">echo</span> $(( <span class="hljs-number">0</span>x<span class="hljs-variable">$n</span> ))
     <span class="hljs-keyword">fi</span>
